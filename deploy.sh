@@ -79,6 +79,10 @@ deploy_to_github() {
     if [ "$1" = "deploy" ]; then
         echo "🚀 部署到GitHub Pages..."
         
+        # 设置部署分支（默认为gh-pages，可通过第二个参数指定）
+        local deploy_branch="${2:-gh-pages}"
+        echo "📝 部署分支: $deploy_branch"
+        
         # 检查Git仓库位置
         local git_dir=""
         if [ -d ".git" ]; then
@@ -103,9 +107,14 @@ deploy_to_github() {
             cp -r doc/_book ./_book_temp
         fi
         
-        # 切换到gh-pages分支
-        echo "📝 切换到gh-pages分支..."
-        git checkout gh-pages
+        # 检查目标分支是否存在，如果不存在则创建
+        if ! git show-ref --verify --quiet refs/heads/$deploy_branch; then
+            echo "📝 创建新分支: $deploy_branch"
+            git checkout -b $deploy_branch
+        else
+            echo "📝 切换到分支: $deploy_branch"
+            git checkout $deploy_branch
+        fi
         
         # 清理当前分支内容（保留.git目录）
         echo "🧹 清理当前分支内容..."
@@ -125,7 +134,7 @@ deploy_to_github() {
         
         # 推送到远程仓库
         echo "🚀 推送到GitHub..."
-        git push origin gh-pages
+        git push origin $deploy_branch
         
         # 切换回main分支
         git checkout main
@@ -138,9 +147,11 @@ deploy_to_github() {
         echo "✅ 部署完成！"
         echo "🌐 文档将在几分钟后可在以下地址访问："
         echo "   https://xde1997.github.io/Tutorial_FPGA/"
+        echo "💡 如果使用自定义分支，请在GitHub仓库设置中配置GitHub Pages源分支为: $deploy_branch"
     else
         echo "📖 文档已构建完成，位于 _book/ 目录"
         echo "💡 运行 './deploy.sh deploy' 来部署到GitHub Pages"
+        echo "💡 运行 './deploy.sh deploy gp_graph' 来部署到自定义分支"
     fi
 }
 
