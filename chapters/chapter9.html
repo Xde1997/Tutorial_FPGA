@@ -1,0 +1,1947 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第9章：OCaml/Hardcaml硬件设计 · FPGA原理与AI加速应用教程</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="FPGA教程团队">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="chapter10.html" />
+    
+    
+    <link rel="prev" href="chapter8.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第一部分：FPGA基础架构</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="chapter1.html">
+            
+                <a href="chapter1.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    第1章：FPGA基础架构与工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="chapter2.html">
+            
+                <a href="chapter2.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    第2章：HDL设计基础与方法学
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="chapter3.html">
+            
+                <a href="chapter3.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    第3章：时序、时钟与同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="chapter4.html">
+            
+                <a href="chapter4.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    第4章：存储器系统与接口设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第二部分：高级设计技术</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="chapter5.html">
+            
+                <a href="chapter5.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    第5章：高速I/O与通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="chapter6.html">
+            
+                <a href="chapter6.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    第6章：DSP与算术优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="chapter7.html">
+            
+                <a href="chapter7.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    第7章：HLS与C到硬件综合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="chapter8.html">
+            
+                <a href="chapter8.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    第8章：函数式HDL之Haskell/Clash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.5" data-path="chapter9.html">
+            
+                <a href="chapter9.html">
+            
+                    
+                        <b>3.5.</b>
+                    
+                    第9章：OCaml/Hardcaml硬件设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="chapter10.html">
+            
+                <a href="chapter10.html">
+            
+                    
+                        <b>3.6.</b>
+                    
+                    第10章：零知识证明加速器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第三部分：AI加速实战</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="chapter11.html">
+            
+                <a href="chapter11.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    第11章：AI加速器基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="chapter12.html">
+            
+                <a href="chapter12.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    第12章：LLM推理加速
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="chapter13.html">
+            
+                <a href="chapter13.html">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    第13章：视觉与多模态处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="chapter14.html">
+            
+                <a href="chapter14.html">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    第14章：LLM服务基础设施
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="chapter15.html">
+            
+                <a href="chapter15.html">
+            
+                    
+                        <b>4.5.</b>
+                    
+                    第15章：机器人运动控制与FPGA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="chapter16.html">
+            
+                <a href="chapter16.html">
+            
+                    
+                        <b>4.6.</b>
+                    
+                    第16章：激光雷达信号处理与FPGA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="chapter17.html">
+            
+                <a href="chapter17.html">
+            
+                    
+                        <b>4.7.</b>
+                    
+                    第17章：毫米波雷达与FPGA
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第四部分：高级优化与扩展</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="chapter18.html">
+            
+                <a href="chapter18.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    第18章：性能分析与优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="chapter19.html">
+            
+                <a href="chapter19.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    第19章：功耗优化技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="chapter20.html">
+            
+                <a href="chapter20.html">
+            
+                    
+                        <b>5.3.</b>
+                    
+                    第20章：多FPGA系统与扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="chapter21.html">
+            
+                <a href="chapter21.html">
+            
+                    
+                        <b>5.4.</b>
+                    
+                    第21章：可靠性与容错设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="chapter22.html">
+            
+                <a href="chapter22.html">
+            
+                    
+                        <b>5.5.</b>
+                    
+                    第22章：未来趋势与新兴技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../docs/DEPLOY_README.html">
+            
+                <a href="../docs/DEPLOY_README.html">
+            
+                    
+                        <b>6.1.</b>
+                    
+                    部署指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../docs/GITBOOK_SETUP.html">
+            
+                <a href="../docs/GITBOOK_SETUP.html">
+            
+                    
+                        <b>6.2.</b>
+                    
+                    安装说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../docs/CONVERSION_SUMMARY.html">
+            
+                <a href="../docs/CONVERSION_SUMMARY.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    转换总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >第9章：OCaml/Hardcaml硬件设计</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7B2C;&#x4E5D;&#x7AE0;&#xFF1A;ocamlhardcaml&#x786C;&#x4EF6;&#x8BBE;&#x8BA1;">&#x7B2C;&#x4E5D;&#x7AE0;&#xFF1A;OCaml/Hardcaml&#x786C;&#x4EF6;&#x8BBE;&#x8BA1;</h1>
+<p>&#x672C;&#x7AE0;&#x63A2;&#x8BA8;&#x4F7F;&#x7528;OCaml&#x8BED;&#x8A00;&#x548C;Hardcaml&#x5E93;&#x8FDB;&#x884C;&#x786C;&#x4EF6;&#x8BBE;&#x8BA1;&#x7684;&#x65B9;&#x6CD5;&#x8BBA;&#x3002;Hardcaml&#x662F;Jane Street&#x5F00;&#x53D1;&#x7684;&#x4E00;&#x4E2A;&#x5F3A;&#x7C7B;&#x578B;&#x3001;&#x51FD;&#x6570;&#x5F0F;&#x786C;&#x4EF6;&#x63CF;&#x8FF0;&#x6846;&#x67B6;&#xFF0C;&#x5B83;&#x5C06;OCaml&#x7684;&#x7C7B;&#x578B;&#x5B89;&#x5168;&#x6027;&#x548C;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x4F18;&#x52BF;&#x5E26;&#x5165;&#x786C;&#x4EF6;&#x8BBE;&#x8BA1;&#x9886;&#x57DF;&#x3002;&#x5B66;&#x4E60;&#x76EE;&#x6807;&#x5305;&#x62EC;&#xFF1A;&#x7406;&#x89E3;Hardcaml&#x7684;&#x8BBE;&#x8BA1;&#x7406;&#x5FF5;&#x548C;&#x7C7B;&#x578B;&#x7CFB;&#x7EDF;&#x3001;&#x638C;&#x63E1;&#x7EC4;&#x5408;&#x903B;&#x8F91;&#x548C;&#x65F6;&#x5E8F;&#x903B;&#x8F91;&#x7684;&#x51FD;&#x6570;&#x5F0F;&#x62BD;&#x8C61;&#x3001;&#x8FD0;&#x7528;Hardcaml&#x7684;&#x4EFF;&#x771F;&#x548C;&#x9A8C;&#x8BC1;&#x6846;&#x67B6;&#x3001;&#x5206;&#x6790;Jane Street&#x5728;&#x9AD8;&#x9891;&#x4EA4;&#x6613;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x6848;&#x4F8B;&#x3001;&#x8BBE;&#x8BA1;&#x4F4E;&#x5EF6;&#x8FDF;&#x91D1;&#x878D;&#x8BA1;&#x7B97;&#x52A0;&#x901F;&#x5668;&#x3002;&#x8FD9;&#x4E9B;&#x6280;&#x80FD;&#x5BF9;&#x4E8E;&#x9700;&#x8981;&#x6781;&#x9AD8;&#x53EF;&#x9760;&#x6027;&#x548C;&#x4F4E;&#x5EF6;&#x8FDF;&#x7684;&#x91D1;&#x878D;&#x79D1;&#x6280;&#x3001;&#x7F51;&#x7EDC;&#x5904;&#x7406;&#x548C;&#x5B9E;&#x65F6;&#x7CFB;&#x7EDF;&#x8BBE;&#x8BA1;&#x5C24;&#x4E3A;&#x91CD;&#x8981;&#x3002;</p>
+<h2 id="91-hardcaml&#x8BBE;&#x8BA1;&#x7406;&#x5FF5;&#x4E0E;&#x67B6;&#x6784;">9.1 Hardcaml&#x8BBE;&#x8BA1;&#x7406;&#x5FF5;&#x4E0E;&#x67B6;&#x6784;</h2>
+<h3 id="911-&#x4E3A;&#x4EC0;&#x4E48;&#x9009;&#x62E9;ocaml&#x8FDB;&#x884C;&#x786C;&#x4EF6;&#x8BBE;&#x8BA1;">9.1.1 &#x4E3A;&#x4EC0;&#x4E48;&#x9009;&#x62E9;OCaml&#x8FDB;&#x884C;&#x786C;&#x4EF6;&#x8BBE;&#x8BA1;</h3>
+<p>&#x4F20;&#x7EDF;HDL&#xFF08;Verilog/VHDL&#xFF09;&#x5728;&#x5927;&#x89C4;&#x6A21;&#x8BBE;&#x8BA1;&#x4E2D;&#x9762;&#x4E34;&#x8BF8;&#x591A;&#x6311;&#x6218;&#xFF1A;&#x7C7B;&#x578B;&#x7CFB;&#x7EDF;&#x8584;&#x5F31;&#x3001;&#x62BD;&#x8C61;&#x80FD;&#x529B;&#x6709;&#x9650;&#x3001;&#x6613;&#x51FA;&#x73B0;&#x7EC6;&#x5FAE;&#x9519;&#x8BEF;&#x3002;Hardcaml&#x901A;&#x8FC7;OCaml&#x7684;&#x5F3A;&#x5927;&#x7C7B;&#x578B;&#x7CFB;&#x7EDF;&#x89E3;&#x51B3;&#x8FD9;&#x4E9B;&#x95EE;&#x9898;&#x3002;</p>
+<p><strong>OCaml&#x4F18;&#x52BF;&#x6620;&#x5C04;&#x5230;&#x786C;&#x4EF6;&#x8BBE;&#x8BA1;&#xFF1A;</strong></p>
+<ul>
+<li><strong>&#x5F3A;&#x7C7B;&#x578B;&#x7CFB;&#x7EDF;</strong>&#xFF1A;&#x7F16;&#x8BD1;&#x65F6;&#x6355;&#x83B7;&#x4F4D;&#x5BBD;&#x4E0D;&#x5339;&#x914D;&#x3001;&#x65F6;&#x949F;&#x57DF;&#x9519;&#x8BEF;</li>
+<li><strong>&#x51FD;&#x6570;&#x5F0F;&#x8303;&#x5F0F;</strong>&#xFF1A;&#x786C;&#x4EF6;&#x672C;&#x8D28;&#x4E0A;&#x662F;&#x65E0;&#x526F;&#x4F5C;&#x7528;&#x7684;&#x7EAF;&#x51FD;&#x6570;</li>
+<li><strong>&#x6A21;&#x5757;&#x7CFB;&#x7EDF;</strong>&#xFF1A;&#x652F;&#x6301;&#x53C2;&#x6570;&#x5316;&#x8BBE;&#x8BA1;&#x548C;&#x63A5;&#x53E3;&#x62BD;&#x8C61;</li>
+<li><strong>&#x4EE3;&#x6570;&#x6570;&#x636E;&#x7C7B;&#x578B;</strong>&#xFF1A;&#x81EA;&#x7136;&#x8868;&#x8FBE;&#x72B6;&#x6001;&#x673A;&#x548C;&#x534F;&#x8BAE;</li>
+<li><strong>&#x9AD8;&#x9636;&#x51FD;&#x6570;</strong>&#xFF1A;&#x6784;&#x5EFA;&#x53EF;&#x590D;&#x7528;&#x7684;&#x786C;&#x4EF6;&#x751F;&#x6210;&#x5668;</li>
+</ul>
+<p><strong>Hardcaml vs &#x4F20;&#x7EDF;HDL&#x5BF9;&#x6BD4;&#xFF1A;</strong></p>
+<pre><code>&#x7279;&#x6027;          | Verilog    | VHDL      | Hardcaml
+&#x7C7B;&#x578B;&#x5B89;&#x5168;      | &#x5F31;         | &#x4E2D;&#x7B49;      | &#x5F3A;
+&#x62BD;&#x8C61;&#x80FD;&#x529B;      | &#x4F4E;         | &#x4E2D;&#x7B49;      | &#x9AD8;
+&#x4EFF;&#x771F;&#x901F;&#x5EA6;      | &#x5FEB;         | &#x6162;        | &#x6781;&#x5FEB;&#xFF08;&#x89E3;&#x91CA;&#x5668;&#x6A21;&#x5F0F;&#xFF09;
+&#x9A8C;&#x8BC1;&#x80FD;&#x529B;      | &#x5916;&#x90E8;&#x5DE5;&#x5177;   | &#x5185;&#x7F6E;&#x65AD;&#x8A00;  | &#x96C6;&#x6210;&#x5C5E;&#x6027;&#x6D4B;&#x8BD5;
+&#x751F;&#x6210;&#x6548;&#x7387;      | &#x624B;&#x5DE5;&#x7F16;&#x5199;   | &#x624B;&#x5DE5;&#x7F16;&#x5199;  | &#x5143;&#x7F16;&#x7A0B;&#x751F;&#x6210;
+</code></pre><h3 id="912-hardcaml&#x6838;&#x5FC3;&#x6982;&#x5FF5;">9.1.2 Hardcaml&#x6838;&#x5FC3;&#x6982;&#x5FF5;</h3>
+<p><strong>1. Signal&#x7C7B;&#x578B;&#x7CFB;&#x7EDF;</strong>
+Hardcaml&#x4E2D;&#x6240;&#x6709;&#x786C;&#x4EF6;&#x4FE1;&#x53F7;&#x90FD;&#x662F;&#x5F3A;&#x7C7B;&#x578B;&#x7684;&#xFF0C;&#x4F4D;&#x5BBD;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x786E;&#x5B9A;&#xFF1A;</p>
+<pre><code>- Signal.t&#xFF1A;&#x57FA;&#x7840;&#x4FE1;&#x53F7;&#x7C7B;&#x578B;
+- &apos;a Signal.t&#xFF1A;&#x5E26;&#x4F4D;&#x5BBD;phantom type&#x7684;&#x4FE1;&#x53F7;
+- Signal.Vec&#xFF1A;&#x5411;&#x91CF;&#x4FE1;&#x53F7;
+- Signal.Map&#xFF1A;&#x547D;&#x540D;&#x4FE1;&#x53F7;&#x96C6;&#x5408;
+</code></pre><p><strong>2. &#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#x673A;&#x5236;</strong>
+&#x4F7F;&#x7528;OCaml&#x7684;&#x6A21;&#x5757;&#x7CFB;&#x7EDF;&#x5B9A;&#x4E49;&#x786C;&#x4EF6;&#x63A5;&#x53E3;&#xFF1A;</p>
+<pre><code>&#x601D;&#x8DEF;&#xFF1A;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;FIFO&#x63A5;&#x53E3;
+- &#x8F93;&#x5165;&#xFF1A;&#x5199;&#x4F7F;&#x80FD;&#x3001;&#x5199;&#x6570;&#x636E;&#x3001;&#x8BFB;&#x4F7F;&#x80FD;
+- &#x8F93;&#x51FA;&#xFF1A;&#x8BFB;&#x6570;&#x636E;&#x3001;&#x6EE1;&#x6807;&#x5FD7;&#x3001;&#x7A7A;&#x6807;&#x5FD7;
+- &#x53C2;&#x6570;&#xFF1A;&#x6570;&#x636E;&#x5BBD;&#x5EA6;&#x3001;&#x6DF1;&#x5EA6;&#xFF08;2&#x7684;&#x5E42;&#x6B21;&#xFF09;
+</code></pre><p><strong>3. &#x5C42;&#x6B21;&#x5316;&#x8BBE;&#x8BA1;</strong>
+Hardcaml&#x652F;&#x6301;&#x4E09;&#x5C42;&#x62BD;&#x8C61;&#xFF1A;</p>
+<ul>
+<li><strong>Circuit&#x5C42;</strong>&#xFF1A;&#x6700;&#x5E95;&#x5C42;&#x7684;&#x7F51;&#x8868;&#x8868;&#x793A;</li>
+<li><strong>Module&#x5C42;</strong>&#xFF1A;&#x5E26;&#x63A5;&#x53E3;&#x7684;&#x53EF;&#x590D;&#x7528;&#x6A21;&#x5757;</li>
+<li><strong>System&#x5C42;</strong>&#xFF1A;&#x591A;&#x6A21;&#x5757;&#x4E92;&#x8054;&#x7684;&#x7CFB;&#x7EDF;&#x7EA7;&#x8BBE;&#x8BA1;</li>
+</ul>
+<h3 id="913-hardcaml&#x5DE5;&#x5177;&#x94FE;&#x67B6;&#x6784;">9.1.3 Hardcaml&#x5DE5;&#x5177;&#x94FE;&#x67B6;&#x6784;</h3>
+<p><strong>&#x7F16;&#x8BD1;&#x6D41;&#x7A0B;&#xFF1A;</strong></p>
+<pre><code>OCaml&#x6E90;&#x7801; &#x2192; Hardcaml AST &#x2192; &#x4E2D;&#x95F4;&#x8868;&#x793A;(IR) &#x2192; &#x591A;&#x79CD;&#x540E;&#x7AEF;
+                                            &#x251C;&#x2500;&#x2500; Verilog&#x751F;&#x6210;
+                                            &#x251C;&#x2500;&#x2500; C++&#x4EFF;&#x771F;&#x5668;
+                                            &#x251C;&#x2500;&#x2500; Verilator&#x63A5;&#x53E3;
+                                            &#x2514;&#x2500;&#x2500; &#x6CE2;&#x5F62;&#x67E5;&#x770B;&#x5668;
+</code></pre><p><strong>&#x8D44;&#x6E90;&#x4F30;&#x7B97;&#xFF08;Xilinx UltraScale+&#xFF09;&#xFF1A;</strong></p>
+<ul>
+<li>Hardcaml&#x751F;&#x6210;&#x7684;Verilog&#x7EFC;&#x5408;&#x6548;&#x7387;&#xFF1A;&#x4E0E;&#x624B;&#x5199;RTL&#x76F8;&#x5F53;</li>
+<li>&#x5178;&#x578B;&#x5F00;&#x9500;&#xFF1A;&lt;5%&#x989D;&#x5916;LUT&#xFF08;&#x7528;&#x4E8E;&#x751F;&#x6210;&#x7684;&#x80F6;&#x5408;&#x903B;&#x8F91;&#xFF09;</li>
+<li>&#x65F6;&#x5E8F;&#x8D28;&#x91CF;&#xFF1A;&#x53D6;&#x51B3;&#x4E8E;&#x751F;&#x6210;&#x7B56;&#x7565;&#xFF0C;&#x53EF;&#x8FBE;&#x5230;&#x624B;&#x5DE5;&#x4F18;&#x5316;&#x7684;90-95%</li>
+</ul>
+<h2 id="92-&#x7EC4;&#x5408;&#x903B;&#x8F91;&#x62BD;&#x8C61;">9.2 &#x7EC4;&#x5408;&#x903B;&#x8F91;&#x62BD;&#x8C61;</h2>
+<h3 id="921-&#x57FA;&#x7840;&#x7EC4;&#x5408;&#x903B;&#x8F91;&#x6784;&#x5EFA;">9.2.1 &#x57FA;&#x7840;&#x7EC4;&#x5408;&#x903B;&#x8F91;&#x6784;&#x5EFA;</h3>
+<p><strong>&#x7B97;&#x672F;&#x8FD0;&#x7B97;&#x5355;&#x5143;&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;&#xFF1A;</strong></p>
+<pre><code>&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;32&#x4F4D;ALU&#xFF1A;
+1. &#x5B9A;&#x4E49;&#x64CD;&#x4F5C;&#x7801;&#x7C7B;&#x578B;&#xFF08;&#x52A0;&#x3001;&#x51CF;&#x3001;&#x4E0E;&#x3001;&#x6216;&#x3001;&#x5F02;&#x6216;&#x3001;&#x79FB;&#x4F4D;&#xFF09;
+2. &#x4F7F;&#x7528;&#x6A21;&#x5F0F;&#x5339;&#x914D;&#x5B9E;&#x73B0;&#x64CD;&#x4F5C;&#x9009;&#x62E9;
+3. &#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x7ED3;&#x679C;&#x4F4D;&#x5BBD;
+4. &#x751F;&#x6210;&#x8FDB;&#x4F4D;&#x94FE;&#x4F18;&#x5316;&#x7684;&#x52A0;&#x6CD5;&#x5668;
+</code></pre><p><strong>&#x591A;&#x8DEF;&#x9009;&#x62E9;&#x5668;&#x751F;&#x6210;&#x5668;&#xFF1A;</strong></p>
+<pre><code>&#x601D;&#x8DEF;&#xFF1A;&#x53C2;&#x6570;&#x5316;N&#x9009;1&#x591A;&#x8DEF;&#x9009;&#x62E9;&#x5668;
+- &#x8F93;&#x5165;&#xFF1A;N&#x4E2A;&#x6570;&#x636E;&#x8F93;&#x5165;&#xFF0C;log2(N)&#x4F4D;&#x9009;&#x62E9;&#x4FE1;&#x53F7;
+- &#x4F7F;&#x7528;&#x4E8C;&#x53C9;&#x6811;&#x7ED3;&#x6784;&#x4F18;&#x5316;&#x5EF6;&#x8FDF;
+- &#x81EA;&#x52A8;&#x5904;&#x7406;&#x975E;2&#x7684;&#x5E42;&#x6B21;&#x7684;&#x60C5;&#x51B5;
+</code></pre><h3 id="922-&#x9AD8;&#x7EA7;&#x7EC4;&#x5408;&#x903B;&#x8F91;&#x6A21;&#x5F0F;">9.2.2 &#x9AD8;&#x7EA7;&#x7EC4;&#x5408;&#x903B;&#x8F91;&#x6A21;&#x5F0F;</h3>
+<p><strong>1. &#x4F18;&#x5148;&#x7F16;&#x7801;&#x5668;</strong></p>
+<pre><code>&#x5B9E;&#x73B0;&#x601D;&#x8DEF;&#xFF1A;
+- &#x8F93;&#x5165;&#xFF1A;N&#x4F4D;&#x8BF7;&#x6C42;&#x5411;&#x91CF;
+- &#x8F93;&#x51FA;&#xFF1A;&#x6700;&#x9AD8;&#x4F18;&#x5148;&#x7EA7;&#x7684;&#x72EC;&#x70ED;&#x7801;
+- &#x4F7F;&#x7528;&#x9012;&#x5F52;&#x5206;&#x89E3;&#x964D;&#x4F4E;&#x5EF6;&#x8FDF;&#xFF1A;O(log N)&#x7EA7;
+- &#x751F;&#x6210;&#x5E73;&#x8861;&#x7684;&#x903B;&#x8F91;&#x6811;
+</code></pre><p><strong>2. &#x6876;&#x5F62;&#x79FB;&#x4F4D;&#x5668;</strong></p>
+<pre><code>&#x8BBE;&#x8BA1;&#x8981;&#x70B9;&#xFF1A;
+- &#x652F;&#x6301;&#x903B;&#x8F91;/&#x7B97;&#x672F;/&#x5FAA;&#x73AF;&#x79FB;&#x4F4D;
+- &#x4F7F;&#x7528;&#x5BF9;&#x6570;&#x7EA7;&#x79FB;&#x4F4D;&#x5668;&#x7EA7;&#x8054;
+- 32&#x4F4D;&#x5B9E;&#x73B0;&#xFF1A;5&#x7EA7;2:1&#x591A;&#x8DEF;&#x9009;&#x62E9;&#x5668;
+- &#x8D44;&#x6E90;&#x4F30;&#x7B97;&#xFF1A;~160 LUTs (UltraScale+)
+</code></pre><p><strong>3. &#x5E76;&#x884C;&#x524D;&#x7F00;&#x7F51;&#x7EDC;</strong>
+&#x7528;&#x4E8E;&#x9AD8;&#x901F;&#x52A0;&#x6CD5;&#x5668;&#x548C;&#x626B;&#x63CF;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<pre><code>Kogge-Stone&#x52A0;&#x6CD5;&#x5668;&#x5B9E;&#x73B0;&#xFF1A;
+- &#x5EF6;&#x8FDF;&#xFF1A;log2(N)&#x7EA7;
+- &#x9762;&#x79EF;&#xFF1A;N*log2(N)&#x4E2A;&#x524D;&#x7F00;&#x5355;&#x5143;
+- 32&#x4F4D;&#x5B9E;&#x4F8B;&#xFF1A;5&#x7EA7;&#xFF0C;&#x7EA6;200 LUTs
+</code></pre><h3 id="923-&#x7EC4;&#x5408;&#x903B;&#x8F91;&#x4F18;&#x5316;&#x6280;&#x672F;">9.2.3 &#x7EC4;&#x5408;&#x903B;&#x8F91;&#x4F18;&#x5316;&#x6280;&#x672F;</h3>
+<p><strong>1. &#x5171;&#x4EAB;&#x5B50;&#x8868;&#x8FBE;&#x5F0F;&#x6D88;&#x9664;</strong>
+Hardcaml&#x81EA;&#x52A8;&#x8BC6;&#x522B;&#x548C;&#x5171;&#x4EAB;&#x76F8;&#x540C;&#x7684;&#x5B50;&#x7535;&#x8DEF;&#xFF1A;</p>
+<pre><code>&#x573A;&#x666F;&#xFF1A;&#x591A;&#x4E2A;&#x4E58;&#x6CD5;&#x5668;&#x5171;&#x4EAB;&#x64CD;&#x4F5C;&#x6570;
+&#x4F18;&#x5316;&#x524D;&#xFF1A;4&#x4E2A;&#x72EC;&#x7ACB;16&#xD7;16&#x4E58;&#x6CD5;&#x5668;
+&#x4F18;&#x5316;&#x540E;&#xFF1A;2&#x4E2A;&#x4E58;&#x6CD5;&#x5668;+&#x591A;&#x8DEF;&#x9009;&#x62E9;&#x5668;
+&#x8282;&#x7701;&#xFF1A;~50% DSP&#x8D44;&#x6E90;
+</code></pre><p><strong>2. &#x5E38;&#x6570;&#x4F20;&#x64AD;&#x548C;&#x6298;&#x53E0;</strong>
+&#x7F16;&#x8BD1;&#x65F6;&#x8BA1;&#x7B97;&#x6240;&#x6709;&#x5E38;&#x6570;&#x8868;&#x8FBE;&#x5F0F;&#xFF1A;</p>
+<pre><code>&#x793A;&#x4F8B;&#xFF1A;FIR&#x6EE4;&#x6CE2;&#x5668;&#x7CFB;&#x6570;&#x4E58;&#x6CD5;
+- &#x5C06;&#x4E58;&#x5E38;&#x6570;&#x8F6C;&#x6362;&#x4E3A;&#x79FB;&#x4F4D;&#x52A0;
+- 16&#x4F4D;&#xD7;&#x5E38;&#x6570;&#xFF1A;&#x5E73;&#x5747;&#x8282;&#x7701;70% LUTs
+</code></pre><p><strong>3. &#x903B;&#x8F91;&#x4F18;&#x5316;&#x63D0;&#x793A;</strong>
+&#x901A;&#x8FC7;&#x7C7B;&#x578B;&#x6CE8;&#x89E3;&#x6307;&#x5BFC;&#x7EFC;&#x5408;&#xFF1A;</p>
+<pre><code>- @no_sharing&#xFF1A;&#x9632;&#x6B62;&#x5171;&#x4EAB;&#x5173;&#x952E;&#x8DEF;&#x5F84;&#x903B;&#x8F91;
+- @full_case&#xFF1A;&#x5E2E;&#x52A9;&#x7EFC;&#x5408;&#x5668;&#x4F18;&#x5316;case&#x8BED;&#x53E5;
+- @parallel&#xFF1A;&#x63D0;&#x793A;&#x5E76;&#x884C;&#x5316;&#x673A;&#x4F1A;
+</code></pre><h2 id="93-&#x65F6;&#x5E8F;&#x903B;&#x8F91;&#x62BD;&#x8C61;">9.3 &#x65F6;&#x5E8F;&#x903B;&#x8F91;&#x62BD;&#x8C61;</h2>
+<h3 id="931-&#x5BC4;&#x5B58;&#x5668;&#x548C;&#x72B6;&#x6001;&#x7BA1;&#x7406;">9.3.1 &#x5BC4;&#x5B58;&#x5668;&#x548C;&#x72B6;&#x6001;&#x7BA1;&#x7406;</h3>
+<p><strong>1. &#x5BC4;&#x5B58;&#x5668;&#x539F;&#x8BED;</strong></p>
+<pre><code>&#x57FA;&#x7840;&#x5BC4;&#x5B58;&#x5668;&#x7C7B;&#x578B;&#xFF1A;
+- Reg&#xFF1A;&#x7B80;&#x5355;D&#x89E6;&#x53D1;&#x5668;
+- Reg_en&#xFF1A;&#x5E26;&#x4F7F;&#x80FD;&#x7684;&#x5BC4;&#x5B58;&#x5668;
+- Reg_sync_reset&#xFF1A;&#x540C;&#x6B65;&#x590D;&#x4F4D;&#x5BC4;&#x5B58;&#x5668;
+- Reg_init&#xFF1A;&#x5E26;&#x521D;&#x59CB;&#x503C;&#x7684;&#x5BC4;&#x5B58;&#x5668;
+</code></pre><p><strong>2. &#x5BC4;&#x5B58;&#x5668;&#x6587;&#x4EF6;&#x8BBE;&#x8BA1;</strong></p>
+<pre><code>&#x5B9E;&#x73B0;32&#xD7;32&#x4F4D;&#x5BC4;&#x5B58;&#x5668;&#x6587;&#x4EF6;&#xFF1A;
+- 2&#x8BFB;1&#x5199;&#x7AEF;&#x53E3;
+- &#x4F7F;&#x7528;&#x5206;&#x5E03;&#x5F0F;RAM&#x5B9E;&#x73B0;
+- &#x8BFB;&#x5EF6;&#x8FDF;&#xFF1A;1&#x5468;&#x671F;
+- &#x8D44;&#x6E90;&#xFF1A;64 LUTs + 32 FFs
+</code></pre><p><strong>3. &#x79FB;&#x4F4D;&#x5BC4;&#x5B58;&#x5668;</strong></p>
+<pre><code>&#x53C2;&#x6570;&#x5316;&#x79FB;&#x4F4D;&#x5BC4;&#x5B58;&#x5668;&#x751F;&#x6210;&#x5668;&#xFF1A;
+- &#x6DF1;&#x5EA6;&#xFF1A;1-256&#x7EA7;&#x53EF;&#x914D;
+- &#x5BBD;&#x5EA6;&#xFF1A;&#x4EFB;&#x610F;
+- &#x53EF;&#x9009;&#x62BD;&#x5934;&#x8F93;&#x51FA;
+- SRL32&#x539F;&#x8BED;&#x63A8;&#x65AD;
+</code></pre><h3 id="932-&#x72B6;&#x6001;&#x673A;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;">9.3.2 &#x72B6;&#x6001;&#x673A;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;</h3>
+<p><strong>1. Moore&#x578B;&#x72B6;&#x6001;&#x673A;</strong></p>
+<pre><code>&#x4EA4;&#x901A;&#x706F;&#x63A7;&#x5236;&#x5668;&#x793A;&#x4F8B;&#xFF1A;
+&#x72B6;&#x6001;&#xFF1A;&#x7EA2;&#x706F;&#x3001;&#x9EC4;&#x706F;&#x3001;&#x7EFF;&#x706F;
+&#x8F93;&#x5165;&#xFF1A;&#x8BA1;&#x65F6;&#x5668;&#x3001;&#x7D27;&#x6025;&#x4FE1;&#x53F7;
+&#x7279;&#x70B9;&#xFF1A;&#x8F93;&#x51FA;&#x4EC5;&#x4F9D;&#x8D56;&#x5F53;&#x524D;&#x72B6;&#x6001;
+&#x7F16;&#x7801;&#xFF1A;&#x72EC;&#x70ED;&#x7801;&#xFF08;&#x4F4E;&#x6247;&#x51FA;&#xFF09;
+</code></pre><p><strong>2. Mealy&#x578B;&#x72B6;&#x6001;&#x673A;</strong></p>
+<pre><code>UART&#x63A5;&#x6536;&#x5668;&#xFF1A;
+&#x72B6;&#x6001;&#xFF1A;&#x7A7A;&#x95F2;&#x3001;&#x8D77;&#x59CB;&#x4F4D;&#x3001;&#x6570;&#x636E;&#x4F4D;&#x3001;&#x505C;&#x6B62;&#x4F4D;
+&#x8F93;&#x5165;&#xFF1A;&#x4E32;&#x884C;&#x6570;&#x636E;&#x3001;&#x6CE2;&#x7279;&#x7387;&#x65F6;&#x949F;
+&#x8F93;&#x51FA;&#xFF1A;&#x4F9D;&#x8D56;&#x72B6;&#x6001;&#x548C;&#x8F93;&#x5165;&#x7EC4;&#x5408;
+&#x4F18;&#x5316;&#xFF1A;&#x6700;&#x5C0F;&#x5316;&#x72B6;&#x6001;&#x6570;&#x91CF;
+</code></pre><p><strong>3. &#x5206;&#x5C42;&#x72B6;&#x6001;&#x673A;</strong></p>
+<pre><code>&#x4EE5;&#x592A;&#x7F51;MAC&#x5C42;&#x63A7;&#x5236;&#x5668;&#xFF1A;
+&#x9876;&#x5C42;&#xFF1A;&#x94FE;&#x8DEF;&#x72B6;&#x6001;&#xFF08;&#x65AD;&#x5F00;/&#x534F;&#x5546;/&#x5DF2;&#x8FDE;&#x63A5;&#xFF09;
+&#x5B50;&#x72B6;&#x6001;&#x673A;&#xFF1A;
+- &#x81EA;&#x534F;&#x5546;&#x72B6;&#x6001;&#x673A;
+- &#x5E27;&#x53D1;&#x9001;&#x72B6;&#x6001;&#x673A;
+- &#x5E27;&#x63A5;&#x6536;&#x72B6;&#x6001;&#x673A;
+&#x597D;&#x5904;&#xFF1A;&#x6A21;&#x5757;&#x5316;&#x3001;&#x6613;&#x7EF4;&#x62A4;
+</code></pre><h3 id="933-&#x6D41;&#x6C34;&#x7EBF;&#x8BBE;&#x8BA1;&#x62BD;&#x8C61;">9.3.3 &#x6D41;&#x6C34;&#x7EBF;&#x8BBE;&#x8BA1;&#x62BD;&#x8C61;</h3>
+<p><strong>1. &#x81EA;&#x52A8;&#x6D41;&#x6C34;&#x7EBF;&#x63D2;&#x5165;</strong></p>
+<pre><code>&#x77E9;&#x9635;&#x4E58;&#x6CD5;&#x6D41;&#x6C34;&#x7EBF;&#x5316;&#xFF1A;
+- &#x8F93;&#x5165;&#xFF1A;&#x5EF6;&#x8FDF;&#x7EA6;&#x675F;
+- &#x81EA;&#x52A8;&#x63D2;&#x5165;&#x5BC4;&#x5B58;&#x5668;&#x7EA7;
+- &#x5E73;&#x8861;&#x5404;&#x7EA7;&#x5EF6;&#x8FDF;
+- &#x4FDD;&#x6301;&#x529F;&#x80FD;&#x6B63;&#x786E;&#x6027;
+</code></pre><p><strong>2. &#x5F39;&#x6027;&#x6D41;&#x6C34;&#x7EBF;</strong></p>
+<pre><code>&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;&#xFF1A;
+- Valid/Ready&#x63E1;&#x624B;&#x534F;&#x8BAE;
+- &#x81EA;&#x52A8;&#x6C14;&#x6CE1;&#x538B;&#x7F29;
+- &#x652F;&#x6301;&#x53EF;&#x53D8;&#x5EF6;&#x8FDF;&#x64CD;&#x4F5C;
+- &#x5178;&#x578B;&#x5E94;&#x7528;&#xFF1A;&#x9664;&#x6CD5;&#x5668;&#x3001;&#x5E73;&#x65B9;&#x6839;
+</code></pre><p><strong>3. &#x6D41;&#x6C34;&#x7EBF;&#x5371;&#x9669;&#x5904;&#x7406;</strong></p>
+<pre><code>CPU&#x6D41;&#x6C34;&#x7EBF;&#x793A;&#x4F8B;&#xFF1A;
+- &#x6570;&#x636E;&#x5371;&#x9669;&#xFF1A;&#x524D;&#x9012;&#x903B;&#x8F91;&#x751F;&#x6210;
+- &#x63A7;&#x5236;&#x5371;&#x9669;&#xFF1A;&#x5206;&#x652F;&#x9884;&#x6D4B;&#x96C6;&#x6210;
+- &#x7ED3;&#x6784;&#x5371;&#x9669;&#xFF1A;&#x8D44;&#x6E90;&#x4EF2;&#x88C1;&#x5668;
+- &#x81EA;&#x52A8;&#x751F;&#x6210;&#x4E92;&#x9501;&#x903B;&#x8F91;
+</code></pre><h2 id="94-&#x4EFF;&#x771F;&#x4E0E;&#x9A8C;&#x8BC1;&#x6846;&#x67B6;">9.4 &#x4EFF;&#x771F;&#x4E0E;&#x9A8C;&#x8BC1;&#x6846;&#x67B6;</h2>
+<h3 id="941-hardcaml&#x4EFF;&#x771F;&#x5668;&#x67B6;&#x6784;">9.4.1 Hardcaml&#x4EFF;&#x771F;&#x5668;&#x67B6;&#x6784;</h3>
+<p><strong>1. &#x89E3;&#x91CA;&#x578B;&#x4EFF;&#x771F;&#x5668;</strong></p>
+<pre><code>&#x7279;&#x70B9;&#xFF1A;
+- &#x7EAF;OCaml&#x5B9E;&#x73B0;&#xFF0C;&#x65E0;&#x9700;&#x5916;&#x90E8;&#x5DE5;&#x5177;
+- &#x4EFF;&#x771F;&#x901F;&#x5EA6;&#xFF1A;~10-50 MHz&#x7B49;&#x6548;
+- &#x652F;&#x6301;&#x4EA4;&#x4E92;&#x5F0F;&#x8C03;&#x8BD5;
+- &#x96F6;&#x7F16;&#x8BD1;&#x65F6;&#x95F4;
+</code></pre><p><strong>2. &#x7F16;&#x8BD1;&#x578B;&#x4EFF;&#x771F;&#x5668;</strong></p>
+<pre><code>C++&#x4EE3;&#x7801;&#x751F;&#x6210;&#xFF1A;
+- &#x901F;&#x5EA6;&#xFF1A;100-500 MHz&#x7B49;&#x6548;
+- &#x652F;&#x6301;VCD&#x6CE2;&#x5F62;&#x8F93;&#x51FA;
+- &#x53EF;&#x96C6;&#x6210;Verilator
+- &#x9002;&#x5408;&#x957F;&#x65F6;&#x95F4;&#x4EFF;&#x771F;
+</code></pre><p><strong>3. &#x534F;&#x540C;&#x4EFF;&#x771F;&#x63A5;&#x53E3;</strong></p>
+<pre><code>&#x4E0E;&#x5176;&#x4ED6;&#x4EFF;&#x771F;&#x5668;&#x96C6;&#x6210;&#xFF1A;
+- Verilator&#xFF1A;&#x6700;&#x9AD8;&#x6027;&#x80FD;
+- Icarus Verilog&#xFF1A;&#x5F00;&#x6E90;&#x517C;&#x5BB9;
+- ModelSim/Questa&#xFF1A;&#x5546;&#x4E1A;&#x9A8C;&#x8BC1;
+- XSIM&#xFF1A;Xilinx&#x539F;&#x751F;
+</code></pre><h3 id="942-&#x5C5E;&#x6027;&#x57FA;&#x6D4B;&#x8BD5;">9.4.2 &#x5C5E;&#x6027;&#x57FA;&#x6D4B;&#x8BD5;</h3>
+<p><strong>1. QuickCheck&#x96C6;&#x6210;</strong></p>
+<pre><code>&#x81EA;&#x52A8;&#x6D4B;&#x8BD5;&#x751F;&#x6210;&#xFF1A;
+- &#x968F;&#x673A;&#x8F93;&#x5165;&#x751F;&#x6210;
+- &#x5C5E;&#x6027;&#x9A8C;&#x8BC1;
+- &#x53CD;&#x4F8B;&#x6700;&#x5C0F;&#x5316;
+- &#x8986;&#x76D6;&#x7387;&#x6307;&#x5BFC;
+</code></pre><p><strong>2. &#x5F62;&#x5F0F;&#x5316;&#x5C5E;&#x6027;</strong></p>
+<pre><code>FIFO&#x6B63;&#x786E;&#x6027;&#x5C5E;&#x6027;&#xFF1A;
+- &#x4E0D;&#x4F1A;&#x540C;&#x65F6;&#x6EE1;&#x548C;&#x7A7A;
+- &#x5199;&#x5165;&#x6570;&#x636E;&#x5FC5;&#x5B9A;&#x53EF;&#x8BFB;&#x51FA;
+- FIFO&#x987A;&#x5E8F;&#x4FDD;&#x6301;
+- &#x65E0;&#x6570;&#x636E;&#x4E22;&#x5931;
+</code></pre><p><strong>3. &#x6D4B;&#x8BD5;&#x7B56;&#x7565;</strong></p>
+<pre><code>&#x5206;&#x5C42;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#xFF1A;
+1. &#x5355;&#x5143;&#x6D4B;&#x8BD5;&#xFF1A;&#x5355;&#x4E2A;&#x6A21;&#x5757;
+2. &#x96C6;&#x6210;&#x6D4B;&#x8BD5;&#xFF1A;&#x6A21;&#x5757;&#x4E92;&#x8054;
+3. &#x7CFB;&#x7EDF;&#x6D4B;&#x8BD5;&#xFF1A;&#x5B8C;&#x6574;&#x8BBE;&#x8BA1;
+4. &#x56DE;&#x5F52;&#x6D4B;&#x8BD5;&#xFF1A;&#x81EA;&#x52A8;&#x5316;
+</code></pre><h3 id="943-&#x8986;&#x76D6;&#x7387;&#x548C;&#x8C03;&#x8BD5;">9.4.3 &#x8986;&#x76D6;&#x7387;&#x548C;&#x8C03;&#x8BD5;</h3>
+<p><strong>1. &#x4EE3;&#x7801;&#x8986;&#x76D6;&#x7387;</strong></p>
+<pre><code>&#x8986;&#x76D6;&#x7387;&#x7C7B;&#x578B;&#xFF1A;
+- &#x8BED;&#x53E5;&#x8986;&#x76D6;
+- &#x5206;&#x652F;&#x8986;&#x76D6;
+- &#x6761;&#x4EF6;&#x8986;&#x76D6;
+- FSM&#x72B6;&#x6001;&#x8986;&#x76D6;
+- &#x8DE8;&#x72B6;&#x6001;&#x8F6C;&#x6362;&#x8986;&#x76D6;
+</code></pre><p><strong>2. &#x529F;&#x80FD;&#x8986;&#x76D6;&#x7387;</strong></p>
+<pre><code>&#x8986;&#x76D6;&#x70B9;&#x5B9A;&#x4E49;&#xFF1A;
+- &#x534F;&#x8BAE;&#x573A;&#x666F;
+- &#x8FB9;&#x754C;&#x6761;&#x4EF6;
+- &#x9519;&#x8BEF;&#x6CE8;&#x5165;
+- &#x6027;&#x80FD;&#x6781;&#x9650;
+</code></pre><p><strong>3. &#x6CE2;&#x5F62;&#x8C03;&#x8BD5;</strong></p>
+<pre><code>&#x96C6;&#x6210;&#x8C03;&#x8BD5;&#x73AF;&#x5883;&#xFF1A;
+- &#x4FE1;&#x53F7;&#x547D;&#x540D;&#x4FDD;&#x6301;
+- &#x5C42;&#x6B21;&#x5316;&#x67E5;&#x770B;
+- &#x65AD;&#x70B9;&#x8BBE;&#x7F6E;
+- &#x503C;&#x53D8;&#x5316;&#x8FFD;&#x8E2A;
+- &#x56E0;&#x679C;&#x5173;&#x7CFB;&#x5206;&#x6790;
+</code></pre><h2 id="95-jane-street&#x4EA4;&#x6613;&#x7CFB;&#x7EDF;&#x5E94;&#x7528;">9.5 Jane Street&#x4EA4;&#x6613;&#x7CFB;&#x7EDF;&#x5E94;&#x7528;</h2>
+<h3 id="951-&#x4F4E;&#x5EF6;&#x8FDF;&#x4EA4;&#x6613;&#x67B6;&#x6784;">9.5.1 &#x4F4E;&#x5EF6;&#x8FDF;&#x4EA4;&#x6613;&#x67B6;&#x6784;</h3>
+<p><strong>&#x7CFB;&#x7EDF;&#x9700;&#x6C42;&#xFF1A;</strong></p>
+<ul>
+<li>&#x7AEF;&#x5230;&#x7AEF;&#x5EF6;&#x8FDF;&#xFF1A;&lt;1&#x5FAE;&#x79D2;</li>
+<li>&#x541E;&#x5410;&#x91CF;&#xFF1A;1000&#x4E07;&#x8BA2;&#x5355;/&#x79D2;</li>
+<li>&#x53EF;&#x9760;&#x6027;&#xFF1A;99.999%</li>
+<li>&#x786E;&#x5B9A;&#x6027;&#xFF1A;&#x65E0;&#x6296;&#x52A8;</li>
+</ul>
+<p><strong>FPGA&#x52A0;&#x901F;&#x7B56;&#x7565;&#xFF1A;</strong></p>
+<pre><code>1. &#x7F51;&#x7EDC;&#x534F;&#x8BAE;&#x5378;&#x8F7D;
+   - TCP/IP bypass
+   - &#x5185;&#x6838;&#x65C1;&#x8DEF;
+   - &#x96F6;&#x62F7;&#x8D1D;DMA
+
+2. &#x5E02;&#x573A;&#x6570;&#x636E;&#x5904;&#x7406;
+   - &#x5E76;&#x884C;&#x89E3;&#x7801;&#x5668;
+   - &#x589E;&#x91CF;&#x66F4;&#x65B0;
+   - &#x672C;&#x5730;&#x7F13;&#x5B58;
+
+3. &#x7B56;&#x7565;&#x6267;&#x884C;&#x5F15;&#x64CE;
+   - &#x786C;&#x8FDE;&#x7EBF;&#x7B97;&#x6CD5;
+   - &#x5E76;&#x884C;&#x98CE;&#x63A7;
+   - &#x539F;&#x5B50;&#x8BA2;&#x5355;&#x751F;&#x6210;
+</code></pre><h3 id="952-&#x5E02;&#x573A;&#x6570;&#x636E;&#x5904;&#x7406;&#x5668;&#x8BBE;&#x8BA1;">9.5.2 &#x5E02;&#x573A;&#x6570;&#x636E;&#x5904;&#x7406;&#x5668;&#x8BBE;&#x8BA1;</h3>
+<p><strong>FAST&#x534F;&#x8BAE;&#x89E3;&#x7801;&#x5668;&#xFF1A;</strong></p>
+<pre><code>&#x5B9E;&#x73B0;&#x601D;&#x8DEF;&#xFF1A;
+1. &#x5E76;&#x884C;&#x6A21;&#x677F;&#x5339;&#x914D;
+2. &#x53D8;&#x957F;&#x5B57;&#x6BB5;&#x63D0;&#x53D6;
+3. Delta&#x7F16;&#x7801;&#x5904;&#x7406;
+4. &#x5B57;&#x5178;&#x538B;&#x7F29;&#x89E3;&#x7801;
+
+&#x6027;&#x80FD;&#x6307;&#x6807;&#xFF1A;
+- &#x5EF6;&#x8FDF;&#xFF1A;&lt;50ns/&#x6D88;&#x606F;
+- &#x541E;&#x5410;&#xFF1A;10 Gbps&#x7EBF;&#x901F;
+- &#x8D44;&#x6E90;&#xFF1A;15K LUTs
+</code></pre><p><strong>&#x8BA2;&#x5355;&#x7C3F;&#x7EF4;&#x62A4;&#x5F15;&#x64CE;&#xFF1A;</strong></p>
+<pre><code>&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF1A;
+- &#x4EF7;&#x683C;&#x4F18;&#x5148;&#x961F;&#x5217;
+- &#x5206;&#x7EA7;&#x5B58;&#x50A8;
+- &#x5E76;&#x884C;&#x66F4;&#x65B0;
+
+&#x4F18;&#x5316;&#x6280;&#x672F;&#xFF1A;
+- &#x4E13;&#x7528;&#x6BD4;&#x8F83;&#x5668;&#x6811;
+- &#x6D41;&#x6C34;&#x7EBF;&#x63D2;&#x5165;/&#x5220;&#x9664;
+- &#x589E;&#x91CF;&#x8BA1;&#x7B97;
+
+&#x6027;&#x80FD;&#xFF1A;
+- &#x66F4;&#x65B0;&#x5EF6;&#x8FDF;&#xFF1A;&lt;10ns
+- &#x5BB9;&#x91CF;&#xFF1A;10K&#x6863;&#x4F4D;
+- &#x5E76;&#x53D1;&#xFF1A;8&#x8DEF;&#x66F4;&#x65B0;
+</code></pre><h3 id="953-&#x98CE;&#x9669;&#x7BA1;&#x7406;&#x52A0;&#x901F;&#x5668;">9.5.3 &#x98CE;&#x9669;&#x7BA1;&#x7406;&#x52A0;&#x901F;&#x5668;</h3>
+<p><strong>&#x5B9E;&#x65F6;&#x98CE;&#x63A7;&#x68C0;&#x67E5;&#xFF1A;</strong></p>
+<pre><code>&#x68C0;&#x67E5;&#x9879;&#x76EE;&#xFF1A;
+1. &#x4ED3;&#x4F4D;&#x9650;&#x5236;
+2. &#x8D44;&#x91D1;&#x9650;&#x5236;
+3. &#x9891;&#x7387;&#x9650;&#x5236;
+4. &#x4EF7;&#x683C;&#x5408;&#x7406;&#x6027;
+
+&#x5E76;&#x884C;&#x67B6;&#x6784;&#xFF1A;
+- 16&#x8DEF;&#x5E76;&#x884C;&#x68C0;&#x67E5;
+- 0&#x5EF6;&#x8FDF;&#x65C1;&#x8DEF;
+- &#x786C;&#x4EF6;&#x65AD;&#x8DEF;&#x5668;
+</code></pre><p><strong>&#x5E0C;&#x814A;&#x503C;&#x8BA1;&#x7B97;&#x5F15;&#x64CE;&#xFF1A;</strong></p>
+<pre><code>&#x671F;&#x6743;&#x5B9A;&#x4EF7;&#x6A21;&#x578B;&#xFF1A;
+- Black-Scholes&#x5E76;&#x884C;&#x8BA1;&#x7B97;
+- &#x9690;&#x542B;&#x6CE2;&#x52A8;&#x7387;&#x6C42;&#x89E3;
+- Greeks&#x5B9E;&#x65F6;&#x66F4;&#x65B0;
+
+&#x5B9E;&#x73B0;&#x8981;&#x70B9;&#xFF1A;
+- CORDIC&#x4E09;&#x89D2;&#x51FD;&#x6570;
+- &#x67E5;&#x8868;&#x6CD5;&#x6B63;&#x6001;&#x5206;&#x5E03;
+- &#x5B9A;&#x70B9;&#x6570;&#x4F18;&#x5316;
+- 8&#x8DEF;&#x5E76;&#x884C;
+
+&#x6027;&#x80FD;&#xFF1A;
+- &#x5EF6;&#x8FDF;&#xFF1A;&lt;100ns/&#x671F;&#x6743;
+- &#x7CBE;&#x5EA6;&#xFF1A;6&#x4F4D;&#x6709;&#x6548;&#x6570;&#x5B57;
+- &#x541E;&#x5410;&#xFF1A;8&#x4EBF;&#x6B21;/&#x79D2;
+</code></pre><h2 id="96-&#x9AD8;&#x9891;&#x4EA4;&#x6613;&#x52A0;&#x901F;&#x6848;&#x4F8B;">9.6 &#x9AD8;&#x9891;&#x4EA4;&#x6613;&#x52A0;&#x901F;&#x6848;&#x4F8B;</h2>
+<h3 id="961-&#x7EB3;&#x79D2;&#x7EA7;&#x5957;&#x5229;&#x7CFB;&#x7EDF;">9.6.1 &#x7EB3;&#x79D2;&#x7EA7;&#x5957;&#x5229;&#x7CFB;&#x7EDF;</h3>
+<p><strong>&#x8DE8;&#x5E02;&#x573A;&#x5957;&#x5229;&#x67B6;&#x6784;&#xFF1A;</strong></p>
+<pre><code>&#x7EC4;&#x4EF6;&#x8BBE;&#x8BA1;&#xFF1A;
+1. &#x591A;&#x4EA4;&#x6613;&#x6240;&#x8FDE;&#x63A5;&#x5668;
+   - &#x5E76;&#x884C;&#x5E02;&#x573A;&#x6570;&#x636E;&#x63A5;&#x6536;
+   - &#x65F6;&#x95F4;&#x6233;&#x540C;&#x6B65;&#xFF08;PTP&#xFF09;
+   - &#x4E9A;&#x5FAE;&#x79D2;&#x7CBE;&#x5EA6;
+
+2. &#x4EF7;&#x5DEE;&#x68C0;&#x6D4B;&#x5668;
+   - &#x5B9E;&#x65F6;&#x4EF7;&#x683C;&#x6BD4;&#x8F83;
+   - &#x6ED1;&#x70B9;&#x8BA1;&#x7B97;
+   - &#x673A;&#x4F1A;&#x8BC6;&#x522B;
+
+3. &#x6267;&#x884C;&#x5F15;&#x64CE;
+   - &#x539F;&#x5B50;&#x8BA2;&#x5355;&#x5BF9;
+   - &#x8DEF;&#x7531;&#x4F18;&#x5316;
+   - &#x5931;&#x8D25;&#x56DE;&#x6EDA;
+</code></pre><p><strong>&#x5EF6;&#x8FDF;&#x4F18;&#x5316;&#x6280;&#x672F;&#xFF1A;</strong></p>
+<pre><code>1. &#x9884;&#x8BA1;&#x7B97;&#x7B56;&#x7565;&#x53C2;&#x6570;
+2. &#x6295;&#x673A;&#x6267;&#x884C;&#x8DEF;&#x5F84;
+3. &#x5E76;&#x884C;&#x8BA2;&#x5355;&#x751F;&#x6210;
+4. &#x786C;&#x4EF6;TCP&#x6808;
+
+&#x7AEF;&#x5230;&#x7AEF;&#x5EF6;&#x8FDF;&#x5206;&#x89E3;&#xFF1A;
+- &#x7F51;&#x7EDC;&#x63A5;&#x6536;&#xFF1A;20ns
+- &#x534F;&#x8BAE;&#x89E3;&#x6790;&#xFF1A;30ns
+- &#x7B56;&#x7565;&#x8BA1;&#x7B97;&#xFF1A;40ns
+- &#x8BA2;&#x5355;&#x751F;&#x6210;&#xFF1A;20ns
+- &#x7F51;&#x7EDC;&#x53D1;&#x9001;&#xFF1A;20ns
+&#x603B;&#x8BA1;&#xFF1A;130ns
+</code></pre><h3 id="962-&#x505A;&#x5E02;&#x5546;&#x7CFB;&#x7EDF;">9.6.2 &#x505A;&#x5E02;&#x5546;&#x7CFB;&#x7EDF;</h3>
+<p><strong>&#x8FDE;&#x7EED;&#x62A5;&#x4EF7;&#x5F15;&#x64CE;&#xFF1A;</strong></p>
+<pre><code>&#x6838;&#x5FC3;&#x529F;&#x80FD;&#xFF1A;
+1. &#x4E70;&#x5356;&#x4EF7;&#x5DEE;&#x7EF4;&#x62A4;
+2. &#x5E93;&#x5B58;&#x98CE;&#x9669;&#x5BF9;&#x51B2;
+3. &#x52A8;&#x6001;&#x4EF7;&#x683C;&#x8C03;&#x6574;
+4. &#x8BA2;&#x5355;&#x4F18;&#x5148;&#x7EA7;&#x7BA1;&#x7406;
+
+&#x5E76;&#x884C;&#x5EA6;&#x5206;&#x6790;&#xFF1A;
+- 100&#x4E2A;&#x6807;&#x7684;&#x5E76;&#x884C;&#x5904;&#x7406;
+- &#x6BCF;&#x6807;&#x7684;10&#x6863;&#x62A5;&#x4EF7;
+- &#x6BEB;&#x79D2;&#x7EA7;&#x66F4;&#x65B0;&#x9891;&#x7387;
+</code></pre><p><strong>&#x667A;&#x80FD;&#x8BA2;&#x5355;&#x8DEF;&#x7531;&#xFF1A;</strong></p>
+<pre><code>&#x8DEF;&#x7531;&#x51B3;&#x7B56;&#x56E0;&#x7D20;&#xFF1A;
+- &#x6267;&#x884C;&#x6210;&#x672C;&#x6700;&#x5C0F;&#x5316;
+- &#x5E02;&#x573A;&#x51B2;&#x51FB;&#x8BC4;&#x4F30;
+- &#x6D41;&#x52A8;&#x6027;&#x5206;&#x5E03;
+- &#x5EF6;&#x8FDF;&#x4F18;&#x5316;
+
+&#x5B9E;&#x73B0;&#x67B6;&#x6784;&#xFF1A;
+- &#x6210;&#x672C;&#x77E9;&#x9635;&#x9884;&#x8BA1;&#x7B97;
+- &#x5E76;&#x884C;&#x8DEF;&#x5F84;&#x8BC4;&#x4F30;
+- &#x52A8;&#x6001;&#x6743;&#x91CD;&#x8C03;&#x6574;
+- &#x786C;&#x4EF6;&#x8DEF;&#x7531;&#x8868;
+</code></pre><h3 id="963-&#x6027;&#x80FD;&#x76D1;&#x63A7;&#x4E0E;&#x5206;&#x6790;">9.6.3 &#x6027;&#x80FD;&#x76D1;&#x63A7;&#x4E0E;&#x5206;&#x6790;</h3>
+<p><strong>&#x786C;&#x4EF6;&#x6027;&#x80FD;&#x8BA1;&#x6570;&#x5668;&#xFF1A;</strong></p>
+<pre><code>&#x76D1;&#x63A7;&#x6307;&#x6807;&#xFF1A;
+1. &#x6D88;&#x606F;&#x5904;&#x7406;&#x5EF6;&#x8FDF;&#x5206;&#x5E03;
+2. &#x7B56;&#x7565;&#x8BA1;&#x7B97;&#x65F6;&#x95F4;
+3. &#x7F51;&#x7EDC;&#x5F80;&#x8FD4;&#x65F6;&#x95F4;
+4. &#x7F13;&#x5B58;&#x547D;&#x4E2D;&#x7387;
+5. &#x6D41;&#x6C34;&#x7EBF;&#x505C;&#x987F;
+
+&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#xFF1A;
+- &#x5206;&#x5E03;&#x5F0F;&#x8BA1;&#x6570;&#x5668;
+- &#x786C;&#x4EF6;&#x76F4;&#x65B9;&#x56FE;
+- &#x73AF;&#x5F62;&#x7F13;&#x51B2;&#x533A;
+- &#x5B9E;&#x65F6;&#x7EDF;&#x8BA1;
+</code></pre><p><strong>&#x5EF6;&#x8FDF;&#x5206;&#x6790;&#x6846;&#x67B6;&#xFF1A;</strong></p>
+<pre><code>&#x5173;&#x952E;&#x8DEF;&#x5F84;&#x8FFD;&#x8E2A;&#xFF1A;
+- &#x786C;&#x4EF6;&#x65F6;&#x95F4;&#x6233;
+- &#x56E0;&#x679C;&#x5173;&#x7CFB;&#x8BB0;&#x5F55;
+- &#x74F6;&#x9888;&#x8BC6;&#x522B;
+- &#x4F18;&#x5316;&#x5EFA;&#x8BAE;
+
+&#x53EF;&#x89C6;&#x5316;&#xFF1A;
+- &#x5B9E;&#x65F6;&#x5EF6;&#x8FDF;&#x56FE;
+- &#x70ED;&#x70B9;&#x5206;&#x6790;
+- &#x8D8B;&#x52BF;&#x9884;&#x6D4B;
+</code></pre><h2 id="97-evm&#x5B57;&#x8282;&#x7801;&#x6267;&#x884C;&#x5F15;&#x64CE;&#x5B9E;&#x73B0;">9.7 EVM&#x5B57;&#x8282;&#x7801;&#x6267;&#x884C;&#x5F15;&#x64CE;&#x5B9E;&#x73B0;</h2>
+<h3 id="971-evm&#x67B6;&#x6784;&#x6982;&#x8FF0;&#x4E0E;&#x786C;&#x4EF6;&#x6620;&#x5C04;">9.7.1 EVM&#x67B6;&#x6784;&#x6982;&#x8FF0;&#x4E0E;&#x786C;&#x4EF6;&#x6620;&#x5C04;</h3>
+<p><strong>EVM&#x6267;&#x884C;&#x6A21;&#x578B;&#xFF1A;</strong></p>
+<pre><code>&#x6838;&#x5FC3;&#x7EC4;&#x4EF6;&#xFF1A;
+1. &#x6808;&#x673A;&#x5668;&#xFF08;Stack Machine&#xFF09;
+   - &#x6700;&#x5927;&#x6DF1;&#x5EA6;&#xFF1A;1024
+   - &#x5B57;&#x957F;&#xFF1A;256&#x4F4D;
+   - LIFO&#x64CD;&#x4F5C;
+
+2. &#x5185;&#x5B58;&#x6A21;&#x578B;
+   - &#x5B57;&#x8282;&#x5BFB;&#x5740;
+   - &#x52A8;&#x6001;&#x6269;&#x5C55;
+   - Gas&#x8BA1;&#x8D39;
+
+3. &#x5B58;&#x50A8;&#x6A21;&#x578B;
+   - &#x952E;&#x503C;&#x5BF9;&#xFF1A;256&#x4F4D; &#x2192; 256&#x4F4D;
+   - &#x6301;&#x4E45;&#x5316;&#x5B58;&#x50A8;
+   - Merkle Patricia Tree
+
+4. &#x6267;&#x884C;&#x73AF;&#x5883;
+   - PC&#xFF08;&#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;&#xFF09;
+   - Gas&#x5269;&#x4F59;&#x91CF;
+   - &#x8C03;&#x7528;&#x6DF1;&#x5EA6;
+</code></pre><p><strong>&#x786C;&#x4EF6;&#x52A0;&#x901F;&#x673A;&#x4F1A;&#x5206;&#x6790;&#xFF1A;</strong></p>
+<pre><code>&#x74F6;&#x9888;&#x8BC6;&#x522B;&#xFF1A;
+1. 256&#x4F4D;&#x7B97;&#x672F;&#x8FD0;&#x7B97;
+   - &#x8F6F;&#x4EF6;&#xFF1A;&#x591A;&#x7CBE;&#x5EA6;&#x5E93;&#xFF0C;~100&#x5468;&#x671F;
+   - FPGA&#xFF1A;&#x4E13;&#x7528;ALU&#xFF0C;~10&#x5468;&#x671F;
+
+2. Keccak256&#x54C8;&#x5E0C;
+   - &#x8F6F;&#x4EF6;&#xFF1A;~1000&#x5468;&#x671F;/&#x5757;
+   - FPGA&#xFF1A;&#x6D41;&#x6C34;&#x7EBF;&#xFF0C;~50&#x5468;&#x671F;/&#x5757;
+
+3. &#x5B58;&#x50A8;&#x8BBF;&#x95EE;
+   - &#x8F6F;&#x4EF6;&#xFF1A;&#x6570;&#x636E;&#x5E93;&#x67E5;&#x8BE2;&#xFF0C;~1ms
+   - FPGA&#xFF1A;&#x7F13;&#x5B58;+&#x9884;&#x53D6;&#xFF0C;~100ns
+
+4. &#x7B7E;&#x540D;&#x9A8C;&#x8BC1;
+   - &#x8F6F;&#x4EF6;&#xFF1A;~50,000&#x5468;&#x671F;
+   - FPGA&#xFF1A;&#x5E76;&#x884C;&#x5316;&#xFF0C;~5,000&#x5468;&#x671F;
+</code></pre><h3 id="972-&#x6808;&#x673A;&#x5668;&#x786C;&#x4EF6;&#x5B9E;&#x73B0;">9.7.2 &#x6808;&#x673A;&#x5668;&#x786C;&#x4EF6;&#x5B9E;&#x73B0;</h3>
+<p><strong>256&#x4F4D;&#x6808;&#x5B58;&#x50A8;&#x8BBE;&#x8BA1;&#xFF1A;</strong></p>
+<pre><code>&#x67B6;&#x6784;&#x9009;&#x62E9;&#xFF1A;
+1. &#x5BC4;&#x5B58;&#x5668;&#x6587;&#x4EF6;&#x5B9E;&#x73B0;
+   - &#x6DF1;&#x5EA6;&#xFF1A;32&#xFF08;&#x5E38;&#x7528;&#x90E8;&#x5206;&#xFF09;
+   - &#x5BBD;&#x5EA6;&#xFF1A;256&#x4F4D;
+   - &#x7AEF;&#x53E3;&#xFF1A;2&#x8BFB;1&#x5199;
+   - &#x6EA2;&#x51FA;&#x5230;BRAM
+
+2. &#x6808;&#x64CD;&#x4F5C;&#x4F18;&#x5316;
+   - PUSH&#xFF1A;1&#x5468;&#x671F;
+   - POP&#xFF1A;1&#x5468;&#x671F;
+   - DUP/SWAP&#xFF1A;1&#x5468;&#x671F;
+   - &#x6DF1;&#x5EA6;&#x68C0;&#x67E5;&#xFF1A;&#x5E76;&#x884C;
+
+&#x8D44;&#x6E90;&#x4F30;&#x7B97;&#xFF08;Versal AI&#xFF09;&#xFF1A;
+- &#x5BC4;&#x5B58;&#x5668;&#x6587;&#x4EF6;&#xFF1A;512 CLBs
+- &#x63A7;&#x5236;&#x903B;&#x8F91;&#xFF1A;200 LUTs
+- BRAM&#xFF1A;4&#x5757;&#xFF08;&#x6DF1;&#x6808;&#xFF09;
+</code></pre><p><strong>&#x7B97;&#x672F;&#x8FD0;&#x7B97;&#x5355;&#x5143;&#x8BBE;&#x8BA1;&#xFF1A;</strong></p>
+<pre><code>256&#x4F4D;ALU&#x67B6;&#x6784;&#xFF1A;
+1. &#x52A0;&#x51CF;&#x6CD5;&#x5668;
+   - 4&#x7EA7;64&#x4F4D;&#x52A0;&#x6CD5;&#x5668;&#x7EA7;&#x8054;
+   - &#x8FDB;&#x4F4D;&#x9884;&#x6D4B;&#x4F18;&#x5316;
+   - &#x5EF6;&#x8FDF;&#xFF1A;2&#x5468;&#x671F;
+
+2. &#x4E58;&#x6CD5;&#x5668;
+   - Karatsuba&#x7B97;&#x6CD5;
+   - 4&#x4E2A;64&#x4F4D;DSP
+   - &#x5EF6;&#x8FDF;&#xFF1A;4&#x5468;&#x671F;
+
+3. &#x6A21;&#x8FD0;&#x7B97;
+   - Barrett&#x7EA6;&#x7B80;
+   - &#x4E13;&#x7528;&#x9664;&#x6CD5;&#x5668;
+   - &#x5EF6;&#x8FDF;&#xFF1A;8&#x5468;&#x671F;
+
+4. &#x6BD4;&#x8F83;&#x5668;
+   - &#x5E76;&#x884C;&#x6BD4;&#x8F83;
+   - 1&#x5468;&#x671F;&#x5B8C;&#x6210;
+</code></pre><h3 id="973-&#x64CD;&#x4F5C;&#x7801;&#x6267;&#x884C;&#x5F15;&#x64CE;">9.7.3 &#x64CD;&#x4F5C;&#x7801;&#x6267;&#x884C;&#x5F15;&#x64CE;</h3>
+<p><strong>&#x6307;&#x4EE4;&#x8BD1;&#x7801;&#x4E0E;&#x5206;&#x53D1;&#xFF1A;</strong></p>
+<pre><code>&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;&#xFF1A;
+1. &#x64CD;&#x4F5C;&#x7801;&#x5206;&#x7C7B;
+   - &#x7B97;&#x672F;&#x7C7B;&#xFF08;ADD/MUL/MOD&#xFF09;
+   - &#x6808;&#x64CD;&#x4F5C;&#xFF08;PUSH/POP/DUP&#xFF09;
+   - &#x5185;&#x5B58;&#x8BBF;&#x95EE;&#xFF08;MLOAD/MSTORE&#xFF09;
+   - &#x63A7;&#x5236;&#x6D41;&#xFF08;JUMP/JUMPI&#xFF09;
+   - &#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#xFF08;CALL/CREATE&#xFF09;
+
+2. &#x5E76;&#x884C;&#x6267;&#x884C;&#x5355;&#x5143;
+   - 4&#x4E2A;ALU&#x5E76;&#x884C;
+   - 2&#x4E2A;&#x5185;&#x5B58;&#x7AEF;&#x53E3;
+   - 1&#x4E2A;&#x54C8;&#x5E0C;&#x5355;&#x5143;
+   - &#x52A8;&#x6001;&#x8C03;&#x5EA6;
+
+3. &#x6D41;&#x6C34;&#x7EBF;&#x8BBE;&#x8BA1;
+   - &#x53D6;&#x6307;&#xFF08;IF&#xFF09;
+   - &#x8BD1;&#x7801;&#xFF08;ID&#xFF09;
+   - &#x6267;&#x884C;&#xFF08;EX&#xFF09;
+   - &#x5199;&#x56DE;&#xFF08;WB&#xFF09;
+</code></pre><p><strong>Gas&#x8BA1;&#x91CF;&#x786C;&#x4EF6;&#xFF1A;</strong></p>
+<pre><code>&#x5B9E;&#x73B0;&#x8981;&#x70B9;&#xFF1A;
+1. Gas&#x67E5;&#x627E;&#x8868;
+   - ROM&#x5B58;&#x50A8;&#x56FA;&#x5B9A;&#x6210;&#x672C;
+   - &#x7EC4;&#x5408;&#x903B;&#x8F91;&#x8BA1;&#x7B97;&#x52A8;&#x6001;&#x6210;&#x672C;
+   - &#x5E76;&#x884C;&#x51CF;&#x6CD5;&#x5668;
+
+2. Gas&#x68C0;&#x67E5;
+   - &#x9884;&#x6D4B;&#x6027;&#x68C0;&#x67E5;
+   - &#x5FEB;&#x901F;&#x4E2D;&#x65AD;
+   - &#x56DE;&#x6EDA;&#x673A;&#x5236;
+
+&#x4F18;&#x5316;&#x6280;&#x672F;&#xFF1A;
+- &#x5E38;&#x89C1;&#x64CD;&#x4F5C;&#x7801;Gas&#x9884;&#x8BA1;&#x7B97;
+- &#x6279;&#x91CF;Gas&#x6263;&#x9664;
+- &#x6295;&#x673A;&#x6267;&#x884C;
+</code></pre><h3 id="974-&#x5185;&#x5B58;&#x5B50;&#x7CFB;&#x7EDF;&#x4F18;&#x5316;">9.7.4 &#x5185;&#x5B58;&#x5B50;&#x7CFB;&#x7EDF;&#x4F18;&#x5316;</h3>
+<p><strong>EVM&#x5185;&#x5B58;&#x7BA1;&#x7406;&#xFF1A;</strong></p>
+<pre><code>&#x5C42;&#x6B21;&#x5316;&#x5B58;&#x50A8;&#xFF1A;
+1. L1&#x7F13;&#x5B58;&#xFF08;&#x7247;&#x4E0A;&#xFF09;
+   - &#x5BB9;&#x91CF;&#xFF1A;64KB
+   - &#x5EF6;&#x8FDF;&#xFF1A;1&#x5468;&#x671F;
+   - &#x5168;&#x5173;&#x8054;
+
+2. L2&#x7F13;&#x5B58;&#xFF08;BRAM&#xFF09;
+   - &#x5BB9;&#x91CF;&#xFF1A;2MB
+   - &#x5EF6;&#x8FDF;&#xFF1A;3&#x5468;&#x671F;
+   - &#x7EC4;&#x5173;&#x8054;
+
+3. &#x5916;&#x90E8;&#x5185;&#x5B58;&#xFF08;DDR4&#xFF09;
+   - &#x5BB9;&#x91CF;&#xFF1A;&#x6309;&#x9700;
+   - &#x5EF6;&#x8FDF;&#xFF1A;~100&#x5468;&#x671F;
+   - &#x9884;&#x53D6;&#x4F18;&#x5316;
+
+&#x5185;&#x5B58;&#x6269;&#x5C55;&#x7B56;&#x7565;&#xFF1A;
+- &#x6309;&#x9875;&#x5206;&#x914D;&#xFF08;4KB&#xFF09;
+- &#x7A00;&#x758F;&#x5B58;&#x50A8;&#x4F18;&#x5316;
+- &#x5199;&#x65F6;&#x590D;&#x5236;
+</code></pre><p><strong>&#x5B58;&#x50A8;&#xFF08;Storage&#xFF09;&#x52A0;&#x901F;&#xFF1A;</strong></p>
+<pre><code>Merkle Patricia Tree&#x786C;&#x4EF6;&#xFF1A;
+1. &#x54C8;&#x5E0C;&#x8BA1;&#x7B97;&#x6D41;&#x6C34;&#x7EBF;
+   - Keccak-256&#x6838;&#x5FC3;
+   - 8&#x8DEF;&#x5E76;&#x884C;
+   - &#x541E;&#x5410;&#xFF1A;1GB/s
+
+2. &#x6811;&#x904D;&#x5386;&#x52A0;&#x901F;
+   - &#x8DEF;&#x5F84;&#x7F13;&#x5B58;
+   - &#x5206;&#x652F;&#x9884;&#x6D4B;
+   - &#x5E76;&#x884C;&#x67E5;&#x627E;
+
+3. &#x72B6;&#x6001;&#x7F13;&#x5B58;
+   - &#x70ED;&#x70B9;&#x6570;&#x636E;&#x8BC6;&#x522B;
+   - LRU&#x66FF;&#x6362;
+   - &#x9884;&#x6D4B;&#x6027;&#x52A0;&#x8F7D;
+</code></pre><h3 id="975-&#x5BC6;&#x7801;&#x5B66;&#x539F;&#x8BED;&#x52A0;&#x901F;">9.7.5 &#x5BC6;&#x7801;&#x5B66;&#x539F;&#x8BED;&#x52A0;&#x901F;</h3>
+<p><strong>Keccak256&#x5B9E;&#x73B0;&#xFF1A;</strong></p>
+<pre><code>&#x786C;&#x4EF6;&#x67B6;&#x6784;&#xFF1A;
+1. &#x8F6E;&#x51FD;&#x6570;&#x6D41;&#x6C34;&#x7EBF;
+   - 24&#x8F6E;&#x5C55;&#x5F00;
+   - &#x6BCF;&#x8F6E;5&#x4E2A;&#x6B65;&#x9AA4;
+   - &#x6DF1;&#x5EA6;&#x6D41;&#x6C34;&#x7EBF;
+
+2. &#x5E76;&#x884C;&#x5EA6;
+   - 4&#x4E2A;&#x72EC;&#x7ACB;&#x6838;&#x5FC3;
+   - &#x4EA4;&#x9519;&#x5904;&#x7406;
+   - &#x5171;&#x4EAB;&#x8F93;&#x5165;&#x7F13;&#x51B2;
+
+&#x6027;&#x80FD;&#x6307;&#x6807;&#xFF1A;
+- &#x5EF6;&#x8FDF;&#xFF1A;50&#x5468;&#x671F;/&#x5757;
+- &#x541E;&#x5410;&#xFF1A;4&#x5757;/50&#x5468;&#x671F;
+- &#x8D44;&#x6E90;&#xFF1A;8K LUTs/&#x6838;&#x5FC3;
+</code></pre><p><strong>&#x692D;&#x5706;&#x66F2;&#x7EBF;&#x8FD0;&#x7B97;&#xFF08;secp256k1&#xFF09;&#xFF1A;</strong></p>
+<pre><code>&#x70B9;&#x4E58;&#x52A0;&#x901F;&#x5668;&#xFF1A;
+1. Montgomery&#x9636;&#x68AF;&#x7B97;&#x6CD5;
+   - &#x6052;&#x5B9A;&#x65F6;&#x95F4;&#x6267;&#x884C;
+   - &#x4FA7;&#x4FE1;&#x9053;&#x4FDD;&#x62A4;
+   - 256&#x4F4D;&#x6A21;&#x8FD0;&#x7B97;
+
+2. &#x5E76;&#x884C;&#x5316;&#x7B56;&#x7565;
+   - &#x7A97;&#x53E3;&#x6CD5;&#xFF08;w=4&#xFF09;
+   - &#x9884;&#x8BA1;&#x7B97;&#x8868;
+   - 4&#x8DEF;&#x5E76;&#x884C;
+
+3. &#x7B7E;&#x540D;&#x9A8C;&#x8BC1;
+   - ECDSA&#x6D41;&#x6C34;&#x7EBF;
+   - &#x6279;&#x91CF;&#x9A8C;&#x8BC1;
+   - &#x5EF6;&#x8FDF;&#xFF1A;5000&#x5468;&#x671F;
+
+&#x8D44;&#x6E90;&#x4F7F;&#x7528;&#xFF1A;
+- DSP&#xFF1A;32&#x4E2A;
+- LUT&#xFF1A;15K
+- BRAM&#xFF1A;8&#x5757;
+</code></pre><h3 id="976-&#x5B8C;&#x6574;evm&#x5904;&#x7406;&#x5668;&#x96C6;&#x6210;">9.7.6 &#x5B8C;&#x6574;EVM&#x5904;&#x7406;&#x5668;&#x96C6;&#x6210;</h3>
+<p><strong>&#x7CFB;&#x7EDF;&#x67B6;&#x6784;&#xFF1A;</strong></p>
+<pre><code>&#x6A21;&#x5757;&#x4E92;&#x8054;&#xFF1A;
+1. &#x6307;&#x4EE4;&#x83B7;&#x53D6;&#x5355;&#x5143;
+   &#x2193;
+2. &#x8BD1;&#x7801;&#x5206;&#x53D1;&#x5668; &#x2192; [ALU&#x9635;&#x5217;]
+   &#x2193;           &#x2192; [&#x5185;&#x5B58;&#x5355;&#x5143;]
+3. &#x6267;&#x884C;&#x5F15;&#x64CE;   &#x2192; [&#x5BC6;&#x7801;&#x5B66;&#x6838;&#x5FC3;]
+   &#x2193;
+4. &#x72B6;&#x6001;&#x63D0;&#x4EA4;&#x5355;&#x5143;
+
+&#x603B;&#x7EBF;&#x8BBE;&#x8BA1;&#xFF1A;
+- AXI4&#x4E3B;&#x63A5;&#x53E3;&#xFF1A;&#x8BBF;&#x95EE;&#x5916;&#x90E8;&#x5185;&#x5B58;
+- AXI4-Stream&#xFF1A;&#x4EA4;&#x6613;&#x8F93;&#x5165;
+- APB&#xFF1A;&#x63A7;&#x5236;&#x5BC4;&#x5B58;&#x5668;
+</code></pre><p><strong>&#x6027;&#x80FD;&#x4F18;&#x5316;&#x7B56;&#x7565;&#xFF1A;</strong></p>
+<pre><code>1. &#x4EA4;&#x6613;&#x5E76;&#x884C;&#x5904;&#x7406;
+   - &#x4F9D;&#x8D56;&#x6027;&#x5206;&#x6790;
+   - &#x63A8;&#x6D4B;&#x6267;&#x884C;
+   - &#x51B2;&#x7A81;&#x68C0;&#x6D4B;
+
+2. &#x6279;&#x5904;&#x7406;&#x4F18;&#x5316;
+   - &#x4EA4;&#x6613;&#x6392;&#x5E8F;
+   - &#x72B6;&#x6001;&#x9884;&#x8BFB;
+   - &#x7ED3;&#x679C;&#x7F13;&#x5B58;
+
+3. &#x52A8;&#x6001;&#x8D44;&#x6E90;&#x5206;&#x914D;
+   - ALU&#x6C60;&#x5316;
+   - &#x5185;&#x5B58;&#x5E26;&#x5BBD;&#x4EF2;&#x88C1;
+   - &#x4F18;&#x5148;&#x7EA7;&#x8C03;&#x5EA6;
+</code></pre><p><strong>&#x5B9E;&#x6D4B;&#x6027;&#x80FD;&#xFF08;Versal AI Core&#xFF09;&#xFF1A;</strong></p>
+<pre><code>&#x57FA;&#x51C6;&#x6D4B;&#x8BD5;&#x7ED3;&#x679C;&#xFF1A;
+1. &#x7B80;&#x5355;&#x8F6C;&#x8D26;&#xFF08;21000 gas&#xFF09;
+   - &#x8F6F;&#x4EF6;&#xFF1A;~50&#x3BC;s
+   - FPGA&#xFF1A;~5&#x3BC;s
+   - &#x52A0;&#x901F;&#x6BD4;&#xFF1A;10x
+
+2. ERC20&#x8F6C;&#x8D26;
+   - &#x8F6F;&#x4EF6;&#xFF1A;~150&#x3BC;s
+   - FPGA&#xFF1A;~15&#x3BC;s
+   - &#x52A0;&#x901F;&#x6BD4;&#xFF1A;10x
+
+3. Uniswap&#x4EA4;&#x6362;
+   - &#x8F6F;&#x4EF6;&#xFF1A;~500&#x3BC;s
+   - FPGA&#xFF1A;~60&#x3BC;s
+   - &#x52A0;&#x901F;&#x6BD4;&#xFF1A;8.3x
+
+&#x8D44;&#x6E90;&#x5229;&#x7528;&#x7387;&#xFF1A;
+- LUT&#xFF1A;45%&#xFF08;150K/330K&#xFF09;
+- DSP&#xFF1A;60%&#xFF08;150/250&#xFF09;
+- BRAM&#xFF1A;40%&#xFF08;400/900&#xFF09;
+- &#x529F;&#x8017;&#xFF1A;35W
+</code></pre><h3 id="977-hardcaml-evm&#x6838;&#x5FC3;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5B9E;&#x73B0;">9.7.7 Hardcaml EVM&#x6838;&#x5FC3;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5B9E;&#x73B0;</h3>
+<p><strong>&#x7C7B;&#x578B;&#x5B89;&#x5168;&#x7684;EVM&#x6808;&#x8BBE;&#x8BA1;&#xFF1A;</strong></p>
+<pre><code class="lang-ocaml"><span class="hljs-comment">(* 256&#x4F4D;&#x5B57;&#x7C7B;&#x578B;&#x5B9A;&#x4E49; *)</span>
+<span class="hljs-keyword">module</span> <span class="hljs-type">Word256</span> = <span class="hljs-keyword">struct</span>
+  <span class="hljs-keyword">type</span> t = <span class="hljs-type">Signal</span>.t <span class="hljs-comment">(* 256 bits *)</span>
+
+  <span class="hljs-comment">(* &#x7B97;&#x672F;&#x8FD0;&#x7B97;&#x6A21;&#x5757;&#x63A5;&#x53E3; *)</span>
+  <span class="hljs-keyword">module</span> <span class="hljs-keyword">type</span> <span class="hljs-type">Arithmetic</span> = <span class="hljs-keyword">sig</span>
+    <span class="hljs-keyword">val</span> add : t -&gt; t -&gt; t * <span class="hljs-type">Signal</span>.t  <span class="hljs-comment">(* &#x7ED3;&#x679C;&#x548C;&#x6EA2;&#x51FA;&#x6807;&#x5FD7; *)</span>
+    <span class="hljs-keyword">val</span> sub : t -&gt; t -&gt; t * <span class="hljs-type">Signal</span>.t  <span class="hljs-comment">(* &#x7ED3;&#x679C;&#x548C;&#x4E0B;&#x6EA2;&#x6807;&#x5FD7; *)</span>
+    <span class="hljs-keyword">val</span> mul : t -&gt; t -&gt; t              <span class="hljs-comment">(* 256&#x4F4D;&#x4E58;&#x6CD5; *)</span>
+    <span class="hljs-keyword">val</span> div : t -&gt; t -&gt; t              <span class="hljs-comment">(* &#x6574;&#x6570;&#x9664;&#x6CD5; *)</span>
+    <span class="hljs-keyword">val</span> <span class="hljs-keyword">mod</span> : t -&gt; t -&gt; t              <span class="hljs-comment">(* &#x6A21;&#x8FD0;&#x7B97; *)</span>
+    <span class="hljs-keyword">val</span> exp : t -&gt; t -&gt; t              <span class="hljs-comment">(* &#x6307;&#x6570;&#x8FD0;&#x7B97; *)</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment">(* EVM&#x6808;&#x6A21;&#x5757;&#x63A5;&#x53E3; *)</span>
+<span class="hljs-keyword">module</span> <span class="hljs-keyword">type</span> <span class="hljs-type">Stack</span> = <span class="hljs-keyword">sig</span>
+  <span class="hljs-keyword">type</span> t
+  <span class="hljs-keyword">val</span> create : depth:<span class="hljs-built_in">int</span> -&gt; t
+  <span class="hljs-keyword">val</span> push : t -&gt; <span class="hljs-type">Word256</span>.t -&gt; t
+  <span class="hljs-keyword">val</span> pop : t -&gt; (<span class="hljs-type">Word256</span>.t * t) option
+  <span class="hljs-keyword">val</span> peek : t -&gt; <span class="hljs-built_in">int</span> -&gt; <span class="hljs-type">Word256</span>.t option
+  <span class="hljs-keyword">val</span> swap : t -&gt; <span class="hljs-built_in">int</span> -&gt; t option
+  <span class="hljs-keyword">val</span> dup : t -&gt; <span class="hljs-built_in">int</span> -&gt; t option
+  <span class="hljs-keyword">val</span> depth : t -&gt; <span class="hljs-built_in">int</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment">(* &#x786C;&#x4EF6;&#x6808;&#x5B9E;&#x73B0;&#x7B56;&#x7565; *)</span>
+&#x6808;&#x5B58;&#x50A8;&#x67B6;&#x6784;&#xFF1A;
+<span class="hljs-number">1.</span> &#x70ED;&#x6808;&#xFF08;<span class="hljs-type">Top</span> <span class="hljs-number">32</span>&#xFF09;&#xFF1A;&#x5BC4;&#x5B58;&#x5668;&#x6587;&#x4EF6;
+   - <span class="hljs-number">2</span>&#x8BFB;<span class="hljs-number">1</span>&#x5199;&#x7AEF;&#x53E3;
+   - &#x5355;&#x5468;&#x671F;&#x8BBF;&#x95EE;
+   - &#x8D44;&#x6E90;&#xFF1A;<span class="hljs-number">512</span> <span class="hljs-type">CLBs</span>
+
+<span class="hljs-number">2.</span> &#x51B7;&#x6808;&#xFF08;<span class="hljs-number">32</span>-<span class="hljs-number">1024</span>&#xFF09;&#xFF1A;<span class="hljs-type">BRAM</span>
+   - &#x6D41;&#x6C34;&#x7EBF;&#x8BBF;&#x95EE;
+   - &#x81EA;&#x52A8;&#x8FC1;&#x79FB;&#x903B;&#x8F91;
+   - &#x8D44;&#x6E90;&#xFF1A;<span class="hljs-number">8</span> <span class="hljs-type">BRAM</span>&#x5757;
+</code></pre>
+<p><strong>Hardcaml EVM&#x5185;&#x5B58;&#x5B50;&#x7CFB;&#x7EDF;&#xFF1A;</strong></p>
+<pre><code class="lang-ocaml"><span class="hljs-comment">(* &#x5185;&#x5B58;&#x63A5;&#x53E3;&#x5B9A;&#x4E49; *)</span>
+<span class="hljs-keyword">module</span> <span class="hljs-keyword">type</span> <span class="hljs-type">Memory</span> = <span class="hljs-keyword">sig</span>
+  <span class="hljs-keyword">type</span> t
+  <span class="hljs-keyword">type</span> addr = <span class="hljs-type">Signal</span>.t <span class="hljs-comment">(* 256 bits *)</span>
+  <span class="hljs-keyword">type</span> data = <span class="hljs-type">Signal</span>.t <span class="hljs-comment">(* 8 bits *)</span>
+
+  <span class="hljs-keyword">val</span> create : <span class="hljs-built_in">unit</span> -&gt; t
+  <span class="hljs-keyword">val</span> read : t -&gt; addr -&gt; data
+  <span class="hljs-keyword">val</span> read_word : t -&gt; addr -&gt; <span class="hljs-type">Word256</span>.t
+  <span class="hljs-keyword">val</span> write : t -&gt; addr -&gt; data -&gt; t
+  <span class="hljs-keyword">val</span> write_word : t -&gt; addr -&gt; <span class="hljs-type">Word256</span>.t -&gt; t
+  <span class="hljs-keyword">val</span> expand : t -&gt; addr -&gt; t <span class="hljs-comment">(* Gas&#x8BA1;&#x7B97; *)</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment">(* &#x7A00;&#x758F;&#x5185;&#x5B58;&#x5B9E;&#x73B0; *)</span>
+&#x5185;&#x5B58;&#x5C42;&#x6B21;&#x8BBE;&#x8BA1;&#xFF1A;
+<span class="hljs-number">1.</span> &#x9875;&#x8868;&#xFF08;<span class="hljs-type">Page</span> <span class="hljs-type">Table</span>&#xFF09;
+   - <span class="hljs-number">4</span>KB&#x9875;&#x9762;&#x7C92;&#x5EA6;
+   - &#x4E24;&#x7EA7;&#x9875;&#x8868;&#x7ED3;&#x6784;
+   - &#x6309;&#x9700;&#x5206;&#x914D;
+
+<span class="hljs-number">2.</span> &#x7F13;&#x5B58;&#x8BBE;&#x8BA1;
+   - <span class="hljs-type">L1</span>&#xFF1A;&#x76F4;&#x63A5;&#x6620;&#x5C04;&#xFF0C;<span class="hljs-number">64</span>KB
+   - <span class="hljs-type">L2</span>&#xFF1A;<span class="hljs-number">4</span>&#x8DEF;&#x7EC4;&#x76F8;&#x8054;&#xFF0C;<span class="hljs-number">256</span>KB
+   - &#x5199;&#x56DE;&#x7B56;&#x7565;
+
+<span class="hljs-number">3.</span> &#x5185;&#x5B58;&#x6269;&#x5C55;&#x63A7;&#x5236;&#x5668;
+   - &#x786C;&#x4EF6;<span class="hljs-type">Gas</span>&#x8BA1;&#x7B97;
+   - &#x8FB9;&#x754C;&#x68C0;&#x67E5;
+   - &#x96F6;&#x521D;&#x59CB;&#x5316;
+</code></pre>
+<p><strong>&#x64CD;&#x4F5C;&#x7801;&#x8BD1;&#x7801;&#x4E0E;&#x5206;&#x53D1;&#x67B6;&#x6784;&#xFF1A;</strong></p>
+<pre><code class="lang-ocaml"><span class="hljs-comment">(* &#x64CD;&#x4F5C;&#x7801;&#x7C7B;&#x578B;&#x5B9A;&#x4E49; *)</span>
+<span class="hljs-keyword">type</span> opcode = 
+  | <span class="hljs-type">ADD</span> | <span class="hljs-type">MUL</span> | <span class="hljs-type">SUB</span> | <span class="hljs-type">DIV</span> | <span class="hljs-type">MOD</span> | <span class="hljs-type">EXP</span>
+  | <span class="hljs-type">LT</span> | <span class="hljs-type">GT</span> | <span class="hljs-type">SLT</span> | <span class="hljs-type">SGT</span> | <span class="hljs-type">EQ</span>
+  | <span class="hljs-type">AND</span> | <span class="hljs-type">OR</span> | <span class="hljs-type">XOR</span> | <span class="hljs-type">NOT</span> | <span class="hljs-type">BYTE</span>
+  | <span class="hljs-type">SHA3</span> | <span class="hljs-type">ADDRESS</span> | <span class="hljs-type">BALANCE</span>
+  | <span class="hljs-type">PUSH</span> <span class="hljs-keyword">of</span> <span class="hljs-built_in">int</span> <span class="hljs-comment">(* 1-32 *)</span>
+  | <span class="hljs-type">DUP</span> <span class="hljs-keyword">of</span> <span class="hljs-built_in">int</span>  <span class="hljs-comment">(* 1-16 *)</span>
+  | <span class="hljs-type">SWAP</span> <span class="hljs-keyword">of</span> <span class="hljs-built_in">int</span> <span class="hljs-comment">(* 1-16 *)</span>
+  | <span class="hljs-type">JUMP</span> | <span class="hljs-type">JUMPI</span> | <span class="hljs-type">PC</span> | <span class="hljs-type">MSIZE</span> | <span class="hljs-type">GAS</span>
+  <span class="hljs-comment">(* ... &#x66F4;&#x591A;&#x64CD;&#x4F5C;&#x7801; ... *)</span>
+
+<span class="hljs-comment">(* &#x786C;&#x4EF6;&#x8BD1;&#x7801;&#x5668;&#x5B9E;&#x73B0; *)</span>
+&#x8BD1;&#x7801;&#x5668;&#x67B6;&#x6784;&#xFF1A;
+<span class="hljs-number">1.</span> &#x4E00;&#x7EA7;&#x8BD1;&#x7801;
+   - <span class="hljs-number">8</span>&#x4F4D;&#x64CD;&#x4F5C;&#x7801; &#x2192; &#x64CD;&#x4F5C;&#x7C7B;&#x522B;
+   - &#x5355;&#x5468;&#x671F;&#x67E5;&#x8868;
+   - <span class="hljs-number">5</span>&#x4F4D;&#x7F16;&#x7801;&#x8F93;&#x51FA;
+
+<span class="hljs-number">2.</span> &#x4E8C;&#x7EA7;&#x8BD1;&#x7801;
+   - &#x64CD;&#x4F5C;&#x7C7B;&#x522B; &#x2192; &#x63A7;&#x5236;&#x4FE1;&#x53F7;
+   - &#x5FAE;&#x7801;<span class="hljs-type">ROM</span>&#xFF1A;<span class="hljs-number">256</span>&#xD7;<span class="hljs-number">64</span>&#x4F4D;
+   - &#x5305;&#x542B;<span class="hljs-type">Gas</span>&#x6210;&#x672C;
+
+<span class="hljs-number">3.</span> &#x64CD;&#x4F5C;&#x5206;&#x53D1;
+   - <span class="hljs-number">4</span>&#x4E2A;&#x5E76;&#x884C;&#x6267;&#x884C;&#x69FD;
+   - &#x52A8;&#x6001;&#x8C03;&#x5EA6;&#x903B;&#x8F91;
+   - &#x4F9D;&#x8D56;&#x6027;&#x68C0;&#x67E5;
+</code></pre>
+<h3 id="978-hardcaml-evm&#x6267;&#x884C;&#x5F15;&#x64CE;&#x5B9E;&#x73B0;">9.7.8 Hardcaml EVM&#x6267;&#x884C;&#x5F15;&#x64CE;&#x5B9E;&#x73B0;</h3>
+<p><strong>&#x6267;&#x884C;&#x7BA1;&#x7EBF;&#x8BBE;&#x8BA1;&#xFF1A;</strong></p>
+<pre><code class="lang-ocaml"><span class="hljs-comment">(* &#x6267;&#x884C;&#x7BA1;&#x7EBF;&#x63A5;&#x53E3; *)</span>
+<span class="hljs-keyword">module</span> <span class="hljs-type">Pipeline</span> = <span class="hljs-keyword">struct</span>
+  <span class="hljs-keyword">type</span> stage = 
+    | <span class="hljs-type">Fetch</span>     <span class="hljs-comment">(* &#x53D6;&#x6307;&#x4EE4; *)</span>
+    | <span class="hljs-type">Decode</span>    <span class="hljs-comment">(* &#x8BD1;&#x7801; *)</span>
+    | <span class="hljs-type">Execute</span>   <span class="hljs-comment">(* &#x6267;&#x884C; *)</span>
+    | <span class="hljs-type">Memory</span>    <span class="hljs-comment">(* &#x5185;&#x5B58;&#x8BBF;&#x95EE; *)</span>
+    | <span class="hljs-type">Writeback</span> <span class="hljs-comment">(* &#x5199;&#x56DE; *)</span>
+
+  <span class="hljs-comment">(* &#x6D41;&#x6C34;&#x7EBF;&#x5BC4;&#x5B58;&#x5668; *)</span>
+  <span class="hljs-keyword">type</span> pipeline_reg = {
+    pc : <span class="hljs-type">Signal</span>.t;
+    opcode : <span class="hljs-type">Signal</span>.t;
+    operands : <span class="hljs-type">Signal</span>.t <span class="hljs-built_in">list</span>;
+    gas_remaining : <span class="hljs-type">Signal</span>.t;
+  }
+<span class="hljs-keyword">end</span>
+
+&#x786C;&#x4EF6;&#x5B9E;&#x73B0;&#x7EC6;&#x8282;&#xFF1A;
+<span class="hljs-number">1.</span> &#x53D6;&#x6307;&#x4EE4;&#x9636;&#x6BB5;
+   - &#x4ECE;&#x4EE3;&#x7801;&#x5185;&#x5B58;&#x8BFB;&#x53D6;
+   - <span class="hljs-type">PC</span>&#x66F4;&#x65B0;&#x903B;&#x8F91;
+   - &#x5206;&#x652F;&#x9884;&#x6D4B;&#x5668;
+
+<span class="hljs-number">2.</span> &#x8BD1;&#x7801;&#x9636;&#x6BB5;
+   - &#x64CD;&#x4F5C;&#x7801;&#x8BC6;&#x522B;
+   - &#x64CD;&#x4F5C;&#x6570;&#x63D0;&#x53D6;
+   - <span class="hljs-type">Gas</span>&#x68C0;&#x67E5;
+
+<span class="hljs-number">3.</span> &#x6267;&#x884C;&#x9636;&#x6BB5;
+   - <span class="hljs-number">4</span>&#x4E2A;<span class="hljs-type">ALU</span>&#x5355;&#x5143;
+   - <span class="hljs-number">1</span>&#x4E2A;&#x4E58;&#x6CD5;&#x5668;
+   - <span class="hljs-number">1</span>&#x4E2A;&#x9664;&#x6CD5;&#x5668;
+   - <span class="hljs-number">1</span>&#x4E2A;&#x54C8;&#x5E0C;&#x5355;&#x5143;
+</code></pre>
+<p><strong>256&#x4F4D;ALU&#x786C;&#x4EF6;&#x5B9E;&#x73B0;&#xFF1A;</strong></p>
+<pre><code class="lang-ocaml"><span class="hljs-comment">(* ALU&#x6A21;&#x5757;&#x751F;&#x6210;&#x5668; *)</span>
+<span class="hljs-keyword">module</span> <span class="hljs-type">Make_ALU</span> (<span class="hljs-type">Config</span> : <span class="hljs-keyword">sig</span>
+  <span class="hljs-keyword">val</span> pipeline_stages : <span class="hljs-built_in">int</span>
+  <span class="hljs-keyword">val</span> use_dsp : <span class="hljs-built_in">bool</span>
+<span class="hljs-keyword">end</span>) = <span class="hljs-keyword">struct</span>
+
+  <span class="hljs-comment">(* &#x52A0;&#x6CD5;&#x5668;&#x5B9E;&#x73B0; *)</span>
+  <span class="hljs-keyword">let</span> adder a b =
+    <span class="hljs-keyword">if</span> <span class="hljs-type">Config</span>.pipeline_stages = <span class="hljs-number">0</span> <span class="hljs-keyword">then</span>
+      <span class="hljs-comment">(* &#x7EC4;&#x5408;&#x903B;&#x8F91;&#x5B9E;&#x73B0; *)</span>
+      ripple_carry_adder a b
+    <span class="hljs-keyword">else</span>
+      <span class="hljs-comment">(* &#x6D41;&#x6C34;&#x7EBF;&#x5B9E;&#x73B0; *)</span>
+      <span class="hljs-keyword">let</span> chunks = split_n <span class="hljs-number">64</span> [a; b] <span class="hljs-keyword">in</span>
+      <span class="hljs-keyword">let</span> partial_sums = 
+        <span class="hljs-type">List</span>.map2 chunks 
+          ~f:(<span class="hljs-keyword">fun</span> a b -&gt; add_with_carry a b) <span class="hljs-keyword">in</span>
+      pipeline_stages <span class="hljs-type">Config</span>.pipeline_stages
+        (combine_with_carry partial_sums)
+
+  <span class="hljs-comment">(* &#x4E58;&#x6CD5;&#x5668;&#x5B9E;&#x73B0; *)</span>
+  <span class="hljs-keyword">let</span> multiplier a b =
+    <span class="hljs-comment">(* Karatsuba 256&#x4F4D;&#x4E58;&#x6CD5; *)</span>
+    <span class="hljs-keyword">let</span> a_hi, a_lo = split_128 a <span class="hljs-keyword">in</span>
+    <span class="hljs-keyword">let</span> b_hi, b_lo = split_128 b <span class="hljs-keyword">in</span>
+
+    <span class="hljs-comment">(* &#x4E09;&#x6B21;128&#x4F4D;&#x4E58;&#x6CD5; *)</span>
+    <span class="hljs-keyword">let</span> p0 = mul_128 a_lo b_lo <span class="hljs-keyword">in</span>
+    <span class="hljs-keyword">let</span> p2 = mul_128 a_hi b_hi <span class="hljs-keyword">in</span>
+    <span class="hljs-keyword">let</span> p1 = mul_128 (add a_hi a_lo) (add b_hi b_lo) <span class="hljs-keyword">in</span>
+
+    <span class="hljs-comment">(* &#x7EC4;&#x5408;&#x7ED3;&#x679C; *)</span>
+    combine_karatsuba p0 p1 p2
+<span class="hljs-keyword">end</span>
+
+&#x8D44;&#x6E90;&#x4F7F;&#x7528;&#xFF08;<span class="hljs-type">UltraScale</span>+&#xFF09;&#xFF1A;
+- <span class="hljs-number">256</span>&#x4F4D;&#x52A0;&#x6CD5;&#x5668;&#xFF1A;~<span class="hljs-number">400</span> <span class="hljs-type">LUTs</span>&#xFF0C;<span class="hljs-number">2</span>&#x5468;&#x671F;
+- <span class="hljs-number">256</span>&#x4F4D;&#x4E58;&#x6CD5;&#x5668;&#xFF1A;<span class="hljs-number">8</span> <span class="hljs-type">DSP48E2</span>&#xFF0C;<span class="hljs-number">4</span>&#x5468;&#x671F;
+- <span class="hljs-number">256</span>&#x4F4D;&#x9664;&#x6CD5;&#x5668;&#xFF1A;&#x8FED;&#x4EE3;&#x5B9E;&#x73B0;&#xFF0C;<span class="hljs-number">32</span>&#x5468;&#x671F;
+</code></pre>
+<p><strong>Keccak256&#x54C8;&#x5E0C;&#x52A0;&#x901F;&#x5668;&#xFF1A;</strong></p>
+<pre><code class="lang-ocaml"><span class="hljs-comment">(* Keccak&#x786C;&#x4EF6;&#x6A21;&#x5757; *)</span>
+<span class="hljs-keyword">module</span> <span class="hljs-type">Keccak256_Core</span> = <span class="hljs-keyword">struct</span>
+  <span class="hljs-comment">(* &#x72B6;&#x6001;&#x6570;&#x7EC4;&#xFF1A;5&#xD7;5&#xD7;64&#x4F4D; *)</span>
+  <span class="hljs-keyword">type</span> state = <span class="hljs-type">Signal</span>.t <span class="hljs-built_in">array</span> <span class="hljs-built_in">array</span>
+
+  <span class="hljs-comment">(* &#x8F6E;&#x51FD;&#x6570;&#x5B9E;&#x73B0; *)</span>
+  <span class="hljs-keyword">let</span> round_function state round_constant =
+    state
+    |&gt; theta_step    <span class="hljs-comment">(* &#x5217;&#x6821;&#x9A8C; *)</span>
+    |&gt; rho_step      <span class="hljs-comment">(* &#x5FAA;&#x73AF;&#x79FB;&#x4F4D; *)</span>
+    |&gt; pi_step       <span class="hljs-comment">(* &#x7F6E;&#x6362; *)</span>
+    |&gt; chi_step      <span class="hljs-comment">(* &#x975E;&#x7EBF;&#x6027;&#x53D8;&#x6362; *)</span>
+    |&gt; iota_step round_constant
+
+  <span class="hljs-comment">(* &#x5B8C;&#x6574;&#x54C8;&#x5E0C;&#x51FD;&#x6570; *)</span>
+  <span class="hljs-keyword">let</span> keccak256 input =
+    <span class="hljs-keyword">let</span> state = init_state <span class="hljs-literal">()</span> <span class="hljs-keyword">in</span>
+    <span class="hljs-keyword">let</span> padded = pad_message input <span class="hljs-keyword">in</span>
+
+    <span class="hljs-comment">(* &#x5438;&#x6536;&#x9636;&#x6BB5; *)</span>
+    <span class="hljs-keyword">let</span> absorbed = 
+      chunks padded ~size:<span class="hljs-number">1088</span>
+      |&gt; fold ~init:state ~f:absorb_block <span class="hljs-keyword">in</span>
+
+    <span class="hljs-comment">(* &#x538B;&#x7F29;&#x9636;&#x6BB5; - 24&#x8F6E; *)</span>
+    <span class="hljs-keyword">let</span> final_state = 
+      fold (<span class="hljs-number">0</span> -- <span class="hljs-number">23</span>) ~init:absorbed 
+        ~f:(<span class="hljs-keyword">fun</span> s i -&gt; 
+          round_function s (round_constants.(i))) <span class="hljs-keyword">in</span>
+
+    extract_hash final_state
+<span class="hljs-keyword">end</span>
+
+&#x5B9E;&#x73B0;&#x4F18;&#x5316;&#xFF1A;
+<span class="hljs-number">1.</span> &#x5168;&#x5C55;&#x5F00;&#x5B9E;&#x73B0;
+   - <span class="hljs-number">24</span>&#x8F6E;&#x5B8C;&#x5168;&#x5C55;&#x5F00;
+   - &#x5EF6;&#x8FDF;&#xFF1A;<span class="hljs-number">30</span>&#x5468;&#x671F;
+   - &#x8D44;&#x6E90;&#xFF1A;<span class="hljs-number">45</span>K <span class="hljs-type">LUTs</span>
+
+<span class="hljs-number">2.</span> &#x90E8;&#x5206;&#x5C55;&#x5F00;
+   - <span class="hljs-number">4</span>&#x8F6E;/&#x5468;&#x671F;
+   - &#x5EF6;&#x8FDF;&#xFF1A;<span class="hljs-number">150</span>&#x5468;&#x671F;
+   - &#x8D44;&#x6E90;&#xFF1A;<span class="hljs-number">8</span>K <span class="hljs-type">LUTs</span>
+
+<span class="hljs-number">3.</span> &#x8FED;&#x4EE3;&#x5B9E;&#x73B0;
+   - <span class="hljs-number">1</span>&#x8F6E;/&#x5468;&#x671F;
+   - &#x5EF6;&#x8FDF;&#xFF1A;<span class="hljs-number">600</span>&#x5468;&#x671F;
+   - &#x8D44;&#x6E90;&#xFF1A;<span class="hljs-number">2</span>K <span class="hljs-type">LUTs</span>
+</code></pre>
+<h3 id="979-&#x5B58;&#x50A8;&#x5B50;&#x7CFB;&#x7EDF;&#x4E0E;&#x72B6;&#x6001;&#x7BA1;&#x7406;">9.7.9 &#x5B58;&#x50A8;&#x5B50;&#x7CFB;&#x7EDF;&#x4E0E;&#x72B6;&#x6001;&#x7BA1;&#x7406;</h3>
+<p><strong>Merkle Patricia Trie&#x52A0;&#x901F;&#x5668;&#xFF1A;</strong></p>
+<pre><code class="lang-ocaml"><span class="hljs-comment">(* MPT&#x8282;&#x70B9;&#x7C7B;&#x578B; *)</span>
+<span class="hljs-keyword">type</span> node =
+  | <span class="hljs-type">Empty</span>
+  | <span class="hljs-type">Leaf</span> <span class="hljs-keyword">of</span> { key : <span class="hljs-type">Signal</span>.t; <span class="hljs-keyword">value</span> : <span class="hljs-type">Signal</span>.t }
+  | <span class="hljs-type">Branch</span> <span class="hljs-keyword">of</span> { children : <span class="hljs-type">Signal</span>.t <span class="hljs-built_in">array</span>; <span class="hljs-keyword">value</span> : <span class="hljs-type">Signal</span>.t option }
+  | <span class="hljs-type">Extension</span> <span class="hljs-keyword">of</span> { prefix : <span class="hljs-type">Signal</span>.t; child : <span class="hljs-type">Signal</span>.t }
+
+<span class="hljs-comment">(* &#x786C;&#x4EF6;MPT&#x67E5;&#x627E;&#x5F15;&#x64CE; *)</span>
+<span class="hljs-keyword">module</span> <span class="hljs-type">MPT_Lookup</span> = <span class="hljs-keyword">struct</span>
+  <span class="hljs-comment">(* &#x5E76;&#x884C;&#x8DEF;&#x5F84;&#x89E3;&#x7801;&#x5668; *)</span>
+  <span class="hljs-keyword">let</span> path_decoder key =
+    <span class="hljs-comment">(* &#x5C06;256&#x4F4D;key&#x8F6C;&#x6362;&#x4E3A;64&#x4E2A;4&#x4F4D;nibbles *)</span>
+    <span class="hljs-keyword">let</span> nibbles = extract_nibbles key <span class="hljs-keyword">in</span>
+
+    <span class="hljs-comment">(* &#x9884;&#x8BA1;&#x7B97;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x7684;&#x5206;&#x652F; *)</span>
+    <span class="hljs-keyword">let</span> branch_predictions = 
+      <span class="hljs-type">Array</span>.init <span class="hljs-number">16</span> ~f:(<span class="hljs-keyword">fun</span> i -&gt;
+        predict_branch nibbles i) <span class="hljs-keyword">in</span>
+
+    nibbles, branch_predictions
+
+  <span class="hljs-comment">(* &#x6D41;&#x6C34;&#x7EBF;&#x67E5;&#x627E; *)</span>
+  <span class="hljs-keyword">let</span> lookup trie key =
+    <span class="hljs-keyword">let</span> nibbles, predictions = path_decoder key <span class="hljs-keyword">in</span>
+
+    <span class="hljs-comment">(* 8&#x7EA7;&#x6D41;&#x6C34;&#x7EBF;&#xFF0C;&#x6BCF;&#x7EA7;&#x5904;&#x7406;8&#x4E2A;nibbles *)</span>
+    <span class="hljs-keyword">let</span> pipeline = create_pipeline <span class="hljs-number">8</span> <span class="hljs-keyword">in</span>
+
+    fold nibbles ~init:root ~f:(<span class="hljs-keyword">fun</span> node nibble -&gt;
+      <span class="hljs-keyword">match</span> node <span class="hljs-keyword">with</span>
+      | <span class="hljs-type">Branch</span> { children; _ } -&gt;
+          <span class="hljs-comment">(* &#x4F7F;&#x7528;&#x9884;&#x8BA1;&#x7B97;&#x7684;&#x5206;&#x652F;&#x9884;&#x6D4B; *)</span>
+          select children nibble
+      | <span class="hljs-type">Extension</span> { prefix; child } -&gt;
+          <span class="hljs-comment">(* &#x5E76;&#x884C;&#x524D;&#x7F00;&#x5339;&#x914D; *)</span>
+          <span class="hljs-keyword">if</span> prefix_match prefix nibble <span class="hljs-keyword">then</span>
+            child
+          <span class="hljs-keyword">else</span>
+            <span class="hljs-type">Empty</span>
+      | _ -&gt; node)
+<span class="hljs-keyword">end</span>
+
+&#x6027;&#x80FD;&#x7279;&#x5F81;&#xFF1A;
+- &#x67E5;&#x627E;&#x5EF6;&#x8FDF;&#xFF1A;<span class="hljs-number">8</span>-<span class="hljs-number">64</span>&#x5468;&#x671F;&#xFF08;&#x53D6;&#x51B3;&#x4E8E;&#x6DF1;&#x5EA6;&#xFF09;
+- &#x541E;&#x5410;&#x7387;&#xFF1A;<span class="hljs-number">1</span>&#x67E5;&#x627E;/<span class="hljs-number">8</span>&#x5468;&#x671F;&#xFF08;&#x6D41;&#x6C34;&#x7EBF;&#xFF09;
+- &#x7F13;&#x5B58;&#x547D;&#x4E2D;&#x7387;&#xFF1A;&gt;<span class="hljs-number">90</span>%&#xFF08;&#x70ED;&#x6570;&#x636E;&#xFF09;
+</code></pre>
+<p><strong>&#x72B6;&#x6001;&#x7F13;&#x5B58;&#x4E0E;&#x9884;&#x53D6;&#xFF1A;</strong></p>
+<pre><code class="lang-ocaml"><span class="hljs-comment">(* &#x667A;&#x80FD;&#x7F13;&#x5B58;&#x63A7;&#x5236;&#x5668; *)</span>
+<span class="hljs-keyword">module</span> <span class="hljs-type">State_Cache</span> = <span class="hljs-keyword">struct</span>
+  <span class="hljs-keyword">type</span> cache_line = {
+    tag : <span class="hljs-type">Signal</span>.t;      <span class="hljs-comment">(* &#x5730;&#x5740;&#x6807;&#x7B7E; *)</span>
+    data : <span class="hljs-type">Word256</span>.t;    <span class="hljs-comment">(* &#x5B58;&#x50A8;&#x503C; *)</span>
+    valid : <span class="hljs-type">Signal</span>.t;    <span class="hljs-comment">(* &#x6709;&#x6548;&#x4F4D; *)</span>
+    dirty : <span class="hljs-type">Signal</span>.t;    <span class="hljs-comment">(* &#x810F;&#x4F4D; *)</span>
+    lru : <span class="hljs-type">Signal</span>.t;      <span class="hljs-comment">(* LRU&#x8BA1;&#x6570; *)</span>
+  }
+
+  <span class="hljs-comment">(* 4&#x8DEF;&#x7EC4;&#x76F8;&#x8054;&#x7F13;&#x5B58; *)</span>
+  <span class="hljs-keyword">let</span> cache_lookup addr =
+    <span class="hljs-keyword">let</span> index = extract_index addr <span class="hljs-keyword">in</span>
+    <span class="hljs-keyword">let</span> tag = extract_tag addr <span class="hljs-keyword">in</span>
+
+    <span class="hljs-comment">(* &#x5E76;&#x884C;&#x6BD4;&#x8F83;4&#x8DEF; *)</span>
+    <span class="hljs-keyword">let</span> ways = cache.(index) <span class="hljs-keyword">in</span>
+    <span class="hljs-keyword">let</span> hits = <span class="hljs-type">Array</span>.map ways ~f:(<span class="hljs-keyword">fun</span> way -&gt;
+      way.valid &amp;: (way.tag ==: tag)) <span class="hljs-keyword">in</span>
+
+    <span class="hljs-comment">(* &#x9009;&#x62E9;&#x547D;&#x4E2D;&#x7684;&#x8DEF; *)</span>
+    priority_encoder hits
+
+  <span class="hljs-comment">(* &#x9884;&#x53D6;&#x5F15;&#x64CE; *)</span>
+  <span class="hljs-keyword">let</span> prefetch_engine =
+    <span class="hljs-comment">(* &#x8BBF;&#x95EE;&#x6A21;&#x5F0F;&#x68C0;&#x6D4B; *)</span>
+    <span class="hljs-keyword">let</span> pattern = detect_access_pattern history <span class="hljs-keyword">in</span>
+
+    <span class="hljs-keyword">match</span> pattern <span class="hljs-keyword">with</span>
+    | <span class="hljs-type">Sequential</span> -&gt; prefetch_sequential addr
+    | <span class="hljs-type">Strided</span> n -&gt; prefetch_strided addr n
+    | <span class="hljs-type">Random</span> -&gt; no_prefetch <span class="hljs-literal">()</span>
+<span class="hljs-keyword">end</span>
+
+&#x7F13;&#x5B58;&#x914D;&#x7F6E;&#xFF1A;
+- <span class="hljs-type">L1</span>&#xFF1A;<span class="hljs-number">32</span>KB&#xFF0C;<span class="hljs-number">4</span>&#x8DEF;&#x7EC4;&#x76F8;&#x8054;&#xFF0C;<span class="hljs-number">1</span>&#x5468;&#x671F;
+- <span class="hljs-type">L2</span>&#xFF1A;<span class="hljs-number">256</span>KB&#xFF0C;<span class="hljs-number">8</span>&#x8DEF;&#x7EC4;&#x76F8;&#x8054;&#xFF0C;<span class="hljs-number">3</span>&#x5468;&#x671F;
+- &#x9884;&#x53D6;&#x6DF1;&#x5EA6;&#xFF1A;<span class="hljs-number">4</span>-<span class="hljs-number">16</span>&#x4E2A;&#x5757;
+- &#x66FF;&#x6362;&#x7B56;&#x7565;&#xFF1A;&#x4F2A;<span class="hljs-type">LRU</span>
+</code></pre>
+<h3 id="9710-&#x7CFB;&#x7EDF;&#x96C6;&#x6210;&#x4E0E;&#x6027;&#x80FD;&#x4F18;&#x5316;">9.7.10 &#x7CFB;&#x7EDF;&#x96C6;&#x6210;&#x4E0E;&#x6027;&#x80FD;&#x4F18;&#x5316;</h3>
+<p><strong>&#x591A;&#x6838;EVM&#x5904;&#x7406;&#x5668;&#x67B6;&#x6784;&#xFF1A;</strong></p>
+<pre><code class="lang-ocaml"><span class="hljs-comment">(* &#x4EA4;&#x6613;&#x5E76;&#x884C;&#x5904;&#x7406;&#x5668; *)</span>
+<span class="hljs-keyword">module</span> <span class="hljs-type">Parallel_EVM</span> = <span class="hljs-keyword">struct</span>
+  <span class="hljs-keyword">type</span> core = {
+    id : <span class="hljs-built_in">int</span>;
+    pipeline : <span class="hljs-type">Pipeline</span>.t;
+    local_cache : <span class="hljs-type">Cache</span>.t;
+    status : [ <span class="hljs-type">`Idle</span> | <span class="hljs-type">`Busy</span> | <span class="hljs-type">`Stalled</span> ];
+  }
+
+  <span class="hljs-comment">(* 4&#x6838;&#x5E76;&#x884C;&#x67B6;&#x6784; *)</span>
+  <span class="hljs-keyword">let</span> cores = <span class="hljs-type">Array</span>.init <span class="hljs-number">4</span> ~f:(<span class="hljs-keyword">fun</span> i -&gt;
+    { id = i;
+      pipeline = <span class="hljs-type">Pipeline</span>.create <span class="hljs-literal">()</span>;
+      local_cache = <span class="hljs-type">Cache</span>.create ~size:<span class="hljs-number">32</span>;
+      status = <span class="hljs-type">`Idle</span> })
+
+  <span class="hljs-comment">(* &#x4EA4;&#x6613;&#x8C03;&#x5EA6;&#x5668; *)</span>
+  <span class="hljs-keyword">let</span> schedule_transaction tx =
+    <span class="hljs-comment">(* &#x4F9D;&#x8D56;&#x6027;&#x5206;&#x6790; *)</span>
+    <span class="hljs-keyword">let</span> deps = analyze_dependencies tx <span class="hljs-keyword">in</span>
+
+    <span class="hljs-comment">(* &#x67E5;&#x627E;&#x7A7A;&#x95F2;&#x6838;&#x5FC3; *)</span>
+    <span class="hljs-keyword">let</span> available_core = 
+      <span class="hljs-type">Array</span>.find cores ~f:(<span class="hljs-keyword">fun</span> c -&gt; 
+        c.status = <span class="hljs-type">`Idle</span> &amp;&amp; 
+        not (conflicts_with c deps)) <span class="hljs-keyword">in</span>
+
+    <span class="hljs-keyword">match</span> available_core <span class="hljs-keyword">with</span>
+    | <span class="hljs-type">Some</span> core -&gt; 
+        assign_to_core core tx
+    | <span class="hljs-type">None</span> -&gt; 
+        queue_transaction tx
+<span class="hljs-keyword">end</span>
+
+&#x8D44;&#x6E90;&#x5206;&#x914D;&#xFF1A;
+- &#x6BCF;&#x6838;&#x5FC3;&#xFF1A;<span class="hljs-number">40</span>K <span class="hljs-type">LUTs</span>&#xFF0C;<span class="hljs-number">50</span> <span class="hljs-type">DSP</span>
+- &#x5171;&#x4EAB;&#x7F13;&#x5B58;&#xFF1A;<span class="hljs-number">100</span> <span class="hljs-type">BRAM</span>
+- &#x4E92;&#x8054;&#x7F51;&#x7EDC;&#xFF1A;<span class="hljs-number">10</span>K <span class="hljs-type">LUTs</span>
+- &#x603B;&#x8BA1;&#xFF1A;<span class="hljs-number">170</span>K <span class="hljs-type">LUTs</span>&#xFF0C;<span class="hljs-number">200</span> <span class="hljs-type">DSP</span>
+</code></pre>
+<p><strong>&#x6027;&#x80FD;&#x76D1;&#x63A7;&#x4E0E;&#x8C03;&#x4F18;&#x6846;&#x67B6;&#xFF1A;</strong></p>
+<pre><code class="lang-ocaml"><span class="hljs-comment">(* &#x786C;&#x4EF6;&#x6027;&#x80FD;&#x8BA1;&#x6570;&#x5668; *)</span>
+<span class="hljs-keyword">module</span> <span class="hljs-type">Performance_Monitor</span> = <span class="hljs-keyword">struct</span>
+  <span class="hljs-keyword">let</span> counters = {
+    cycles : <span class="hljs-type">Counter</span>.create <span class="hljs-number">64</span>;
+    instructions : <span class="hljs-type">Counter</span>.create <span class="hljs-number">64</span>;
+    cache_hits : <span class="hljs-type">Counter</span>.create <span class="hljs-number">32</span>;
+    cache_misses : <span class="hljs-type">Counter</span>.create <span class="hljs-number">32</span>;
+    stall_cycles : <span class="hljs-type">Counter</span>.create <span class="hljs-number">32</span>;
+    gas_used : <span class="hljs-type">Counter</span>.create <span class="hljs-number">64</span>;
+  }
+
+  <span class="hljs-comment">(* &#x5B9E;&#x65F6;IPC&#x8BA1;&#x7B97; *)</span>
+  <span class="hljs-keyword">let</span> ipc = 
+    <span class="hljs-type">Signal</span>.(counters.instructions /: counters.cycles)
+
+  <span class="hljs-comment">(* &#x7F13;&#x5B58;&#x547D;&#x4E2D;&#x7387; *)</span>
+  <span class="hljs-keyword">let</span> hit_rate =
+    <span class="hljs-keyword">let</span> total = counters.cache_hits +: counters.cache_misses <span class="hljs-keyword">in</span>
+    <span class="hljs-type">Signal</span>.(counters.cache_hits /: total)
+
+  <span class="hljs-comment">(* &#x6027;&#x80FD;&#x74F6;&#x9888;&#x68C0;&#x6D4B; *)</span>
+  <span class="hljs-keyword">let</span> bottleneck_detector =
+    priority_encoder [
+      (stall_cycles &gt;: threshold_stall), <span class="hljs-string">&quot;Pipeline Stall&quot;</span>;
+      (hit_rate &lt;: threshold_hit), <span class="hljs-string">&quot;Cache Miss&quot;</span>;
+      (ipc &lt;: threshold_ipc), <span class="hljs-string">&quot;Low IPC&quot;</span>;
+    ]
+<span class="hljs-keyword">end</span>
+
+&#x5178;&#x578B;&#x6027;&#x80FD;&#x6307;&#x6807;&#xFF1A;
+- <span class="hljs-type">IPC</span>&#xFF1A;<span class="hljs-number">0.8</span>-<span class="hljs-number">1.2</span>&#xFF08;&#x53D6;&#x51B3;&#x4E8E;&#x5DE5;&#x4F5C;&#x8D1F;&#x8F7D;&#xFF09;
+- &#x7F13;&#x5B58;&#x547D;&#x4E2D;&#x7387;&#xFF1A;<span class="hljs-number">85</span>-<span class="hljs-number">95</span>%
+- &#x6D41;&#x6C34;&#x7EBF;&#x5229;&#x7528;&#x7387;&#xFF1A;<span class="hljs-number">70</span>-<span class="hljs-number">85</span>%
+- &#x529F;&#x8017;&#x6548;&#x7387;&#xFF1A;<span class="hljs-number">10</span> <span class="hljs-type">Mtx</span>/s/<span class="hljs-type">W</span>
+</code></pre>
+<p><strong>&#x5B9E;&#x9645;&#x90E8;&#x7F72;&#x8003;&#x8651;&#xFF1A;</strong></p>
+<pre><code>1. &#x70ED;&#x70B9;&#x5408;&#x7EA6;&#x4F18;&#x5316;
+   - &#x8BC6;&#x522B;&#x9891;&#x7E41;&#x8C03;&#x7528;&#x7684;&#x5408;&#x7EA6;
+   - &#x4E13;&#x7528;&#x786C;&#x4EF6;&#x52A0;&#x901F;&#x5668;
+   - JIT&#x7F16;&#x8BD1;&#x96C6;&#x6210;
+
+2. &#x5185;&#x5B58;&#x5E26;&#x5BBD;&#x4F18;&#x5316;
+   - &#x6570;&#x636E;&#x9884;&#x53D6;
+   - &#x8BBF;&#x95EE;&#x5408;&#x5E76;
+   - &#x7A81;&#x53D1;&#x4F20;&#x8F93;
+
+3. &#x9519;&#x8BEF;&#x5904;&#x7406;
+   - EVM&#x5F02;&#x5E38;&#x6355;&#x83B7;
+   - &#x72B6;&#x6001;&#x56DE;&#x6EDA;
+   - Gas&#x8017;&#x5C3D;&#x5904;&#x7406;
+
+4. &#x8C03;&#x8BD5;&#x652F;&#x6301;
+   - &#x6267;&#x884C;&#x8FFD;&#x8E2A;
+   - &#x65AD;&#x70B9;&#x652F;&#x6301;
+   - &#x6027;&#x80FD;&#x5206;&#x6790;
+</code></pre><h3 id="9711-&#x4F18;&#x5316;&#x6280;&#x5DE7;&#x4E0E;&#x6700;&#x4F73;&#x5B9E;&#x8DF5;">9.7.11 &#x4F18;&#x5316;&#x6280;&#x5DE7;&#x4E0E;&#x6700;&#x4F73;&#x5B9E;&#x8DF5;</h3>
+<p><strong>Hardcaml&#x7279;&#x5B9A;&#x4F18;&#x5316;&#xFF1A;</strong></p>
+<pre><code class="lang-ocaml"><span class="hljs-comment">(* 1. &#x4F7F;&#x7528;&#x7EC4;&#x5408;&#x5668;&#x4F18;&#x5316;&#x5E38;&#x89C1;&#x6A21;&#x5F0F; *)</span>
+<span class="hljs-keyword">let</span> optimized_stack_op = 
+  <span class="hljs-type">Hardcaml</span>.<span class="hljs-type">Recipe</span>.sequence [
+    pop2;  <span class="hljs-comment">(* &#x5F39;&#x51FA;&#x4E24;&#x4E2A;&#x64CD;&#x4F5C;&#x6570; *)</span>
+    map2 ~f:<span class="hljs-type">Word256</span>.add;  <span class="hljs-comment">(* &#x6267;&#x884C;&#x52A0;&#x6CD5; *)</span>
+    push;  <span class="hljs-comment">(* &#x538B;&#x5165;&#x7ED3;&#x679C; *)</span>
+  ]
+
+<span class="hljs-comment">(* 2. &#x8D44;&#x6E90;&#x5171;&#x4EAB;&#x63A7;&#x5236; *)</span>
+<span class="hljs-keyword">let</span> [@no_share] critical_alu = 
+  <span class="hljs-comment">(* &#x5173;&#x952E;&#x8DEF;&#x5F84;&#x4E0A;&#x7684;ALU&#x4E0D;&#x5171;&#x4EAB; *)</span>
+  instantiate_alu <span class="hljs-literal">()</span>
+
+<span class="hljs-comment">(* 3. &#x6D41;&#x6C34;&#x7EBF;&#x81EA;&#x52A8;&#x5E73;&#x8861; *)</span>
+<span class="hljs-keyword">let</span> balanced_pipeline = 
+  balance_pipeline 
+    ~stages:<span class="hljs-number">4</span> 
+    ~constraints:[timing_constraint <span class="hljs-number">5.0</span>]
+    unbalanced_logic
+</code></pre>
+<p><strong>&#x6027;&#x80FD;&#x8C03;&#x4F18;&#x7B56;&#x7565;&#xFF1A;</strong></p>
+<pre><code>1. &#x64CD;&#x4F5C;&#x878D;&#x5408;
+   - PUSH1 + ADD &#x2192; PUSH1_ADD
+   - DUP1 + SWAP1 &#x2192; &#x4E13;&#x7528;&#x4EA4;&#x6362;
+   - &#x51CF;&#x5C11;&#x6808;&#x64CD;&#x4F5C;&#x5F00;&#x9500;
+
+2. &#x6295;&#x673A;&#x6267;&#x884C;
+   - &#x5206;&#x652F;&#x9884;&#x6D4B;&#xFF1A;85%&#x51C6;&#x786E;&#x7387;
+   - &#x63A8;&#x6D4B;&#x52A0;&#x8F7D;&#xFF1A;&#x9690;&#x85CF;&#x5185;&#x5B58;&#x5EF6;&#x8FDF;
+   - &#x5FEB;&#x901F;&#x56DE;&#x6EDA;&#xFF1A;1&#x5468;&#x671F;
+
+3. &#x52A8;&#x6001;&#x4F18;&#x5316;
+   - &#x70ED;&#x8DEF;&#x5F84;&#x68C0;&#x6D4B;
+   - &#x5FAE;&#x7801;&#x66F4;&#x65B0;
+   - &#x81EA;&#x9002;&#x5E94;&#x7F13;&#x5B58;
+</code></pre><h2 id="&#x672C;&#x7AE0;&#x5C0F;&#x7ED3;">&#x672C;&#x7AE0;&#x5C0F;&#x7ED3;</h2>
+<p>&#x672C;&#x7AE0;&#x6DF1;&#x5165;&#x63A2;&#x8BA8;&#x4E86;&#x4F7F;&#x7528;OCaml/Hardcaml&#x8FDB;&#x884C;FPGA&#x786C;&#x4EF6;&#x8BBE;&#x8BA1;&#x7684;&#x65B9;&#x6CD5;&#x8BBA;&#x548C;&#x5B9E;&#x8DF5;&#x3002;&#x5173;&#x952E;&#x8981;&#x70B9;&#x5305;&#x62EC;&#xFF1A;</p>
+<ol>
+<li><p><strong>Hardcaml&#x8BBE;&#x8BA1;&#x7406;&#x5FF5;</strong>&#xFF1A;&#x5C06;OCaml&#x7684;&#x7C7B;&#x578B;&#x5B89;&#x5168;&#x548C;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x4F18;&#x52BF;&#x5F15;&#x5165;&#x786C;&#x4EF6;&#x8BBE;&#x8BA1;&#xFF0C;&#x901A;&#x8FC7;&#x5F3A;&#x7C7B;&#x578B;&#x7CFB;&#x7EDF;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x6355;&#x83B7;&#x9519;&#x8BEF;&#xFF0C;&#x4F7F;&#x7528;&#x9AD8;&#x9636;&#x51FD;&#x6570;&#x6784;&#x5EFA;&#x53EF;&#x590D;&#x7528;&#x786C;&#x4EF6;&#x751F;&#x6210;&#x5668;&#x3002;</p>
+</li>
+<li><p><strong>&#x62BD;&#x8C61;&#x5C42;&#x6B21;</strong>&#xFF1A;Hardcaml&#x63D0;&#x4F9B;&#x4E86;&#x4ECE;&#x4FE1;&#x53F7;&#x7EA7;&#x5230;&#x7CFB;&#x7EDF;&#x7EA7;&#x7684;&#x591A;&#x5C42;&#x62BD;&#x8C61;&#xFF0C;&#x652F;&#x6301;&#x7EC4;&#x5408;&#x903B;&#x8F91;&#x7684;&#x51FD;&#x6570;&#x5F0F;&#x8868;&#x8FBE;&#x3001;&#x65F6;&#x5E8F;&#x903B;&#x8F91;&#x7684;&#x72B6;&#x6001;&#x7BA1;&#x7406;&#x3001;&#x4EE5;&#x53CA;&#x590D;&#x6742;&#x7CFB;&#x7EDF;&#x7684;&#x6A21;&#x5757;&#x5316;&#x8BBE;&#x8BA1;&#x3002;</p>
+</li>
+<li><p><strong>&#x4EFF;&#x771F;&#x9A8C;&#x8BC1;</strong>&#xFF1A;&#x96C6;&#x6210;&#x7684;&#x4EFF;&#x771F;&#x548C;&#x9A8C;&#x8BC1;&#x6846;&#x67B6;&#x652F;&#x6301;&#x5FEB;&#x901F;&#x8FED;&#x4EE3;&#xFF0C;&#x5305;&#x62EC;&#x89E3;&#x91CA;&#x578B;&#x548C;&#x7F16;&#x8BD1;&#x578B;&#x4EFF;&#x771F;&#x5668;&#x3001;&#x5C5E;&#x6027;&#x57FA;&#x6D4B;&#x8BD5;&#x3001;&#x4EE5;&#x53CA;&#x4E0E;&#x5546;&#x4E1A;&#x5DE5;&#x5177;&#x7684;&#x534F;&#x540C;&#x4EFF;&#x771F;&#x3002;</p>
+</li>
+<li><p><strong>&#x91D1;&#x878D;&#x5E94;&#x7528;</strong>&#xFF1A;Jane Street&#x7684;&#x5B9E;&#x8DF5;&#x8BC1;&#x660E;&#x4E86;Hardcaml&#x5728;&#x4F4E;&#x5EF6;&#x8FDF;&#x4EA4;&#x6613;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x4EF7;&#x503C;&#xFF0C;&#x5B9E;&#x73B0;&#x7EB3;&#x79D2;&#x7EA7;&#x5EF6;&#x8FDF;&#x548C;&#x786E;&#x5B9A;&#x6027;&#x6267;&#x884C;&#x3002;</p>
+</li>
+<li><p><strong>&#x6027;&#x80FD;&#x4F18;&#x5316;</strong>&#xFF1A;&#x901A;&#x8FC7;&#x5E76;&#x884C;&#x5316;&#x3001;&#x6D41;&#x6C34;&#x7EBF;&#x3001;&#x9884;&#x8BA1;&#x7B97;&#x7B49;&#x6280;&#x672F;&#xFF0C;Hardcaml&#x751F;&#x6210;&#x7684;&#x786C;&#x4EF6;&#x53EF;&#x4EE5;&#x8FBE;&#x5230;&#x624B;&#x5199;RTL 90-95%&#x7684;&#x6027;&#x80FD;&#x3002;</p>
+</li>
+</ol>
+<p><strong>&#x6838;&#x5FC3;&#x516C;&#x5F0F;&#x4E0E;&#x6307;&#x6807;&#xFF1A;</strong></p>
+<ul>
+<li>&#x6D41;&#x6C34;&#x7EBF;&#x541E;&#x5410;&#x7387;&#xFF1A;<code>Throughput = Frequency / InitiationInterval</code></li>
+<li>&#x5EF6;&#x8FDF;&#x8BA1;&#x7B97;&#xFF1A;<code>Latency = &#x3A3;(StageDelay) + RegisterDelay &#xD7; Stages</code></li>
+<li>&#x8D44;&#x6E90;&#x6548;&#x7387;&#xFF1A;<code>Efficiency = Performance / (LUTs + DSPs &#xD7; Weight)</code></li>
+<li>&#x5957;&#x5229;&#x6536;&#x76CA;&#xFF1A;<code>Profit = PriceDiff &#xD7; Volume - ExecutionCost - Slippage</code></li>
+</ul>
+<h2 id="&#x7EC3;&#x4E60;&#x9898;">&#x7EC3;&#x4E60;&#x9898;</h2>
+<h3 id="&#x57FA;&#x7840;&#x9898;">&#x57FA;&#x7840;&#x9898;</h3>
+<ol>
+<li><p><strong>Hardcaml&#x7C7B;&#x578B;&#x7CFB;&#x7EDF;&#x7406;&#x89E3;</strong>
+&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x5316;&#x4F4D;&#x5BBD;&#x7684;&#x9971;&#x548C;&#x52A0;&#x6CD5;&#x5668;&#xFF0C;&#x5F53;&#x7ED3;&#x679C;&#x6EA2;&#x51FA;&#x65F6;&#x8F93;&#x51FA;&#x6700;&#x5927;&#x503C;&#x3002;</p>
+<p><em>Hint</em>&#xFF1A;&#x4F7F;&#x7528;phantom type&#x786E;&#x4FDD;&#x7C7B;&#x578B;&#x5B89;&#x5168;&#xFF0C;&#x8003;&#x8651;&#x6709;&#x7B26;&#x53F7;&#x548C;&#x65E0;&#x7B26;&#x53F7;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#x3002;</p>
+</li>
+<li><p><strong>&#x7EC4;&#x5408;&#x903B;&#x8F91;&#x751F;&#x6210;</strong>
+&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;8&#x4F4D;&#x6876;&#x5F62;&#x79FB;&#x4F4D;&#x5668;&#xFF0C;&#x652F;&#x6301;&#x5DE6;&#x79FB;&#x3001;&#x53F3;&#x79FB;&#x548C;&#x5FAA;&#x73AF;&#x79FB;&#x4F4D;&#x4E09;&#x79CD;&#x6A21;&#x5F0F;&#x3002;</p>
+<p><em>Hint</em>&#xFF1A;&#x4F7F;&#x7528;3&#x7EA7;2:1&#x591A;&#x8DEF;&#x9009;&#x62E9;&#x5668;&#xFF0C;&#x6BCF;&#x7EA7;&#x79FB;&#x4F4D;1&#x3001;2&#x3001;4&#x4F4D;&#x3002;</p>
+</li>
+<li><p><strong>&#x72B6;&#x6001;&#x673A;&#x8BBE;&#x8BA1;</strong>
+&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;UART&#x53D1;&#x9001;&#x5668;&#x72B6;&#x6001;&#x673A;&#xFF0C;&#x652F;&#x6301;8N1&#x683C;&#x5F0F;&#xFF08;8&#x6570;&#x636E;&#x4F4D;&#xFF0C;&#x65E0;&#x6821;&#x9A8C;&#xFF0C;1&#x505C;&#x6B62;&#x4F4D;&#xFF09;&#x3002;</p>
+<p><em>Hint</em>&#xFF1A;&#x72B6;&#x6001;&#x5305;&#x62EC;IDLE&#x3001;START&#x3001;DATA[0-7]&#x3001;STOP&#xFF0C;&#x4F7F;&#x7528;&#x8BA1;&#x6570;&#x5668;&#x63A7;&#x5236;&#x6CE2;&#x7279;&#x7387;&#x3002;</p>
+</li>
+<li><p><strong>&#x4EFF;&#x771F;&#x6D4B;&#x8BD5;&#x7F16;&#x5199;</strong>
+&#x4E3A;&#x4E0A;&#x8FF0;UART&#x53D1;&#x9001;&#x5668;&#x7F16;&#x5199;&#x5C5E;&#x6027;&#x57FA;&#x6D4B;&#x8BD5;&#xFF0C;&#x9A8C;&#x8BC1;&#x53D1;&#x9001;&#x7684;&#x6570;&#x636E;&#x4E0E;&#x63A5;&#x6536;&#x7684;&#x6570;&#x636E;&#x4E00;&#x81F4;&#x3002;</p>
+<p><em>Hint</em>&#xFF1A;&#x751F;&#x6210;&#x968F;&#x673A;&#x6570;&#x636E;&#x6D41;&#xFF0C;&#x6A21;&#x62DF;&#x63A5;&#x6536;&#x5668;&#xFF0C;&#x68C0;&#x67E5;&#x8D77;&#x59CB;&#x4F4D;&#x548C;&#x505C;&#x6B62;&#x4F4D;&#x3002;</p>
+</li>
+</ol>
+<h3 id="&#x6311;&#x6218;&#x9898;">&#x6311;&#x6218;&#x9898;</h3>
+<ol>
+<li><p><strong>&#x9AD8;&#x6027;&#x80FD;&#x7B97;&#x672F;&#x5355;&#x5143;</strong>
+&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x80FD;&#x5728;&#x5355;&#x5468;&#x671F;&#x5185;&#x8BA1;&#x7B97;<code>(A&#xD7;B+C&#xD7;D)</code>&#x7684;&#x878D;&#x5408;&#x4E58;&#x52A0;&#x5355;&#x5143;&#xFF0C;&#x5176;&#x4E2D;A&#x3001;B&#x3001;C&#x3001;D&#x90FD;&#x662F;16&#x4F4D;&#x6709;&#x7B26;&#x53F7;&#x6570;&#x3002;&#x5206;&#x6790;&#x5982;&#x4F55;&#x6700;&#x5C0F;&#x5316;&#x5173;&#x952E;&#x8DEF;&#x5F84;&#x5EF6;&#x8FDF;&#x3002;</p>
+<p><em>Hint</em>&#xFF1A;&#x8003;&#x8651;&#x4F7F;&#x7528;DSP48E2&#x7684;&#x7EA7;&#x8054;&#x529F;&#x80FD;&#xFF0C;&#x9884;&#x52A0;&#x5668;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x67D0;&#x4E9B;&#x4F18;&#x5316;&#x60C5;&#x51B5;&#x3002;</p>
+</li>
+<li><p><strong>&#x5E76;&#x884C;&#x5957;&#x5229;&#x68C0;&#x6D4B;&#x5668;</strong>
+&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x786C;&#x4EF6;&#x6A21;&#x5757;&#xFF0C;&#x5E76;&#x884C;&#x76D1;&#x63A7;3&#x4E2A;&#x4EA4;&#x6613;&#x6240;&#x7684;&#x540C;&#x4E00;&#x4EA4;&#x6613;&#x5BF9;&#x4EF7;&#x683C;&#xFF0C;&#x5F53;&#x4EF7;&#x5DEE;&#x8D85;&#x8FC7;&#x9608;&#x503C;&#x65F6;&#x751F;&#x6210;&#x5957;&#x5229;&#x4FE1;&#x53F7;&#x3002;&#x8981;&#x6C42;&#x5EF6;&#x8FDF;&#x4E0D;&#x8D85;&#x8FC7;10&#x4E2A;&#x65F6;&#x949F;&#x5468;&#x671F;&#x3002;</p>
+<p><em>Hint</em>&#xFF1A;&#x4F7F;&#x7528;&#x5E76;&#x884C;&#x6BD4;&#x8F83;&#x5668;&#x6811;&#xFF0C;&#x8003;&#x8651;&#x624B;&#x7EED;&#x8D39;&#x548C;&#x6ED1;&#x70B9;&#x7684;&#x5F71;&#x54CD;&#xFF0C;&#x5B9E;&#x73B0;&#x5FEB;&#x901F;&#x4E09;&#x65B9;&#x6700;&#x503C;&#x67E5;&#x627E;&#x3002;</p>
+</li>
+<li><p><strong>&#x6D41;&#x6C34;&#x7EBF;&#x5371;&#x9669;&#x68C0;&#x6D4B;</strong>
+&#x4E3A;&#x4E00;&#x4E2A;5&#x7EA7;&#x6D41;&#x6C34;&#x7EBF;CPU&#x8BBE;&#x8BA1;&#x6570;&#x636E;&#x5371;&#x9669;&#x68C0;&#x6D4B;&#x548C;&#x524D;&#x9012;&#x5355;&#x5143;&#xFF0C;&#x652F;&#x6301;RAW&#xFF08;Read After Write&#xFF09;&#x5371;&#x9669;&#x7684;&#x81EA;&#x52A8;&#x89E3;&#x51B3;&#x3002;</p>
+<p><em>Hint</em>&#xFF1A;&#x6BD4;&#x8F83;&#x6E90;&#x5BC4;&#x5B58;&#x5668;&#x5730;&#x5740;&#x4E0E;&#x524D;&#x9762;&#x5404;&#x7EA7;&#x7684;&#x76EE;&#x6807;&#x5BC4;&#x5B58;&#x5668;&#xFF0C;&#x751F;&#x6210;&#x524D;&#x9012;&#x63A7;&#x5236;&#x4FE1;&#x53F7;&#x3002;</p>
+</li>
+<li><p><strong>&#x6027;&#x80FD;&#x4F18;&#x5316;&#x6311;&#x6218;</strong>
+&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x7528;Hardcaml&#x5B9E;&#x73B0;&#x7684;32&#x70B9;FFT&#x6A21;&#x5757;&#xFF0C;&#x5F53;&#x524D;&#x4F7F;&#x7528;16&#x4E2A;&#x65F6;&#x949F;&#x5468;&#x671F;&#x5B8C;&#x6210;&#x8BA1;&#x7B97;&#x3002;&#x8BF7;&#x63D0;&#x51FA;&#x81F3;&#x5C11;3&#x79CD;&#x4F18;&#x5316;&#x65B9;&#x6848;&#xFF0C;&#x5C06;&#x5EF6;&#x8FDF;&#x964D;&#x4F4E;&#x5230;8&#x4E2A;&#x5468;&#x671F;&#x4EE5;&#x5185;&#xFF0C;&#x5E76;&#x5206;&#x6790;&#x8D44;&#x6E90;&#x4EE3;&#x4EF7;&#x3002;</p>
+<p><em>Hint</em>&#xFF1A;&#x8003;&#x8651;&#x5E76;&#x884C;&#x8776;&#x5F62;&#x8FD0;&#x7B97;&#x3001;&#x6D41;&#x6C34;&#x7EBF;&#x6DF1;&#x5EA6;&#x6743;&#x8861;&#x3001;&#x5B58;&#x50A8;&#x5668;&#x5E26;&#x5BBD;&#x4F18;&#x5316;&#x3001;Radix-4&#x7B97;&#x6CD5;&#x3002;</p>
+</li>
+</ol>
+<details>
+<summary>&#x7EC3;&#x4E60;&#x9898;&#x7B54;&#x6848;</summary>
+
+1. **&#x9971;&#x548C;&#x52A0;&#x6CD5;&#x5668;**&#xFF1A;&#x68C0;&#x6D4B;&#x8FDB;&#x4F4D;&#x8F93;&#x51FA;&#xFF0C;&#x5F53;&#x6EA2;&#x51FA;&#x65F6;&#x6839;&#x636E;&#x64CD;&#x4F5C;&#x6570;&#x7B26;&#x53F7;&#x9009;&#x62E9;&#x6700;&#x5927;&#x6B63;&#x503C;&#x6216;&#x6700;&#x5C0F;&#x8D1F;&#x503C;&#x3002;&#x65E0;&#x7B26;&#x53F7;&#xFF1A;&#x6EA2;&#x51FA;&#x65F6;&#x8F93;&#x51FA;2^n-1&#xFF1B;&#x6709;&#x7B26;&#x53F7;&#xFF1A;&#x6B63;&#x6EA2;&#x51FA;&#x8F93;&#x51FA;2^(n-1)-1&#xFF0C;&#x8D1F;&#x6EA2;&#x51FA;&#x8F93;&#x51FA;-2^(n-1)&#x3002;
+
+2. **&#x6876;&#x5F62;&#x79FB;&#x4F4D;&#x5668;**&#xFF1A;&#x7B2C;&#x4E00;&#x7EA7;&#x6839;&#x636E;shift[0]&#x9009;&#x62E9;&#x79FB;&#x4F4D;0&#x6216;1&#x4F4D;&#xFF0C;&#x7B2C;&#x4E8C;&#x7EA7;&#x6839;&#x636E;shift[1]&#x9009;&#x62E9;&#x79FB;&#x4F4D;0&#x6216;2&#x4F4D;&#xFF0C;&#x7B2C;&#x4E09;&#x7EA7;&#x6839;&#x636E;shift[2]&#x9009;&#x62E9;&#x79FB;&#x4F4D;0&#x6216;4&#x4F4D;&#x3002;&#x5FAA;&#x73AF;&#x79FB;&#x4F4D;&#x65F6;&#x5C06;&#x79FB;&#x51FA;&#x7684;&#x4F4D;&#x8FDE;&#x63A5;&#x5230;&#x53E6;&#x4E00;&#x7AEF;&#x3002;
+
+3. **UART&#x53D1;&#x9001;&#x5668;**&#xFF1A;IDLE&#x72B6;&#x6001;&#x7B49;&#x5F85;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#xFF0C;&#x6536;&#x5230;&#x540E;&#x52A0;&#x8F7D;&#x6570;&#x636E;&#x5E76;&#x8DF3;&#x8F6C;&#x5230;START&#x72B6;&#x6001;&#x53D1;&#x9001;&#x8D77;&#x59CB;&#x4F4D;&#xFF08;0&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x4F9D;&#x6B21;&#x53D1;&#x9001;8&#x4E2A;&#x6570;&#x636E;&#x4F4D;&#xFF08;LSB first&#xFF09;&#xFF0C;&#x6700;&#x540E;&#x53D1;&#x9001;&#x505C;&#x6B62;&#x4F4D;&#xFF08;1&#xFF09;&#x5E76;&#x8FD4;&#x56DE;IDLE&#x3002;
+
+4. **&#x4EFF;&#x771F;&#x6D4B;&#x8BD5;**&#xFF1A;&#x521B;&#x5EFA;&#x53D1;&#x9001;&#x5668;&#x548C;&#x6A21;&#x62DF;&#x63A5;&#x6536;&#x5668;&#x5B9E;&#x4F8B;&#xFF0C;&#x968F;&#x673A;&#x751F;&#x6210;100&#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x901A;&#x8FC7;&#x53D1;&#x9001;&#x5668;&#x53D1;&#x9001;&#xFF0C;&#x5728;&#x63A5;&#x6536;&#x5668;&#x7AEF;&#x91C7;&#x6837;&#x5E76;&#x91CD;&#x7EC4;&#x5B57;&#x8282;&#xFF0C;&#x4F7F;&#x7528;OCaml&#x7684;assert&#x6BD4;&#x8F83;&#x539F;&#x59CB;&#x6570;&#x636E;&#x548C;&#x63A5;&#x6536;&#x6570;&#x636E;&#x3002;
+
+5. **&#x878D;&#x5408;&#x4E58;&#x52A0;&#x5355;&#x5143;**&#xFF1A;&#x4F7F;&#x7528;2&#x4E2A;DSP48E2&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x8BA1;&#x7B97;A&#xD7;B&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x8BA1;&#x7B97;C&#xD7;D&#x5E76;&#x7D2F;&#x52A0;&#x7B2C;&#x4E00;&#x4E2A;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x901A;&#x8FC7;PCOUT&#x7EA7;&#x8054;&#x603B;&#x7EBF;&#x8FDE;&#x63A5;&#xFF0C;&#x603B;&#x5EF6;&#x8FDF;&#x7EA6;4&#x4E2A;&#x65F6;&#x949F;&#x5468;&#x671F;&#x3002;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5C06;&#x4E58;&#x6CD5;&#x5668;&#x8F93;&#x51FA;&#x5BC4;&#x5B58;&#x5668;&#x548C;&#x52A0;&#x6CD5;&#x5668;&#x8F93;&#x5165;&#x5BC4;&#x5B58;&#x5668;&#x5408;&#x5E76;&#x6765;&#x51CF;&#x5C11;&#x5EF6;&#x8FDF;&#x3002;
+
+6. **&#x5957;&#x5229;&#x68C0;&#x6D4B;&#x5668;**&#xFF1A;&#x4F7F;&#x7528;6&#x4E2A;&#x5E76;&#x884C;&#x6BD4;&#x8F83;&#x5668;&#x8BA1;&#x7B97;&#x6240;&#x6709;&#x4EF7;&#x5DEE;&#xFF08;P1-P2&#x3001;P1-P3&#x3001;P2-P3&#x548C;&#x53CD;&#x5411;&#xFF09;&#xFF0C;&#x6BCF;&#x4E2A;&#x4EF7;&#x5DEE;&#x4E0E;&#x9608;&#x503C;&#x6BD4;&#x8F83;&#x3002;&#x8003;&#x8651;&#x4EA4;&#x6613;&#x6210;&#x672C;&#xFF1A;`profit = price_diff - fee1 - fee2 - slippage`&#x3002;&#x4F7F;&#x7528;&#x4F18;&#x5148;&#x7F16;&#x7801;&#x5668;&#x9009;&#x62E9;&#x6700;&#x4F18;&#x5957;&#x5229;&#x673A;&#x4F1A;&#x3002;
+
+7. **&#x6570;&#x636E;&#x524D;&#x9012;&#x5355;&#x5143;**&#xFF1A;EX/MEM&#x548C;MEM/WB&#x5BC4;&#x5B58;&#x5668;&#x4E2D;&#x4FDD;&#x5B58;&#x76EE;&#x6807;&#x5BC4;&#x5B58;&#x5668;&#x5730;&#x5740;&#xFF0C;&#x4E0E;ID/EX&#x9636;&#x6BB5;&#x7684;&#x6E90;&#x5BC4;&#x5B58;&#x5668;&#x6BD4;&#x8F83;&#x3002;&#x5339;&#x914D;&#x65F6;&#x751F;&#x6210;&#x524D;&#x9012;&#x9009;&#x62E9;&#x4FE1;&#x53F7;&#xFF0C;&#x591A;&#x91CD;&#x5339;&#x914D;&#x65F6;&#x9009;&#x62E9;&#x6700;&#x65B0;&#x7684;&#x7ED3;&#x679C;&#x3002;Load&#x6307;&#x4EE4;&#x9700;&#x8981;&#x7279;&#x6B8A;&#x5904;&#x7406;&#xFF0C;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x63D2;&#x5165;&#x6C14;&#x6CE1;&#x3002;
+
+8. **FFT&#x4F18;&#x5316;&#x65B9;&#x6848;**&#xFF1A;(1)&#x5E76;&#x884C;&#x5316;&#xFF1A;&#x4F7F;&#x7528;8&#x4E2A;&#x8776;&#x5F62;&#x8FD0;&#x7B97;&#x5355;&#x5143;&#xFF0C;&#x6BCF;&#x7EA7;&#x5E76;&#x884C;&#x5904;&#x7406;&#xFF0C;5&#x7EA7;&#x6D41;&#x6C34;&#x7EBF;&#x53EF;&#x5728;6-7&#x5468;&#x671F;&#x5B8C;&#x6210;&#xFF1B;(2)&#x5B58;&#x50A8;&#x4F18;&#x5316;&#xFF1A;&#x4F7F;&#x7528;&#x53CC;&#x7AEF;&#x53E3;&#x5B58;&#x50A8;&#x5668;&#x652F;&#x6301;&#x540C;&#x65F6;&#x8BFB;&#x5199;&#xFF0C;&#x51CF;&#x5C11;&#x5B58;&#x50A8;&#x8BBF;&#x95EE;&#x51B2;&#x7A81;&#xFF1B;(3)Radix-4&#x7B97;&#x6CD5;&#xFF1A;&#x6BCF;&#x7EA7;&#x5904;&#x7406;4&#x70B9;DFT&#xFF0C;&#x51CF;&#x5C11;&#x7EA7;&#x6570;&#x5230;3&#x7EA7;&#xFF0C;&#x4F46;&#x6BCF;&#x7EA7;&#x8BA1;&#x7B97;&#x66F4;&#x590D;&#x6742;&#xFF1B;(4)&#x8D44;&#x6E90;&#x6362;&#x65F6;&#x95F4;&#xFF1A;&#x9884;&#x8BA1;&#x7B97;&#x65CB;&#x8F6C;&#x56E0;&#x5B50;&#xFF0C;&#x4F7F;&#x7528;&#x66F4;&#x591A;DSP&#x5B9E;&#x73B0;&#x66F4;&#x591A;&#x5E76;&#x884C;&#x4E58;&#x6CD5;&#x3002;&#x8D44;&#x6E90;&#x589E;&#x52A0;&#x7EA6;2-4&#x500D;&#xFF0C;&#x53EF;&#x5B9E;&#x73B0;4-8&#x5468;&#x671F;&#x7684;&#x76EE;&#x6807;&#x3002;
+
+</details>
+
+<h2 id="&#x5E38;&#x89C1;&#x9677;&#x9631;&#x4E0E;&#x9519;&#x8BEF;-gotchas">&#x5E38;&#x89C1;&#x9677;&#x9631;&#x4E0E;&#x9519;&#x8BEF; (Gotchas)</h2>
+<ol>
+<li><p><strong>&#x7C7B;&#x578B;&#x63A8;&#x5BFC;&#x9677;&#x9631;</strong></p>
+<ul>
+<li>&#x9519;&#x8BEF;&#xFF1A;&#x4F9D;&#x8D56;&#x81EA;&#x52A8;&#x7C7B;&#x578B;&#x63A8;&#x5BFC;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x610F;&#x5916;&#x7684;&#x4F4D;&#x5BBD;</li>
+<li>&#x6B63;&#x786E;&#xFF1A;&#x59CB;&#x7EC8;&#x663E;&#x5F0F;&#x6807;&#x6CE8;&#x4FE1;&#x53F7;&#x4F4D;&#x5BBD;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x5728;&#x7B97;&#x672F;&#x8FD0;&#x7B97;&#x4E2D;</li>
+<li>&#x75C7;&#x72B6;&#xFF1A;&#x4EFF;&#x771F;&#x6B63;&#x786E;&#x4F46;&#x7EFC;&#x5408;&#x540E;&#x884C;&#x4E3A;&#x5F02;&#x5E38;</li>
+</ul>
+</li>
+<li><p><strong>&#x7EC4;&#x5408;&#x903B;&#x8F91;&#x73AF;&#x8DEF;</strong></p>
+<ul>
+<li>&#x9519;&#x8BEF;&#xFF1A;&#x5728;&#x7EC4;&#x5408;&#x903B;&#x8F91;&#x4E2D;&#x521B;&#x5EFA;&#x53CD;&#x9988;&#x8DEF;&#x5F84;</li>
+<li>&#x6B63;&#x786E;&#xFF1A;&#x6240;&#x6709;&#x53CD;&#x9988;&#x5FC5;&#x987B;&#x7ECF;&#x8FC7;&#x5BC4;&#x5B58;&#x5668;</li>
+<li>&#x5DE5;&#x5177;&#x63D0;&#x793A;&#xFF1A;Hardcaml&#x4F1A;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x68C0;&#x6D4B;&#x5E76;&#x62A5;&#x544A;&#x7EC4;&#x5408;&#x73AF;</li>
+</ul>
+</li>
+<li><p><strong>&#x65F6;&#x949F;&#x57DF;&#x6DF7;&#x6DC6;</strong></p>
+<ul>
+<li>&#x9519;&#x8BEF;&#xFF1A;&#x4E0D;&#x540C;&#x65F6;&#x949F;&#x57DF;&#x4FE1;&#x53F7;&#x76F4;&#x63A5;&#x8FDE;&#x63A5;</li>
+<li>&#x6B63;&#x786E;&#xFF1A;&#x4F7F;&#x7528;&#x4E13;&#x95E8;&#x7684;CDC&#xFF08;Clock Domain Crossing&#xFF09;&#x539F;&#x8BED;</li>
+<li>&#x540E;&#x679C;&#xFF1A;&#x4E9A;&#x7A33;&#x6001;&#x5BFC;&#x81F4;&#x7CFB;&#x7EDF;&#x4E0D;&#x7A33;&#x5B9A;</li>
+</ul>
+</li>
+<li><p><strong>&#x8D44;&#x6E90;&#x5171;&#x4EAB;&#x8FC7;&#x5EA6;</strong></p>
+<ul>
+<li>&#x9519;&#x8BEF;&#xFF1A;&#x8FC7;&#x5EA6;&#x4F7F;&#x7528;&#x9AD8;&#x9636;&#x51FD;&#x6570;&#x5BFC;&#x81F4;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x8D44;&#x6E90;&#x5171;&#x4EAB;</li>
+<li>&#x6B63;&#x786E;&#xFF1A;&#x5173;&#x952E;&#x8DEF;&#x5F84;&#x4E0A;&#x907F;&#x514D;&#x5171;&#x4EAB;&#xFF0C;&#x4F7F;&#x7528;<code>@no_sharing</code>&#x6CE8;&#x89E3;</li>
+<li>&#x5F71;&#x54CD;&#xFF1A;&#x65F6;&#x5E8F;&#x6536;&#x655B;&#x56F0;&#x96BE;</li>
+</ul>
+</li>
+<li><p><strong>&#x4EFF;&#x771F;&#x4E0E;&#x7EFC;&#x5408;&#x5DEE;&#x5F02;</strong></p>
+<ul>
+<li>&#x9519;&#x8BEF;&#xFF1A;&#x4F9D;&#x8D56;&#x4EFF;&#x771F;&#x4E2D;&#x7684;&#x975E;&#x7EFC;&#x5408;&#x7279;&#x6027;</li>
+<li>&#x6B63;&#x786E;&#xFF1A;&#x786E;&#x4FDD;&#x6240;&#x6709;&#x6784;&#x9020;&#x90FD;&#x53EF;&#x7EFC;&#x5408;</li>
+<li>&#x4F8B;&#x5B50;&#xFF1A;&#x52A8;&#x6001;&#x6570;&#x7EC4;&#x7D22;&#x5F15;&#x3001;&#x9012;&#x5F52;&#x51FD;&#x6570;&#x8C03;&#x7528;</li>
+</ul>
+</li>
+<li><p><strong>&#x521D;&#x59CB;&#x503C;&#x5047;&#x8BBE;</strong></p>
+<ul>
+<li>&#x9519;&#x8BEF;&#xFF1A;&#x5047;&#x8BBE;&#x5BC4;&#x5B58;&#x5668;&#x6709;&#x7279;&#x5B9A;&#x521D;&#x59CB;&#x503C;</li>
+<li>&#x6B63;&#x786E;&#xFF1A;&#x663E;&#x5F0F;&#x6307;&#x5B9A;&#x521D;&#x59CB;&#x503C;&#x6216;&#x8BBE;&#x8BA1;&#x590D;&#x4F4D;&#x903B;&#x8F91;</li>
+<li>&#x6CE8;&#x610F;&#xFF1A;FPGA&#x548C;ASIC&#x7684;&#x521D;&#x59CB;&#x5316;&#x884C;&#x4E3A;&#x4E0D;&#x540C;</li>
+</ul>
+</li>
+</ol>
+<h2 id="&#x6700;&#x4F73;&#x5B9E;&#x8DF5;&#x68C0;&#x67E5;&#x6E05;&#x5355;">&#x6700;&#x4F73;&#x5B9E;&#x8DF5;&#x68C0;&#x67E5;&#x6E05;&#x5355;</h2>
+<h3 id="&#x8BBE;&#x8BA1;&#x5BA1;&#x67E5;&#x8981;&#x70B9;">&#x8BBE;&#x8BA1;&#x5BA1;&#x67E5;&#x8981;&#x70B9;</h3>
+<ul>
+<li><p>[ ] <strong>&#x7C7B;&#x578B;&#x5B89;&#x5168;</strong></p>
+<ul>
+<li>&#x6240;&#x6709;&#x4FE1;&#x53F7;&#x90FD;&#x6709;&#x660E;&#x786E;&#x7684;&#x4F4D;&#x5BBD;&#x6807;&#x6CE8;</li>
+<li>&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#x4F7F;&#x7528;&#x5F3A;&#x7C7B;&#x578B;&#x6A21;&#x5757;&#x7B7E;&#x540D;</li>
+<li>&#x907F;&#x514D;any&#x7C7B;&#x578B;&#x6216;&#x52A8;&#x6001;&#x7C7B;&#x578B;</li>
+</ul>
+</li>
+<li><p>[ ] <strong>&#x65F6;&#x5E8F;&#x7EA6;&#x675F;</strong></p>
+<ul>
+<li>&#x5173;&#x952E;&#x8DEF;&#x5F84;&#x5DF2;&#x8BC6;&#x522B;&#x5E76;&#x4F18;&#x5316;</li>
+<li>&#x6240;&#x6709;&#x65F6;&#x949F;&#x57DF;&#x4EA4;&#x53C9;&#x90FD;&#x6709;&#x9002;&#x5F53;&#x5904;&#x7406;</li>
+<li>&#x5F02;&#x6B65;&#x8F93;&#x5165;&#x5DF2;&#x540C;&#x6B65;</li>
+</ul>
+</li>
+<li><p>[ ] <strong>&#x8D44;&#x6E90;&#x5229;&#x7528;</strong></p>
+<ul>
+<li>DSP&#x548C;BRAM&#x4F7F;&#x7528;&#x7B26;&#x5408;&#x9884;&#x671F;</li>
+<li>&#x65E0;&#x610F;&#x5916;&#x7684;&#x8D44;&#x6E90;&#x5171;&#x4EAB;&#x6216;&#x590D;&#x5236;</li>
+<li>LUT&#x5229;&#x7528;&#x7387;&#x5728;&#x76EE;&#x6807;&#x8303;&#x56F4;&#x5185;</li>
+</ul>
+</li>
+<li><p>[ ] <strong>&#x53EF;&#x6D4B;&#x8BD5;&#x6027;</strong></p>
+<ul>
+<li>&#x6240;&#x6709;&#x6A21;&#x5757;&#x90FD;&#x6709;&#x5355;&#x5143;&#x6D4B;&#x8BD5;</li>
+<li>&#x5173;&#x952E;&#x5C5E;&#x6027;&#x6709;&#x5F62;&#x5F0F;&#x5316;&#x9A8C;&#x8BC1;</li>
+<li>&#x6D4B;&#x8BD5;&#x8986;&#x76D6;&#x7387;&gt;95%</li>
+</ul>
+</li>
+<li><p>[ ] <strong>&#x4EE3;&#x7801;&#x8D28;&#x91CF;</strong></p>
+<ul>
+<li>&#x547D;&#x540D;&#x89C4;&#x8303;&#x4E00;&#x81F4;</li>
+<li>&#x9002;&#x5F53;&#x7684;&#x6CE8;&#x91CA;&#x548C;&#x6587;&#x6863;</li>
+<li>&#x6A21;&#x5757;&#x5316;&#x8BBE;&#x8BA1;&#xFF0C;&#x804C;&#x8D23;&#x5355;&#x4E00;</li>
+</ul>
+</li>
+<li><p>[ ] <strong>&#x6027;&#x80FD;&#x9A8C;&#x8BC1;</strong></p>
+<ul>
+<li>&#x5EF6;&#x8FDF;&#x6EE1;&#x8DB3;&#x89C4;&#x683C;&#x8981;&#x6C42;</li>
+<li>&#x541E;&#x5410;&#x91CF;&#x8FBE;&#x5230;&#x8BBE;&#x8BA1;&#x76EE;&#x6807;</li>
+<li>&#x65E0;&#x65F6;&#x5E8F;&#x8FDD;&#x4F8B;</li>
+</ul>
+</li>
+<li><p>[ ] <strong>&#x4EFF;&#x771F;&#x4E00;&#x81F4;&#x6027;</strong></p>
+<ul>
+<li>RTL&#x4EFF;&#x771F;&#x4E0E;&#x95E8;&#x7EA7;&#x4EFF;&#x771F;&#x4E00;&#x81F4;</li>
+<li>&#x65F6;&#x5E8F;&#x4EFF;&#x771F;&#x65E0;&#x8FDD;&#x4F8B;</li>
+<li>&#x8986;&#x76D6;&#x6240;&#x6709;&#x8FB9;&#x754C;&#x6761;&#x4EF6;</li>
+</ul>
+</li>
+<li><p>[ ] <strong>&#x90E8;&#x7F72;&#x51C6;&#x5907;</strong></p>
+<ul>
+<li>&#x751F;&#x6210;&#x7684;Verilog&#x4EE3;&#x7801;&#x5DF2;&#x5BA1;&#x67E5;</li>
+<li>&#x7EA6;&#x675F;&#x6587;&#x4EF6;&#x5B8C;&#x6574;&#x4E14;&#x6B63;&#x786E;</li>
+<li>&#x6709;&#x56DE;&#x9000;&#x548C;&#x8C03;&#x8BD5;&#x673A;&#x5236;---</li>
+</ul>
+</li>
+</ul>
+<div style="text-align: center; margin: 20px 0;">
+  <a href="chapter8.html" style="margin-right: 20px;">&#x2190; &#x4E0A;&#x4E00;&#x7AE0;&#xFF1A;&#x672A;&#x6765;&#x8D8B;&#x52BF;&#x4E0E;&#x65B0;&#x5174;&#x6280;&#x672F;</a>
+  <a href="chapter10.html" style="margin-left: 20px;">&#x4E0B;&#x4E00;&#x7AE0;&#xFF1A;&#x96F6;&#x77E5;&#x8BC6;&#x8BC1;&#x660E;&#x52A0;&#x901F;&#x5668; &#x2192;</a>
+</div>
+
+
+
+<script type="text/javascript">var targetUl = document.getElementsByClassName('page-inner')[0].getElementsByTagName('ul')[0];if(targetUl.getElementsByTagName('a').length>0){targetUl.className='toc';}</script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="chapter8.html" class="navigation navigation-prev " aria-label="Previous page: 第8章：函数式HDL之Haskell/Clash">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="chapter10.html" class="navigation navigation-next " aria-label="Next page: 第10章：零知识证明加速器">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第9章：OCaml/Hardcaml硬件设计","level":"3.5","depth":1,"next":{"title":"第10章：零知识证明加速器","level":"3.6","depth":1,"path":"chapters/chapter10.md","ref":"chapters/chapter10.md","articles":[]},"previous":{"title":"第8章：函数式HDL之Haskell/Clash","level":"3.4","depth":1,"path":"chapters/chapter8.md","ref":"chapters/chapter8.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","search","copy-code-button","theme-default","back-to-top-button","github","splitter","toc"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/Xde1997/Tutorial_FPGA"},"splitter":{},"toc":{"addClass":true,"className":"toc"},"search":{"maxIndexSize":100000,"ignoreCase":true},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{"copyText":"复制","format":"html"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"expandable-chapters":{}},"theme":"default","author":"FPGA教程团队","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"themeColor":"#3f51b5","themeColorSecondary":"#ff4081"},"title":"FPGA原理与AI加速应用教程","language":"zh-hans","gitbook":"*","description":"面向软件工程师的FPGA实战指南"},"file":{"path":"chapters/chapter9.md","mtime":"2025-08-03T11:36:00.091Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-08-03T12:22:26.570Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

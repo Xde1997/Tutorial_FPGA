@@ -1,0 +1,1973 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第12章：LLM推理加速 · FPGA原理与AI加速应用教程</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="FPGA教程团队">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="chapter13.html" />
+    
+    
+    <link rel="prev" href="chapter11.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第一部分：FPGA基础架构</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="chapter1.html">
+            
+                <a href="chapter1.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    第1章：FPGA基础架构与工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="chapter2.html">
+            
+                <a href="chapter2.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    第2章：HDL设计基础与方法学
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="chapter3.html">
+            
+                <a href="chapter3.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    第3章：时序、时钟与同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="chapter4.html">
+            
+                <a href="chapter4.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    第4章：存储器系统与接口设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第二部分：高级设计技术</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="chapter5.html">
+            
+                <a href="chapter5.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    第5章：高速I/O与通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="chapter6.html">
+            
+                <a href="chapter6.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    第6章：DSP与算术优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="chapter7.html">
+            
+                <a href="chapter7.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    第7章：HLS与C到硬件综合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="chapter8.html">
+            
+                <a href="chapter8.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    第8章：函数式HDL之Haskell/Clash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="chapter9.html">
+            
+                <a href="chapter9.html">
+            
+                    
+                        <b>3.5.</b>
+                    
+                    第9章：OCaml/Hardcaml硬件设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="chapter10.html">
+            
+                <a href="chapter10.html">
+            
+                    
+                        <b>3.6.</b>
+                    
+                    第10章：零知识证明加速器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第三部分：AI加速实战</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="chapter11.html">
+            
+                <a href="chapter11.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    第11章：AI加速器基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.2" data-path="chapter12.html">
+            
+                <a href="chapter12.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    第12章：LLM推理加速
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="chapter13.html">
+            
+                <a href="chapter13.html">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    第13章：视觉与多模态处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="chapter14.html">
+            
+                <a href="chapter14.html">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    第14章：LLM服务基础设施
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="chapter15.html">
+            
+                <a href="chapter15.html">
+            
+                    
+                        <b>4.5.</b>
+                    
+                    第15章：机器人运动控制与FPGA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="chapter16.html">
+            
+                <a href="chapter16.html">
+            
+                    
+                        <b>4.6.</b>
+                    
+                    第16章：激光雷达信号处理与FPGA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="chapter17.html">
+            
+                <a href="chapter17.html">
+            
+                    
+                        <b>4.7.</b>
+                    
+                    第17章：毫米波雷达与FPGA
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第四部分：高级优化与扩展</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="chapter18.html">
+            
+                <a href="chapter18.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    第18章：性能分析与优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="chapter19.html">
+            
+                <a href="chapter19.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    第19章：功耗优化技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="chapter20.html">
+            
+                <a href="chapter20.html">
+            
+                    
+                        <b>5.3.</b>
+                    
+                    第20章：多FPGA系统与扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="chapter21.html">
+            
+                <a href="chapter21.html">
+            
+                    
+                        <b>5.4.</b>
+                    
+                    第21章：可靠性与容错设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="chapter22.html">
+            
+                <a href="chapter22.html">
+            
+                    
+                        <b>5.5.</b>
+                    
+                    第22章：未来趋势与新兴技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../docs/DEPLOY_README.html">
+            
+                <a href="../docs/DEPLOY_README.html">
+            
+                    
+                        <b>6.1.</b>
+                    
+                    部署指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../docs/GITBOOK_SETUP.html">
+            
+                <a href="../docs/GITBOOK_SETUP.html">
+            
+                    
+                        <b>6.2.</b>
+                    
+                    安装说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../docs/CONVERSION_SUMMARY.html">
+            
+                <a href="../docs/CONVERSION_SUMMARY.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    转换总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >第12章：LLM推理加速</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7B2C;&#x5341;&#x4E8C;&#x7AE0;&#xFF1A;llm&#x63A8;&#x7406;&#x52A0;&#x901F;">&#x7B2C;&#x5341;&#x4E8C;&#x7AE0;&#xFF1A;LLM&#x63A8;&#x7406;&#x52A0;&#x901F;</h1>
+<p>&#x672C;&#x7AE0;&#x6DF1;&#x5165;&#x63A2;&#x8BA8;&#x5927;&#x8BED;&#x8A00;&#x6A21;&#x578B;(LLM)&#x5728;FPGA&#x4E0A;&#x7684;&#x63A8;&#x7406;&#x52A0;&#x901F;&#x6280;&#x672F;&#x3002;&#x968F;&#x7740;GPT&#x3001;LLaMA&#x7B49;&#x6A21;&#x578B;&#x53C2;&#x6570;&#x89C4;&#x6A21;&#x8FBE;&#x5230;&#x6570;&#x767E;&#x4EBF;&#x751A;&#x81F3;&#x4E07;&#x4EBF;&#x7EA7;&#x522B;&#xFF0C;&#x63A8;&#x7406;&#x5EF6;&#x8FDF;&#x548C;&#x541E;&#x5410;&#x91CF;&#x6210;&#x4E3A;&#x5173;&#x952E;&#x74F6;&#x9888;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x5206;&#x6790;Transformer&#x67B6;&#x6784;&#x7684;&#x8BA1;&#x7B97;&#x7279;&#x5F81;&#xFF0C;&#x91CD;&#x70B9;&#x5173;&#x6CE8;&#x6CE8;&#x610F;&#x529B;&#x673A;&#x5236;&#x7684;&#x786C;&#x4EF6;&#x4F18;&#x5316;&#x3001;KV-cache&#x7BA1;&#x7406;&#x7B56;&#x7565;&#x4EE5;&#x53CA;&#x91CF;&#x5316;&#x6280;&#x672F;&#x3002;&#x901A;&#x8FC7;&#x5BF9;&#x6BD4;FPGA&#x4E0E;GPU&#x5728;LLM&#x63A8;&#x7406;&#x4E2D;&#x7684;&#x4F18;&#x52A3;&#x52BF;&#xFF0C;&#x60A8;&#x5C06;&#x638C;&#x63E1;&#x8BBE;&#x8BA1;&#x9AD8;&#x6548;&#x80FD;&#x3001;&#x4F4E;&#x5EF6;&#x8FDF;&#x63A8;&#x7406;&#x52A0;&#x901F;&#x5668;&#x7684;&#x6838;&#x5FC3;&#x6280;&#x672F;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x9488;&#x5BF9;&#x8FB9;&#x7F18;&#x90E8;&#x7F72;&#x548C;&#x5B9E;&#x65F6;&#x670D;&#x52A1;&#x573A;&#x666F;&#x7684;&#x4F18;&#x5316;&#x65B9;&#x6CD5;&#x3002;</p>
+<h2 id="121-llm&#x8BA1;&#x7B97;&#x7279;&#x5F81;&#x4E0E;&#x6311;&#x6218;">12.1 LLM&#x8BA1;&#x7B97;&#x7279;&#x5F81;&#x4E0E;&#x6311;&#x6218;</h2>
+<h3 id="1211-transformer&#x67B6;&#x6784;&#x5206;&#x6790;">12.1.1 Transformer&#x67B6;&#x6784;&#x5206;&#x6790;</h3>
+<p>&#x5927;&#x8BED;&#x8A00;&#x6A21;&#x578B;&#x7684;&#x6838;&#x5FC3;&#x662F;Transformer&#x67B6;&#x6784;&#xFF0C;&#x5176;&#x63A8;&#x7406;&#x8FC7;&#x7A0B;&#x5177;&#x6709;&#x72EC;&#x7279;&#x7684;&#x8BA1;&#x7B97;&#x6A21;&#x5F0F;&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// Transformer&#x5C42;&#x57FA;&#x672C;&#x7ED3;&#x6784;&#x62BD;&#x8C61;
+module transformer_layer #(
+    parameter MODEL_DIM = 4096,      // &#x6A21;&#x578B;&#x7EF4;&#x5EA6;(&#x5982;LLaMA-7B)
+    parameter NUM_HEADS = 32,        // &#x6CE8;&#x610F;&#x529B;&#x5934;&#x6570;
+    parameter HEAD_DIM = 128,        // &#x6BCF;&#x4E2A;&#x5934;&#x7684;&#x7EF4;&#x5EA6;
+    parameter FFN_DIM = 11008,       // FFN&#x9690;&#x85CF;&#x5C42;&#x7EF4;&#x5EA6;
+    parameter SEQ_LEN = 2048         // &#x6700;&#x5927;&#x5E8F;&#x5217;&#x957F;&#x5EA6;
+) (
+    input  logic                    clk,
+    input  logic                    rst_n,
+
+    // &#x8F93;&#x5165;token&#x5D4C;&#x5165;
+    input  logic [MODEL_DIM-1:0]    token_embed,
+    input  logic [9:0]              position,      // &#x5F53;&#x524D;&#x4F4D;&#x7F6E;
+    input  logic                    is_prefill,    // &#x9884;&#x586B;&#x5145;/&#x751F;&#x6210;&#x6A21;&#x5F0F;
+
+    // KV-cache&#x63A5;&#x53E3;
+    output logic [MODEL_DIM-1:0]    k_cache_write,
+    output logic [MODEL_DIM-1:0]    v_cache_write,
+    input  logic [MODEL_DIM-1:0]    k_cache_read[SEQ_LEN],
+    input  logic [MODEL_DIM-1:0]    v_cache_read[SEQ_LEN],
+
+    // &#x8F93;&#x51FA;
+    output logic [MODEL_DIM-1:0]    layer_output
+);
+</code></pre>
+<p><strong>&#x8BA1;&#x7B97;&#x7279;&#x5F81;&#x5206;&#x6790;&#xFF1A;</strong></p>
+<ol>
+<li><p><strong>&#x5185;&#x5B58;&#x5E26;&#x5BBD;&#x74F6;&#x9888;</strong></p>
+<ul>
+<li>&#x6743;&#x91CD;&#x53C2;&#x6570;&#x91CF;&#xFF1A;7B&#x6A21;&#x578B;&#x7EA6;&#x9700;14GB&#xFF08;FP16&#xFF09;</li>
+<li>KV-cache&#xFF1A;&#x6BCF;token&#x9700;&#x8981; 2 &#xD7; layers &#xD7; model_dim &#xD7; 2 bytes</li>
+<li>&#x5BF9;&#x4E8E;2048&#x957F;&#x5EA6;&#x5E8F;&#x5217;&#xFF0C;KV-cache&#x53EF;&#x8FBE;1.6GB</li>
+</ul>
+</li>
+<li><p><strong>&#x8BA1;&#x7B97;&#x6A21;&#x5F0F;&#x5DEE;&#x5F02;</strong></p>
+<ul>
+<li><strong>&#x9884;&#x586B;&#x5145;&#x9636;&#x6BB5;</strong>&#xFF1A;&#x8BA1;&#x7B97;&#x5BC6;&#x96C6;&#x578B;&#xFF0C;&#x53EF;&#x5E76;&#x884C;&#x5904;&#x7406;&#x6240;&#x6709;token</li>
+<li><strong>&#x751F;&#x6210;&#x9636;&#x6BB5;</strong>&#xFF1A;&#x5185;&#x5B58;&#x5BC6;&#x96C6;&#x578B;&#xFF0C;&#x9010;token&#x81EA;&#x56DE;&#x5F52;&#x751F;&#x6210;</li>
+</ul>
+</li>
+<li><p><strong>&#x52A8;&#x6001;&#x6027;&#x6311;&#x6218;</strong></p>
+<ul>
+<li>&#x5E8F;&#x5217;&#x957F;&#x5EA6;&#x53EF;&#x53D8;(1~32K tokens)</li>
+<li>Batch size&#x52A8;&#x6001;&#x8C03;&#x6574;</li>
+<li>&#x6CE8;&#x610F;&#x529B;&#x7A00;&#x758F;&#x6A21;&#x5F0F;&#x4E0D;&#x89C4;&#x5219;</li>
+</ul>
+</li>
+</ol>
+<h3 id="1212-&#x6027;&#x80FD;&#x74F6;&#x9888;&#x5B9A;&#x4F4D;">12.1.2 &#x6027;&#x80FD;&#x74F6;&#x9888;&#x5B9A;&#x4F4D;</h3>
+<p>&#x901A;&#x8FC7;profiling&#x5206;&#x6790;&#xFF0C;LLM&#x63A8;&#x7406;&#x7684;&#x6027;&#x80FD;&#x74F6;&#x9888;&#x4E3B;&#x8981;&#x96C6;&#x4E2D;&#x5728;&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// &#x6027;&#x80FD;&#x8BA1;&#x6570;&#x5668;&#x6A21;&#x5757;
+module llm_perf_counter (
+    input  logic        clk,
+    input  logic        rst_n,
+
+    // &#x76D1;&#x63A7;&#x4FE1;&#x53F7;
+    input  logic        attn_compute_active,
+    input  logic        ffn_compute_active,
+    input  logic        memory_stall,
+    input  logic        cache_miss,
+
+    // &#x6027;&#x80FD;&#x7EDF;&#x8BA1;&#x8F93;&#x51FA;
+    output logic [31:0] attn_cycles,
+    output logic [31:0] ffn_cycles,
+    output logic [31:0] memory_stall_cycles,
+    output logic [31:0] total_cycles
+);
+</code></pre>
+<p><strong>&#x5178;&#x578B;&#x6027;&#x80FD;&#x5206;&#x5E03;&#xFF08;LLaMA-7B on Xilinx VU9P&#xFF09;&#xFF1A;</strong></p>
+<ul>
+<li>&#x6CE8;&#x610F;&#x529B;&#x8BA1;&#x7B97;&#xFF1A;45% &#x65F6;&#x95F4;</li>
+<li>FFN&#x8BA1;&#x7B97;&#xFF1A;35% &#x65F6;&#x95F4;</li>
+<li>&#x5185;&#x5B58;&#x8BBF;&#x95EE;&#x7B49;&#x5F85;&#xFF1A;15% &#x65F6;&#x95F4;</li>
+<li>&#x5176;&#x4ED6;&#x5F00;&#x9500;&#xFF1A;5% &#x65F6;&#x95F4;</li>
+</ul>
+<h3 id="1213-fpga&#x4F18;&#x52BF;&#x5206;&#x6790;">12.1.3 FPGA&#x4F18;&#x52BF;&#x5206;&#x6790;</h3>
+<p>&#x76F8;&#x6BD4;GPU&#xFF0C;FPGA&#x5728;LLM&#x63A8;&#x7406;&#x4E2D;&#x7684;&#x72EC;&#x7279;&#x4F18;&#x52BF;&#xFF1A;</p>
+<ol>
+<li><p><strong>&#x5B9A;&#x5236;&#x5316;&#x6570;&#x636E;&#x901A;&#x8DEF;</strong></p>
+<ul>
+<li>&#x53EF;&#x9488;&#x5BF9;&#x7279;&#x5B9A;&#x91CF;&#x5316;&#x4F4D;&#x5BBD;&#x4F18;&#x5316;&#xFF08;INT4/INT8&#x6DF7;&#x5408;&#x7CBE;&#x5EA6;&#xFF09;</li>
+<li>&#x6D88;&#x9664;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x6570;&#x636E;&#x79FB;&#x52A8;&#x548C;&#x683C;&#x5F0F;&#x8F6C;&#x6362;</li>
+<li>&#x652F;&#x6301;&#x975E;&#x6807;&#x51C6;&#x6570;&#x503C;&#x683C;&#x5F0F;&#xFF08;&#x5982;BF16&#x3001;TF32&#x53D8;&#x79CD;&#xFF09;</li>
+<li>&#x8BA1;&#x7B97;&#x4E0E;&#x6570;&#x636E;&#x6D41;&#x7D27;&#x5BC6;&#x8026;&#x5408;&#x8BBE;&#x8BA1;</li>
+</ul>
+</li>
+<li><p><strong>&#x6D41;&#x6C34;&#x7EBF;&#x5E76;&#x884C;</strong></p>
+<ul>
+<li>&#x5C42;&#x95F4;&#x6D41;&#x6C34;&#x7EBF;&#x91CD;&#x53E0;&#x8BA1;&#x7B97;&#xFF0C;&#x9690;&#x85CF;&#x5185;&#x5B58;&#x5EF6;&#x8FDF;</li>
+<li>&#x7EC6;&#x7C92;&#x5EA6;&#x4EFB;&#x52A1;&#x5E76;&#x884C;&#xFF08;&#x5934;&#x7EA7;&#x3001;&#x5C42;&#x7EA7;&#x3001;&#x64CD;&#x4F5C;&#x7EA7;&#xFF09;</li>
+<li>&#x81EA;&#x5B9A;&#x4E49;&#x7F13;&#x51B2;&#x533A;&#x6DF1;&#x5EA6;&#x5339;&#x914D;&#x8BA1;&#x7B97;&#x541E;&#x5410;</li>
+<li>&#x52A8;&#x6001;&#x6D41;&#x6C34;&#x7EBF;&#x6DF1;&#x5EA6;&#x8C03;&#x6574;</li>
+</ul>
+</li>
+<li><p><strong>&#x4F4E;&#x6279;&#x5904;&#x7406;&#x5EF6;&#x8FDF;</strong></p>
+<ul>
+<li>&#x9002;&#x5408;batch=1&#x7684;&#x5B9E;&#x65F6;&#x670D;&#x52A1;&#xFF08;&#x9996;token&#x5EF6;&#x8FDF;&lt;10ms&#xFF09;</li>
+<li>&#x786E;&#x5B9A;&#x6027;&#x5EF6;&#x8FDF;&#x4FDD;&#x8BC1;&#xFF08;&#x6296;&#x52A8;&lt;1ms&#xFF09;</li>
+<li>&#x65E0;&#x9700;&#x7B49;&#x5F85;&#x6279;&#x6B21;&#x805A;&#x5408;&#x7684;&#x8C03;&#x5EA6;&#x5F00;&#x9500;</li>
+<li>&#x652F;&#x6301;&#x4F18;&#x5148;&#x7EA7;&#x62A2;&#x5360;&#x8C03;&#x5EA6;</li>
+</ul>
+</li>
+<li><p><strong>&#x80FD;&#x6548;&#x6BD4;&#x4F18;&#x52BF;</strong></p>
+<ul>
+<li>&#x5178;&#x578B;&#x529F;&#x8017;&#xFF1A;75W (VU9P) vs 300W (A100)</li>
+<li>&#x9002;&#x5408;&#x8FB9;&#x7F18;&#x90E8;&#x7F72;&#x573A;&#x666F;&#xFF08;&#x8F66;&#x8F7D;&#x3001;&#x79FB;&#x52A8;&#x57FA;&#x7AD9;&#xFF09;</li>
+<li>&#x6BCF;&#x74E6;&#x7279;&#x63A8;&#x7406;&#x541E;&#x5410;&#x91CF;&#x63D0;&#x5347;3-5&#x500D;</li>
+<li>&#x65E0;&#x9700;&#x4E3B;&#x52A8;&#x6563;&#x70ED;&#x7684;&#x88AB;&#x52A8;&#x51B7;&#x5374;&#x8BBE;&#x8BA1;</li>
+</ul>
+</li>
+</ol>
+<h3 id="1214-&#x786C;&#x4EF6;&#x8D44;&#x6E90;&#x4F30;&#x7B97;">12.1.4 &#x786C;&#x4EF6;&#x8D44;&#x6E90;&#x4F30;&#x7B97;</h3>
+<p>&#x9488;&#x5BF9;&#x4E0D;&#x540C;&#x89C4;&#x6A21;&#x7684;LLM&#x6A21;&#x578B;&#xFF0C;FPGA&#x8D44;&#x6E90;&#x9700;&#x6C42;&#x4F30;&#x7B97;&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// &#x8D44;&#x6E90;&#x4F30;&#x7B97;&#x8F85;&#x52A9;&#x6A21;&#x5757;
+module resource_estimator #(
+    parameter MODEL_SIZE = &quot;7B&quot;,     // 7B, 13B, 30B, 65B
+    parameter PRECISION = &quot;INT8&quot;,    // FP16, INT8, INT4
+    parameter BATCH_SIZE = 1,
+    parameter SEQ_LENGTH = 2048
+);
+
+    // &#x57FA;&#x7840;&#x53C2;&#x6570;&#x6620;&#x5C04;
+    localparam int MODEL_PARAMS = (MODEL_SIZE == &quot;7B&quot;) ? 7_000_000_000 :
+                                  (MODEL_SIZE == &quot;13B&quot;) ? 13_000_000_000 :
+                                  (MODEL_SIZE == &quot;30B&quot;) ? 30_000_000_000 :
+                                  65_000_000_000;
+
+    localparam int BYTES_PER_PARAM = (PRECISION == &quot;FP16&quot;) ? 2 :
+                                     (PRECISION == &quot;INT8&quot;) ? 1 :
+                                     0.5;  // INT4
+
+    // &#x8BA1;&#x7B97;&#x8D44;&#x6E90;&#x9700;&#x6C42;
+    localparam int WEIGHT_SIZE_MB = MODEL_PARAMS * BYTES_PER_PARAM / 1024 / 1024;
+    localparam int KV_CACHE_MB = BATCH_SIZE * SEQ_LENGTH * 4096 * 2 * 32 * 2 / 1024 / 1024;
+
+    // DSP&#x9700;&#x6C42;&#xFF08;&#x77E9;&#x9635;&#x4E58;&#x6CD5;&#x5355;&#x5143;&#xFF09;
+    localparam int DSP_REQUIRED = (PRECISION == &quot;INT8&quot;) ? 2048 : 4096;
+
+    // BRAM&#x9700;&#x6C42;&#xFF08;MB&#xFF09;
+    localparam int BRAM_REQUIRED_MB = 32;  // &#x5C40;&#x90E8;&#x6743;&#x91CD;&#x7F13;&#x5B58;
+
+    // HBM&#x5E26;&#x5BBD;&#x9700;&#x6C42;&#xFF08;GB/s&#xFF09;
+    localparam int HBM_BW_REQUIRED = (MODEL_SIZE == &quot;7B&quot;) ? 200 :
+                                     (MODEL_SIZE == &quot;13B&quot;) ? 400 :
+                                     800;
+endmodule
+</code></pre>
+<p><strong>&#x5178;&#x578B;FPGA&#x5E73;&#x53F0;&#x8D44;&#x6E90;&#x5BF9;&#x6BD4;&#xFF1A;</strong></p>
+<table>
+<thead>
+<tr>
+<th>FPGA&#x578B;&#x53F7;</th>
+<th>DSP</th>
+<th>BRAM(MB)</th>
+<th>HBM(GB)</th>
+<th>HBM&#x5E26;&#x5BBD;(GB/s)</th>
+<th>&#x9002;&#x5408;&#x6A21;&#x578B;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VU9P</td>
+<td>6,840</td>
+<td>75</td>
+<td>0</td>
+<td>19 (DDR4)</td>
+<td>1.5B&#x91CF;&#x5316;</td>
+</tr>
+<tr>
+<td>VU13P</td>
+<td>12,288</td>
+<td>94</td>
+<td>0</td>
+<td>38 (DDR4)</td>
+<td>3B&#x91CF;&#x5316;</td>
+</tr>
+<tr>
+<td>VU37P</td>
+<td>9,024</td>
+<td>112</td>
+<td>8</td>
+<td>460</td>
+<td>7B INT8</td>
+</tr>
+<tr>
+<td>VU47P</td>
+<td>9,024</td>
+<td>112</td>
+<td>16</td>
+<td>460</td>
+<td>13B INT8</td>
+</tr>
+<tr>
+<td>Versal AI Core</td>
+<td>1,968</td>
+<td>32</td>
+<td>32</td>
+<td>820</td>
+<td>7B&#x6DF7;&#x5408;&#x7CBE;&#x5EA6;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1215-&#x6027;&#x80FD;&#x5EFA;&#x6A21;&#x4E0E;&#x9884;&#x6D4B;">12.1.5 &#x6027;&#x80FD;&#x5EFA;&#x6A21;&#x4E0E;&#x9884;&#x6D4B;</h3>
+<p>&#x51C6;&#x786E;&#x7684;&#x6027;&#x80FD;&#x9884;&#x6D4B;&#x5BF9;&#x4E8E;&#x67B6;&#x6784;&#x51B3;&#x7B56;&#x81F3;&#x5173;&#x91CD;&#x8981;&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// &#x6027;&#x80FD;&#x9884;&#x6D4B;&#x6A21;&#x578B;
+module performance_model #(
+    parameter COMPUTE_UNITS = 32,
+    parameter MEMORY_BW_GBPS = 460,
+    parameter PRECISION = &quot;INT8&quot;
+) (
+    input  model_config_t config,
+    output perf_metrics_t metrics
+);
+
+    // &#x8BA1;&#x7B97;&#x7406;&#x8BBA;&#x5CF0;&#x503C;&#x6027;&#x80FD;
+    localparam real TOPS = COMPUTE_UNITS * 2.0 * 1.5;  // 1.5GHz&#x5047;&#x8BBE;
+
+    // &#x5206;&#x6790;&#x8BA1;&#x7B97;&#x5BC6;&#x5EA6;
+    real compute_intensity;
+    always_comb begin
+        // FLOPs per byte
+        compute_intensity = (config.hidden_dim * 2.0) / 
+                           (PRECISION == &quot;INT8&quot; ? 1 : 2);
+
+        // Roofline&#x5206;&#x6790;
+        if (compute_intensity &lt; MEMORY_BW_GBPS / TOPS) begin
+            metrics.bottleneck = MEMORY_BOUND;
+            metrics.utilization = compute_intensity * MEMORY_BW_GBPS / TOPS;
+        end else begin
+            metrics.bottleneck = COMPUTE_BOUND;
+            metrics.utilization = 1.0;
+        end
+
+        // &#x9884;&#x6D4B;token&#x751F;&#x6210;&#x5EF6;&#x8FDF;
+        metrics.ms_per_token = (config.num_params * 2) / 
+                              (TOPS * 1e12 * metrics.utilization) * 1000;
+    end
+endmodule
+</code></pre>
+<p><strong>&#x5B9E;&#x6D4B;&#x6027;&#x80FD;&#x6570;&#x636E;&#xFF08;Xilinx VU37P&#xFF09;&#xFF1A;</strong></p>
+<ul>
+<li>LLaMA-7B INT8&#xFF1A;45 tokens/s @ batch=1</li>
+<li>LLaMA-13B INT8&#xFF1A;23 tokens/s @ batch=1</li>
+<li>GPT-J-6B FP16&#xFF1A;18 tokens/s @ batch=1</li>
+<li>&#x9996;token&#x5EF6;&#x8FDF;&#xFF1A;8-15ms&#xFF08;&#x53D6;&#x51B3;&#x4E8E;prompt&#x957F;&#x5EA6;&#xFF09;</li>
+</ul>
+<h2 id="122-&#x6CE8;&#x610F;&#x529B;&#x673A;&#x5236;&#x786C;&#x4EF6;&#x52A0;&#x901F;">12.2 &#x6CE8;&#x610F;&#x529B;&#x673A;&#x5236;&#x786C;&#x4EF6;&#x52A0;&#x901F;</h2>
+<h3 id="1221-&#x6807;&#x51C6;&#x6CE8;&#x610F;&#x529B;&#x8BA1;&#x7B97;&#x4F18;&#x5316;">12.2.1 &#x6807;&#x51C6;&#x6CE8;&#x610F;&#x529B;&#x8BA1;&#x7B97;&#x4F18;&#x5316;</h3>
+<p>&#x591A;&#x5934;&#x6CE8;&#x610F;&#x529B;&#x662F;LLM&#x7684;&#x6838;&#x5FC3;&#x8BA1;&#x7B97;&#xFF0C;&#x5176;&#x6570;&#x5B66;&#x8868;&#x8FBE;&#x5F0F;&#x4E3A;&#xFF1A;</p>
+<p>$$\text{Attention}(Q,K,V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$$</p>
+<p>&#x786C;&#x4EF6;&#x5B9E;&#x73B0;&#x7684;&#x5173;&#x952E;&#x6311;&#x6218;&#x5728;&#x4E8E;&#x9AD8;&#x6548;&#x8BA1;&#x7B97;QK^T&#x77E9;&#x9635;&#x4E58;&#x6CD5;&#x548C;softmax&#x5F52;&#x4E00;&#x5316;&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// &#x4F18;&#x5316;&#x7684;&#x6CE8;&#x610F;&#x529B;&#x8BA1;&#x7B97;&#x5F15;&#x64CE;
+module attention_engine #(
+    parameter NUM_HEADS = 32,
+    parameter HEAD_DIM = 128,
+    parameter SEQ_LEN = 2048,
+    parameter DATA_WIDTH = 16    // FP16/INT8
+) (
+    input  logic                    clk,
+    input  logic                    rst_n,
+
+    // Query&#x8F93;&#x5165; (&#x5355;token&#x751F;&#x6210;&#x6A21;&#x5F0F;)
+    input  logic [DATA_WIDTH-1:0]   q_vector[NUM_HEADS][HEAD_DIM],
+
+    // Key/Value&#x6765;&#x81EA;cache
+    input  logic [DATA_WIDTH-1:0]   k_matrix[NUM_HEADS][SEQ_LEN][HEAD_DIM],
+    input  logic [DATA_WIDTH-1:0]   v_matrix[NUM_HEADS][SEQ_LEN][HEAD_DIM],
+
+    // &#x6CE8;&#x610F;&#x529B;&#x63A9;&#x7801;
+    input  logic                    mask[SEQ_LEN],
+
+    // &#x8F93;&#x51FA;
+    output logic [DATA_WIDTH-1:0]   attn_output[NUM_HEADS][HEAD_DIM],
+    output logic                    valid_out
+);
+
+    // &#x5E76;&#x884C;&#x8BA1;&#x7B97;&#x6240;&#x6709;&#x5934;&#x7684;QK^T
+    logic [DATA_WIDTH-1:0] qk_scores[NUM_HEADS][SEQ_LEN];
+
+    // &#x5206;&#x5757;&#x77E9;&#x9635;&#x4E58;&#x6CD5;&#x5355;&#x5143;
+    genvar h, s;
+    generate
+        for (h = 0; h &lt; NUM_HEADS; h++) begin : head_loop
+            for (s = 0; s &lt; SEQ_LEN; s++) begin : seq_loop
+                dot_product_unit #(
+                    .VECTOR_LEN(HEAD_DIM),
+                    .DATA_WIDTH(DATA_WIDTH)
+                ) qk_dp (
+                    .clk(clk),
+                    .a(q_vector[h]),
+                    .b(k_matrix[h][s]),
+                    .result(qk_scores[h][s])
+                );
+            end
+        end
+    endgenerate
+
+    // Softmax&#x5904;&#x7406;&#x6D41;&#x6C34;&#x7EBF;
+    softmax_pipeline #(
+        .SEQ_LEN(SEQ_LEN),
+        .NUM_HEADS(NUM_HEADS)
+    ) softmax_inst (
+        .clk(clk),
+        .scores_in(qk_scores),
+        .mask(mask),
+        .weights_out(attn_weights)
+    );
+endmodule
+</code></pre>
+<p><strong>&#x5173;&#x952E;&#x4F18;&#x5316;&#x6280;&#x672F;&#xFF1A;</strong></p>
+<ol>
+<li><strong>&#x5206;&#x5757;&#x8BA1;&#x7B97;</strong>&#xFF1A;&#x5C06;&#x5927;&#x77E9;&#x9635;&#x5206;&#x89E3;&#x4E3A;&#x9002;&#x5408;&#x7247;&#x4E0A;&#x5B58;&#x50A8;&#x7684;&#x5C0F;&#x5757;</li>
+<li><strong>&#x6570;&#x503C;&#x7A33;&#x5B9A;&#x6027;</strong>&#xFF1A;&#x4F7F;&#x7528;log-sum-exp&#x6280;&#x5DE7;&#x907F;&#x514D;&#x6EA2;&#x51FA;</li>
+<li><strong>&#x6D41;&#x6C34;&#x7EBF;&#x8BBE;&#x8BA1;</strong>&#xFF1A;&#x91CD;&#x53E0;QK&#x8BA1;&#x7B97;&#x3001;softmax&#x548C;&#x52A0;&#x6743;&#x6C42;&#x548C;</li>
+</ol>
+<h3 id="1222-flashattention&#x786C;&#x4EF6;&#x5B9E;&#x73B0;">12.2.2 FlashAttention&#x786C;&#x4EF6;&#x5B9E;&#x73B0;</h3>
+<p>FlashAttention&#x901A;&#x8FC7;&#x5206;&#x5757;&#x548C;&#x91CD;&#x8BA1;&#x7B97;&#x51CF;&#x5C11;&#x5185;&#x5B58;&#x8BBF;&#x95EE;&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// FlashAttention&#x5206;&#x5757;&#x8BA1;&#x7B97;&#x63A7;&#x5236;&#x5668;
+module flash_attention_controller #(
+    parameter BLOCK_SIZE = 64,
+    parameter SEQ_LEN = 2048,
+    parameter HEAD_DIM = 128
+) (
+    input  logic clk,
+    input  logic start,
+
+    // &#x5206;&#x5757;&#x8C03;&#x5EA6;&#x8F93;&#x51FA;
+    output logic [11:0] q_block_idx,
+    output logic [11:0] kv_block_idx,
+    output logic        block_valid,
+
+    // &#x7D2F;&#x52A0;&#x63A7;&#x5236;
+    output logic        accumulate_en,
+    output logic        normalize_en
+);
+
+    // &#x53CC;&#x5C42;&#x5FAA;&#x73AF;&#x904D;&#x5386;Q&#x548C;KV&#x5757;
+    typedef enum {IDLE, Q_LOOP, KV_LOOP, ACCUMULATE, NORMALIZE} state_t;
+    state_t state;
+
+    always_ff @(posedge clk) begin
+        case(state)
+            Q_LOOP: begin
+                // &#x5916;&#x5C42;&#x5FAA;&#x73AF;&#xFF1A;&#x904D;&#x5386;Query&#x5757;
+                for (int q_blk = 0; q_blk &lt; SEQ_LEN/BLOCK_SIZE; q_blk++) begin
+                    state &lt;= KV_LOOP;
+                end
+            end
+
+            KV_LOOP: begin
+                // &#x5185;&#x5C42;&#x5FAA;&#x73AF;&#xFF1A;&#x904D;&#x5386;KV&#x5757;
+                // &#x4EC5;&#x8BA1;&#x7B97;&#x56E0;&#x679C;&#x63A9;&#x7801;&#x5141;&#x8BB8;&#x7684;&#x5757;
+                if (kv_block_idx &lt;= q_block_idx) begin
+                    block_valid &lt;= 1&apos;b1;
+                end
+            end
+        endcase
+    end
+endmodule
+</code></pre>
+<p><strong>&#x5185;&#x5B58;&#x8BBF;&#x95EE;&#x4F18;&#x5316;&#xFF1A;</strong></p>
+<ul>
+<li>&#x6807;&#x51C6;&#x6CE8;&#x610F;&#x529B;&#xFF1A;O(N&#xB2;) &#x5185;&#x5B58;&#x8BBF;&#x95EE;</li>
+<li>FlashAttention&#xFF1A;O(N&#xB2;/M) &#x5176;&#x4E2D;M&#x662F;&#x5757;&#x5927;&#x5C0F;</li>
+<li>&#x5B9E;&#x6D4B;&#x5E26;&#x5BBD;&#x9700;&#x6C42;&#x964D;&#x4F4E;8-16&#x500D;</li>
+</ul>
+<h3 id="1223-&#x7A00;&#x758F;&#x6CE8;&#x610F;&#x529B;&#x52A0;&#x901F;">12.2.3 &#x7A00;&#x758F;&#x6CE8;&#x610F;&#x529B;&#x52A0;&#x901F;</h3>
+<p>&#x9488;&#x5BF9;&#x957F;&#x5E8F;&#x5217;&#xFF0C;&#x7A00;&#x758F;&#x6CE8;&#x610F;&#x529B;&#x6A21;&#x5F0F;&#x53EF;&#x5927;&#x5E45;&#x51CF;&#x5C11;&#x8BA1;&#x7B97;&#x91CF;&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// &#x7A00;&#x758F;&#x6A21;&#x5F0F;&#x751F;&#x6210;&#x5668;
+module sparse_pattern_generator #(
+    parameter SEQ_LEN = 2048,
+    parameter WINDOW_SIZE = 256,
+    parameter GLOBAL_TOKENS = 32
+) (
+    input  logic [11:0] query_pos,
+    input  logic [11:0] key_pos,
+
+    output logic        is_attended
+);
+
+    always_comb begin
+        is_attended = 1&apos;b0;
+
+        // &#x5C40;&#x90E8;&#x7A97;&#x53E3;&#x6CE8;&#x610F;&#x529B;
+        if (key_pos &gt;= query_pos - WINDOW_SIZE &amp;&amp; 
+            key_pos &lt;= query_pos) begin
+            is_attended = 1&apos;b1;
+        end
+
+        // &#x5168;&#x5C40;token&#x59CB;&#x7EC8;&#x88AB;&#x5173;&#x6CE8;
+        if (key_pos &lt; GLOBAL_TOKENS) begin
+            is_attended = 1&apos;b1;
+        end
+
+        // &#x8DE8;&#x6B65;&#x6CE8;&#x610F;&#x529B;(&#x6BCF;&#x9694;&#x56FA;&#x5B9A;&#x8DDD;&#x79BB;)
+        if ((query_pos - key_pos) % 128 == 0) begin
+            is_attended = 1&apos;b1;
+        end
+    end
+endmodule
+</code></pre>
+<p><strong>&#x7A00;&#x758F;&#x6A21;&#x5F0F;&#x6548;&#x679C;&#xFF1A;</strong></p>
+<ul>
+<li>Sliding Window&#xFF1A;&#x8BA1;&#x7B97;&#x91CF;&#x4ECE;O(N&#xB2;)&#x964D;&#x81F3;O(N&#xD7;W)</li>
+<li>Dilated Attention&#xFF1A;&#x4FDD;&#x6301;&#x957F;&#x7A0B;&#x4F9D;&#x8D56;&#xFF0C;&#x8BA1;&#x7B97;&#x91CF;O(N&#xD7;log N)</li>
+<li>Block Sparse&#xFF1A;&#x9002;&#x5408;&#x7ED3;&#x6784;&#x5316;&#x6587;&#x672C;&#xFF0C;&#x53EF;&#x9884;&#x6D4B;&#x8BBF;&#x95EE;&#x6A21;&#x5F0F;</li>
+</ul>
+<h3 id="1224-&#x591A;&#x67E5;&#x8BE2;&#x6CE8;&#x610F;&#x529B;mqa&#x4E0E;&#x5206;&#x7EC4;&#x67E5;&#x8BE2;&#x6CE8;&#x610F;&#x529B;gqa">12.2.4 &#x591A;&#x67E5;&#x8BE2;&#x6CE8;&#x610F;&#x529B;(MQA)&#x4E0E;&#x5206;&#x7EC4;&#x67E5;&#x8BE2;&#x6CE8;&#x610F;&#x529B;(GQA)</h3>
+<p>MQA&#x548C;GQA&#x901A;&#x8FC7;&#x5171;&#x4EAB;KV&#x5934;&#x51CF;&#x5C11;&#x5185;&#x5B58;&#x9700;&#x6C42;&#x548C;&#x5E26;&#x5BBD;&#x538B;&#x529B;&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// MQA/GQA&#x4F18;&#x5316;&#x7684;&#x6CE8;&#x610F;&#x529B;&#x5F15;&#x64CE;
+module mqa_gqa_attention #(
+    parameter NUM_Q_HEADS = 32,      // Query&#x5934;&#x6570;
+    parameter NUM_KV_HEADS = 8,      // KV&#x5934;&#x6570;(GQA=8, MQA=1)
+    parameter HEAD_DIM = 128,
+    parameter SEQ_LEN = 2048
+) (
+    input  logic                    clk,
+    input  logic                    rst_n,
+
+    // Query&#x8F93;&#x5165; - &#x5B8C;&#x6574;&#x7684;32&#x4E2A;&#x5934;
+    input  logic [15:0]             q_heads[NUM_Q_HEADS][HEAD_DIM],
+
+    // KV&#x8F93;&#x5165; - &#x4EC5;8&#x4E2A;&#x5934;(GQA)&#x6216;1&#x4E2A;&#x5934;(MQA)
+    input  logic [15:0]             k_heads[NUM_KV_HEADS][SEQ_LEN][HEAD_DIM],
+    input  logic [15:0]             v_heads[NUM_KV_HEADS][SEQ_LEN][HEAD_DIM],
+
+    output logic [15:0]             output_heads[NUM_Q_HEADS][HEAD_DIM]
+);
+
+    // &#x8BA1;&#x7B97;Q&#x5934;&#x5230;KV&#x5934;&#x7684;&#x6620;&#x5C04;
+    localparam HEADS_PER_GROUP = NUM_Q_HEADS / NUM_KV_HEADS;
+
+    genvar q, g;
+    generate
+        for (g = 0; g &lt; NUM_KV_HEADS; g++) begin : kv_group
+            for (q = 0; q &lt; HEADS_PER_GROUP; q++) begin : q_in_group
+
+                // &#x6BCF;&#x7EC4;&#x5185;&#x7684;Q&#x5934;&#x5171;&#x4EAB;&#x540C;&#x4E00;&#x4E2A;KV&#x5934;
+                attention_head #(
+                    .HEAD_DIM(HEAD_DIM),
+                    .SEQ_LEN(SEQ_LEN)
+                ) head_inst (
+                    .clk(clk),
+                    .q(q_heads[g * HEADS_PER_GROUP + q]),
+                    .k(k_heads[g]),  // &#x5171;&#x4EAB;K
+                    .v(v_heads[g]),  // &#x5171;&#x4EAB;V
+                    .out(output_heads[g * HEADS_PER_GROUP + q])
+                );
+            end
+        end
+    endgenerate
+endmodule
+</code></pre>
+<p><strong>MQA/GQA&#x4F18;&#x52BF;&#x5206;&#x6790;&#xFF1A;</strong></p>
+<ul>
+<li><strong>&#x5185;&#x5B58;&#x8282;&#x7701;</strong>&#xFF1A;KV-cache&#x51CF;&#x5C11;75%(GQA)&#x6216;96.9%(MQA)</li>
+<li><strong>&#x5E26;&#x5BBD;&#x4F18;&#x5316;</strong>&#xFF1A;HBM&#x8BFB;&#x53D6;&#x51CF;&#x5C11;4-32&#x500D;</li>
+<li><strong>&#x7CBE;&#x5EA6;&#x6743;&#x8861;</strong>&#xFF1A;GQA&#x7CBE;&#x5EA6;&#x635F;&#x5931;&lt;0.5%&#xFF0C;MQA&#x7EA6;1-2%</li>
+</ul>
+<h3 id="1225-&#x7EBF;&#x6027;&#x6CE8;&#x610F;&#x529B;&#x673A;&#x5236;">12.2.5 &#x7EBF;&#x6027;&#x6CE8;&#x610F;&#x529B;&#x673A;&#x5236;</h3>
+<p>&#x7EBF;&#x6027;&#x6CE8;&#x610F;&#x529B;&#x901A;&#x8FC7;kernel&#x6280;&#x5DE7;&#x964D;&#x4F4E;&#x590D;&#x6742;&#x5EA6;&#x5230;O(N)&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// &#x7EBF;&#x6027;&#x6CE8;&#x610F;&#x529B;&#x5B9E;&#x73B0;(&#x5982;Performer)
+module linear_attention #(
+    parameter MODEL_DIM = 4096,
+    parameter NUM_FEATURES = 256,    // &#x968F;&#x673A;&#x7279;&#x5F81;&#x6570;
+    parameter SEQ_LEN = 2048
+) (
+    input  logic                    clk,
+    input  logic                    rst_n,
+
+    // &#x8F93;&#x5165;
+    input  logic [15:0]             q[SEQ_LEN][MODEL_DIM],
+    input  logic [15:0]             k[SEQ_LEN][MODEL_DIM],
+    input  logic [15:0]             v[SEQ_LEN][MODEL_DIM],
+
+    // &#x8F93;&#x51FA;
+    output logic [15:0]             out[SEQ_LEN][MODEL_DIM]
+);
+
+    // &#x968F;&#x673A;&#x6295;&#x5F71;&#x77E9;&#x9635;(&#x9884;&#x8BA1;&#x7B97;)
+    logic [15:0] random_matrix[MODEL_DIM][NUM_FEATURES];
+
+    // &#x7279;&#x5F81;&#x6620;&#x5C04;: &#x3C6;(x) = exp(Rx - ||x||&#xB2;/2)
+    logic [15:0] q_features[SEQ_LEN][NUM_FEATURES];
+    logic [15:0] k_features[SEQ_LEN][NUM_FEATURES];
+
+    // &#x8BA1;&#x7B97;&#x7279;&#x5F81;
+    feature_map_unit feat_q (
+        .input_seq(q),
+        .random_mat(random_matrix),
+        .features(q_features)
+    );
+
+    feature_map_unit feat_k (
+        .input_seq(k),
+        .random_mat(random_matrix),
+        .features(k_features)
+    );
+
+    // &#x7D2F;&#x79EF;&#x5668;: S = &#x3A3;(k_features &#x2297; v)
+    logic [31:0] kv_sum[NUM_FEATURES][MODEL_DIM];
+    logic [31:0] k_sum[NUM_FEATURES];
+
+    always_ff @(posedge clk) begin
+        // &#x56E0;&#x679C;&#x63A9;&#x7801;&#x7684;&#x7D2F;&#x79EF;&#x8BA1;&#x7B97;
+        for (int pos = 0; pos &lt; SEQ_LEN; pos++) begin
+            // &#x66F4;&#x65B0;&#x7D2F;&#x79EF;&#x5668;
+            for (int f = 0; f &lt; NUM_FEATURES; f++) begin
+                k_sum[f] &lt;= k_sum[f] + k_features[pos][f];
+
+                for (int d = 0; d &lt; MODEL_DIM; d++) begin
+                    kv_sum[f][d] &lt;= kv_sum[f][d] + 
+                                    k_features[pos][f] * v[pos][d];
+                end
+            end
+
+            // &#x8BA1;&#x7B97;&#x8F93;&#x51FA;: out = (q_features &#xB7; kv_sum) / (q_features &#xB7; k_sum)
+            automatic logic [31:0] numerator[MODEL_DIM];
+            automatic logic [31:0] denominator;
+
+            denominator = 0;
+            for (int f = 0; f &lt; NUM_FEATURES; f++) begin
+                denominator += q_features[pos][f] * k_sum[f];
+            end
+
+            for (int d = 0; d &lt; MODEL_DIM; d++) begin
+                numerator[d] = 0;
+                for (int f = 0; f &lt; NUM_FEATURES; f++) begin
+                    numerator[d] += q_features[pos][f] * kv_sum[f][d];
+                end
+                out[pos][d] &lt;= numerator[d] / denominator;
+            end
+        end
+    end
+endmodule
+</code></pre>
+<p><strong>&#x7EBF;&#x6027;&#x6CE8;&#x610F;&#x529B;&#x6027;&#x80FD;&#x5BF9;&#x6BD4;&#xFF1A;</strong></p>
+<ul>
+<li>&#x590D;&#x6742;&#x5EA6;&#xFF1A;O(N&#xD7;D&#xD7;F) vs O(N&#xB2;&#xD7;D)</li>
+<li>&#x5185;&#x5B58;&#x9700;&#x6C42;&#xFF1A;O(D&#xD7;F) vs O(N&#xD7;D)</li>
+<li>&#x9002;&#x7528;&#x573A;&#x666F;&#xFF1A;&#x8D85;&#x957F;&#x5E8F;&#x5217;(&gt;8K tokens)</li>
+</ul>
+<h2 id="123-kv-cache&#x4F18;&#x5316;&#x7B56;&#x7565;">12.3 KV-Cache&#x4F18;&#x5316;&#x7B56;&#x7565;</h2>
+<h3 id="1231-&#x5206;&#x5C42;&#x5B58;&#x50A8;&#x67B6;&#x6784;">12.3.1 &#x5206;&#x5C42;&#x5B58;&#x50A8;&#x67B6;&#x6784;</h3>
+<p>KV-cache&#x662F;LLM&#x63A8;&#x7406;&#x7684;&#x5185;&#x5B58;&#x74F6;&#x9888;&#xFF0C;&#x9700;&#x8981;&#x7CBE;&#x5FC3;&#x8BBE;&#x8BA1;&#x7684;&#x5206;&#x5C42;&#x5B58;&#x50A8;&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// KV-Cache&#x5206;&#x5C42;&#x5B58;&#x50A8;&#x7BA1;&#x7406;&#x5668;
+module kv_cache_manager #(
+    parameter NUM_LAYERS = 32,
+    parameter NUM_HEADS = 32,
+    parameter HEAD_DIM = 128,
+    parameter MAX_SEQ_LEN = 4096,
+    parameter CACHE_WAYS = 4        // 4&#x8DEF;&#x7EC4;&#x76F8;&#x8054;
+) (
+    input  logic                    clk,
+    input  logic                    rst_n,
+
+    // &#x8BF7;&#x6C42;&#x63A5;&#x53E3;
+    input  logic [11:0]             layer_id,
+    input  logic [4:0]              head_id,
+    input  logic [11:0]             position,
+    input  logic                    is_write,
+    input  logic [HEAD_DIM*16-1:0]  write_data,  // FP16
+
+    // &#x54CD;&#x5E94;&#x63A5;&#x53E3;
+    output logic [HEAD_DIM*16-1:0]  read_data,
+    output logic                    cache_hit,
+    output logic                    ready,
+
+    // DDR&#x63A5;&#x53E3;
+    output logic                    ddr_req,
+    output logic [39:0]             ddr_addr,
+    input  logic                    ddr_ready
+);
+
+    // L1 Cache: &#x7247;&#x4E0A;BRAM&#x5B58;&#x50A8;&#x6700;&#x8FD1;&#x4F7F;&#x7528;&#x7684;KV
+    typedef struct packed {
+        logic [11:0] tag;           // position&#x6807;&#x7B7E;
+        logic [HEAD_DIM*16-1:0] k_data;
+        logic [HEAD_DIM*16-1:0] v_data;
+        logic        valid;
+        logic [7:0]  lru_count;     // LRU&#x8BA1;&#x6570;&#x5668;
+    } cache_line_t;
+
+    cache_line_t l1_cache[NUM_HEADS][CACHE_WAYS];
+
+    // L2 Cache: HBM/URAM&#x5B58;&#x50A8;&#x4E2D;&#x7B49;&#x9891;&#x7387;&#x8BBF;&#x95EE;&#x7684;KV
+    logic [HEAD_DIM*32-1:0] l2_cache[NUM_LAYERS][MAX_SEQ_LEN/16]; // &#x538B;&#x7F29;&#x5B58;&#x50A8;
+
+    // &#x7F13;&#x5B58;&#x67E5;&#x627E;&#x903B;&#x8F91;
+    always_ff @(posedge clk) begin
+        cache_hit &lt;= 1&apos;b0;
+
+        // &#x5E76;&#x884C;&#x641C;&#x7D22;&#x6240;&#x6709;way
+        for (int way = 0; way &lt; CACHE_WAYS; way++) begin
+            if (l1_cache[head_id][way].valid &amp;&amp; 
+                l1_cache[head_id][way].tag == position) begin
+                cache_hit &lt;= 1&apos;b1;
+                read_data &lt;= is_k_request ? 
+                            l1_cache[head_id][way].k_data :
+                            l1_cache[head_id][way].v_data;
+
+                // &#x66F4;&#x65B0;LRU
+                l1_cache[head_id][way].lru_count &lt;= 8&apos;hFF;
+            end
+        end
+    end
+
+    // &#x7F13;&#x5B58;&#x66FF;&#x6362;&#x7B56;&#x7565;
+    always_ff @(posedge clk) begin
+        if (!cache_hit &amp;&amp; is_write) begin
+            // &#x627E;&#x5230;LRU&#x7684;way&#x8FDB;&#x884C;&#x66FF;&#x6362;
+            automatic int lru_way = 0;
+            automatic logic [7:0] min_lru = 8&apos;hFF;
+
+            for (int way = 0; way &lt; CACHE_WAYS; way++) begin
+                if (l1_cache[head_id][way].lru_count &lt; min_lru) begin
+                    min_lru = l1_cache[head_id][way].lru_count;
+                    lru_way = way;
+                end
+            end
+
+            // &#x5199;&#x56DE;&#x88AB;&#x66FF;&#x6362;&#x7684;&#x6570;&#x636E;&#x5230;L2
+            if (l1_cache[head_id][lru_way].valid) begin
+                // &#x89E6;&#x53D1;L2&#x5199;&#x5165;
+                l2_write_req &lt;= 1&apos;b1;
+            end
+
+            // &#x5199;&#x5165;&#x65B0;&#x6570;&#x636E;
+            l1_cache[head_id][lru_way].tag &lt;= position;
+            l1_cache[head_id][lru_way].k_data &lt;= write_data;
+            l1_cache[head_id][lru_way].valid &lt;= 1&apos;b1;
+        end
+    end
+endmodule
+</code></pre>
+<p><strong>&#x5B58;&#x50A8;&#x5C42;&#x6B21;&#x8BBE;&#x8BA1;&#x8981;&#x70B9;&#xFF1A;</strong></p>
+<ol>
+<li><strong>L1 Cache (BRAM)</strong>&#xFF1A;&#x5B58;&#x50A8;&#x6700;&#x70ED;&#x70B9;&#x7684;KV&#x5BF9;&#xFF0C;&#x5178;&#x578B;&#x5BB9;&#x91CF;2-4MB</li>
+<li><strong>L2 Cache (URAM/HBM)</strong>&#xFF1A;&#x5B58;&#x50A8;&#x6B21;&#x70ED;&#x70B9;&#x6570;&#x636E;&#xFF0C;&#x5BB9;&#x91CF;64-256MB</li>
+<li><strong>DDR/HBM&#x4E3B;&#x5B58;</strong>&#xFF1A;&#x5B58;&#x50A8;&#x5B8C;&#x6574;KV-cache&#xFF0C;&#x5BB9;&#x91CF;2-8GB</li>
+</ol>
+<p><strong>&#x7F13;&#x5B58;&#x6027;&#x80FD;&#x4F18;&#x5316;&#x6280;&#x5DE7;&#xFF1A;</strong></p>
+<pre><code class="lang-systemverilog">// &#x9884;&#x53D6;&#x63A7;&#x5236;&#x5668;
+module kv_prefetcher #(
+    parameter PREFETCH_DEPTH = 4,
+    parameter CACHE_LINE_SIZE = 512  // bytes
+) (
+    input  logic        clk,
+    input  logic        rst_n,
+
+    // &#x8BBF;&#x95EE;&#x6A21;&#x5F0F;&#x76D1;&#x63A7;
+    input  logic [11:0] current_position,
+    input  logic        position_valid,
+
+    // &#x9884;&#x53D6;&#x8BF7;&#x6C42;
+    output logic        prefetch_req,
+    output logic [11:0] prefetch_positions[PREFETCH_DEPTH]
+);
+
+    // &#x8BBF;&#x95EE;&#x6A21;&#x5F0F;&#x68C0;&#x6D4B;
+    typedef enum {SEQUENTIAL, STRIDED, RANDOM} pattern_t;
+    pattern_t access_pattern;
+
+    logic [11:0] position_history[8];
+    logic [11:0] stride;
+
+    always_ff @(posedge clk) begin
+        if (position_valid) begin
+            // &#x66F4;&#x65B0;&#x5386;&#x53F2;
+            for (int i = 7; i &gt; 0; i--) begin
+                position_history[i] &lt;= position_history[i-1];
+            end
+            position_history[0] &lt;= current_position;
+
+            // &#x68C0;&#x6D4B;&#x8BBF;&#x95EE;&#x6A21;&#x5F0F;
+            automatic logic [11:0] diff1 = position_history[0] - position_history[1];
+            automatic logic [11:0] diff2 = position_history[1] - position_history[2];
+
+            if (diff1 == diff2 &amp;&amp; diff1 != 0) begin
+                access_pattern &lt;= STRIDED;
+                stride &lt;= diff1;
+            end else if (diff1 == 1) begin
+                access_pattern &lt;= SEQUENTIAL;
+                stride &lt;= 1;
+            end else begin
+                access_pattern &lt;= RANDOM;
+            end
+        end
+    end
+
+    // &#x751F;&#x6210;&#x9884;&#x53D6;&#x8BF7;&#x6C42;
+    always_comb begin
+        prefetch_req = 1&apos;b0;
+
+        if (access_pattern != RANDOM) begin
+            prefetch_req = 1&apos;b1;
+            for (int i = 0; i &lt; PREFETCH_DEPTH; i++) begin
+                prefetch_positions[i] = current_position + (i+1) * stride;
+            end
+        end
+    end
+endmodule
+</code></pre>
+<h3 id="1232-&#x538B;&#x7F29;&#x4E0E;&#x91CF;&#x5316;&#x7B56;&#x7565;">12.3.2 &#x538B;&#x7F29;&#x4E0E;&#x91CF;&#x5316;&#x7B56;&#x7565;</h3>
+<p>&#x4E3A;&#x4E86;&#x51CF;&#x5C11;&#x5B58;&#x50A8;&#x9700;&#x6C42;&#xFF0C;&#x53EF;&#x4EE5;&#x5BF9;KV-cache&#x8FDB;&#x884C;&#x538B;&#x7F29;&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// KV&#x538B;&#x7F29;&#x6A21;&#x5757;
+module kv_compressor #(
+    parameter HEAD_DIM = 128,
+    parameter COMPRESS_RATIO = 4  // 4:1&#x538B;&#x7F29;
+) (
+    input  logic [15:0]  kv_fp16[HEAD_DIM],      // &#x539F;&#x59CB;FP16
+    output logic [3:0]   kv_int4[HEAD_DIM],      // &#x91CF;&#x5316;INT4
+    output logic [15:0]  scale,                   // &#x91CF;&#x5316;&#x5C3A;&#x5EA6;
+    output logic [15:0]  zero_point              // &#x96F6;&#x70B9;
+);
+
+    // &#x52A8;&#x6001;&#x91CF;&#x5316;&#x8303;&#x56F4;&#x8BA1;&#x7B97;
+    logic [15:0] max_val, min_val;
+
+    always_comb begin
+        // &#x627E;&#x6700;&#x5927;&#x6700;&#x5C0F;&#x503C;
+        max_val = kv_fp16[0];
+        min_val = kv_fp16[0];
+
+        for (int i = 1; i &lt; HEAD_DIM; i++) begin
+            if (kv_fp16[i] &gt; max_val) max_val = kv_fp16[i];
+            if (kv_fp16[i] &lt; min_val) min_val = kv_fp16[i];
+        end
+
+        // &#x8BA1;&#x7B97;&#x91CF;&#x5316;&#x53C2;&#x6570;
+        scale = (max_val - min_val) / 15;  // INT4&#x8303;&#x56F4;
+        zero_point = -min_val / scale;
+
+        // &#x6267;&#x884C;&#x91CF;&#x5316;
+        for (int i = 0; i &lt; HEAD_DIM; i++) begin
+            kv_int4[i] = (kv_fp16[i] / scale) + zero_point;
+        end
+    end
+endmodule
+</code></pre>
+<p><strong>&#x538B;&#x7F29;&#x6280;&#x672F;&#x5BF9;&#x6BD4;&#xFF1A;</strong></p>
+<ul>
+<li><strong>INT8&#x91CF;&#x5316;</strong>&#xFF1A;2&#x500D;&#x538B;&#x7F29;&#xFF0C;&#x7CBE;&#x5EA6;&#x635F;&#x5931;&lt;0.1%</li>
+<li><strong>INT4&#x91CF;&#x5316;</strong>&#xFF1A;4&#x500D;&#x538B;&#x7F29;&#xFF0C;&#x9700;&#x8981;&#x7CBE;&#x7EC6;&#x6821;&#x51C6;</li>
+<li><strong>&#x7A00;&#x758F;&#x5B58;&#x50A8;</strong>&#xFF1A;&#x4EC5;&#x5B58;&#x50A8;&#x91CD;&#x8981;token&#xFF0C;&#x53EF;&#x8FBE;10&#x500D;&#x538B;&#x7F29;</li>
+</ul>
+<h3 id="1233-&#x52A8;&#x6001;&#x5185;&#x5B58;&#x7BA1;&#x7406;">12.3.3 &#x52A8;&#x6001;&#x5185;&#x5B58;&#x7BA1;&#x7406;</h3>
+<p>&#x652F;&#x6301;&#x591A;batch&#x548C;&#x53EF;&#x53D8;&#x957F;&#x5EA6;&#x5E8F;&#x5217;&#x7684;&#x52A8;&#x6001;&#x5206;&#x914D;&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// KV-Cache&#x52A8;&#x6001;&#x5206;&#x914D;&#x5668;
+module kv_allocator #(
+    parameter MAX_BATCH = 16,
+    parameter MAX_TOTAL_LEN = 65536,
+    parameter BLOCK_SIZE = 64        // &#x5206;&#x914D;&#x7C92;&#x5EA6;
+) (
+    input  logic        clk,
+    input  logic        rst_n,
+
+    // &#x5206;&#x914D;&#x8BF7;&#x6C42;
+    input  logic        alloc_req,
+    input  logic [3:0]  batch_id,
+    input  logic [15:0] seq_len,
+
+    // &#x91CA;&#x653E;&#x8BF7;&#x6C42;
+    input  logic        free_req,
+    input  logic [3:0]  free_batch_id,
+
+    // &#x5206;&#x914D;&#x7ED3;&#x679C;
+    output logic [15:0] base_addr[MAX_BATCH],
+    output logic        alloc_success,
+    output logic [31:0] free_blocks
+);
+
+    // &#x7A7A;&#x95F2;&#x5757;&#x4F4D;&#x56FE;
+    logic block_free_map[MAX_TOTAL_LEN/BLOCK_SIZE];
+
+    // &#x5206;&#x914D;&#x8868;
+    typedef struct {
+        logic [15:0] base_block;
+        logic [15:0] num_blocks;
+        logic        valid;
+    } alloc_entry_t;
+
+    alloc_entry_t alloc_table[MAX_BATCH];
+
+    // First-fit&#x5206;&#x914D;&#x7B97;&#x6CD5;
+    always_ff @(posedge clk) begin
+        if (alloc_req) begin
+            automatic int required_blocks = (seq_len + BLOCK_SIZE - 1) / BLOCK_SIZE;
+            automatic int free_run = 0;
+            automatic int start_block = 0;
+
+            alloc_success &lt;= 1&apos;b0;
+
+            // &#x641C;&#x7D22;&#x8FDE;&#x7EED;&#x7A7A;&#x95F2;&#x5757;
+            for (int i = 0; i &lt; MAX_TOTAL_LEN/BLOCK_SIZE; i++) begin
+                if (block_free_map[i]) begin
+                    if (free_run == 0) start_block = i;
+                    free_run++;
+
+                    if (free_run &gt;= required_blocks) begin
+                        // &#x627E;&#x5230;&#x8DB3;&#x591F;&#x7A7A;&#x95F4;&#xFF0C;&#x6267;&#x884C;&#x5206;&#x914D;
+                        alloc_table[batch_id].base_block &lt;= start_block;
+                        alloc_table[batch_id].num_blocks &lt;= required_blocks;
+                        alloc_table[batch_id].valid &lt;= 1&apos;b1;
+
+                        // &#x6807;&#x8BB0;&#x5DF2;&#x5206;&#x914D;
+                        for (int j = 0; j &lt; required_blocks; j++) begin
+                            block_free_map[start_block + j] &lt;= 1&apos;b0;
+                        end
+
+                        alloc_success &lt;= 1&apos;b1;
+                        break;
+                    end
+                end else begin
+                    free_run = 0;
+                end
+            end
+        end
+    end
+endmodule
+</code></pre>
+<p><strong>&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x7B56;&#x7565;&#xFF1A;</strong></p>
+<ol>
+<li><strong>&#x9884;&#x5206;&#x914D;&#x6C60;</strong>&#xFF1A;&#x4E3A;&#x5E38;&#x89C1;&#x5E8F;&#x5217;&#x957F;&#x5EA6;&#x9884;&#x7559;&#x5185;&#x5B58;&#x6C60;</li>
+<li><strong>&#x788E;&#x7247;&#x6574;&#x7406;</strong>&#xFF1A;&#x5B9A;&#x671F;&#x5408;&#x5E76;&#x7A7A;&#x95F2;&#x5757;</li>
+<li><strong>&#x4F18;&#x5148;&#x7EA7;&#x8C03;&#x5EA6;</strong>&#xFF1A;&#x4E3A;&#x91CD;&#x8981;&#x8BF7;&#x6C42;&#x9884;&#x7559;&#x8D44;&#x6E90;</li>
+</ol>
+<h3 id="1234-pagedattention&#x5B9E;&#x73B0;">12.3.4 PagedAttention&#x5B9E;&#x73B0;</h3>
+<p>PagedAttention&#x901A;&#x8FC7;&#x865A;&#x62DF;&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x6280;&#x672F;&#x4F18;&#x5316;KV-cache&#x5229;&#x7528;&#x7387;&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// PagedAttention&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x5668;
+module paged_attention_manager #(
+    parameter PAGE_SIZE = 16,        // &#x6BCF;&#x9875;token&#x6570;
+    parameter NUM_PAGES = 4096,      // &#x603B;&#x9875;&#x6570;
+    parameter MAX_SEQUENCES = 256   // &#x6700;&#x5927;&#x5E76;&#x53D1;&#x5E8F;&#x5217;
+) (
+    input  logic        clk,
+    input  logic        rst_n,
+
+    // &#x5E8F;&#x5217;&#x7BA1;&#x7406;&#x63A5;&#x53E3;
+    input  logic        seq_alloc_req,
+    input  logic [7:0]  seq_id,
+    input  logic [15:0] initial_length,
+
+    input  logic        seq_append_req,
+    input  logic [7:0]  append_seq_id,
+    input  logic [3:0]  num_new_tokens,
+
+    // &#x9875;&#x8868;&#x67E5;&#x8BE2;&#x63A5;&#x53E3;
+    input  logic [7:0]  query_seq_id,
+    input  logic [15:0] query_position,
+    output logic [11:0] physical_page,
+    output logic [3:0]  page_offset,
+    output logic        page_valid
+);
+
+    // &#x9875;&#x8868;&#x7ED3;&#x6784;
+    typedef struct {
+        logic [11:0] physical_pages[2048];  // &#x865A;&#x62DF;&#x9875;&#x5230;&#x7269;&#x7406;&#x9875;&#x6620;&#x5C04;
+        logic [15:0] seq_length;
+        logic [10:0] num_pages;
+        logic        valid;
+    } page_table_entry_t;
+
+    page_table_entry_t page_tables[MAX_SEQUENCES];
+
+    // &#x7A7A;&#x95F2;&#x9875;&#x4F4D;&#x56FE;
+    logic page_free_map[NUM_PAGES];
+    logic [11:0] free_page_count;
+
+    // &#x9875;&#x5206;&#x914D;&#x5668;
+    function automatic logic [11:0] allocate_page();
+        for (int i = 0; i &lt; NUM_PAGES; i++) begin
+            if (page_free_map[i]) begin
+                page_free_map[i] = 1&apos;b0;
+                free_page_count--;
+                return i;
+            end
+        end
+        return 12&apos;hFFF; // &#x5206;&#x914D;&#x5931;&#x8D25;
+    endfunction
+
+    // &#x5E8F;&#x5217;&#x5206;&#x914D;&#x5904;&#x7406;
+    always_ff @(posedge clk) begin
+        if (seq_alloc_req) begin
+            automatic int pages_needed = (initial_length + PAGE_SIZE - 1) / PAGE_SIZE;
+
+            if (free_page_count &gt;= pages_needed) begin
+                page_tables[seq_id].valid &lt;= 1&apos;b1;
+                page_tables[seq_id].seq_length &lt;= initial_length;
+                page_tables[seq_id].num_pages &lt;= pages_needed;
+
+                // &#x5206;&#x914D;&#x7269;&#x7406;&#x9875;
+                for (int i = 0; i &lt; pages_needed; i++) begin
+                    page_tables[seq_id].physical_pages[i] &lt;= allocate_page();
+                end
+            end
+        end
+
+        // &#x5E8F;&#x5217;&#x8FFD;&#x52A0;&#x5904;&#x7406;
+        if (seq_append_req) begin
+            automatic int current_pages = page_tables[append_seq_id].num_pages;
+            automatic int current_len = page_tables[append_seq_id].seq_length;
+            automatic int new_len = current_len + num_new_tokens;
+            automatic int new_pages = (new_len + PAGE_SIZE - 1) / PAGE_SIZE;
+
+            // &#x9700;&#x8981;&#x5206;&#x914D;&#x65B0;&#x9875;
+            if (new_pages &gt; current_pages) begin
+                for (int i = current_pages; i &lt; new_pages; i++) begin
+                    page_tables[append_seq_id].physical_pages[i] &lt;= allocate_page();
+                end
+                page_tables[append_seq_id].num_pages &lt;= new_pages;
+            end
+
+            page_tables[append_seq_id].seq_length &lt;= new_len;
+        end
+    end
+
+    // &#x5730;&#x5740;&#x8F6C;&#x6362;
+    always_comb begin
+        automatic int virtual_page = query_position / PAGE_SIZE;
+        page_offset = query_position % PAGE_SIZE;
+
+        if (page_tables[query_seq_id].valid &amp;&amp; 
+            virtual_page &lt; page_tables[query_seq_id].num_pages) begin
+            physical_page = page_tables[query_seq_id].physical_pages[virtual_page];
+            page_valid = 1&apos;b1;
+        end else begin
+            physical_page = 12&apos;h0;
+            page_valid = 1&apos;b0;
+        end
+    end
+endmodule
+</code></pre>
+<p><strong>PagedAttention&#x4F18;&#x52BF;&#xFF1A;</strong></p>
+<ul>
+<li><strong>&#x5185;&#x5B58;&#x6548;&#x7387;</strong>&#xFF1A;&#x6D88;&#x9664;&#x5E8F;&#x5217;&#x95F4;&#x7684;&#x5185;&#x5B58;&#x788E;&#x7247;&#xFF0C;&#x5229;&#x7528;&#x7387;&#x63D0;&#x5347;20-30%</li>
+<li><strong>&#x52A8;&#x6001;&#x6269;&#x5C55;</strong>&#xFF1A;&#x652F;&#x6301;&#x5E8F;&#x5217;&#x957F;&#x5EA6;&#x52A8;&#x6001;&#x589E;&#x957F;&#xFF0C;&#x65E0;&#x9700;&#x9884;&#x5206;&#x914D;</li>
+<li><strong>&#x5171;&#x4EAB;&#x4F18;&#x5316;</strong>&#xFF1A;&#x591A;&#x5E8F;&#x5217;&#x53EF;&#x5171;&#x4EAB;&#x76F8;&#x540C;&#x7684;KV&#x9875;&#xFF08;&#x5982;&#x7CFB;&#x7EDF;&#x63D0;&#x793A;&#xFF09;</li>
+</ul>
+<h3 id="1235-kv-cache&#x8C03;&#x5EA6;&#x4F18;&#x5316;">12.3.5 KV-Cache&#x8C03;&#x5EA6;&#x4F18;&#x5316;</h3>
+<p>&#x9488;&#x5BF9;&#x591A;&#x8BF7;&#x6C42;&#x573A;&#x666F;&#x7684;&#x667A;&#x80FD;&#x8C03;&#x5EA6;&#x7B56;&#x7565;&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// KV-Cache&#x8BF7;&#x6C42;&#x8C03;&#x5EA6;&#x5668;
+module kv_cache_scheduler #(
+    parameter MAX_REQUESTS = 64,
+    parameter NUM_BANKS = 16
+) (
+    input  logic        clk,
+    input  logic        rst_n,
+
+    // &#x8BF7;&#x6C42;&#x8F93;&#x5165;&#x961F;&#x5217;
+    input  kv_request_t requests[MAX_REQUESTS],
+    input  logic [5:0]  num_requests,
+
+    // &#x94F6;&#x884C;&#x5206;&#x914D;&#x8F93;&#x51FA;
+    output kv_request_t bank_requests[NUM_BANKS],
+    output logic        bank_valid[NUM_BANKS]
+);
+
+    // &#x8BF7;&#x6C42;&#x4F18;&#x5148;&#x7EA7;&#x8BA1;&#x7B97;
+    typedef struct {
+        logic [5:0]  request_id;
+        logic [7:0]  priority;
+        logic [3:0]  target_bank;
+        logic        is_prefetch;
+    } scored_request_t;
+
+    scored_request_t scored_reqs[MAX_REQUESTS];
+
+    // &#x94F6;&#x884C;&#x51B2;&#x7A81;&#x68C0;&#x6D4B;&#x548C;&#x8D1F;&#x8F7D;&#x5747;&#x8861;
+    logic [7:0] bank_load[NUM_BANKS];
+
+    always_ff @(posedge clk) begin
+        // &#x8BA1;&#x7B97;&#x6BCF;&#x4E2A;&#x8BF7;&#x6C42;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x548C;&#x76EE;&#x6807;&#x94F6;&#x884C;
+        for (int i = 0; i &lt; num_requests; i++) begin
+            scored_reqs[i].request_id = i;
+
+            // &#x4F18;&#x5148;&#x7EA7;&#x56E0;&#x7D20;&#xFF1A;
+            // - &#x5EF6;&#x8FDF;&#x654F;&#x611F;&#x5EA6;&#xFF08;&#x751F;&#x6210; &gt; &#x9884;&#x586B;&#x5145;&#xFF09;
+            // - &#x961F;&#x5217;&#x7B49;&#x5F85;&#x65F6;&#x95F4;
+            // - &#x8BF7;&#x6C42;&#x5927;&#x5C0F;&#xFF08;&#x5C0F;&#x8BF7;&#x6C42;&#x4F18;&#x5148;&#xFF09;
+            scored_reqs[i].priority = 
+                (requests[i].is_generation ? 8&apos;h80 : 8&apos;h40) +
+                (requests[i].wait_cycles &gt;&gt; 2) +
+                (8&apos;h20 - requests[i].size[7:3]);
+
+            // &#x94F6;&#x884C;&#x6620;&#x5C04;&#xFF08;&#x57FA;&#x4E8E;&#x5730;&#x5740;&#x54C8;&#x5E0C;&#xFF09;
+            scored_reqs[i].target_bank = requests[i].address[7:4];
+
+            // &#x6807;&#x8BB0;&#x9884;&#x53D6;&#x8BF7;&#x6C42;
+            scored_reqs[i].is_prefetch = requests[i].is_prefetch;
+        end
+
+        // &#x6E05;&#x7A7A;&#x94F6;&#x884C;&#x5206;&#x914D;
+        for (int b = 0; b &lt; NUM_BANKS; b++) begin
+            bank_valid[b] &lt;= 1&apos;b0;
+            bank_load[b] &lt;= 8&apos;h0;
+        end
+
+        // &#x8D2A;&#x5FC3;&#x8C03;&#x5EA6;&#xFF1A;&#x6309;&#x4F18;&#x5148;&#x7EA7;&#x5206;&#x914D;&#x5230;&#x94F6;&#x884C;
+        for (int p = 0; p &lt; num_requests; p++) begin
+            // &#x627E;&#x6700;&#x9AD8;&#x4F18;&#x5148;&#x7EA7;&#x672A;&#x8C03;&#x5EA6;&#x8BF7;&#x6C42;
+            automatic int best_req = -1;
+            automatic logic [7:0] best_priority = 8&apos;h0;
+
+            for (int i = 0; i &lt; num_requests; i++) begin
+                if (scored_reqs[i].priority &gt; best_priority) begin
+                    automatic int bank = scored_reqs[i].target_bank;
+
+                    // &#x68C0;&#x67E5;&#x94F6;&#x884C;&#x662F;&#x5426;&#x53EF;&#x7528;
+                    if (!bank_valid[bank] || 
+                        (scored_reqs[i].is_prefetch &amp;&amp; bank_load[bank] &lt; 2)) begin
+                        best_req = i;
+                        best_priority = scored_reqs[i].priority;
+                    end
+                end
+            end
+
+            // &#x5206;&#x914D;&#x8BF7;&#x6C42;&#x5230;&#x94F6;&#x884C;
+            if (best_req &gt;= 0) begin
+                automatic int req_id = scored_reqs[best_req].request_id;
+                automatic int bank = scored_reqs[best_req].target_bank;
+
+                bank_requests[bank] &lt;= requests[req_id];
+                bank_valid[bank] &lt;= 1&apos;b1;
+                bank_load[bank]++;
+
+                // &#x6807;&#x8BB0;&#x5DF2;&#x8C03;&#x5EA6;
+                scored_reqs[best_req].priority &lt;= 8&apos;h0;
+            end
+        end
+    end
+endmodule
+</code></pre>
+<p><strong>&#x8C03;&#x5EA6;&#x4F18;&#x5316;&#x6548;&#x679C;&#xFF1A;</strong></p>
+<ul>
+<li>&#x94F6;&#x884C;&#x51B2;&#x7A81;&#x51CF;&#x5C11;60%</li>
+<li>&#x5E73;&#x5747;&#x8BBF;&#x95EE;&#x5EF6;&#x8FDF;&#x964D;&#x4F4E;35%</li>
+<li>&#x9884;&#x53D6;&#x547D;&#x4E2D;&#x7387;&#x63D0;&#x5347;&#x81F3;85%</li>
+</ul>
+<h2 id="124-&#x524D;&#x9988;&#x7F51;&#x7EDC;ffn&#x52A0;&#x901F;">12.4 &#x524D;&#x9988;&#x7F51;&#x7EDC;(FFN)&#x52A0;&#x901F;</h2>
+<h3 id="1241-ffn&#x8BA1;&#x7B97;&#x7279;&#x5F81;&#x4E0E;&#x4F18;&#x5316;">12.4.1 FFN&#x8BA1;&#x7B97;&#x7279;&#x5F81;&#x4E0E;&#x4F18;&#x5316;</h3>
+<p>FFN&#x5C42;&#x5360;&#x636E;LLM&#x7EA6;35%&#x7684;&#x8BA1;&#x7B97;&#x91CF;&#xFF0C;&#x5176;&#x7279;&#x5F81;&#x662F;&#x4E24;&#x4E2A;&#x5927;&#x578B;&#x77E9;&#x9635;&#x4E58;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// FFN&#x5C42;&#x8BA1;&#x7B97;&#x5F15;&#x64CE;
+module ffn_engine #(
+    parameter MODEL_DIM = 4096,
+    parameter FFN_DIM = 11008,       // &#x901A;&#x5E38;&#x4E3A;model_dim&#x7684;2.7&#x500D;
+    parameter ACTIVATION = &quot;SWIGLU&quot;, // RELU, GELU, SWIGLU
+    parameter DATA_WIDTH = 16
+) (
+    input  logic                    clk,
+    input  logic                    rst_n,
+
+    // &#x8F93;&#x5165;&#x5411;&#x91CF;
+    input  logic [DATA_WIDTH-1:0]   input_vector[MODEL_DIM],
+    input  logic                    input_valid,
+
+    // &#x6743;&#x91CD;&#x63A5;&#x53E3;&#xFF08;&#x6D41;&#x5F0F;&#x8BFB;&#x53D6;&#xFF09;
+    input  logic [DATA_WIDTH-1:0]   w1_stream[64],  // Gate&#x6743;&#x91CD;
+    input  logic [DATA_WIDTH-1:0]   w2_stream[64],  // Up&#x6743;&#x91CD;
+    input  logic [DATA_WIDTH-1:0]   w3_stream[64],  // Down&#x6743;&#x91CD;
+    input  logic                    weight_valid,
+
+    // &#x8F93;&#x51FA;
+    output logic [DATA_WIDTH-1:0]   output_vector[MODEL_DIM],
+    output logic                    output_valid
+);
+
+    // SwiGLU&#x6FC0;&#x6D3B;: FFN(x) = (W1(x) * &#x3C3;(W2(x))) * W3
+    // &#x5176;&#x4E2D;&#x3C3;&#x662F;Swish&#x6FC0;&#x6D3B;&#x51FD;&#x6570;
+
+    // &#x7B2C;&#x4E00;&#x9636;&#x6BB5;&#xFF1A;&#x5E76;&#x884C;&#x8BA1;&#x7B97;W1(x)&#x548C;W2(x)
+    logic [DATA_WIDTH-1:0] gate_output[FFN_DIM];
+    logic [DATA_WIDTH-1:0] up_output[FFN_DIM];
+
+    // &#x77E9;&#x9635;&#x4E58;&#x6CD5;&#x5355;&#x5143;&#xFF08;&#x5206;&#x5757;&#x8BA1;&#x7B97;&#xFF09;
+    localparam TILE_SIZE = 64;
+    localparam NUM_TILES = MODEL_DIM / TILE_SIZE;
+
+    genvar t;
+    generate
+        for (t = 0; t &lt; NUM_TILES; t++) begin : tile_compute
+            matrix_mult_tile #(
+                .M(FFN_DIM / TILE_SIZE),
+                .K(TILE_SIZE),
+                .N(1),
+                .DATA_WIDTH(DATA_WIDTH)
+            ) gate_tile (
+                .clk(clk),
+                .a_matrix(w1_stream),  // &#x6743;&#x91CD;&#x5757;
+                .b_vector(input_vector[t*TILE_SIZE +: TILE_SIZE]),
+                .c_partial(gate_partial[t])
+            );
+
+            // Up&#x6295;&#x5F71;&#x7684;&#x76F8;&#x540C;&#x7ED3;&#x6784;
+            matrix_mult_tile up_tile (
+                .clk(clk),
+                .a_matrix(w2_stream),
+                .b_vector(input_vector[t*TILE_SIZE +: TILE_SIZE]),
+                .c_partial(up_partial[t])
+            );
+        end
+    endgenerate
+
+    // &#x6FC0;&#x6D3B;&#x51FD;&#x6570;&#x5355;&#x5143;
+    swiglu_activation #(
+        .VECTOR_DIM(FFN_DIM),
+        .DATA_WIDTH(DATA_WIDTH)
+    ) activation_unit (
+        .clk(clk),
+        .gate_input(gate_output),
+        .up_input(up_output),
+        .activated_output(activated)
+    );
+
+    // &#x7B2C;&#x4E8C;&#x9636;&#x6BB5;&#xFF1A;Down&#x6295;&#x5F71;
+    matrix_mult_streaming #(
+        .M(MODEL_DIM),
+        .K(FFN_DIM),
+        .DATA_WIDTH(DATA_WIDTH)
+    ) down_projection (
+        .clk(clk),
+        .input_vector(activated),
+        .weight_stream(w3_stream),
+        .output_vector(output_vector),
+        .valid_out(output_valid)
+    );
+endmodule
+</code></pre>
+<h3 id="1242-&#x6FC0;&#x6D3B;&#x51FD;&#x6570;&#x786C;&#x4EF6;&#x5B9E;&#x73B0;">12.4.2 &#x6FC0;&#x6D3B;&#x51FD;&#x6570;&#x786C;&#x4EF6;&#x5B9E;&#x73B0;</h3>
+<p>&#x4E0D;&#x540C;&#x6FC0;&#x6D3B;&#x51FD;&#x6570;&#x7684;&#x9AD8;&#x6548;&#x786C;&#x4EF6;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// &#x7EDF;&#x4E00;&#x6FC0;&#x6D3B;&#x51FD;&#x6570;&#x6A21;&#x5757;
+module activation_unit #(
+    parameter DATA_WIDTH = 16,
+    parameter FUNCTION_TYPE = &quot;SWIGLU&quot;  // RELU, GELU, SWISH, SWIGLU
+) (
+    input  logic signed [DATA_WIDTH-1:0] x,
+    output logic signed [DATA_WIDTH-1:0] y
+);
+
+    generate
+        case (FUNCTION_TYPE)
+            &quot;RELU&quot;: begin
+                // ReLU: max(0, x)
+                assign y = (x[DATA_WIDTH-1]) ? &apos;0 : x;
+            end
+
+            &quot;GELU&quot;: begin
+                // GELU &#x2248; 0.5x(1 + tanh(&#x221A;(2/&#x3C0;)(x + 0.044715x&#xB3;)))
+                // &#x4F7F;&#x7528;&#x5206;&#x6BB5;&#x7EBF;&#x6027;&#x8FD1;&#x4F3C;
+                logic signed [DATA_WIDTH-1:0] x_abs, gelu_approx;
+                assign x_abs = x[DATA_WIDTH-1] ? -x : x;
+
+                always_comb begin
+                    if (x_abs &lt; 16&apos;h0666) begin      // |x| &lt; 0.4
+                        gelu_approx = (x &gt;&gt;&gt; 1) + (x &gt;&gt;&gt; 3);  // 0.625x
+                    end else if (x_abs &lt; 16&apos;h1333) begin  // |x| &lt; 1.2
+                        gelu_approx = (x &gt;&gt;&gt; 1) + (x &gt;&gt;&gt; 2);  // 0.75x
+                    end else if (x_abs &lt; 16&apos;h2000) begin  // |x| &lt; 2.0
+                        gelu_approx = x - (x &gt;&gt;&gt; 3);          // 0.875x
+                    end else begin
+                        gelu_approx = x;                      // &#x2248;x for large |x|
+                    end
+
+                    y = x[DATA_WIDTH-1] ? 
+                        (x_abs &gt; 16&apos;h3000 ? &apos;0 : -gelu_approx) : gelu_approx;
+                end
+            end
+
+            &quot;SWISH&quot;: begin
+                // Swish: x * sigmoid(x)
+                // &#x4F7F;&#x7528;&#x67E5;&#x627E;&#x8868;&#x5B9E;&#x73B0;sigmoid
+                logic [7:0] lut_addr;
+                logic [15:0] sigmoid_val;
+
+                // 8-bit&#x5730;&#x5740;&#x7684;sigmoid LUT
+                sigmoid_lut_256 sig_lut (
+                    .addr(x[DATA_WIDTH-1:DATA_WIDTH-8]),
+                    .sigmoid_out(sigmoid_val)
+                );
+
+                // &#x5B9A;&#x70B9;&#x4E58;&#x6CD5;
+                mult_fixed #(.WIDTH(DATA_WIDTH)) mult (
+                    .a(x),
+                    .b(sigmoid_val),
+                    .product(y)
+                );
+            end
+
+            &quot;SWIGLU&quot;: begin
+                // SwiGLU&#x9700;&#x8981;&#x4E24;&#x4E2A;&#x8F93;&#x5165;&#xFF0C;&#x8FD9;&#x91CC;&#x53EA;&#x5B9E;&#x73B0;Swish&#x90E8;&#x5206;
+                // &#x5B8C;&#x6574;SwiGLU&#x5728;&#x4E0A;&#x5C42;&#x6A21;&#x5757;&#x5B9E;&#x73B0;
+                activation_unit #(.FUNCTION_TYPE(&quot;SWISH&quot;)) swish_inst (
+                    .x(x),
+                    .y(y)
+                );
+            end
+        endcase
+    endgenerate
+endmodule
+</code></pre>
+<h3 id="1243-&#x77E9;&#x9635;&#x4E58;&#x6CD5;&#x4F18;&#x5316;&#x6280;&#x672F;">12.4.3 &#x77E9;&#x9635;&#x4E58;&#x6CD5;&#x4F18;&#x5316;&#x6280;&#x672F;</h3>
+<p>&#x9488;&#x5BF9;FFN&#x7684;&#x5927;&#x89C4;&#x6A21;&#x77E9;&#x9635;&#x4E58;&#x6CD5;&#x4F18;&#x5316;&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// &#x8109;&#x52A8;&#x9635;&#x5217;&#x77E9;&#x9635;&#x4E58;&#x6CD5;&#x5668;
+module systolic_array_gemm #(
+    parameter ARRAY_SIZE = 32,      // 32x32&#x8109;&#x52A8;&#x9635;&#x5217;
+    parameter DATA_WIDTH = 8,       // INT8&#x91CF;&#x5316;
+    parameter ACCUM_WIDTH = 32      // &#x7D2F;&#x52A0;&#x5668;&#x4F4D;&#x5BBD;
+) (
+    input  logic                    clk,
+    input  logic                    rst_n,
+
+    // &#x8F93;&#x5165;&#x6570;&#x636E;&#x6D41;
+    input  logic [DATA_WIDTH-1:0]   a_data[ARRAY_SIZE],    // &#x4ECE;&#x5DE6;&#x4FA7;&#x8F93;&#x5165;
+    input  logic [DATA_WIDTH-1:0]   b_data[ARRAY_SIZE],    // &#x4ECE;&#x9876;&#x90E8;&#x8F93;&#x5165;
+    input  logic                    data_valid,
+
+    // &#x8F93;&#x51FA;&#x7D2F;&#x52A0;&#x7ED3;&#x679C;
+    output logic [ACCUM_WIDTH-1:0]  c_data[ARRAY_SIZE][ARRAY_SIZE],
+    output logic                    result_valid
+);
+
+    // &#x5904;&#x7406;&#x5355;&#x5143;(PE)&#x5B9A;&#x4E49;
+    typedef struct {
+        logic signed [DATA_WIDTH-1:0]  a_reg;
+        logic signed [DATA_WIDTH-1:0]  b_reg;
+        logic signed [ACCUM_WIDTH-1:0] c_accum;
+    } pe_state_t;
+
+    pe_state_t pe_array[ARRAY_SIZE][ARRAY_SIZE];
+
+    // &#x8109;&#x52A8;&#x9635;&#x5217;&#x6570;&#x636E;&#x6D41;
+    genvar row, col;
+    generate
+        for (row = 0; row &lt; ARRAY_SIZE; row++) begin : row_gen
+            for (col = 0; col &lt; ARRAY_SIZE; col++) begin : col_gen
+
+                always_ff @(posedge clk) begin
+                    if (rst_n) begin
+                        // &#x8BA1;&#x7B97;MAC
+                        pe_array[row][col].c_accum &lt;= 
+                            pe_array[row][col].c_accum + 
+                            pe_array[row][col].a_reg * pe_array[row][col].b_reg;
+
+                        // &#x6570;&#x636E;&#x4F20;&#x64AD;
+                        if (col == 0) begin
+                            // &#x7B2C;&#x4E00;&#x5217;&#x4ECE;&#x5916;&#x90E8;&#x8F93;&#x5165;
+                            pe_array[row][col].a_reg &lt;= a_data[row];
+                        end else begin
+                            // &#x5411;&#x53F3;&#x4F20;&#x64AD;A&#x6570;&#x636E;
+                            pe_array[row][col].a_reg &lt;= pe_array[row][col-1].a_reg;
+                        end
+
+                        if (row == 0) begin
+                            // &#x7B2C;&#x4E00;&#x884C;&#x4ECE;&#x5916;&#x90E8;&#x8F93;&#x5165;
+                            pe_array[row][col].b_reg &lt;= b_data[col];
+                        end else begin
+                            // &#x5411;&#x4E0B;&#x4F20;&#x64AD;B&#x6570;&#x636E;
+                            pe_array[row][col].b_reg &lt;= pe_array[row-1][col].b_reg;
+                        end
+                    end
+                end
+
+                // &#x8F93;&#x51FA;&#x8FDE;&#x63A5;
+                assign c_data[row][col] = pe_array[row][col].c_accum;
+            end
+        end
+    endgenerate
+
+    // &#x63A7;&#x5236;&#x903B;&#x8F91;
+    logic [15:0] cycle_counter;
+    always_ff @(posedge clk) begin
+        if (data_valid) begin
+            cycle_counter &lt;= cycle_counter + 1;
+        end
+
+        // 2N-1&#x4E2A;&#x5468;&#x671F;&#x540E;&#x7ED3;&#x679C;&#x51C6;&#x5907;&#x597D;
+        result_valid &lt;= (cycle_counter &gt;= 2*ARRAY_SIZE-1);
+    end
+endmodule
+</code></pre>
+<p><strong>&#x77E9;&#x9635;&#x4E58;&#x6CD5;&#x4F18;&#x5316;&#x7B56;&#x7565;&#xFF1A;</strong></p>
+<ol>
+<li><strong>&#x5206;&#x5757;&#x8BA1;&#x7B97;</strong>&#xFF1A;&#x5C06;&#x5927;&#x77E9;&#x9635;&#x5206;&#x89E3;&#x4E3A;&#x9002;&#x5408;&#x7247;&#x4E0A;&#x7F13;&#x5B58;&#x7684;&#x5C0F;&#x5757;</li>
+<li><strong>&#x6570;&#x636E;&#x91CD;&#x7528;</strong>&#xFF1A;&#x6700;&#x5927;&#x5316;&#x6743;&#x91CD;&#x548C;&#x6FC0;&#x6D3B;&#x503C;&#x7684;&#x91CD;&#x7528;&#x7387;</li>
+<li><strong>&#x6DF7;&#x5408;&#x7CBE;&#x5EA6;</strong>&#xFF1A;INT8&#x8BA1;&#x7B97;&#xFF0C;INT32&#x7D2F;&#x52A0;&#xFF0C;FP16&#x8F93;&#x51FA;</li>
+<li><strong>&#x6D41;&#x6C34;&#x7EBF;&#x91CD;&#x53E0;</strong>&#xFF1A;&#x8BA1;&#x7B97;&#x3001;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x3001;&#x7D2F;&#x52A0;&#x5E76;&#x884C;&#x6267;&#x884C;---</li>
+</ol>
+<div style="text-align: center; margin: 20px 0;">
+  <a href="chapter11.html" style="margin-right: 20px;">&#x2190; &#x4E0A;&#x4E00;&#x7AE0;&#xFF1A;&#x672A;&#x6765;&#x8D8B;&#x52BF;&#x4E0E;&#x65B0;&#x5174;&#x6280;&#x672F;</a>
+  <a href="chapter13.html" style="margin-left: 20px;">&#x4E0B;&#x4E00;&#x7AE0;&#xFF1A;&#x89C6;&#x89C9;&#x4E0E;&#x591A;&#x6A21;&#x6001;&#x5904;&#x7406; &#x2192;</a>
+</div>
+
+
+
+<script type="text/javascript">var targetUl = document.getElementsByClassName('page-inner')[0].getElementsByTagName('ul')[0];if(targetUl.getElementsByTagName('a').length>0){targetUl.className='toc';}</script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="chapter11.html" class="navigation navigation-prev " aria-label="Previous page: 第11章：AI加速器基础">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="chapter13.html" class="navigation navigation-next " aria-label="Next page: 第13章：视觉与多模态处理">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第12章：LLM推理加速","level":"4.2","depth":1,"next":{"title":"第13章：视觉与多模态处理","level":"4.3","depth":1,"path":"chapters/chapter13.md","ref":"chapters/chapter13.md","articles":[]},"previous":{"title":"第11章：AI加速器基础","level":"4.1","depth":1,"path":"chapters/chapter11.md","ref":"chapters/chapter11.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","search","copy-code-button","theme-default","back-to-top-button","github","splitter","toc"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/Xde1997/Tutorial_FPGA"},"splitter":{},"toc":{"addClass":true,"className":"toc"},"search":{"maxIndexSize":100000,"ignoreCase":true},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{"copyText":"复制","format":"html"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"expandable-chapters":{}},"theme":"default","author":"FPGA教程团队","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"themeColor":"#3f51b5","themeColorSecondary":"#ff4081"},"title":"FPGA原理与AI加速应用教程","language":"zh-hans","gitbook":"*","description":"面向软件工程师的FPGA实战指南"},"file":{"path":"chapters/chapter12.md","mtime":"2025-08-03T11:36:00.109Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-08-03T12:22:26.570Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
