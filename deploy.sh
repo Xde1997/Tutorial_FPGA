@@ -175,7 +175,7 @@ main() {
     echo "✅ 文档构建成功！"
     
     # 部署
-    deploy_to_github "$1"
+    deploy_to_github "$1" "$2"
     
     echo "🎉 完成！"
 }
