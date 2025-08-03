@@ -107,8 +107,9 @@ deploy_to_github() {
         echo "📝 切换到gh-pages分支..."
         git checkout gh-pages
         
-        # 清理当前分支内容
-        git rm -rf . || true
+        # 清理当前分支内容（保留.git目录）
+        echo "🧹 清理当前分支内容..."
+        find . -mindepth 1 -not -path './.git*' -delete
         
         # 复制文档内容
         echo "📋 复制文档内容..."
