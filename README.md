@@ -8,6 +8,12 @@
 
 本教程基于原始作者的开源项目，采用知识共享署名-相同方式共享 4.0 国际许可协议。
 
+## 🌐 在线文档
+
+📖 **在线阅读：** [https://xde1997.github.io/Tutorial_FPGA/](https://xde1997.github.io/Tutorial_FPGA/)
+
+GitHub Pages自动构建，支持搜索、代码高亮、移动端适配等功能。
+
 本教程面向具有软件工程和AI背景的工程师，旨在快速掌握FPGA设计原理并应用于AI加速领域。课程采用自顶向下的方法，从系统架构到具体实现，重点关注大语言模型(LLM)、视觉模型和多模态AI系统的硬件加速。
 
 ## 🎯 目标读者
@@ -25,9 +31,10 @@
 
 ## 🚀 快速开始
 
-1. 从[第一章](chapters/chapter1.md)开始学习FPGA基础架构
-2. 按照章节顺序逐步深入
-3. 每章都包含实际案例分析，建议在Vivado环境中验证
+1. **在线阅读**：[https://xde1997.github.io/Tutorial_FPGA/](https://xde1997.github.io/Tutorial_FPGA/)
+2. 从[第一章](chapters/chapter1.md)开始学习FPGA基础架构
+3. 按照章节顺序逐步深入
+4. 每章都包含实际案例分析，建议在Vivado环境中验证
 
 ## 💡 学习建议
 
