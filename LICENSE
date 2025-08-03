@@ -1,21 +1,35 @@
-MIT License
+Creative Commons Attribution-ShareAlike 4.0 International License
 
-Copyright (c) 2025 Harry Crab
+本作品采用知识共享署名-相同方式共享 4.0 国际许可协议进行许可。
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+原始作者：https://github.com/zsc/fpga_tutorial/tree/main
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+本许可证允许您：
+- 共享：以任何媒介或格式复制及分发本材料
+- 改编：重混、转换和基于本材料创作
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+只要您遵守以下条款：
+- 署名：您必须给出适当的署名，提供指向本许可证的链接，同时标明是否作出了修改。您可以用任何合理的方式来署名，但是不得以任何方式暗示许可人为您或您的使用背书。
+- 相同方式共享：如果您重混、转换或基于本材料创作，您必须基于与原先相同的许可协议分发您贡献的作品。
+
+完整许可证文本请访问：
+https://creativecommons.org/licenses/by-sa/4.0/deed.zh
+
+---
+
+FPGA Tutorial - Creative Commons Attribution-ShareAlike 4.0 International License
+
+This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+
+Original Author: https://github.com/zsc/fpga_tutorial/tree/main
+
+This license allows you to:
+- Share: copy and redistribute the material in any medium or format
+- Adapt: remix, transform, and build upon the material
+
+Under the following terms:
+- Attribution: You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+- ShareAlike: If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+
+Full license text available at:
+https://creativecommons.org/licenses/by-sa/4.0/
