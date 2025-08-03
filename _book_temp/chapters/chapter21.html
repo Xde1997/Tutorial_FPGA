@@ -1,0 +1,2442 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第21章：可靠性与容错设计 · FPGA原理与AI加速应用教程</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="FPGA教程团队">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <link rel="stylesheet" href="../assets/css/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="chapter22.html" />
+    
+    
+    <link rel="prev" href="chapter20.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第一部分：FPGA基础架构</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="chapter1.html">
+            
+                <a href="chapter1.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    第1章：FPGA基础架构与工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="chapter2.html">
+            
+                <a href="chapter2.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    第2章：HDL设计基础与方法学
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="chapter3.html">
+            
+                <a href="chapter3.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    第3章：时序、时钟与同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="chapter4.html">
+            
+                <a href="chapter4.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    第4章：存储器系统与接口设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第二部分：高级设计技术</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="chapter5.html">
+            
+                <a href="chapter5.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    第5章：高速I/O与通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="chapter6.html">
+            
+                <a href="chapter6.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    第6章：DSP与算术优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="chapter7.html">
+            
+                <a href="chapter7.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    第7章：HLS与C到硬件综合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="chapter8.html">
+            
+                <a href="chapter8.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    第8章：函数式HDL之Haskell/Clash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="chapter9.html">
+            
+                <a href="chapter9.html">
+            
+                    
+                        <b>3.5.</b>
+                    
+                    第9章：OCaml/Hardcaml硬件设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="chapter10.html">
+            
+                <a href="chapter10.html">
+            
+                    
+                        <b>3.6.</b>
+                    
+                    第10章：零知识证明加速器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第三部分：AI加速实战</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="chapter11.html">
+            
+                <a href="chapter11.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    第11章：AI加速器基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="chapter12.html">
+            
+                <a href="chapter12.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    第12章：LLM推理加速
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="chapter13.html">
+            
+                <a href="chapter13.html">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    第13章：视觉与多模态处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="chapter14.html">
+            
+                <a href="chapter14.html">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    第14章：LLM服务基础设施
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="chapter15.html">
+            
+                <a href="chapter15.html">
+            
+                    
+                        <b>4.5.</b>
+                    
+                    第15章：机器人运动控制与FPGA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="chapter16.html">
+            
+                <a href="chapter16.html">
+            
+                    
+                        <b>4.6.</b>
+                    
+                    第16章：激光雷达信号处理与FPGA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="chapter17.html">
+            
+                <a href="chapter17.html">
+            
+                    
+                        <b>4.7.</b>
+                    
+                    第17章：毫米波雷达与FPGA
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第四部分：高级优化与扩展</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="chapter18.html">
+            
+                <a href="chapter18.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    第18章：性能分析与优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="chapter19.html">
+            
+                <a href="chapter19.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    第19章：功耗优化技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="chapter20.html">
+            
+                <a href="chapter20.html">
+            
+                    
+                        <b>5.3.</b>
+                    
+                    第20章：多FPGA系统与扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="5.4" data-path="chapter21.html">
+            
+                <a href="chapter21.html">
+            
+                    
+                        <b>5.4.</b>
+                    
+                    第21章：可靠性与容错设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="chapter22.html">
+            
+                <a href="chapter22.html">
+            
+                    
+                        <b>5.5.</b>
+                    
+                    第22章：未来趋势与新兴技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../docs/DEPLOY_README.md">
+            
+                <span>
+            
+                    
+                        <b>6.1.</b>
+                    
+                    部署指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../docs/GITBOOK_SETUP.md">
+            
+                <span>
+            
+                    
+                        <b>6.2.</b>
+                    
+                    安装说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../docs/CONVERSION_SUMMARY.md">
+            
+                <span>
+            
+                    
+                        <b>6.3.</b>
+                    
+                    转换总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >第21章：可靠性与容错设计</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7B2C;&#x5341;&#x516B;&#x7AE0;&#xFF1A;&#x53EF;&#x9760;&#x6027;&#x4E0E;&#x5BB9;&#x9519;&#x8BBE;&#x8BA1;">&#x7B2C;&#x5341;&#x516B;&#x7AE0;&#xFF1A;&#x53EF;&#x9760;&#x6027;&#x4E0E;&#x5BB9;&#x9519;&#x8BBE;&#x8BA1;</h1>
+<p>&#x5728;&#x9AD8;&#x53EF;&#x9760;&#x6027;&#x5E94;&#x7528;&#x4E2D;&#xFF0C;FPGA&#x7CFB;&#x7EDF;&#x5FC5;&#x987B;&#x80FD;&#x591F;&#x5728;&#x6076;&#x52A3;&#x73AF;&#x5883;&#x4E0B;&#x6301;&#x7EED;&#x7A33;&#x5B9A;&#x8FD0;&#x884C;&#x3002;&#x4ECE;&#x822A;&#x7A7A;&#x822A;&#x5929;&#x5230;&#x6570;&#x636E;&#x4E2D;&#x5FC3;&#xFF0C;&#x4ECE;&#x81EA;&#x52A8;&#x9A7E;&#x9A76;&#x5230;&#x91D1;&#x878D;&#x4EA4;&#x6613;&#xFF0C;&#x7CFB;&#x7EDF;&#x6545;&#x969C;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x707E;&#x96BE;&#x6027;&#x540E;&#x679C;&#x3002;&#x672C;&#x7AE0;&#x5C06;&#x6DF1;&#x5165;&#x63A2;&#x8BA8;FPGA&#x53EF;&#x9760;&#x6027;&#x8BBE;&#x8BA1;&#x7684;&#x5404;&#x4E2A;&#x65B9;&#x9762;&#xFF0C;&#x5305;&#x62EC;&#x8F6F;&#x9519;&#x8BEF;&#x9632;&#x62A4;&#x3001;&#x4E09;&#x6A21;&#x5197;&#x4F59;&#x8BBE;&#x8BA1;&#x3001;&#x914D;&#x7F6E;&#x5B58;&#x50A8;&#x5668;&#x4FDD;&#x62A4;&#x3001;&#x70ED;&#x5347;&#x7EA7;&#x673A;&#x5236;&#x4EE5;&#x53CA;&#x7CFB;&#x7EDF;&#x7EA7;&#x5BB9;&#x9519;&#x7B56;&#x7565;&#x3002;&#x901A;&#x8FC7;&#x672C;&#x7AE0;&#x5B66;&#x4E60;&#xFF0C;&#x60A8;&#x5C06;&#x638C;&#x63E1;&#x6784;&#x5EFA;&#x4EFB;&#x52A1;&#x5173;&#x952E;&#x578B;FPGA&#x7CFB;&#x7EDF;&#x6240;&#x9700;&#x7684;&#x5B8C;&#x6574;&#x6280;&#x672F;&#x6808;&#xFF0C;&#x80FD;&#x591F;&#x8BBE;&#x8BA1;&#x51FA;&#x6EE1;&#x8DB3;&#x6700;&#x4E25;&#x82DB;&#x53EF;&#x9760;&#x6027;&#x8981;&#x6C42;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x3002;</p>
+<h2 id="181-&#x8F6F;&#x9519;&#x8BEF;&#x68C0;&#x6D4B;&#x4E0E;&#x9632;&#x62A4;">18.1 &#x8F6F;&#x9519;&#x8BEF;&#x68C0;&#x6D4B;&#x4E0E;&#x9632;&#x62A4;</h2>
+<h3 id="1811-seu&#x539F;&#x7406;&#x4E0E;&#x5F71;&#x54CD;&#x5206;&#x6790;">18.1.1 SEU&#x539F;&#x7406;&#x4E0E;&#x5F71;&#x54CD;&#x5206;&#x6790;</h3>
+<p>&#x5355;&#x7C92;&#x5B50;&#x7FFB;&#x8F6C;&#xFF08;Single Event Upset, SEU&#xFF09;&#x662F;FPGA&#x53EF;&#x9760;&#x6027;&#x7684;&#x4E3B;&#x8981;&#x5A01;&#x80C1;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x5728;&#x9AD8;&#x6D77;&#x62D4;&#x6216;&#x592A;&#x7A7A;&#x73AF;&#x5883;&#x4E2D;&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// SEU&#x68C0;&#x6D4B;&#x4E0E;&#x7EA0;&#x6B63;&#x6846;&#x67B6;
+module seu_detection_framework #(
+    parameter DATA_WIDTH = 64,
+    parameter ECC_WIDTH = 8,
+    parameter SCRUB_PERIOD = 1000000  // 1ms
+) (
+    input  logic clk,
+    input  logic rst_n,
+
+    // &#x53D7;&#x4FDD;&#x62A4;&#x6570;&#x636E;&#x63A5;&#x53E3;
+    input  logic [DATA_WIDTH-1:0] data_in,
+    input  logic                  data_valid,
+    output logic [DATA_WIDTH-1:0] data_out,
+    output logic                  data_corrected,
+
+    // SEU&#x68C0;&#x6D4B;&#x8F93;&#x51FA;
+    output logic                  seu_detected,
+    output logic                  seu_uncorrectable,
+    output logic [31:0]          seu_count,
+
+    // &#x914D;&#x7F6E;&#x5B58;&#x50A8;&#x5668;&#x626B;&#x63CF;&#x63A5;&#x53E3;
+    output logic                  frame_ecc_error,
+    output logic [31:0]          frame_address
+);
+</code></pre>
+<p><strong>SEU&#x5F71;&#x54CD;&#x5206;&#x6790;&#xFF1A;</strong></p>
+<ol>
+<li><p><strong>&#x914D;&#x7F6E;&#x5B58;&#x50A8;&#x5668;SEU</strong></p>
+<ul>
+<li>LUT&#x5185;&#x5BB9;&#x6539;&#x53D8;&#x5BFC;&#x81F4;&#x903B;&#x8F91;&#x529F;&#x80FD;&#x9519;&#x8BEF;</li>
+<li>&#x5E03;&#x7EBF;&#x8D44;&#x6E90;&#x6539;&#x53D8;&#x5BFC;&#x81F4;&#x4FE1;&#x53F7;&#x9519;&#x8FDE;</li>
+<li>&#x65F6;&#x949F;&#x914D;&#x7F6E;&#x6539;&#x53D8;&#x5BFC;&#x81F4;&#x65F6;&#x5E8F;&#x8FDD;&#x4F8B;</li>
+<li>&#x53D1;&#x751F;&#x7387;&#xFF1A;~100-1000 FIT/Mb&#xFF08;&#x5730;&#x9762;&#xFF09;</li>
+</ul>
+</li>
+<li><p><strong>&#x7528;&#x6237;&#x5B58;&#x50A8;&#x5668;SEU</strong></p>
+<ul>
+<li>BRAM/URAM&#x6570;&#x636E;&#x4F4D;&#x7FFB;&#x8F6C;</li>
+<li>&#x5BC4;&#x5B58;&#x5668;&#x72B6;&#x6001;&#x6539;&#x53D8;</li>
+<li>&#x53EF;&#x901A;&#x8FC7;ECC&#x68C0;&#x6D4B;&#x548C;&#x7EA0;&#x6B63;</li>
+<li>&#x53D1;&#x751F;&#x7387;&#xFF1A;~50-500 FIT/Mb</li>
+</ul>
+</li>
+<li><p><strong>&#x63A7;&#x5236;&#x903B;&#x8F91;SEU</strong></p>
+<ul>
+<li>&#x72B6;&#x6001;&#x673A;&#x8DF3;&#x8F6C;&#x5230;&#x975E;&#x6CD5;&#x72B6;&#x6001;</li>
+<li>&#x8BA1;&#x6570;&#x5668;&#x503C;&#x7A81;&#x53D8;</li>
+<li>&#x63A7;&#x5236;&#x4FE1;&#x53F7;&#x9519;&#x8BEF;&#x89E6;&#x53D1;</li>
+<li>&#x9700;&#x8981;&#x5197;&#x4F59;&#x8BBE;&#x8BA1;&#x9632;&#x62A4;</li>
+</ul>
+</li>
+</ol>
+<h3 id="1812-ecc&#x4E0E;secded&#x5B9E;&#x73B0;">18.1.2 ECC&#x4E0E;SECDED&#x5B9E;&#x73B0;</h3>
+<p>&#x9519;&#x8BEF;&#x68C0;&#x6D4B;&#x4E0E;&#x7EA0;&#x6B63;&#xFF08;ECC&#xFF09;&#x662F;&#x9632;&#x62A4;&#x5B58;&#x50A8;&#x5668;SEU&#x7684;&#x57FA;&#x7840;&#x6280;&#x672F;&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// SECDED (Single Error Correction, Double Error Detection) &#x7F16;&#x7801;&#x5668;
+module secded_encoder #(
+    parameter DATA_WIDTH = 64,
+    parameter PARITY_WIDTH = 8  // &#x5BF9;&#x4E8E;64&#x4F4D;&#x6570;&#x636E;&#x9700;&#x8981;8&#x4F4D;&#x6821;&#x9A8C;
+) (
+    input  logic [DATA_WIDTH-1:0]   data_in,
+    output logic [DATA_WIDTH-1:0]   data_out,
+    output logic [PARITY_WIDTH-1:0] parity_out
+);
+
+    // Hamming&#x7801;&#x751F;&#x6210;&#x77E9;&#x9635;
+    logic [PARITY_WIDTH-1:0] syndrome;
+
+    always_comb begin
+        // &#x8BA1;&#x7B97;&#x6821;&#x9A8C;&#x4F4D;&#xFF08;&#x4F7F;&#x7528;&#x4F18;&#x5316;&#x7684;H&#x77E9;&#x9635;&#xFF09;
+        parity_out[0] = ^(data_in &amp; 64&apos;hAAAAAAAAAAAAAAAA);
+        parity_out[1] = ^(data_in &amp; 64&apos;hCCCCCCCCCCCCCCCC);
+        parity_out[2] = ^(data_in &amp; 64&apos;hF0F0F0F0F0F0F0F0);
+        parity_out[3] = ^(data_in &amp; 64&apos;hFF00FF00FF00FF00);
+        parity_out[4] = ^(data_in &amp; 64&apos;hFFFF0000FFFF0000);
+        parity_out[5] = ^(data_in &amp; 64&apos;hFFFFFFFF00000000);
+        parity_out[6] = ^(data_in[63:32]);
+        parity_out[7] = ^{data_in, parity_out[6:0]}; // &#x603B;&#x5947;&#x5076;&#x6821;&#x9A8C;
+
+        data_out = data_in;
+    end
+endmodule
+</code></pre>
+<p><strong>ECC&#x5B9E;&#x73B0;&#x7B56;&#x7565;&#xFF1A;</strong></p>
+<ol>
+<li><p><strong>&#x5B58;&#x50A8;&#x5668;ECC&#x96C6;&#x6210;</strong></p>
+<ul>
+<li>BRAM&#x5185;&#x7F6E;ECC&#x6A21;&#x5F0F;&#xFF08;Xilinx UltraScale+&#xFF09;</li>
+<li>72&#x4F4D;&#x5BBD;&#x5EA6;&#x652F;&#x6301;64&#x4F4D;&#x6570;&#x636E;+8&#x4F4D;ECC</li>
+<li>&#x786C;&#x4EF6;&#x81EA;&#x52A8;&#x7EA0;&#x6B63;&#x5355;&#x6BD4;&#x7279;&#x9519;&#x8BEF;</li>
+<li>&#x6027;&#x80FD;&#x5F00;&#x9500;&#xFF1A;&lt;5%&#x9762;&#x79EF;&#xFF0C;~1&#x5468;&#x671F;&#x5EF6;&#x8FDF;</li>
+</ul>
+</li>
+<li><p><strong>&#x81EA;&#x5B9A;&#x4E49;ECC&#x5B9E;&#x73B0;</strong></p>
+<ul>
+<li>BCH&#x7801;for&#x591A;&#x6BD4;&#x7279;&#x7EA0;&#x9519;</li>
+<li>Reed-Solomon&#x7801;for&#x7A81;&#x53D1;&#x9519;&#x8BEF;</li>
+<li>&#x4EA4;&#x7EC7;&#x6280;&#x672F;&#x63D0;&#x9AD8;&#x7EA0;&#x9519;&#x80FD;&#x529B;</li>
+<li>&#x6D41;&#x6C34;&#x7EBF;&#x8BBE;&#x8BA1;&#x51CF;&#x5C11;&#x5EF6;&#x8FDF;</li>
+</ul>
+</li>
+<li><p><strong>&#x5206;&#x5C42;&#x4FDD;&#x62A4;&#x7B56;&#x7565;</strong></p>
+<pre><code class="lang-systemverilog">// &#x591A;&#x7EA7;ECC&#x4FDD;&#x62A4;&#x67B6;&#x6784;
+module hierarchical_ecc_protection (
+    // L1: &#x5BC4;&#x5B58;&#x5668;&#x7EA7;&#x4FDD;&#x62A4;
+    output logic [31:0] protected_reg,
+
+    // L2: BRAM&#x7EA7;&#x4FDD;&#x62A4;  
+    output logic [71:0] bram_with_ecc,
+
+    // L3: &#x7CFB;&#x7EDF;&#x7EA7;&#x6821;&#x9A8C;
+    output logic [15:0] system_checksum
+);
+</code></pre>
+</li>
+</ol>
+<h3 id="1813-&#x914D;&#x7F6E;&#x5B58;&#x50A8;&#x5668;&#x626B;&#x63CF;&#x4E0E;&#x4FEE;&#x590D;">18.1.3 &#x914D;&#x7F6E;&#x5B58;&#x50A8;&#x5668;&#x626B;&#x63CF;&#x4E0E;&#x4FEE;&#x590D;</h3>
+<p>&#x914D;&#x7F6E;&#x5B58;&#x50A8;&#x5668;&#x7684;SEU&#x9632;&#x62A4;&#x9700;&#x8981;&#x4E3B;&#x52A8;&#x626B;&#x63CF;&#x548C;&#x4FEE;&#x590D;&#x673A;&#x5236;&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// &#x914D;&#x7F6E;&#x5B58;&#x50A8;&#x5668;&#x626B;&#x63CF;&#x5668;&#xFF08;SEM IP&#x6838;&#x5FC3;&#xFF09;
+module configuration_scrubber #(
+    parameter FRAME_SIZE = 101,        // Xilinx 7&#x7CFB;&#x5217;&#x5E27;&#x5927;&#x5C0F;
+    parameter SCRUB_RATE = 100_000_000 // 100MHz&#x626B;&#x63CF;&#x9891;&#x7387;
+) (
+    input  logic        clk,
+    input  logic        rst_n,
+
+    // ICAP&#x63A5;&#x53E3;
+    output logic [31:0] icap_data,
+    output logic        icap_write,
+    input  logic        icap_busy,
+
+    // &#x9519;&#x8BEF;&#x62A5;&#x544A;
+    output logic        crc_error,
+    output logic        ecc_error,
+    output logic [31:0] error_frame_addr,
+    output logic        correction_done,
+
+    // &#x6027;&#x80FD;&#x76D1;&#x63A7;
+    output logic [31:0] frames_scanned,
+    output logic [31:0] errors_corrected
+);
+</code></pre>
+<p><strong>&#x626B;&#x63CF;&#x7B56;&#x7565;&#x5B9E;&#x73B0;&#xFF1A;</strong></p>
+<ol>
+<li><p><strong>&#x8FDE;&#x7EED;&#x540E;&#x53F0;&#x626B;&#x63CF;</strong></p>
+<ul>
+<li>&#x5168;&#x82AF;&#x7247;&#x626B;&#x63CF;&#x5468;&#x671F;&#xFF1A;10-100ms</li>
+<li>&#x4F18;&#x5148;&#x7EA7;&#x533A;&#x57DF;&#x5FEB;&#x901F;&#x626B;&#x63CF;</li>
+<li>&#x907F;&#x514D;&#x5E72;&#x6270;&#x6B63;&#x5E38;&#x64CD;&#x4F5C;</li>
+</ul>
+</li>
+<li><p><strong>&#x9009;&#x62E9;&#x6027;&#x626B;&#x63CF;</strong></p>
+<ul>
+<li>&#x5173;&#x952E;&#x533A;&#x57DF;&#x9AD8;&#x9891;&#x626B;&#x63CF;</li>
+<li>&#x9759;&#x6001;&#x533A;&#x57DF;&#x4F4E;&#x9891;&#x626B;&#x63CF;</li>
+<li>&#x52A8;&#x6001;&#x8C03;&#x6574;&#x626B;&#x63CF;&#x7B56;&#x7565;</li>
+</ul>
+</li>
+<li><p><strong>&#x4FEE;&#x590D;&#x673A;&#x5236;</strong></p>
+<ul>
+<li>CRC&#x9519;&#x8BEF;&#x68C0;&#x6D4B;</li>
+<li>ECC&#x81EA;&#x52A8;&#x7EA0;&#x6B63;</li>
+<li>&#x5E27;&#x91CD;&#x5199;for&#x591A;&#x6BD4;&#x7279;&#x9519;&#x8BEF;</li>
+<li>&#x90E8;&#x5206;&#x91CD;&#x914D;&#x7F6E;&#x6062;&#x590D;</li>
+</ul>
+</li>
+</ol>
+<h2 id="182-&#x4E09;&#x6A21;&#x5197;&#x4F59;&#xFF08;tmr&#xFF09;&#x8BBE;&#x8BA1;">18.2 &#x4E09;&#x6A21;&#x5197;&#x4F59;&#xFF08;TMR&#xFF09;&#x8BBE;&#x8BA1;</h2>
+<h3 id="1821-tmr&#x57FA;&#x672C;&#x539F;&#x7406;&#x4E0E;&#x5B9E;&#x73B0;">18.2.1 TMR&#x57FA;&#x672C;&#x539F;&#x7406;&#x4E0E;&#x5B9E;&#x73B0;</h3>
+<p>&#x4E09;&#x6A21;&#x5197;&#x4F59;&#x662F;&#x822A;&#x7A7A;&#x822A;&#x5929;&#x7EA7;&#x53EF;&#x9760;&#x6027;&#x7684;&#x6838;&#x5FC3;&#x6280;&#x672F;&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// TMR&#x6295;&#x7968;&#x5668;&#x5B9E;&#x73B0;
+module tmr_voter #(
+    parameter DATA_WIDTH = 32
+) (
+    input  logic clk,
+    input  logic rst_n,
+
+    // &#x4E09;&#x8DEF;&#x5197;&#x4F59;&#x8F93;&#x5165;
+    input  logic [DATA_WIDTH-1:0] input_a,
+    input  logic [DATA_WIDTH-1:0] input_b,
+    input  logic [DATA_WIDTH-1:0] input_c,
+
+    // &#x6295;&#x7968;&#x8F93;&#x51FA;
+    output logic [DATA_WIDTH-1:0] voted_output,
+    output logic                  error_detected,
+    output logic [2:0]            error_vector,  // &#x6807;&#x8BC6;&#x54EA;&#x8DEF;&#x51FA;&#x9519;
+
+    // &#x8BCA;&#x65AD;&#x63A5;&#x53E3;
+    output logic [31:0]           mismatch_count,
+    output logic [2:0]            last_error_module
+);
+
+    // &#x591A;&#x6570;&#x6295;&#x7968;&#x903B;&#x8F91;
+    always_comb begin
+        voted_output = (input_a &amp; input_b) | 
+                      (input_b &amp; input_c) | 
+                      (input_a &amp; input_c);
+
+        // &#x9519;&#x8BEF;&#x68C0;&#x6D4B;
+        error_vector[0] = (input_a != voted_output);
+        error_vector[1] = (input_b != voted_output);
+        error_vector[2] = (input_c != voted_output);
+
+        error_detected = |error_vector;
+    end
+
+    // &#x9519;&#x8BEF;&#x7EDF;&#x8BA1;
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            mismatch_count &lt;= 0;
+            last_error_module &lt;= 0;
+        end else if (error_detected) begin
+            mismatch_count &lt;= mismatch_count + 1;
+            last_error_module &lt;= error_vector;
+        end
+    end
+endmodule
+</code></pre>
+<p><strong>TMR&#x8BBE;&#x8BA1;&#x8981;&#x70B9;&#xFF1A;</strong></p>
+<ol>
+<li><p><strong>&#x5B8C;&#x6574;TMR&#x67B6;&#x6784;</strong></p>
+<ul>
+<li>&#x8F93;&#x5165;&#x6247;&#x51FA;&#x5230;&#x4E09;&#x4E2A;&#x6A21;&#x5757;</li>
+<li>&#x72EC;&#x7ACB;&#x65F6;&#x949F;&#x6811;for&#x6BCF;&#x4E2A;&#x6A21;&#x5757;</li>
+<li>&#x8F93;&#x51FA;&#x901A;&#x8FC7;&#x6295;&#x7968;&#x5668;</li>
+<li>&#x53CD;&#x9988;&#x8DEF;&#x5F84;&#x4E5F;&#x9700;TMR</li>
+</ul>
+</li>
+<li><p><strong>&#x6295;&#x7968;&#x5668;&#x653E;&#x7F6E;&#x7B56;&#x7565;</strong></p>
+<ul>
+<li>&#x7EC6;&#x7C92;&#x5EA6;&#xFF1A;&#x6BCF;&#x4E2A;&#x5BC4;&#x5B58;&#x5668;&#x540E;&#x6295;&#x7968;</li>
+<li>&#x7C97;&#x7C92;&#x5EA6;&#xFF1A;&#x6A21;&#x5757;&#x8FB9;&#x754C;&#x6295;&#x7968;</li>
+<li>&#x6DF7;&#x5408;&#x7B56;&#x7565;&#xFF1A;&#x5173;&#x952E;&#x8DEF;&#x5F84;&#x7EC6;&#x7C92;&#x5EA6;</li>
+</ul>
+</li>
+<li><p><strong>&#x65F6;&#x949F;&#x57DF;TMR</strong></p>
+<pre><code class="lang-systemverilog">// TMR&#x65F6;&#x949F;&#x751F;&#x6210;
+module tmr_clock_gen (
+    input  logic clk_in,
+    output logic clk_tmr_a,
+    output logic clk_tmr_b,
+    output logic clk_tmr_c
+);
+</code></pre>
+</li>
+</ol>
+<h3 id="1822-&#x72B6;&#x6001;&#x673A;tmr&#x8BBE;&#x8BA1;">18.2.2 &#x72B6;&#x6001;&#x673A;TMR&#x8BBE;&#x8BA1;</h3>
+<p>&#x72B6;&#x6001;&#x673A;&#x7684;TMR&#x9700;&#x8981;&#x7279;&#x6B8A;&#x5904;&#x7406;&#x4EE5;&#x9632;&#x6B62;&#x72B6;&#x6001;&#x53D1;&#x6563;&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// TMR&#x72B6;&#x6001;&#x673A;with&#x540C;&#x6B65;&#x673A;&#x5236;
+module tmr_state_machine #(
+    parameter STATE_WIDTH = 4
+) (
+    input  logic clk,
+    input  logic rst_n,
+
+    // &#x8F93;&#x5165;&#x4FE1;&#x53F7;&#xFF08;&#x5DF2;TMR&#xFF09;
+    input  logic start,
+    input  logic stop,
+
+    // TMR&#x72B6;&#x6001;&#x8F93;&#x51FA;
+    output logic [STATE_WIDTH-1:0] state_a,
+    output logic [STATE_WIDTH-1:0] state_b,
+    output logic [STATE_WIDTH-1:0] state_c,
+    output logic [STATE_WIDTH-1:0] voted_state,
+
+    // &#x540C;&#x6B65;&#x63A7;&#x5236;
+    output logic sync_required,
+    output logic sync_complete
+);
+
+    // &#x72B6;&#x6001;&#x5B9A;&#x4E49;
+    typedef enum logic [STATE_WIDTH-1:0] {
+        IDLE    = 4&apos;b0001,
+        ACTIVE  = 4&apos;b0010,
+        PROCESS = 4&apos;b0100,
+        DONE    = 4&apos;b1000
+    } state_t;
+
+    // &#x4E09;&#x4EFD;&#x72EC;&#x7ACB;&#x72B6;&#x6001;&#x673A;
+    state_t current_state_a, next_state_a;
+    state_t current_state_b, next_state_b;
+    state_t current_state_c, next_state_c;
+
+    // &#x72B6;&#x6001;&#x8F6C;&#x6362;&#x903B;&#x8F91;&#xFF08;&#x4E09;&#x4EFD;&#x76F8;&#x540C;&#xFF09;
+    always_comb begin
+        // Module A
+        case (current_state_a)
+            IDLE:    next_state_a = start ? ACTIVE : IDLE;
+            ACTIVE:  next_state_a = PROCESS;
+            PROCESS: next_state_a = stop ? DONE : PROCESS;
+            DONE:    next_state_a = IDLE;
+            default: next_state_a = IDLE; // &#x5B89;&#x5168;&#x72B6;&#x6001;
+        endcase
+
+        // Module B&#x548C;C&#x903B;&#x8F91;&#x76F8;&#x540C;...
+    end
+
+    // &#x72B6;&#x6001;&#x540C;&#x6B65;&#x68C0;&#x67E5;
+    always_comb begin
+        sync_required = (current_state_a != voted_state) ||
+                       (current_state_b != voted_state) ||
+                       (current_state_c != voted_state);
+    end
+
+    // &#x5468;&#x671F;&#x6027;&#x5F3A;&#x5236;&#x540C;&#x6B65;
+    logic [15:0] sync_counter;
+    always_ff @(posedge clk) begin
+        if (!rst_n || sync_complete) begin
+            sync_counter &lt;= 0;
+        end else begin
+            sync_counter &lt;= sync_counter + 1;
+            if (sync_counter == 16&apos;hFFFF) begin
+                // &#x5F3A;&#x5236;&#x540C;&#x6B65;&#x6240;&#x6709;&#x72B6;&#x6001;
+                current_state_a &lt;= voted_state;
+                current_state_b &lt;= voted_state;
+                current_state_c &lt;= voted_state;
+            end
+        end
+    end
+endmodule
+</code></pre>
+<p><strong>&#x72B6;&#x6001;&#x673A;TMR&#x7B56;&#x7565;&#xFF1A;</strong></p>
+<ol>
+<li><p><strong>&#x72B6;&#x6001;&#x7F16;&#x7801;&#x9009;&#x62E9;</strong></p>
+<ul>
+<li>&#x72EC;&#x70ED;&#x7801;&#xFF1A;&#x6613;&#x68C0;&#x6D4B;&#x975E;&#x6CD5;&#x72B6;&#x6001;</li>
+<li>&#x6C49;&#x660E;&#x8DDD;&#x79BB;&gt;2&#x7684;&#x7F16;&#x7801;</li>
+<li>&#x907F;&#x514D;&#x5168;0/&#x5168;1&#x72B6;&#x6001;</li>
+</ul>
+</li>
+<li><p><strong>&#x540C;&#x6B65;&#x673A;&#x5236;</strong></p>
+<ul>
+<li>&#x5468;&#x671F;&#x6027;&#x72B6;&#x6001;&#x5BF9;&#x9F50;</li>
+<li>&#x68C0;&#x6D4B;&#x5230;&#x5206;&#x6B67;&#x7ACB;&#x5373;&#x540C;&#x6B65;</li>
+<li>&#x5B89;&#x5168;&#x72B6;&#x6001;&#x6062;&#x590D;</li>
+</ul>
+</li>
+<li><p><strong>&#x9519;&#x8BEF;&#x6062;&#x590D;</strong></p>
+<ul>
+<li>&#x975E;&#x6CD5;&#x72B6;&#x6001;&#x68C0;&#x6D4B;</li>
+<li>&#x81EA;&#x52A8;&#x8DF3;&#x8F6C;&#x5230;&#x5B89;&#x5168;&#x72B6;&#x6001;</li>
+<li>&#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;</li>
+</ul>
+</li>
+</ol>
+<h3 id="1823-&#x9009;&#x62E9;&#x6027;tmr&#x4E0E;&#x8D44;&#x6E90;&#x4F18;&#x5316;">18.2.3 &#x9009;&#x62E9;&#x6027;TMR&#x4E0E;&#x8D44;&#x6E90;&#x4F18;&#x5316;</h3>
+<p>&#x5B8C;&#x5168;TMR&#x4F1A;&#x5E26;&#x6765;3&#x500D;&#x4EE5;&#x4E0A;&#x7684;&#x8D44;&#x6E90;&#x5F00;&#x9500;&#xFF0C;&#x9009;&#x62E9;&#x6027;TMR&#x53EF;&#x4EE5;&#x5E73;&#x8861;&#x53EF;&#x9760;&#x6027;&#x4E0E;&#x8D44;&#x6E90;&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// &#x9009;&#x62E9;&#x6027;TMR&#x6846;&#x67B6;
+module selective_tmr_framework #(
+    parameter CRITICAL_WIDTH = 32,
+    parameter NORMAL_WIDTH = 64
+) (
+    input  logic clk,
+    input  logic rst_n,
+
+    // &#x5173;&#x952E;&#x8DEF;&#x5F84;&#x8F93;&#x5165;&#xFF08;&#x9700;&#x8981;TMR&#xFF09;
+    input  logic [CRITICAL_WIDTH-1:0] critical_data,
+
+    // &#x975E;&#x5173;&#x952E;&#x8DEF;&#x5F84;&#x8F93;&#x5165;&#xFF08;&#x4E0D;&#x9700;TMR&#xFF09;
+    input  logic [NORMAL_WIDTH-1:0]   normal_data,
+
+    // &#x6DF7;&#x5408;&#x8F93;&#x51FA;
+    output logic [CRITICAL_WIDTH-1:0] critical_result,
+    output logic [NORMAL_WIDTH-1:0]   normal_result,
+
+    // &#x53EF;&#x9760;&#x6027;&#x76D1;&#x63A7;
+    output logic [31:0] critical_errors,
+    output logic [31:0] normal_errors
+);
+
+    // &#x5173;&#x952E;&#x8DEF;&#x5F84;TMR&#x5B9E;&#x4F8B;&#x5316;
+    logic [CRITICAL_WIDTH-1:0] critical_a, critical_b, critical_c;
+
+    // &#x5173;&#x952E;&#x8BA1;&#x7B97;&#x6A21;&#x5757;&#x4E09;&#x4EFD;&#x5197;&#x4F59;
+    critical_compute inst_a (.data_in(critical_data), .data_out(critical_a));
+    critical_compute inst_b (.data_in(critical_data), .data_out(critical_b));
+    critical_compute inst_c (.data_in(critical_data), .data_out(critical_c));
+
+    // TMR&#x6295;&#x7968;&#x5668;
+    tmr_voter #(.DATA_WIDTH(CRITICAL_WIDTH)) critical_voter (
+        .clk(clk),
+        .rst_n(rst_n),
+        .input_a(critical_a),
+        .input_b(critical_b),
+        .input_c(critical_c),
+        .voted_output(critical_result),
+        .mismatch_count(critical_errors)
+    );
+
+    // &#x975E;&#x5173;&#x952E;&#x8DEF;&#x5F84;&#x4F7F;&#x7528;ECC&#x4FDD;&#x62A4;
+    normal_compute_with_ecc normal_inst (
+        .clk(clk),
+        .rst_n(rst_n),
+        .data_in(normal_data),
+        .data_out(normal_result),
+        .ecc_errors(normal_errors)
+    );
+endmodule
+</code></pre>
+<p><strong>&#x9009;&#x62E9;&#x6027;TMR&#x7B56;&#x7565;&#xFF1A;</strong></p>
+<ol>
+<li><p><strong>&#x5173;&#x952E;&#x5EA6;&#x5206;&#x6790;</strong></p>
+<ul>
+<li>&#x63A7;&#x5236;&#x8DEF;&#x5F84;&#xFF1A;&#x5FC5;&#x987B;TMR</li>
+<li>&#x6570;&#x636E;&#x8DEF;&#x5F84;&#xFF1A;&#x6839;&#x636E;&#x5F71;&#x54CD;&#x7A0B;&#x5EA6;</li>
+<li>&#x63A5;&#x53E3;&#x903B;&#x8F91;&#xFF1A;&#x90E8;&#x5206;TMR</li>
+<li>&#x8BCA;&#x65AD;&#x903B;&#x8F91;&#xFF1A;&#x53EF;&#x9009;TMR</li>
+</ul>
+</li>
+<li><p><strong>&#x6DF7;&#x5408;&#x4FDD;&#x62A4;&#x65B9;&#x6848;</strong></p>
+<pre><code>&#x4FDD;&#x62A4;&#x7EA7;&#x522B;    &#x6280;&#x672F;&#x65B9;&#x6848;           &#x8D44;&#x6E90;&#x5F00;&#x9500;
+Level 0     &#x65E0;&#x4FDD;&#x62A4;             1x
+Level 1     &#x5947;&#x5076;&#x6821;&#x9A8C;           1.1x
+Level 2     ECC/SECDED        1.3x
+Level 3     &#x53CC;&#x6A21;&#x5197;&#x4F59;+&#x6BD4;&#x8F83;      2.1x
+Level 4     &#x5B8C;&#x5168;TMR           3.2x
+</code></pre></li>
+<li><p><strong>&#x52A8;&#x6001;&#x91CD;&#x914D;&#x7F6E;TMR</strong></p>
+<ul>
+<li>&#x8FD0;&#x884C;&#x65F6;&#x8C03;&#x6574;&#x4FDD;&#x62A4;&#x7EA7;&#x522B;</li>
+<li>&#x57FA;&#x4E8E;&#x9519;&#x8BEF;&#x7387;&#x81EA;&#x9002;&#x5E94;</li>
+<li>&#x4EFB;&#x52A1;&#x5173;&#x952E;&#x5EA6;&#x611F;&#x77E5;</li>
+</ul>
+</li>
+</ol>
+<h2 id="183-&#x70ED;&#x63D2;&#x62D4;&#x4E0E;&#x5728;&#x7EBF;&#x5347;&#x7EA7;">18.3 &#x70ED;&#x63D2;&#x62D4;&#x4E0E;&#x5728;&#x7EBF;&#x5347;&#x7EA7;</h2>
+<h3 id="1831-&#x90E8;&#x5206;&#x91CD;&#x914D;&#x7F6E;&#x57FA;&#x7840;">18.3.1 &#x90E8;&#x5206;&#x91CD;&#x914D;&#x7F6E;&#x57FA;&#x7840;</h3>
+<p>&#x90E8;&#x5206;&#x91CD;&#x914D;&#x7F6E;&#xFF08;PR&#xFF09;&#x5141;&#x8BB8;&#x5728;&#x7CFB;&#x7EDF;&#x8FD0;&#x884C;&#x65F6;&#x66F4;&#x65B0;&#x90E8;&#x5206;FPGA&#x903B;&#x8F91;&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// &#x90E8;&#x5206;&#x91CD;&#x914D;&#x7F6E;&#x63A7;&#x5236;&#x5668;
+module partial_reconfiguration_controller #(
+    parameter NUM_RP = 4,              // &#x53EF;&#x91CD;&#x914D;&#x7F6E;&#x5206;&#x533A;&#x6570;&#x91CF;
+    parameter BITSTREAM_SIZE = 1048576 // 1MB bitstream
+) (
+    input  logic        clk,
+    input  logic        rst_n,
+
+    // &#x914D;&#x7F6E;&#x8BF7;&#x6C42;&#x63A5;&#x53E3;
+    input  logic [NUM_RP-1:0]  reconfig_request,
+    input  logic [31:0]        bitstream_addr[NUM_RP],
+    output logic [NUM_RP-1:0]  reconfig_done,
+    output logic [NUM_RP-1:0]  reconfig_error,
+
+    // ICAP&#x63A5;&#x53E3;
+    output logic [31:0] icap_data,
+    output logic        icap_write,
+    output logic        icap_cs,
+    input  logic        icap_busy,
+
+    // &#x9694;&#x79BB;&#x63A7;&#x5236;
+    output logic [NUM_RP-1:0] isolation_enable,
+    output logic [NUM_RP-1:0] reset_rp,
+
+    // &#x72B6;&#x6001;&#x76D1;&#x63A7;
+    output logic [2:0]  current_state,
+    output logic [31:0] bytes_written
+);
+
+    // PR&#x72B6;&#x6001;&#x673A;
+    typedef enum logic [2:0] {
+        IDLE,
+        ISOLATE,
+        RESET_RP,
+        LOAD_BITSTREAM,
+        COMPLETE,
+        ERROR
+    } pr_state_t;
+
+    pr_state_t state;
+    logic [31:0] bitstream_counter;
+    logic [1:0]  active_rp;
+
+    // &#x89E3;&#x8026;&#x903B;&#x8F91;
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            state &lt;= IDLE;
+            isolation_enable &lt;= 0;
+            reset_rp &lt;= 0;
+        end else begin
+            case (state)
+                IDLE: begin
+                    if (|reconfig_request) begin
+                        // &#x627E;&#x5230;&#x8BF7;&#x6C42;&#x7684;RP
+                        for (int i = 0; i &lt; NUM_RP; i++) begin
+                            if (reconfig_request[i]) begin
+                                active_rp &lt;= i;
+                                state &lt;= ISOLATE;
+                                break;
+                            end
+                        end
+                    end
+                end
+
+                ISOLATE: begin
+                    // &#x6FC0;&#x6D3B;&#x9694;&#x79BB;&#x4FE1;&#x53F7;
+                    isolation_enable[active_rp] &lt;= 1&apos;b1;
+                    state &lt;= RESET_RP;
+                end
+
+                RESET_RP: begin
+                    // &#x590D;&#x4F4D;&#x53EF;&#x91CD;&#x914D;&#x7F6E;&#x5206;&#x533A;
+                    reset_rp[active_rp] &lt;= 1&apos;b1;
+                    state &lt;= LOAD_BITSTREAM;
+                    bitstream_counter &lt;= 0;
+                end
+
+                LOAD_BITSTREAM: begin
+                    // &#x901A;&#x8FC7;ICAP&#x52A0;&#x8F7D;&#x6BD4;&#x7279;&#x6D41;
+                    if (!icap_busy &amp;&amp; bitstream_counter &lt; BITSTREAM_SIZE) begin
+                        icap_write &lt;= 1&apos;b1;
+                        icap_cs &lt;= 1&apos;b1;
+                        // &#x4ECE;&#x5185;&#x5B58;&#x8BFB;&#x53D6;&#x6BD4;&#x7279;&#x6D41;&#x6570;&#x636E;
+                        icap_data &lt;= read_bitstream_word(
+                            bitstream_addr[active_rp] + bitstream_counter
+                        );
+                        bitstream_counter &lt;= bitstream_counter + 4;
+                    end else if (bitstream_counter &gt;= BITSTREAM_SIZE) begin
+                        state &lt;= COMPLETE;
+                    end
+                end
+
+                COMPLETE: begin
+                    // &#x91CA;&#x653E;&#x9694;&#x79BB;&#x548C;&#x590D;&#x4F4D;
+                    reset_rp[active_rp] &lt;= 1&apos;b0;
+                    isolation_enable[active_rp] &lt;= 1&apos;b0;
+                    reconfig_done[active_rp] &lt;= 1&apos;b1;
+                    state &lt;= IDLE;
+                end
+
+                ERROR: begin
+                    reconfig_error[active_rp] &lt;= 1&apos;b1;
+                    state &lt;= IDLE;
+                end
+            endcase
+        end
+    end
+endmodule
+</code></pre>
+<p><strong>PR&#x8BBE;&#x8BA1;&#x8981;&#x70B9;&#xFF1A;</strong></p>
+<ol>
+<li><p><strong>&#x5206;&#x533A;&#x89C4;&#x5212;</strong></p>
+<ul>
+<li>&#x9759;&#x6001;&#x533A;&#x57DF;&#xFF1A;&#x59CB;&#x7EC8;&#x8FD0;&#x884C;</li>
+<li>&#x52A8;&#x6001;&#x533A;&#x57DF;&#xFF1A;&#x53EF;&#x91CD;&#x914D;&#x7F6E;</li>
+<li>&#x63A5;&#x53E3;&#x56FA;&#x5B9A;&#xFF1A;AXI/&#x4FE1;&#x53F7;</li>
+</ul>
+</li>
+<li><p><strong>&#x9694;&#x79BB;&#x7B56;&#x7565;</strong></p>
+<ul>
+<li>&#x89E3;&#x8026;&#x903B;&#x8F91;&#x9632;&#x6B62;&#x6BDB;&#x523A;</li>
+<li>&#x4E09;&#x6001;&#x7F13;&#x51B2;&#x5668;&#x9694;&#x79BB;</li>
+<li>&#x65F6;&#x949F;&#x95E8;&#x63A7;</li>
+</ul>
+</li>
+<li><p><strong>&#x914D;&#x7F6E;&#x6D41;&#x7A0B;</strong></p>
+<ul>
+<li>&#x505C;&#x6B62;RP&#x6D3B;&#x52A8;</li>
+<li>&#x6FC0;&#x6D3B;&#x9694;&#x79BB;</li>
+<li>&#x52A0;&#x8F7D;&#x65B0;&#x6BD4;&#x7279;&#x6D41;</li>
+<li>&#x91CA;&#x653E;&#x9694;&#x79BB;</li>
+<li>&#x6062;&#x590D;&#x64CD;&#x4F5C;</li>
+</ul>
+</li>
+</ol>
+<h3 id="1832-&#x65E0;&#x7F1D;&#x5207;&#x6362;&#x673A;&#x5236;">18.3.2 &#x65E0;&#x7F1D;&#x5207;&#x6362;&#x673A;&#x5236;</h3>
+<p>&#x5B9E;&#x73B0;&#x771F;&#x6B63;&#x7684;&#x70ED;&#x5347;&#x7EA7;&#x9700;&#x8981;&#x65E0;&#x7F1D;&#x5207;&#x6362;&#x6280;&#x672F;&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// &#x53CC;&#x7F13;&#x51B2;&#x65E0;&#x7F1D;&#x5207;&#x6362;&#x67B6;&#x6784;
+module seamless_switch_controller #(
+    parameter DATA_WIDTH = 512,
+    parameter ADDR_WIDTH = 32
+) (
+    input  logic clk,
+    input  logic rst_n,
+
+    // &#x8F93;&#x5165;&#x6570;&#x636E;&#x6D41;
+    input  logic [DATA_WIDTH-1:0] data_in,
+    input  logic                  data_valid,
+    output logic                  data_ready,
+
+    // &#x53CC;&#x7F13;&#x51B2;&#x533A;&#x8F93;&#x51FA;
+    output logic [DATA_WIDTH-1:0] data_out,
+    output logic                  data_out_valid,
+
+    // &#x5207;&#x6362;&#x63A7;&#x5236;
+    input  logic                  switch_request,
+    output logic                  switch_complete,
+    output logic                  active_buffer,  // 0 or 1
+
+    // &#x5904;&#x7406;&#x5F15;&#x64CE;&#x63A5;&#x53E3;
+    output logic [DATA_WIDTH-1:0] engine_data[2],
+    output logic                  engine_valid[2],
+    input  logic [DATA_WIDTH-1:0] engine_result[2],
+    input  logic                  engine_done[2]
+);
+
+    // &#x72B6;&#x6001;&#x673A;&#x5B9A;&#x4E49;
+    typedef enum logic [2:0] {
+        NORMAL,
+        PREPARE_SWITCH,
+        DRAIN_OLD,
+        SWITCH_ACTIVE,
+        SYNC_NEW
+    } switch_state_t;
+
+    switch_state_t state;
+    logic pending_switch;
+    logic [15:0] drain_counter;
+
+    // &#x8F93;&#x5165;&#x5206;&#x914D;&#x903B;&#x8F91;
+    always_comb begin
+        data_ready = 1&apos;b1;  // &#x59CB;&#x7EC8;&#x63A5;&#x6536;&#x6570;&#x636E;
+
+        // &#x6839;&#x636E;&#x72B6;&#x6001;&#x5206;&#x914D;&#x6570;&#x636E;&#x5230;&#x4E0D;&#x540C;&#x5F15;&#x64CE;
+        case (state)
+            NORMAL: begin
+                engine_data[active_buffer] = data_in;
+                engine_valid[active_buffer] = data_valid;
+                engine_data[~active_buffer] = &apos;0;
+                engine_valid[~active_buffer] = 1&apos;b0;
+            end
+
+            PREPARE_SWITCH: begin
+                // &#x53CC;&#x53D1;&#x6570;&#x636E;&#x5230;&#x4E24;&#x4E2A;&#x5F15;&#x64CE;
+                engine_data[0] = data_in;
+                engine_data[1] = data_in;
+                engine_valid[0] = data_valid;
+                engine_valid[1] = data_valid;
+            end
+
+            DRAIN_OLD: begin
+                // &#x53EA;&#x53D1;&#x9001;&#x5230;&#x65B0;&#x5F15;&#x64CE;
+                engine_data[~active_buffer] = data_in;
+                engine_valid[~active_buffer] = data_valid;
+                engine_data[active_buffer] = &apos;0;
+                engine_valid[active_buffer] = 1&apos;b0;
+            end
+
+            default: begin
+                engine_data[0] = &apos;0;
+                engine_data[1] = &apos;0;
+                engine_valid[0] = 1&apos;b0;
+                engine_valid[1] = 1&apos;b0;
+            end
+        endcase
+    end
+
+    // &#x8F93;&#x51FA;&#x9009;&#x62E9;&#x903B;&#x8F91;
+    always_comb begin
+        case (state)
+            NORMAL, PREPARE_SWITCH: begin
+                data_out = engine_result[active_buffer];
+                data_out_valid = engine_done[active_buffer];
+            end
+
+            DRAIN_OLD, SWITCH_ACTIVE, SYNC_NEW: begin
+                data_out = engine_result[~active_buffer];
+                data_out_valid = engine_done[~active_buffer];
+            end
+
+            default: begin
+                data_out = &apos;0;
+                data_out_valid = 1&apos;b0;
+            end
+        endcase
+    end
+
+    // &#x5207;&#x6362;&#x72B6;&#x6001;&#x673A;
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            state &lt;= NORMAL;
+            active_buffer &lt;= 1&apos;b0;
+            switch_complete &lt;= 1&apos;b0;
+            drain_counter &lt;= 0;
+        end else begin
+            case (state)
+                NORMAL: begin
+                    if (switch_request) begin
+                        state &lt;= PREPARE_SWITCH;
+                        pending_switch &lt;= 1&apos;b1;
+                    end
+                end
+
+                PREPARE_SWITCH: begin
+                    // &#x7B49;&#x5F85;&#x65B0;&#x5F15;&#x64CE;&#x9884;&#x70ED;
+                    if (engine_done[~active_buffer]) begin
+                        state &lt;= DRAIN_OLD;
+                        drain_counter &lt;= 0;
+                    end
+                end
+
+                DRAIN_OLD: begin
+                    // &#x7B49;&#x5F85;&#x65E7;&#x5F15;&#x64CE;&#x6392;&#x7A7A;
+                    drain_counter &lt;= drain_counter + 1;
+                    if (drain_counter &gt; 1000 || !engine_done[active_buffer]) begin
+                        state &lt;= SWITCH_ACTIVE;
+                    end
+                end
+
+                SWITCH_ACTIVE: begin
+                    // &#x6267;&#x884C;&#x5207;&#x6362;
+                    active_buffer &lt;= ~active_buffer;
+                    state &lt;= SYNC_NEW;
+                end
+
+                SYNC_NEW: begin
+                    // &#x540C;&#x6B65;&#x5B8C;&#x6210;
+                    switch_complete &lt;= 1&apos;b1;
+                    state &lt;= NORMAL;
+                end
+            endcase
+        end
+    end
+endmodule
+</code></pre>
+<p><strong>&#x65E0;&#x7F1D;&#x5207;&#x6362;&#x5173;&#x952E;&#x6280;&#x672F;&#xFF1A;</strong></p>
+<ol>
+<li><p><strong>&#x53CC;&#x7F13;&#x51B2;&#x67B6;&#x6784;</strong></p>
+<ul>
+<li>A/B&#x4E24;&#x5957;&#x5904;&#x7406;&#x903B;&#x8F91;</li>
+<li>&#x9884;&#x70ED;&#x65B0;&#x903B;&#x8F91;</li>
+<li>&#x539F;&#x5B50;&#x5207;&#x6362;</li>
+</ul>
+</li>
+<li><p><strong>&#x72B6;&#x6001;&#x8FC1;&#x79FB;</strong></p>
+<ul>
+<li>&#x589E;&#x91CF;&#x72B6;&#x6001;&#x540C;&#x6B65;</li>
+<li>&#x68C0;&#x67E5;&#x70B9;&#x673A;&#x5236;</li>
+<li>&#x72B6;&#x6001;&#x538B;&#x7F29;&#x4F20;&#x8F93;</li>
+</ul>
+</li>
+<li><p><strong>&#x6D41;&#x91CF;&#x7BA1;&#x7406;</strong></p>
+<ul>
+<li>&#x80CC;&#x538B;&#x63A7;&#x5236;</li>
+<li>&#x7F13;&#x51B2;&#x533A;&#x7BA1;&#x7406;</li>
+<li>&#x96F6;&#x4E22;&#x5305;&#x4FDD;&#x8BC1;</li>
+</ul>
+</li>
+</ol>
+<h3 id="1833-&#x5347;&#x7EA7;&#x56DE;&#x6EDA;&#x673A;&#x5236;">18.3.3 &#x5347;&#x7EA7;&#x56DE;&#x6EDA;&#x673A;&#x5236;</h3>
+<p>&#x53EF;&#x9760;&#x7684;&#x5347;&#x7EA7;&#x7CFB;&#x7EDF;&#x5FC5;&#x987B;&#x652F;&#x6301;&#x5FEB;&#x901F;&#x56DE;&#x6EDA;&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// &#x7248;&#x672C;&#x7BA1;&#x7406;&#x4E0E;&#x56DE;&#x6EDA;&#x63A7;&#x5236;&#x5668;
+module upgrade_rollback_controller #(
+    parameter MAX_VERSIONS = 4,
+    parameter VERSION_ID_WIDTH = 32
+) (
+    input  logic clk,
+    input  logic rst_n,
+
+    // &#x7248;&#x672C;&#x7BA1;&#x7406;&#x63A5;&#x53E3;
+    input  logic [VERSION_ID_WIDTH-1:0] new_version_id,
+    input  logic                        upgrade_start,
+    output logic                        upgrade_success,
+    output logic                        upgrade_failed,
+
+    // &#x56DE;&#x6EDA;&#x63A7;&#x5236;
+    input  logic                        rollback_request,
+    output logic                        rollback_complete,
+    output logic [VERSION_ID_WIDTH-1:0] current_version,
+
+    // &#x5065;&#x5EB7;&#x68C0;&#x67E5;&#x63A5;&#x53E3;
+    input  logic                        health_check_pass,
+    input  logic                        health_check_timeout,
+
+    // &#x914D;&#x7F6E;&#x5B58;&#x50A8;&#x63A5;&#x53E3;
+    output logic [31:0]                 config_addr,
+    output logic                        config_read,
+    output logic                        config_write,
+    inout  logic [31:0]                 config_data
+);
+
+    // &#x7248;&#x672C;&#x6808;&#x7BA1;&#x7406;
+    logic [VERSION_ID_WIDTH-1:0] version_stack[MAX_VERSIONS];
+    logic [1:0] stack_ptr;
+    logic [31:0] health_timer;
+
+    // &#x5347;&#x7EA7;&#x72B6;&#x6001;&#x673A;
+    typedef enum logic [3:0] {
+        STABLE,
+        SAVE_CURRENT,
+        LOAD_NEW,
+        HEALTH_CHECK,
+        COMMIT,
+        ROLLBACK_INIT,
+        ROLLBACK_LOAD,
+        ROLLBACK_DONE
+    } upgrade_state_t;
+
+    upgrade_state_t state;
+
+    // &#x5065;&#x5EB7;&#x68C0;&#x67E5;&#x5B9A;&#x65F6;&#x5668;
+    localparam HEALTH_CHECK_TIMEOUT = 10_000_000; // 100ms @ 100MHz
+
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            state &lt;= STABLE;
+            stack_ptr &lt;= 0;
+            health_timer &lt;= 0;
+            current_version &lt;= 32&apos;h0;
+        end else begin
+            case (state)
+                STABLE: begin
+                    if (upgrade_start) begin
+                        state &lt;= SAVE_CURRENT;
+                    end else if (rollback_request &amp;&amp; stack_ptr &gt; 0) begin
+                        state &lt;= ROLLBACK_INIT;
+                    end
+                end
+
+                SAVE_CURRENT: begin
+                    // &#x4FDD;&#x5B58;&#x5F53;&#x524D;&#x7248;&#x672C;&#x5230;&#x6808;
+                    version_stack[stack_ptr] &lt;= current_version;
+                    stack_ptr &lt;= stack_ptr + 1;
+                    state &lt;= LOAD_NEW;
+                end
+
+                LOAD_NEW: begin
+                    // &#x52A0;&#x8F7D;&#x65B0;&#x7248;&#x672C;&#x914D;&#x7F6E;
+                    current_version &lt;= new_version_id;
+                    // &#x89E6;&#x53D1;PR&#x6216;&#x914D;&#x7F6E;&#x66F4;&#x65B0;
+                    state &lt;= HEALTH_CHECK;
+                    health_timer &lt;= 0;
+                end
+
+                HEALTH_CHECK: begin
+                    health_timer &lt;= health_timer + 1;
+
+                    if (health_check_pass) begin
+                        state &lt;= COMMIT;
+                        upgrade_success &lt;= 1&apos;b1;
+                    end else if (health_check_timeout || 
+                               health_timer &gt; HEALTH_CHECK_TIMEOUT) begin
+                        // &#x5065;&#x5EB7;&#x68C0;&#x67E5;&#x5931;&#x8D25;&#xFF0C;&#x81EA;&#x52A8;&#x56DE;&#x6EDA;
+                        state &lt;= ROLLBACK_INIT;
+                        upgrade_failed &lt;= 1&apos;b1;
+                    end
+                end
+
+                COMMIT: begin
+                    // &#x63D0;&#x4EA4;&#x6210;&#x529F;&#xFF0C;&#x53EF;&#x9009;&#x62E9;&#x6E05;&#x7406;&#x65E7;&#x7248;&#x672C;
+                    state &lt;= STABLE;
+                end
+
+                ROLLBACK_INIT: begin
+                    if (stack_ptr &gt; 0) begin
+                        stack_ptr &lt;= stack_ptr - 1;
+                        state &lt;= ROLLBACK_LOAD;
+                    end else begin
+                        state &lt;= STABLE; // &#x65E0;&#x7248;&#x672C;&#x53EF;&#x56DE;&#x6EDA;
+                    end
+                end
+
+                ROLLBACK_LOAD: begin
+                    // &#x6062;&#x590D;&#x4E4B;&#x524D;&#x7684;&#x7248;&#x672C;
+                    current_version &lt;= version_stack[stack_ptr];
+                    state &lt;= ROLLBACK_DONE;
+                end
+
+                ROLLBACK_DONE: begin
+                    rollback_complete &lt;= 1&apos;b1;
+                    state &lt;= STABLE;
+                end
+            endcase
+        end
+    end
+endmodule
+</code></pre>
+<p><strong>&#x56DE;&#x6EDA;&#x673A;&#x5236;&#x8981;&#x70B9;&#xFF1A;</strong></p>
+<ol>
+<li><p><strong>&#x7248;&#x672C;&#x5386;&#x53F2;&#x7BA1;&#x7406;</strong></p>
+<ul>
+<li>&#x4FDD;&#x5B58;&#x6700;&#x8FD1;N&#x4E2A;&#x7248;&#x672C;</li>
+<li>&#x914D;&#x7F6E;&#x5FEB;&#x7167;&#x5B58;&#x50A8;</li>
+<li>&#x7248;&#x672C;&#x5143;&#x6570;&#x636E;&#x8BB0;&#x5F55;</li>
+</ul>
+</li>
+<li><p><strong>&#x5065;&#x5EB7;&#x68C0;&#x67E5;</strong></p>
+<ul>
+<li>&#x529F;&#x80FD;&#x6D4B;&#x8BD5;</li>
+<li>&#x6027;&#x80FD;&#x57FA;&#x51C6;</li>
+<li>&#x8D85;&#x65F6;&#x81EA;&#x52A8;&#x56DE;&#x6EDA;</li>
+</ul>
+</li>
+<li><p><strong>&#x5FEB;&#x901F;&#x6062;&#x590D;</strong></p>
+<ul>
+<li>&#x9884;&#x52A0;&#x8F7D;&#x914D;&#x7F6E;</li>
+<li>&#x589E;&#x91CF;&#x56DE;&#x6EDA;</li>
+<li>&#x72B6;&#x6001;&#x4E00;&#x81F4;&#x6027;&#x4FDD;&#x8BC1;</li>
+</ul>
+</li>
+</ol>
+<h2 id="184-&#x4EFB;&#x52A1;&#x7EA7;&#x5BB9;&#x9519;&#x7B56;&#x7565;">18.4 &#x4EFB;&#x52A1;&#x7EA7;&#x5BB9;&#x9519;&#x7B56;&#x7565;</h2>
+<h3 id="1841-&#x68C0;&#x67E5;&#x70B9;&#x4E0E;&#x6062;&#x590D;">18.4.1 &#x68C0;&#x67E5;&#x70B9;&#x4E0E;&#x6062;&#x590D;</h3>
+<p>&#x957F;&#x65F6;&#x95F4;&#x8FD0;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#x9700;&#x8981;&#x68C0;&#x67E5;&#x70B9;&#x673A;&#x5236;&#x4EE5;&#x652F;&#x6301;&#x6545;&#x969C;&#x6062;&#x590D;&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// &#x68C0;&#x67E5;&#x70B9;&#x7BA1;&#x7406;&#x5668;
+module checkpoint_manager #(
+    parameter STATE_WIDTH = 1024,     // &#x72B6;&#x6001;&#x5927;&#x5C0F;
+    parameter MAX_CHECKPOINTS = 8,    // &#x6700;&#x5927;&#x68C0;&#x67E5;&#x70B9;&#x6570;
+    parameter CHECKPOINT_INTERVAL = 1000000  // &#x68C0;&#x67E5;&#x70B9;&#x95F4;&#x9694;
+) (
+    input  logic clk,
+    input  logic rst_n,
+
+    // &#x4EFB;&#x52A1;&#x72B6;&#x6001;&#x63A5;&#x53E3;
+    input  logic [STATE_WIDTH-1:0] current_state,
+    input  logic                   state_valid,
+    output logic [STATE_WIDTH-1:0] restored_state,
+    output logic                   restore_valid,
+
+    // &#x68C0;&#x67E5;&#x70B9;&#x63A7;&#x5236;
+    input  logic                   checkpoint_enable,
+    input  logic                   force_checkpoint,
+    input  logic                   restore_request,
+    output logic                   checkpoint_done,
+    output logic                   restore_done,
+
+    // &#x5B58;&#x50A8;&#x63A5;&#x53E3;
+    output logic [31:0]           memory_addr,
+    output logic [STATE_WIDTH-1:0] memory_write_data,
+    input  logic [STATE_WIDTH-1:0] memory_read_data,
+    output logic                   memory_write,
+    output logic                   memory_read,
+
+    // &#x72B6;&#x6001;&#x76D1;&#x63A7;
+    output logic [31:0]           checkpoint_count,
+    output logic [31:0]           last_checkpoint_time,
+    output logic                   checkpoint_valid[MAX_CHECKPOINTS]
+);
+
+    // &#x68C0;&#x67E5;&#x70B9;&#x5143;&#x6570;&#x636E;
+    typedef struct packed {
+        logic [31:0] timestamp;
+        logic [31:0] task_progress;
+        logic [15:0] checksum;
+        logic        valid;
+    } checkpoint_meta_t;
+
+    checkpoint_meta_t checkpoint_meta[MAX_CHECKPOINTS];
+    logic [2:0] current_checkpoint_idx;
+    logic [2:0] restore_checkpoint_idx;
+    logic [31:0] interval_counter;
+
+    // &#x589E;&#x91CF;&#x68C0;&#x67E5;&#x70B9;&#x652F;&#x6301;
+    logic [STATE_WIDTH-1:0] state_delta;
+    logic [STATE_WIDTH-1:0] base_state;
+    logic delta_checkpoint_enable;
+
+    // &#x72B6;&#x6001;&#x673A;
+    typedef enum logic [2:0] {
+        IDLE,
+        COMPUTE_DELTA,
+        SAVE_CHECKPOINT,
+        VERIFY_SAVE,
+        RESTORE_META,
+        RESTORE_DATA,
+        VERIFY_RESTORE
+    } checkpoint_state_t;
+
+    checkpoint_state_t state;
+
+    // &#x68C0;&#x67E5;&#x70B9;&#x4FDD;&#x5B58;&#x903B;&#x8F91;
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            state &lt;= IDLE;
+            current_checkpoint_idx &lt;= 0;
+            interval_counter &lt;= 0;
+            checkpoint_count &lt;= 0;
+        end else begin
+            case (state)
+                IDLE: begin
+                    interval_counter &lt;= interval_counter + 1;
+
+                    if (force_checkpoint || 
+                        (checkpoint_enable &amp;&amp; interval_counter &gt;= CHECKPOINT_INTERVAL)) begin
+                        state &lt;= COMPUTE_DELTA;
+                        interval_counter &lt;= 0;
+                    end else if (restore_request) begin
+                        state &lt;= RESTORE_META;
+                    end
+                end
+
+                COMPUTE_DELTA: begin
+                    // &#x8BA1;&#x7B97;&#x589E;&#x91CF;
+                    state_delta &lt;= current_state ^ base_state;
+
+                    // &#x51B3;&#x5B9A;&#x662F;&#x5426;&#x4F7F;&#x7528;&#x589E;&#x91CF;&#x68C0;&#x67E5;&#x70B9;
+                    if ($countones(state_delta) &lt; STATE_WIDTH/4) begin
+                        delta_checkpoint_enable &lt;= 1&apos;b1;
+                    end else begin
+                        delta_checkpoint_enable &lt;= 1&apos;b0;
+                        base_state &lt;= current_state;
+                    end
+
+                    state &lt;= SAVE_CHECKPOINT;
+                end
+
+                SAVE_CHECKPOINT: begin
+                    // &#x4FDD;&#x5B58;&#x5230;&#x5185;&#x5B58;
+                    memory_addr &lt;= get_checkpoint_addr(current_checkpoint_idx);
+                    memory_write_data &lt;= delta_checkpoint_enable ? 
+                                        state_delta : current_state;
+                    memory_write &lt;= 1&apos;b1;
+
+                    // &#x66F4;&#x65B0;&#x5143;&#x6570;&#x636E;
+                    checkpoint_meta[current_checkpoint_idx].timestamp &lt;= 
+                        last_checkpoint_time;
+                    checkpoint_meta[current_checkpoint_idx].valid &lt;= 1&apos;b1;
+
+                    state &lt;= VERIFY_SAVE;
+                end
+
+                VERIFY_SAVE: begin
+                    memory_write &lt;= 1&apos;b0;
+                    checkpoint_done &lt;= 1&apos;b1;
+                    checkpoint_count &lt;= checkpoint_count + 1;
+
+                    // &#x5FAA;&#x73AF;&#x4F7F;&#x7528;&#x68C0;&#x67E5;&#x70B9;&#x69FD;
+                    current_checkpoint_idx &lt;= current_checkpoint_idx + 1;
+                    if (current_checkpoint_idx == MAX_CHECKPOINTS - 1) begin
+                        current_checkpoint_idx &lt;= 0;
+                    end
+
+                    state &lt;= IDLE;
+                end
+
+                RESTORE_META: begin
+                    // &#x627E;&#x5230;&#x6700;&#x65B0;&#x7684;&#x6709;&#x6548;&#x68C0;&#x67E5;&#x70B9;
+                    restore_checkpoint_idx &lt;= find_latest_checkpoint();
+                    state &lt;= RESTORE_DATA;
+                end
+
+                RESTORE_DATA: begin
+                    // &#x4ECE;&#x5185;&#x5B58;&#x6062;&#x590D;
+                    memory_addr &lt;= get_checkpoint_addr(restore_checkpoint_idx);
+                    memory_read &lt;= 1&apos;b1;
+                    state &lt;= VERIFY_RESTORE;
+                end
+
+                VERIFY_RESTORE: begin
+                    memory_read &lt;= 1&apos;b0;
+                    restored_state &lt;= memory_read_data;
+                    restore_valid &lt;= 1&apos;b1;
+                    restore_done &lt;= 1&apos;b1;
+                    state &lt;= IDLE;
+                end
+            endcase
+        end
+    end
+
+    // &#x8F85;&#x52A9;&#x51FD;&#x6570;
+    function logic [2:0] find_latest_checkpoint();
+        logic [2:0] latest_idx;
+        logic [31:0] latest_time;
+
+        latest_idx = 0;
+        latest_time = 0;
+
+        for (int i = 0; i &lt; MAX_CHECKPOINTS; i++) begin
+            if (checkpoint_meta[i].valid &amp;&amp; 
+                checkpoint_meta[i].timestamp &gt; latest_time) begin
+                latest_idx = i;
+                latest_time = checkpoint_meta[i].timestamp;
+            end
+        end
+
+        return latest_idx;
+    endfunction
+
+    function logic [31:0] get_checkpoint_addr(logic [2:0] idx);
+        return 32&apos;h8000_0000 + (idx * STATE_WIDTH/8);
+    endfunction
+endmodule
+</code></pre>
+<p><strong>&#x68C0;&#x67E5;&#x70B9;&#x7B56;&#x7565;&#xFF1A;</strong></p>
+<ol>
+<li><p><strong>&#x89E6;&#x53D1;&#x673A;&#x5236;</strong></p>
+<ul>
+<li>&#x5B9A;&#x65F6;&#x68C0;&#x67E5;&#x70B9;</li>
+<li>&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;&#x68C0;&#x67E5;&#x70B9;</li>
+<li>&#x9884;&#x6D4B;&#x6027;&#x68C0;&#x67E5;&#x70B9;</li>
+</ul>
+</li>
+<li><p><strong>&#x5B58;&#x50A8;&#x4F18;&#x5316;</strong></p>
+<ul>
+<li>&#x589E;&#x91CF;&#x68C0;&#x67E5;&#x70B9;</li>
+<li>&#x538B;&#x7F29;&#x5B58;&#x50A8;</li>
+<li>&#x591A;&#x7EA7;&#x5B58;&#x50A8;&#x5C42;&#x6B21;</li>
+</ul>
+</li>
+<li><p><strong>&#x4E00;&#x81F4;&#x6027;&#x4FDD;&#x8BC1;</strong></p>
+<ul>
+<li>&#x539F;&#x5B50;&#x64CD;&#x4F5C;</li>
+<li>&#x6821;&#x9A8C;&#x548C;&#x9A8C;&#x8BC1;</li>
+<li>&#x53CC;&#x7F13;&#x51B2;&#x5199;&#x5165;</li>
+</ul>
+</li>
+</ol>
+<h3 id="1842-&#x5197;&#x4F59;&#x8BA1;&#x7B97;&#x4E0E;&#x7ED3;&#x679C;&#x9A8C;&#x8BC1;">18.4.2 &#x5197;&#x4F59;&#x8BA1;&#x7B97;&#x4E0E;&#x7ED3;&#x679C;&#x9A8C;&#x8BC1;</h3>
+<p>&#x5173;&#x952E;&#x8BA1;&#x7B97;&#x8DEF;&#x5F84;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5197;&#x4F59;&#x6267;&#x884C;&#x63D0;&#x9AD8;&#x53EF;&#x9760;&#x6027;&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// &#x5197;&#x4F59;&#x8BA1;&#x7B97;&#x6846;&#x67B6;
+module redundant_compute_framework #(
+    parameter INPUT_WIDTH = 256,
+    parameter OUTPUT_WIDTH = 128,
+    parameter NUM_ENGINES = 3,      // &#x5947;&#x6570;&#x4E2A;&#x5F15;&#x64CE;&#x7528;&#x4E8E;&#x6295;&#x7968;
+    parameter TIMEOUT_CYCLES = 10000
+) (
+    input  logic clk,
+    input  logic rst_n,
+
+    // &#x4EFB;&#x52A1;&#x8F93;&#x5165;
+    input  logic [INPUT_WIDTH-1:0] task_input,
+    input  logic                   task_valid,
+    output logic                   task_ready,
+
+    // &#x7ED3;&#x679C;&#x8F93;&#x51FA;
+    output logic [OUTPUT_WIDTH-1:0] result_data,
+    output logic                    result_valid,
+    output logic                    result_error,
+
+    // &#x8BCA;&#x65AD;&#x63A5;&#x53E3;
+    output logic [NUM_ENGINES-1:0]  engine_status,
+    output logic [NUM_ENGINES-1:0]  engine_mismatch,
+    output logic [31:0]             total_mismatches,
+    output logic [31:0]             recovery_count
+);
+
+    // &#x5F15;&#x64CE;&#x63A5;&#x53E3;
+    logic [INPUT_WIDTH-1:0]  engine_input[NUM_ENGINES];
+    logic                    engine_start[NUM_ENGINES];
+    logic [OUTPUT_WIDTH-1:0] engine_output[NUM_ENGINES];
+    logic                    engine_done[NUM_ENGINES];
+    logic                    engine_timeout[NUM_ENGINES];
+
+    // &#x8BA1;&#x65F6;&#x5668;
+    logic [31:0] engine_timer[NUM_ENGINES];
+
+    // &#x7ED3;&#x679C;&#x6BD4;&#x8F83;&#x4E0E;&#x6295;&#x7968;
+    logic [OUTPUT_WIDTH-1:0] voted_result;
+    logic [NUM_ENGINES-1:0]  result_agree;
+    logic                    majority_agree;
+
+    // &#x72B6;&#x6001;&#x673A;
+    typedef enum logic [2:0] {
+        IDLE,
+        DISPATCH,
+        COMPUTE,
+        COLLECT,
+        VOTE,
+        RETRY,
+        ERROR
+    } compute_state_t;
+
+    compute_state_t state;
+    logic [2:0] retry_count;
+
+    // &#x5206;&#x53D1;&#x4EFB;&#x52A1;&#x5230;&#x591A;&#x4E2A;&#x5F15;&#x64CE;
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            state &lt;= IDLE;
+            retry_count &lt;= 0;
+            total_mismatches &lt;= 0;
+            recovery_count &lt;= 0;
+        end else begin
+            case (state)
+                IDLE: begin
+                    if (task_valid) begin
+                        state &lt;= DISPATCH;
+                        task_ready &lt;= 1&apos;b1;
+                    end
+                end
+
+                DISPATCH: begin
+                    // &#x542F;&#x52A8;&#x6240;&#x6709;&#x5F15;&#x64CE;
+                    for (int i = 0; i &lt; NUM_ENGINES; i++) begin
+                        engine_input[i] &lt;= task_input;
+                        engine_start[i] &lt;= 1&apos;b1;
+                        engine_timer[i] &lt;= 0;
+                    end
+                    state &lt;= COMPUTE;
+                end
+
+                COMPUTE: begin
+                    // &#x7B49;&#x5F85;&#x6240;&#x6709;&#x5F15;&#x64CE;&#x5B8C;&#x6210;&#x6216;&#x8D85;&#x65F6;
+                    for (int i = 0; i &lt; NUM_ENGINES; i++) begin
+                        engine_start[i] &lt;= 1&apos;b0;
+                        engine_timer[i] &lt;= engine_timer[i] + 1;
+
+                        if (engine_timer[i] &gt; TIMEOUT_CYCLES) begin
+                            engine_timeout[i] &lt;= 1&apos;b1;
+                        end
+                    end
+
+                    // &#x68C0;&#x67E5;&#x662F;&#x5426;&#x6709;&#x8DB3;&#x591F;&#x5F15;&#x64CE;&#x5B8C;&#x6210;
+                    if (count_done_engines() &gt;= (NUM_ENGINES + 1) / 2) begin
+                        state &lt;= COLLECT;
+                    end else if (all_engines_timeout()) begin
+                        state &lt;= ERROR;
+                    end
+                end
+
+                COLLECT: begin
+                    // &#x6536;&#x96C6;&#x5B8C;&#x6210;&#x7684;&#x7ED3;&#x679C;
+                    state &lt;= VOTE;
+                end
+
+                VOTE: begin
+                    // &#x6267;&#x884C;&#x591A;&#x6570;&#x6295;&#x7968;
+                    voted_result &lt;= compute_majority_vote();
+
+                    // &#x68C0;&#x67E5;&#x4E00;&#x81F4;&#x6027;
+                    check_result_consistency();
+
+                    if (majority_agree) begin
+                        result_data &lt;= voted_result;
+                        result_valid &lt;= 1&apos;b1;
+                        state &lt;= IDLE;
+                    end else if (retry_count &lt; 3) begin
+                        retry_count &lt;= retry_count + 1;
+                        recovery_count &lt;= recovery_count + 1;
+                        state &lt;= RETRY;
+                    end else begin
+                        state &lt;= ERROR;
+                    end
+                end
+
+                RETRY: begin
+                    // &#x91CD;&#x65B0;&#x6267;&#x884C;&#x4E0D;&#x4E00;&#x81F4;&#x7684;&#x5F15;&#x64CE;
+                    for (int i = 0; i &lt; NUM_ENGINES; i++) begin
+                        if (!result_agree[i]) begin
+                            engine_start[i] &lt;= 1&apos;b1;
+                            engine_timer[i] &lt;= 0;
+                        end
+                    end
+                    state &lt;= COMPUTE;
+                end
+
+                ERROR: begin
+                    result_error &lt;= 1&apos;b1;
+                    state &lt;= IDLE;
+                end
+            endcase
+        end
+    end
+
+    // &#x591A;&#x6570;&#x6295;&#x7968;&#x51FD;&#x6570;
+    function logic [OUTPUT_WIDTH-1:0] compute_majority_vote();
+        logic [OUTPUT_WIDTH-1:0] vote_result;
+        logic [NUM_ENGINES-1:0] vote_count[OUTPUT_WIDTH];
+
+        // &#x5BF9;&#x6BCF;&#x4E00;&#x4F4D;&#x8FDB;&#x884C;&#x6295;&#x7968;
+        for (int bit_idx = 0; bit_idx &lt; OUTPUT_WIDTH; bit_idx++) begin
+            vote_count[bit_idx] = 0;
+
+            for (int eng_idx = 0; eng_idx &lt; NUM_ENGINES; eng_idx++) begin
+                if (engine_done[eng_idx] &amp;&amp; !engine_timeout[eng_idx]) begin
+                    if (engine_output[eng_idx][bit_idx]) begin
+                        vote_count[bit_idx] = vote_count[bit_idx] + 1;
+                    end
+                end
+            end
+
+            // &#x591A;&#x6570;&#x51B3;&#x5B9A;
+            vote_result[bit_idx] = (vote_count[bit_idx] &gt; NUM_ENGINES/2);
+        end
+
+        return vote_result;
+    endfunction
+
+    // &#x4E00;&#x81F4;&#x6027;&#x68C0;&#x67E5;
+    function void check_result_consistency();
+        for (int i = 0; i &lt; NUM_ENGINES; i++) begin
+            if (engine_done[i] &amp;&amp; !engine_timeout[i]) begin
+                result_agree[i] = (engine_output[i] == voted_result);
+                if (!result_agree[i]) begin
+                    engine_mismatch[i] &lt;= 1&apos;b1;
+                    total_mismatches &lt;= total_mismatches + 1;
+                end
+            end
+        end
+
+        // &#x68C0;&#x67E5;&#x662F;&#x5426;&#x6709;&#x591A;&#x6570;&#x4E00;&#x81F4;
+        majority_agree = (count_agreements() &gt;= (NUM_ENGINES + 1) / 2);
+    endfunction
+
+    // &#x8F85;&#x52A9;&#x51FD;&#x6570;
+    function int count_done_engines();
+        int count = 0;
+        for (int i = 0; i &lt; NUM_ENGINES; i++) begin
+            if (engine_done[i] &amp;&amp; !engine_timeout[i]) count++;
+        end
+        return count;
+    endfunction
+
+    function logic all_engines_timeout();
+        for (int i = 0; i &lt; NUM_ENGINES; i++) begin
+            if (!engine_timeout[i]) return 0;
+        end
+        return 1;
+    endfunction
+
+    function int count_agreements();
+        int count = 0;
+        for (int i = 0; i &lt; NUM_ENGINES; i++) begin
+            if (result_agree[i]) count++;
+        end
+        return count;
+    endfunction
+endmodule
+</code></pre>
+<p><strong>&#x5197;&#x4F59;&#x8BA1;&#x7B97;&#x7B56;&#x7565;&#xFF1A;</strong></p>
+<ol>
+<li><p><strong>&#x6267;&#x884C;&#x6A21;&#x5F0F;</strong></p>
+<ul>
+<li>&#x540C;&#x6B65;&#x6267;&#x884C;&#xFF1A;&#x7B49;&#x5F85;&#x6240;&#x6709;&#x5B8C;&#x6210;</li>
+<li>&#x5F02;&#x6B65;&#x6267;&#x884C;&#xFF1A;&#x7B2C;&#x4E00;&#x4E2A;&#x5B8C;&#x6210;&#x5373;&#x53EF;</li>
+<li>&#x6DF7;&#x5408;&#x6A21;&#x5F0F;&#xFF1A;&#x591A;&#x6570;&#x5B8C;&#x6210;&#x5373;&#x53EF;</li>
+</ul>
+</li>
+<li><p><strong>&#x7ED3;&#x679C;&#x9A8C;&#x8BC1;</strong></p>
+<ul>
+<li>&#x7CBE;&#x786E;&#x5339;&#x914D;</li>
+<li>&#x5BB9;&#x5DEE;&#x6BD4;&#x8F83;</li>
+<li>&#x6821;&#x9A8C;&#x548C;&#x9A8C;&#x8BC1;</li>
+</ul>
+</li>
+<li><p><strong>&#x6545;&#x969C;&#x5904;&#x7406;</strong></p>
+<ul>
+<li>&#x81EA;&#x52A8;&#x91CD;&#x8BD5;</li>
+<li>&#x964D;&#x7EA7;&#x8FD0;&#x884C;</li>
+<li>&#x6545;&#x969C;&#x9694;&#x79BB;</li>
+</ul>
+</li>
+</ol>
+<h3 id="1843-&#x5206;&#x5E03;&#x5F0F;&#x5BB9;&#x9519;&#x67B6;&#x6784;">18.4.3 &#x5206;&#x5E03;&#x5F0F;&#x5BB9;&#x9519;&#x67B6;&#x6784;</h3>
+<p>&#x5927;&#x89C4;&#x6A21;FPGA&#x7CFB;&#x7EDF;&#x9700;&#x8981;&#x5206;&#x5E03;&#x5F0F;&#x5BB9;&#x9519;&#x673A;&#x5236;&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// &#x5206;&#x5E03;&#x5F0F;&#x5BB9;&#x9519;&#x534F;&#x8C03;&#x5668;
+module distributed_fault_coordinator #(
+    parameter NUM_NODES = 8,
+    parameter NODE_ID_WIDTH = 3,
+    parameter HEARTBEAT_PERIOD = 1000000  // 10ms @ 100MHz
+) (
+    input  logic clk,
+    input  logic rst_n,
+
+    // &#x672C;&#x5730;&#x8282;&#x70B9;&#x4FE1;&#x606F;
+    input  logic [NODE_ID_WIDTH-1:0] local_node_id,
+    input  logic                     local_healthy,
+
+    // &#x8282;&#x70B9;&#x95F4;&#x901A;&#x4FE1;
+    input  logic [NUM_NODES-1:0]     heartbeat_in,
+    output logic                     heartbeat_out,
+
+    // &#x6545;&#x969C;&#x68C0;&#x6D4B;
+    output logic [NUM_NODES-1:0]     node_alive,
+    output logic [NUM_NODES-1:0]     node_failed,
+    output logic                     cluster_degraded,
+
+    // &#x4EFB;&#x52A1;&#x8FC1;&#x79FB;
+    output logic                     migration_trigger,
+    output logic [NODE_ID_WIDTH-1:0] migration_source,
+    output logic [NODE_ID_WIDTH-1:0] migration_target,
+
+    // &#x5171;&#x8BC6;&#x534F;&#x8BAE;
+    output logic                     leader_node,
+    output logic [NODE_ID_WIDTH-1:0] current_leader
+);
+
+    // &#x5FC3;&#x8DF3;&#x76D1;&#x63A7;
+    logic [31:0] heartbeat_counter[NUM_NODES];
+    logic [31:0] heartbeat_timer;
+    logic [NUM_NODES-1:0] heartbeat_timeout;
+
+    // &#x9886;&#x5BFC;&#x8005;&#x9009;&#x4E3E;&#x72B6;&#x6001;
+    typedef enum logic [2:0] {
+        FOLLOWER,
+        CANDIDATE,
+        LEADER
+    } election_state_t;
+
+    election_state_t election_state;
+    logic [31:0] term;
+    logic [NODE_ID_WIDTH-1:0] voted_for;
+    logic [NUM_NODES-1:0] votes_received;
+
+    // &#x4EFB;&#x52A1;&#x5206;&#x914D;&#x8868;
+    logic [NODE_ID_WIDTH-1:0] task_assignment[256];  // &#x4EFB;&#x52A1;&#x5230;&#x8282;&#x70B9;&#x6620;&#x5C04;
+    logic [7:0] node_load[NUM_NODES];                // &#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x8D1F;&#x8F7D;
+
+    // &#x5FC3;&#x8DF3;&#x751F;&#x6210;&#x4E0E;&#x76D1;&#x63A7;
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            heartbeat_timer &lt;= 0;
+            heartbeat_out &lt;= 0;
+            for (int i = 0; i &lt; NUM_NODES; i++) begin
+                heartbeat_counter[i] &lt;= 0;
+                heartbeat_timeout[i] &lt;= 0;
+                node_alive[i] &lt;= (i == local_node_id);
+            end
+        end else begin
+            // &#x751F;&#x6210;&#x5FC3;&#x8DF3;
+            heartbeat_timer &lt;= heartbeat_timer + 1;
+            if (heartbeat_timer &gt;= HEARTBEAT_PERIOD) begin
+                heartbeat_timer &lt;= 0;
+                heartbeat_out &lt;= ~heartbeat_out;
+            end
+
+            // &#x76D1;&#x63A7;&#x5176;&#x4ED6;&#x8282;&#x70B9;
+            for (int i = 0; i &lt; NUM_NODES; i++) begin
+                if (i != local_node_id) begin
+                    // &#x68C0;&#x6D4B;&#x5FC3;&#x8DF3;&#x8FB9;&#x6CBF;
+                    if (heartbeat_in[i] != heartbeat_counter[i][0]) begin
+                        heartbeat_counter[i] &lt;= 0;
+                        node_alive[i] &lt;= 1&apos;b1;
+                    end else begin
+                        heartbeat_counter[i] &lt;= heartbeat_counter[i] + 1;
+
+                        // &#x8D85;&#x65F6;&#x68C0;&#x6D4B;
+                        if (heartbeat_counter[i] &gt; 3 * HEARTBEAT_PERIOD) begin
+                            heartbeat_timeout[i] &lt;= 1&apos;b1;
+                            node_alive[i] &lt;= 1&apos;b0;
+                            node_failed[i] &lt;= 1&apos;b1;
+                        end
+                    end
+                end
+            end
+        end
+    end
+
+    // &#x9886;&#x5BFC;&#x8005;&#x9009;&#x4E3E;&#xFF08;&#x7B80;&#x5316;&#x7684;Raft&#x534F;&#x8BAE;&#xFF09;
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            election_state &lt;= FOLLOWER;
+            term &lt;= 0;
+            current_leader &lt;= 0;
+            leader_node &lt;= 0;
+        end else begin
+            case (election_state)
+                FOLLOWER: begin
+                    // &#x68C0;&#x6D4B;&#x9886;&#x5BFC;&#x8005;&#x6545;&#x969C;
+                    if (node_failed[current_leader] &amp;&amp; local_healthy) begin
+                        election_state &lt;= CANDIDATE;
+                        term &lt;= term + 1;
+                        voted_for &lt;= local_node_id;
+                        votes_received &lt;= 1 &lt;&lt; local_node_id;
+                    end
+                end
+
+                CANDIDATE: begin
+                    // &#x6536;&#x96C6;&#x6295;&#x7968;&#xFF08;&#x7B80;&#x5316;&#xFF09;
+                    votes_received &lt;= votes_received | heartbeat_in;
+
+                    // &#x68C0;&#x67E5;&#x662F;&#x5426;&#x83B7;&#x5F97;&#x591A;&#x6570;
+                    if ($countones(votes_received) &gt; NUM_NODES/2) begin
+                        election_state &lt;= LEADER;
+                        current_leader &lt;= local_node_id;
+                        leader_node &lt;= 1&apos;b1;
+                    end
+                end
+
+                LEADER: begin
+                    // &#x9886;&#x5BFC;&#x8005;&#x804C;&#x8D23;&#xFF1A;&#x76D1;&#x63A7;&#x96C6;&#x7FA4;&#x5065;&#x5EB7;
+                    cluster_degraded &lt;= ($countones(node_alive) &lt; NUM_NODES * 3/4);
+
+                    // &#x89E6;&#x53D1;&#x4EFB;&#x52A1;&#x8FC1;&#x79FB;
+                    check_and_migrate_tasks();
+                end
+            endcase
+        end
+    end
+
+    // &#x4EFB;&#x52A1;&#x8FC1;&#x79FB;&#x903B;&#x8F91;
+    task check_and_migrate_tasks();
+        for (int i = 0; i &lt; NUM_NODES; i++) begin
+            if (node_failed[i] &amp;&amp; node_load[i] &gt; 0) begin
+                // &#x627E;&#x5230;&#x8D1F;&#x8F7D;&#x6700;&#x4F4E;&#x7684;&#x5065;&#x5EB7;&#x8282;&#x70B9;
+                automatic logic [NODE_ID_WIDTH-1:0] target = find_least_loaded_node();
+
+                if (target != i) begin
+                    migration_trigger &lt;= 1&apos;b1;
+                    migration_source &lt;= i;
+                    migration_target &lt;= target;
+
+                    // &#x66F4;&#x65B0;&#x8D1F;&#x8F7D;&#x4FE1;&#x606F;
+                    node_load[target] &lt;= node_load[target] + node_load[i];
+                    node_load[i] &lt;= 0;
+                end
+            end
+        end
+    endtask
+
+    // &#x627E;&#x5230;&#x8D1F;&#x8F7D;&#x6700;&#x4F4E;&#x7684;&#x5065;&#x5EB7;&#x8282;&#x70B9;
+    function logic [NODE_ID_WIDTH-1:0] find_least_loaded_node();
+        logic [NODE_ID_WIDTH-1:0] min_node;
+        logic [7:0] min_load;
+
+        min_load = 8&apos;hFF;
+        min_node = 0;
+
+        for (int i = 0; i &lt; NUM_NODES; i++) begin
+            if (node_alive[i] &amp;&amp; node_load[i] &lt; min_load) begin
+                min_load = node_load[i];
+                min_node = i;
+            end
+        end
+
+        return min_node;
+    endfunction
+endmodule
+</code></pre>
+<p><strong>&#x5206;&#x5E03;&#x5F0F;&#x5BB9;&#x9519;&#x8981;&#x70B9;&#xFF1A;</strong></p>
+<ol>
+<li><p><strong>&#x6545;&#x969C;&#x68C0;&#x6D4B;&#x673A;&#x5236;</strong></p>
+<ul>
+<li>&#x5FC3;&#x8DF3;&#x76D1;&#x63A7;</li>
+<li>&#x8D85;&#x65F6;&#x68C0;&#x6D4B;</li>
+<li>&#x7EA7;&#x8054;&#x6545;&#x969C;&#x9884;&#x9632;</li>
+</ul>
+</li>
+<li><p><strong>&#x5171;&#x8BC6;&#x534F;&#x8BAE;</strong></p>
+<ul>
+<li>&#x9886;&#x5BFC;&#x8005;&#x9009;&#x4E3E;</li>
+<li>&#x72B6;&#x6001;&#x590D;&#x5236;</li>
+<li>&#x5206;&#x88C2;&#x8111;&#x9884;&#x9632;</li>
+</ul>
+</li>
+<li><p><strong>&#x8D1F;&#x8F7D;&#x5747;&#x8861;</strong></p>
+<ul>
+<li>&#x52A8;&#x6001;&#x4EFB;&#x52A1;&#x8FC1;&#x79FB;</li>
+<li>&#x8D44;&#x6E90;&#x611F;&#x77E5;&#x8C03;&#x5EA6;</li>
+<li>&#x6027;&#x80FD;&#x4F18;&#x5316;</li>
+</ul>
+</li>
+</ol>
+<h2 id="&#x672C;&#x7AE0;&#x5C0F;&#x7ED3;">&#x672C;&#x7AE0;&#x5C0F;&#x7ED3;</h2>
+<p>&#x53EF;&#x9760;&#x6027;&#x4E0E;&#x5BB9;&#x9519;&#x8BBE;&#x8BA1;&#x662F;&#x6784;&#x5EFA;&#x4EFB;&#x52A1;&#x5173;&#x952E;&#x578B;FPGA&#x7CFB;&#x7EDF;&#x7684;&#x57FA;&#x7840;&#x3002;&#x672C;&#x7AE0;&#x6211;&#x4EEC;&#x6DF1;&#x5165;&#x63A2;&#x8BA8;&#x4E86;&#xFF1A;</p>
+<ol>
+<li><strong>&#x8F6F;&#x9519;&#x8BEF;&#x9632;&#x62A4;&#x6280;&#x672F;</strong>&#xFF1A;SEU&#x68C0;&#x6D4B;&#x3001;ECC&#x5B9E;&#x73B0;&#x3001;&#x914D;&#x7F6E;&#x5B58;&#x50A8;&#x5668;&#x626B;&#x63CF;&#x673A;&#x5236;</li>
+<li><strong>TMR&#x8BBE;&#x8BA1;&#x65B9;&#x6CD5;</strong>&#xFF1A;&#x57FA;&#x672C;TMR&#x67B6;&#x6784;&#x3001;&#x72B6;&#x6001;&#x673A;TMR&#x3001;&#x9009;&#x62E9;&#x6027;TMR&#x4F18;&#x5316;</li>
+<li><strong>&#x70ED;&#x5347;&#x7EA7;&#x673A;&#x5236;</strong>&#xFF1A;&#x90E8;&#x5206;&#x91CD;&#x914D;&#x7F6E;&#x3001;&#x65E0;&#x7F1D;&#x5207;&#x6362;&#x3001;&#x7248;&#x672C;&#x56DE;&#x6EDA;&#x7B56;&#x7565;</li>
+<li><strong>&#x4EFB;&#x52A1;&#x7EA7;&#x5BB9;&#x9519;</strong>&#xFF1A;&#x68C0;&#x67E5;&#x70B9;&#x6062;&#x590D;&#x3001;&#x5197;&#x4F59;&#x8BA1;&#x7B97;&#x3001;&#x5206;&#x5E03;&#x5F0F;&#x5BB9;&#x9519;&#x67B6;&#x6784;</li>
+</ol>
+<p><strong>&#x5173;&#x952E;&#x516C;&#x5F0F;&#x4E0E;&#x6982;&#x5FF5;&#xFF1A;</strong></p>
+<ul>
+<li>SEU&#x7387;&#x8BA1;&#x7B97;&#xFF1A;&#x3BB; = &#x3A6; &#xD7; &#x3C3; &#xD7; N&#xFF08;&#x7C92;&#x5B50;&#x901A;&#x91CF;&#xD7;&#x622A;&#x9762;&#xD7;&#x4F4D;&#x6570;&#xFF09;</li>
+<li>TMR&#x53EF;&#x9760;&#x6027;&#xFF1A;R_TMR = 3R&#xB2;(1-R) + R&#xB3;&#xFF08;R&#x4E3A;&#x5355;&#x6A21;&#x5757;&#x53EF;&#x9760;&#x6027;&#xFF09;</li>
+<li>MTTF&#x6539;&#x5584;&#xFF1A;MTTF_TMR &#x2248; 5/(6&#x3BB;&#xB2;t)&#xFF08;&#x3BB;&#x4E3A;&#x6545;&#x969C;&#x7387;&#xFF09;</li>
+<li>&#x68C0;&#x67E5;&#x70B9;&#x5F00;&#x9500;&#xFF1A;T_overhead = T_save + P_fail &#xD7; T_restore</li>
+</ul>
+<h2 id="&#x7EC3;&#x4E60;&#x9898;">&#x7EC3;&#x4E60;&#x9898;</h2>
+<h3 id="&#x57FA;&#x7840;&#x9898;">&#x57FA;&#x7840;&#x9898;</h3>
+<ol>
+<li><p><strong>SEU&#x9632;&#x62A4;&#x8BBE;&#x8BA1;</strong>
+&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;64&#x4F4D;&#x5BC4;&#x5B58;&#x5668;&#x7684;SECDED&#x4FDD;&#x62A4;&#x7535;&#x8DEF;&#xFF0C;&#x8BA1;&#x7B97;&#x9700;&#x8981;&#x591A;&#x5C11;&#x6821;&#x9A8C;&#x4F4D;&#xFF1F;</p>
+<p><em>Hint: &#x4F7F;&#x7528;Hamming&#x8DDD;&#x79BB;&#x8BA1;&#x7B97;</em></p>
+<details>
+<summary>&#x7B54;&#x6848;</summary>
+
+&#x5BF9;&#x4E8E;64&#x4F4D;&#x6570;&#x636E;&#xFF1A;
+- &#x9700;&#x8981;7&#x4F4D;&#x7528;&#x4E8E;&#x5B9A;&#x4F4D;&#x9519;&#x8BEF;&#xFF08;2^7=128&gt;64+7+1&#xFF09;
+- &#x9700;&#x8981;1&#x4F4D;&#x7528;&#x4E8E;&#x53CC;&#x9519;&#x68C0;&#x6D4B;
+- &#x603B;&#x5171;&#x9700;&#x8981;8&#x4F4D;&#x6821;&#x9A8C;&#x4F4D;
+- &#x603B;&#x5B58;&#x50A8;&#xFF1A;64+8=72&#x4F4D;
+</details>
+</li>
+<li><p><strong>TMR&#x5F00;&#x9500;&#x8BA1;&#x7B97;</strong>
+&#x4E00;&#x4E2A;&#x4F7F;&#x7528;10K LUT&#x7684;&#x8BBE;&#x8BA1;&#x5B9E;&#x65BD;&#x5B8C;&#x5168;TMR&#x540E;&#xFF0C;&#x8003;&#x8651;&#x6295;&#x7968;&#x5668;&#x5F00;&#x9500;&#xFF0C;&#x4F30;&#x7B97;&#x603B;&#x8D44;&#x6E90;&#x4F7F;&#x7528;&#x3002;</p>
+<p><em>Hint: &#x6295;&#x7968;&#x5668;&#x7EA6;&#x5360;5%&#x989D;&#x5916;&#x5F00;&#x9500;</em></p>
+<details>
+<summary>&#x7B54;&#x6848;</summary>
+
+TMR&#x8D44;&#x6E90;&#x8BA1;&#x7B97;&#xFF1A;
+- &#x4E09;&#x4EFD;&#x903B;&#x8F91;&#xFF1A;10K &#xD7; 3 = 30K LUT
+- &#x6295;&#x7968;&#x5668;&#x5F00;&#x9500;&#xFF1A;30K &#xD7; 0.05 = 1.5K LUT
+- &#x603B;&#x8BA1;&#xFF1A;31.5K LUT
+- &#x5B9E;&#x9645;&#x5F00;&#x9500;&#xFF1A;3.15&#x500D;
+</details>
+</li>
+<li><p><strong>&#x90E8;&#x5206;&#x91CD;&#x914D;&#x7F6E;&#x65F6;&#x95F4;</strong>
+&#x8BA1;&#x7B97;&#x901A;&#x8FC7;ICAP&#x63A5;&#x53E3;&#x52A0;&#x8F7D;2MB&#x6BD4;&#x7279;&#x6D41;&#x9700;&#x8981;&#x7684;&#x65F6;&#x95F4;&#xFF08;ICAP&#x9891;&#x7387;100MHz&#xFF0C;32&#x4F4D;&#x5BBD;&#xFF09;&#x3002;</p>
+<p><em>Hint: &#x8003;&#x8651;ICAP&#x6548;&#x7387;&#x7EA6;90%</em></p>
+<details>
+<summary>&#x7B54;&#x6848;</summary>
+
+&#x91CD;&#x914D;&#x7F6E;&#x65F6;&#x95F4;&#xFF1A;
+- &#x6570;&#x636E;&#x91CF;&#xFF1A;2MB = 2&#xD7;1024&#xD7;1024&#xD7;8 bits
+- ICAP&#x5E26;&#x5BBD;&#xFF1A;100MHz &#xD7; 32bit &#xD7; 0.9 = 2.88Gbps
+- &#x65F6;&#x95F4;&#xFF1A;(2&#xD7;8&#xD7;1024&#xD7;1024) / 2.88G &#x2248; 5.8ms
+</details>
+</li>
+<li><p><strong>&#x68C0;&#x67E5;&#x70B9;&#x9891;&#x7387;&#x4F18;&#x5316;</strong>
+&#x5982;&#x679C;&#x68C0;&#x67E5;&#x70B9;&#x4FDD;&#x5B58;&#x9700;&#x8981;1ms&#xFF0C;&#x6062;&#x590D;&#x9700;&#x8981;2ms&#xFF0C;&#x7CFB;&#x7EDF;MTTF&#x4E3A;1000&#x5C0F;&#x65F6;&#xFF0C;&#x6700;&#x4F18;&#x68C0;&#x67E5;&#x70B9;&#x95F4;&#x9694;&#x662F;&#x591A;&#x5C11;&#xFF1F;</p>
+<p><em>Hint: &#x4F7F;&#x7528;Young&#x516C;&#x5F0F;</em></p>
+<details>
+<summary>&#x7B54;&#x6848;</summary>
+
+&#x6700;&#x4F18;&#x95F4;&#x9694;&#x8BA1;&#x7B97;&#xFF1A;
+- T_opt = &#x221A;(2 &#xD7; T_checkpoint &#xD7; MTTF)
+- T_opt = &#x221A;(2 &#xD7; 1ms &#xD7; 1000h)
+- T_opt = &#x221A;(7.2&#xD7;10^6 ms) &#x2248; 2683s &#x2248; 45&#x5206;&#x949F;
+</details>
+
+</li>
+</ol>
+<h3 id="&#x6311;&#x6218;&#x9898;">&#x6311;&#x6218;&#x9898;</h3>
+<ol>
+<li><p><strong>&#x6DF7;&#x5408;&#x5BB9;&#x9519;&#x67B6;&#x6784;&#x8BBE;&#x8BA1;</strong>
+&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;AI&#x63A8;&#x7406;&#x52A0;&#x901F;&#x5668;&#x7684;&#x5BB9;&#x9519;&#x65B9;&#x6848;&#xFF0C;&#x8981;&#x6C42;&#xFF1A;&#x63A7;&#x5236;&#x8DEF;&#x5F84;TMR&#xFF0C;&#x6570;&#x636E;&#x8DEF;&#x5F84;ECC&#xFF0C;&#x5B9E;&#x73B0;99.99%&#x53EF;&#x7528;&#x6027;&#x3002;</p>
+<p><em>Hint: &#x5206;&#x6790;&#x4E0D;&#x540C;&#x7EC4;&#x4EF6;&#x7684;&#x5173;&#x952E;&#x5EA6;</em></p>
+<details>
+<summary>&#x7B54;&#x6848;</summary>
+
+&#x67B6;&#x6784;&#x8BBE;&#x8BA1;&#xFF1A;
+- &#x63A7;&#x5236;&#x5668;&#xFF1A;&#x5B8C;&#x5168;TMR&#xFF08;&#x72B6;&#x6001;&#x673A;&#x3001;&#x8C03;&#x5EA6;&#x5668;&#xFF09;
+- &#x6570;&#x636E;&#x901A;&#x8DEF;&#xFF1A;SECDED ECC&#x4FDD;&#x62A4;
+- &#x5B58;&#x50A8;&#x5668;&#xFF1A;&#x5185;&#x7F6E;ECC + &#x5468;&#x671F;&#x6027;&#x626B;&#x63CF;
+- &#x63A5;&#x53E3;&#xFF1A;CRC + &#x91CD;&#x4F20;&#x673A;&#x5236;
+- &#x76D1;&#x63A7;&#xFF1A;&#x770B;&#x95E8;&#x72D7; + &#x5065;&#x5EB7;&#x68C0;&#x67E5;
+- &#x6062;&#x590D;&#xFF1A;&#x5206;&#x7EA7;&#x68C0;&#x67E5;&#x70B9; + &#x5FEB;&#x901F;&#x91CD;&#x542F;
+</details>
+</li>
+<li><p><strong>&#x65E0;&#x7F1D;&#x5347;&#x7EA7;&#x534F;&#x8BAE;&#x8BBE;&#x8BA1;</strong>
+&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x652F;&#x6301;&#x96F6;&#x505C;&#x673A;&#x65F6;&#x95F4;&#x7684;FPGA&#x5347;&#x7EA7;&#x534F;&#x8BAE;&#xFF0C;&#x5904;&#x7406;&#x5B9E;&#x65F6;&#x89C6;&#x9891;&#x6D41;&#xFF08;&#x8981;&#x6C42;&lt;1&#x5E27;&#x5EF6;&#x8FDF;&#xFF09;&#x3002;</p>
+<p><em>Hint: &#x8003;&#x8651;&#x53CC;&#x7F13;&#x51B2;&#x548C;&#x72B6;&#x6001;&#x8FC1;&#x79FB;</em></p>
+<details>
+<summary>&#x7B54;&#x6848;</summary>
+
+&#x534F;&#x8BAE;&#x8BBE;&#x8BA1;&#xFF1A;
+- &#x53CC;&#x5F15;&#x64CE;&#x67B6;&#x6784;&#xFF0C;&#x4EA4;&#x66FF;&#x5904;&#x7406;&#x5E27;
+- &#x5347;&#x7EA7;&#x65F6;&#x65B0;&#x5F15;&#x64CE;&#x9884;&#x70ED;1&#x5E27;&#x65F6;&#x95F4;
+- &#x5E27;&#x8FB9;&#x754C;&#x5207;&#x6362;&#xFF0C;&#x4FDD;&#x8BC1;&#x5B8C;&#x6574;&#x6027;
+- &#x72B6;&#x6001;&#x5305;&#x62EC;&#xFF1A;&#x5E27;&#x7F13;&#x51B2;&#x3001;&#x6EE4;&#x6CE2;&#x5668;&#x7CFB;&#x6570;&#x3001;&#x7EDF;&#x8BA1;&#x4FE1;&#x606F;
+- &#x56DE;&#x6EDA;&#x673A;&#x5236;&#xFF1A;&#x4FDD;&#x5B58;&#x6700;&#x540E;&#x6B63;&#x786E;&#x914D;&#x7F6E;
+- &#x9A8C;&#x8BC1;&#xFF1A;CRC + &#x53C2;&#x8003;&#x5E27;&#x6BD4;&#x5BF9;
+</details>
+</li>
+<li><p><strong>&#x5206;&#x5E03;&#x5F0F;FPGA&#x96C6;&#x7FA4;&#x5BB9;&#x9519;</strong>
+&#x8BBE;&#x8BA1;8&#x8282;&#x70B9;FPGA&#x96C6;&#x7FA4;&#x7684;&#x5BB9;&#x9519;&#x65B9;&#x6848;&#xFF0C;&#x652F;&#x6301;&#x6700;&#x591A;2&#x4E2A;&#x8282;&#x70B9;&#x540C;&#x65F6;&#x6545;&#x969C;&#x3002;</p>
+<p><em>Hint: &#x4F7F;&#x7528;&#x7EA0;&#x5220;&#x7801;&#x548C;&#x526F;&#x672C;&#x7B56;&#x7565;</em></p>
+<details>
+<summary>&#x7B54;&#x6848;</summary>
+
+&#x5BB9;&#x9519;&#x65B9;&#x6848;&#xFF1A;
+- &#x6570;&#x636E;&#x5206;&#x7247;&#xFF1A;Reed-Solomon(6,2)&#x7F16;&#x7801;
+- &#x4EFB;&#x52A1;&#x5206;&#x914D;&#xFF1A;&#x4E00;&#x81F4;&#x6027;&#x54C8;&#x5E0C; + &#x865A;&#x62DF;&#x8282;&#x70B9;
+- &#x6545;&#x969C;&#x68C0;&#x6D4B;&#xFF1A;Gossip&#x534F;&#x8BAE;&#xFF0C;&#x6536;&#x655B;&#x65F6;&#x95F4;<100ms -="" 数据恢复：并行重建，利用剩余节点="" 负载均衡：工作窃取="" +="" 预测调度="" 网络分区：raft共识，保证强一致性="" <="" details="">
+</100ms></details></li>
+<li><p><strong>&#x81EA;&#x9002;&#x5E94;&#x53EF;&#x9760;&#x6027;&#x4F18;&#x5316;</strong>
+&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x6839;&#x636E;&#x73AF;&#x5883;&#x6761;&#x4EF6;&#xFF08;&#x6E29;&#x5EA6;&#x3001;&#x8F90;&#x5C04;&#xFF09;&#x52A8;&#x6001;&#x8C03;&#x6574;&#x4FDD;&#x62A4;&#x7EA7;&#x522B;&#x7684;&#x7CFB;&#x7EDF;&#x3002;</p>
+<p><em>Hint: &#x5EFA;&#x7ACB;&#x9519;&#x8BEF;&#x7387;&#x6A21;&#x578B;</em></p>
+<details>
+<summary>&#x7B54;&#x6848;</summary>
+
+&#x81EA;&#x9002;&#x5E94;&#x7CFB;&#x7EDF;&#xFF1A;
+- &#x73AF;&#x5883;&#x76D1;&#x6D4B;&#xFF1A;&#x6E29;&#x5EA6;&#x3001;&#x9519;&#x8BEF;&#x7387;&#x3001;&#x529F;&#x8017;
+- &#x4FDD;&#x62A4;&#x7EA7;&#x522B;&#xFF1A;L0(&#x65E0;)&#x2192;L1(ECC)&#x2192;L2(DMR)&#x2192;L3(TMR)
+- &#x5207;&#x6362;&#x7B56;&#x7565;&#xFF1A;&#x9519;&#x8BEF;&#x7387;&#x9608;&#x503C;&#x89E6;&#x53D1;
+- &#x6027;&#x80FD;&#x6A21;&#x578B;&#xFF1A;&#x4FDD;&#x62A4;&#x5F00;&#x9500;vs&#x9519;&#x8BEF;&#x6062;&#x590D;&#x65F6;&#x95F4;
+- &#x5B9E;&#x73B0;&#xFF1A;&#x90E8;&#x5206;&#x91CD;&#x914D;&#x7F6E;&#x5207;&#x6362;&#x4FDD;&#x62A4;&#x6A21;&#x5757;
+- &#x4F18;&#x5316;&#x76EE;&#x6807;&#xFF1A;&#x6700;&#x5C0F;&#x5316;&#x603B;&#x4F53;&#x5EF6;&#x8FDF;
+</details>
+
+</li>
+</ol>
+<h2 id="&#x5E38;&#x89C1;&#x9677;&#x9631;&#x4E0E;&#x9519;&#x8BEF;&#xFF08;gotchas&#xFF09;">&#x5E38;&#x89C1;&#x9677;&#x9631;&#x4E0E;&#x9519;&#x8BEF;&#xFF08;Gotchas&#xFF09;</h2>
+<h3 id="seu&#x9632;&#x62A4;&#x9677;&#x9631;">SEU&#x9632;&#x62A4;&#x9677;&#x9631;</h3>
+<ol>
+<li><p><strong>&#x4E0D;&#x5B8C;&#x6574;&#x7684;&#x4FDD;&#x62A4;</strong></p>
+<ul>
+<li>&#x9519;&#x8BEF;&#xFF1A;&#x53EA;&#x4FDD;&#x62A4;&#x6570;&#x636E;&#x8DEF;&#x5F84;</li>
+<li>&#x6B63;&#x786E;&#xFF1A;&#x63A7;&#x5236;&#x8DEF;&#x5F84;&#x66F4;&#x9700;&#x8981;&#x4FDD;&#x62A4;</li>
+</ul>
+</li>
+<li><p><strong>&#x8FC7;&#x5EA6;&#x4FDD;&#x62A4;</strong></p>
+<ul>
+<li>&#x9519;&#x8BEF;&#xFF1A;&#x6240;&#x6709;&#x4FE1;&#x53F7;&#x90FD;TMR</li>
+<li>&#x6B63;&#x786E;&#xFF1A;&#x6839;&#x636E;&#x5173;&#x952E;&#x5EA6;&#x5206;&#x7EA7;&#x4FDD;&#x62A4;</li>
+</ul>
+</li>
+<li><p><strong>&#x6295;&#x7968;&#x5668;&#x5355;&#x70B9;&#x6545;&#x969C;</strong></p>
+<ul>
+<li>&#x9519;&#x8BEF;&#xFF1A;&#x6295;&#x7968;&#x5668;&#x672A;&#x4FDD;&#x62A4;</li>
+<li>&#x6B63;&#x786E;&#xFF1A;&#x6295;&#x7968;&#x5668;&#x4E5F;&#x9700;&#x8981;&#x5197;&#x4F59;&#x6216;&#x52A0;&#x56FA;</li>
+</ul>
+</li>
+</ol>
+<h3 id="&#x70ED;&#x5347;&#x7EA7;&#x9677;&#x9631;">&#x70ED;&#x5347;&#x7EA7;&#x9677;&#x9631;</h3>
+<ol>
+<li><p><strong>&#x72B6;&#x6001;&#x4E22;&#x5931;</strong></p>
+<ul>
+<li>&#x9519;&#x8BEF;&#xFF1A;&#x5347;&#x7EA7;&#x65F6;&#x672A;&#x4FDD;&#x5B58;&#x72B6;&#x6001;</li>
+<li>&#x6B63;&#x786E;&#xFF1A;&#x5B8C;&#x6574;&#x7684;&#x72B6;&#x6001;&#x8FC1;&#x79FB;&#x673A;&#x5236;</li>
+</ul>
+</li>
+<li><p><strong>&#x65F6;&#x5E8F;&#x8FDD;&#x4F8B;</strong></p>
+<ul>
+<li>&#x9519;&#x8BEF;&#xFF1A;&#x5207;&#x6362;&#x65F6;&#x4EA7;&#x751F;&#x6BDB;&#x523A;</li>
+<li>&#x6B63;&#x786E;&#xFF1A;&#x4F7F;&#x7528;&#x89E3;&#x8026;&#x903B;&#x8F91;&#x9694;&#x79BB;</li>
+</ul>
+</li>
+<li><p><strong>&#x7248;&#x672C;&#x517C;&#x5BB9;&#x6027;</strong></p>
+<ul>
+<li>&#x9519;&#x8BEF;&#xFF1A;&#x65B0;&#x65E7;&#x7248;&#x672C;&#x63A5;&#x53E3;&#x4E0D;&#x517C;&#x5BB9;</li>
+<li>&#x6B63;&#x786E;&#xFF1A;&#x4FDD;&#x6301;&#x63A5;&#x53E3;&#x7A33;&#x5B9A;&#x6027;</li>
+</ul>
+</li>
+</ol>
+<h3 id="&#x5BB9;&#x9519;&#x5B9E;&#x73B0;&#x9677;&#x9631;">&#x5BB9;&#x9519;&#x5B9E;&#x73B0;&#x9677;&#x9631;</h3>
+<ol>
+<li><p><strong>&#x9519;&#x8BEF;&#x4F20;&#x64AD;</strong></p>
+<ul>
+<li>&#x9519;&#x8BEF;&#xFF1A;&#x5C40;&#x90E8;&#x9519;&#x8BEF;&#x5F71;&#x54CD;&#x5168;&#x5C40;</li>
+<li>&#x6B63;&#x786E;&#xFF1A;&#x6545;&#x969C;&#x9694;&#x79BB;&#x57DF;&#x8BBE;&#x8BA1;</li>
+</ul>
+</li>
+<li><p><strong>&#x6062;&#x590D;&#x6B7B;&#x9501;</strong></p>
+<ul>
+<li>&#x9519;&#x8BEF;&#xFF1A;&#x6062;&#x590D;&#x8FC7;&#x7A0B;&#x76F8;&#x4E92;&#x4F9D;&#x8D56;</li>
+<li>&#x6B63;&#x786E;&#xFF1A;&#x660E;&#x786E;&#x7684;&#x6062;&#x590D;&#x4F18;&#x5148;&#x7EA7;</li>
+</ul>
+</li>
+</ol>
+<h2 id="&#x6700;&#x4F73;&#x5B9E;&#x8DF5;&#x68C0;&#x67E5;&#x6E05;&#x5355;">&#x6700;&#x4F73;&#x5B9E;&#x8DF5;&#x68C0;&#x67E5;&#x6E05;&#x5355;</h2>
+<h3 id="seu&#x9632;&#x62A4;&#x68C0;&#x67E5;&#x9879;">SEU&#x9632;&#x62A4;&#x68C0;&#x67E5;&#x9879;</h3>
+<ul>
+<li>[ ] &#x8BC6;&#x522B;&#x6240;&#x6709;&#x5173;&#x952E;&#x8DEF;&#x5F84;&#x5E76;&#x5B9E;&#x65BD;&#x4FDD;&#x62A4;</li>
+<li>[ ] &#x914D;&#x7F6E;&#x5B58;&#x50A8;&#x5668;&#x5B9A;&#x671F;&#x626B;&#x63CF;(&lt;100ms)</li>
+<li>[ ] ECC&#x4FDD;&#x62A4;&#x6240;&#x6709;&#x5B58;&#x50A8;&#x5668;</li>
+<li>[ ] &#x5B9E;&#x73B0;&#x9519;&#x8BEF;&#x6CE8;&#x5165;&#x6D4B;&#x8BD5;</li>
+<li>[ ] &#x76D1;&#x63A7;&#x5E76;&#x8BB0;&#x5F55;&#x6240;&#x6709;SEU&#x4E8B;&#x4EF6;</li>
+<li>[ ] &#x5B9A;&#x671F;&#x9A8C;&#x8BC1;&#x4FDD;&#x62A4;&#x673A;&#x5236;&#x6709;&#x6548;&#x6027;</li>
+</ul>
+<h3 id="tmr&#x8BBE;&#x8BA1;&#x68C0;&#x67E5;&#x9879;">TMR&#x8BBE;&#x8BA1;&#x68C0;&#x67E5;&#x9879;</h3>
+<ul>
+<li>[ ] &#x4E09;&#x4E2A;&#x6A21;&#x5757;&#x7269;&#x7406;&#x9694;&#x79BB;&#x653E;&#x7F6E;</li>
+<li>[ ] &#x72EC;&#x7ACB;&#x7684;&#x65F6;&#x949F;&#x548C;&#x590D;&#x4F4D;&#x6811;</li>
+<li>[ ] &#x6295;&#x7968;&#x5668;&#x8F93;&#x51FA;&#x5BC4;&#x5B58;&#x5668;&#x4FDD;&#x62A4;</li>
+<li>[ ] &#x5B9A;&#x671F;&#x540C;&#x6B65;&#x9632;&#x6B62;&#x72B6;&#x6001;&#x53D1;&#x6563;</li>
+<li>[ ] &#x5B9E;&#x73B0;&#x8BCA;&#x65AD;&#x548C;&#x9519;&#x8BEF;&#x62A5;&#x544A;</li>
+<li>[ ] &#x8003;&#x8651;&#x5171;&#x6A21;&#x6545;&#x969C;&#x9884;&#x9632;</li>
+</ul>
+<h3 id="&#x70ED;&#x5347;&#x7EA7;&#x68C0;&#x67E5;&#x9879;">&#x70ED;&#x5347;&#x7EA7;&#x68C0;&#x67E5;&#x9879;</h3>
+<ul>
+<li>[ ] &#x5B8C;&#x6574;&#x7684;&#x72B6;&#x6001;&#x4FDD;&#x5B58;&#x548C;&#x6062;&#x590D;</li>
+<li>[ ] &#x5347;&#x7EA7;&#x8FC7;&#x7A0B;&#x7684;&#x539F;&#x5B50;&#x6027;&#x4FDD;&#x8BC1;</li>
+<li>[ ] &#x5065;&#x5EB7;&#x68C0;&#x67E5;&#x548C;&#x81EA;&#x52A8;&#x56DE;&#x6EDA;</li>
+<li>[ ] &#x7248;&#x672C;&#x517C;&#x5BB9;&#x6027;&#x9A8C;&#x8BC1;</li>
+<li>[ ] &#x5347;&#x7EA7;&#x65E5;&#x5FD7;&#x548C;&#x5BA1;&#x8BA1;&#x8DDF;&#x8E2A;</li>
+<li>[ ] &#x7D27;&#x6025;&#x6062;&#x590D;&#x673A;&#x5236;</li>
+</ul>
+<h3 id="&#x7CFB;&#x7EDF;&#x7EA7;&#x5BB9;&#x9519;&#x68C0;&#x67E5;&#x9879;">&#x7CFB;&#x7EDF;&#x7EA7;&#x5BB9;&#x9519;&#x68C0;&#x67E5;&#x9879;</h3>
+<ul>
+<li>[ ] &#x7AEF;&#x5230;&#x7AEF;&#x7684;&#x5BB9;&#x9519;&#x8986;&#x76D6;</li>
+<li>[ ] &#x6545;&#x969C;&#x6CE8;&#x5165;&#x548C;&#x538B;&#x529B;&#x6D4B;&#x8BD5;</li>
+<li>[ ] &#x6062;&#x590D;&#x65F6;&#x95F4;&#x76EE;&#x6807;(RTO)&#x9A8C;&#x8BC1;</li>
+<li>[ ] &#x76D1;&#x63A7;&#x544A;&#x8B66;&#x7CFB;&#x7EDF;&#x96C6;&#x6210;</li>
+<li>[ ] &#x5B9A;&#x671F;&#x6F14;&#x7EC3;&#x6545;&#x969C;&#x573A;&#x666F;</li>
+<li>[ ] &#x5BB9;&#x9519;&#x673A;&#x5236;&#x7684;&#x53EF;&#x89C2;&#x6D4B;&#x6027;---</li>
+</ul>
+<div style="text-align: center; margin: 20px 0;">
+  <a href="chapter20.html" style="margin-right: 20px;">&#x2190; &#x4E0A;&#x4E00;&#x7AE0;&#xFF1A;&#x672A;&#x6765;&#x8D8B;&#x52BF;&#x4E0E;&#x65B0;&#x5174;&#x6280;&#x672F;</a>
+  <a href="chapter22.html" style="margin-left: 20px;">&#x4E0B;&#x4E00;&#x7AE0;&#xFF1A;&#x672A;&#x6765;&#x8D8B;&#x52BF;&#x4E0E;&#x65B0;&#x5174;&#x6280;&#x672F; &#x2192;</a>
+</div>
+
+
+
+<script type="text/javascript">var targetUl = document.getElementsByClassName('page-inner')[0].getElementsByTagName('ul')[0];if(targetUl.getElementsByTagName('a').length>0){targetUl.className='toc';}</script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="chapter20.html" class="navigation navigation-prev " aria-label="Previous page: 第20章：多FPGA系统与扩展">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="chapter22.html" class="navigation navigation-next " aria-label="Next page: 第22章：未来趋势与新兴技术">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第21章：可靠性与容错设计","level":"5.4","depth":1,"next":{"title":"第22章：未来趋势与新兴技术","level":"5.5","depth":1,"path":"chapters/chapter22.md","ref":"chapters/chapter22.md","articles":[]},"previous":{"title":"第20章：多FPGA系统与扩展","level":"5.3","depth":1,"path":"chapters/chapter20.md","ref":"chapters/chapter20.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","search","copy-code-button","theme-default","back-to-top-button","github","splitter","toc"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"assets/css/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/Xde1997/Tutorial_FPGA"},"splitter":{},"toc":{"addClass":true,"className":"toc"},"search":{"maxIndexSize":100000,"ignoreCase":true},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{"copyText":"复制代码","format":"html"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"assets/css/website.css"}},"expandable-chapters":{"chapterExpand":true,"chapterRespectURL":true}},"theme":"default","author":"FPGA教程团队","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"themeColor":"#2196F3","themeColorSecondary":"#FF5722"},"title":"FPGA原理与AI加速应用教程","language":"zh-hans","gitbook":"*","description":"面向软件工程师的FPGA实战指南"},"file":{"path":"chapters/chapter21.md","mtime":"2025-08-03T12:50:50.919Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-08-03T12:52:22.204Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

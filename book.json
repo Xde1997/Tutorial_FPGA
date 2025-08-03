@@ -22,7 +22,10 @@
       "url": "https://github.com/Xde1997/Tutorial_FPGA"
     },
     "theme-default": {
-      "showLevel": true
+      "showLevel": true,
+      "styles": {
+        "website": "assets/css/website.css"
+      }
     },
     "toc": {
       "addClass": true,
@@ -32,14 +35,17 @@
       "maxIndexSize": 100000,
       "ignoreCase": true
     },
-    "expandable-chapters": {},
+    "expandable-chapters": {
+      "chapterExpand": true,
+      "chapterRespectURL": true
+    },
     "copy-code-button": {
-      "copyText": "复制",
+      "copyText": "复制代码",
       "format": "html"
     }
   },
   "variables": {
-    "themeColor": "#3f51b5",
-    "themeColorSecondary": "#ff4081"
+    "themeColor": "#2196F3",
+    "themeColorSecondary": "#FF5722"
   }
 } 

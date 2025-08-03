@@ -1,0 +1,3719 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第18章：性能分析与优化 · FPGA原理与AI加速应用教程</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="FPGA教程团队">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <link rel="stylesheet" href="../assets/css/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="chapter19.html" />
+    
+    
+    <link rel="prev" href="chapter17.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第一部分：FPGA基础架构</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="chapter1.html">
+            
+                <a href="chapter1.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    第1章：FPGA基础架构与工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="chapter2.html">
+            
+                <a href="chapter2.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    第2章：HDL设计基础与方法学
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="chapter3.html">
+            
+                <a href="chapter3.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    第3章：时序、时钟与同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="chapter4.html">
+            
+                <a href="chapter4.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    第4章：存储器系统与接口设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第二部分：高级设计技术</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="chapter5.html">
+            
+                <a href="chapter5.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    第5章：高速I/O与通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="chapter6.html">
+            
+                <a href="chapter6.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    第6章：DSP与算术优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="chapter7.html">
+            
+                <a href="chapter7.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    第7章：HLS与C到硬件综合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="chapter8.html">
+            
+                <a href="chapter8.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    第8章：函数式HDL之Haskell/Clash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="chapter9.html">
+            
+                <a href="chapter9.html">
+            
+                    
+                        <b>3.5.</b>
+                    
+                    第9章：OCaml/Hardcaml硬件设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="chapter10.html">
+            
+                <a href="chapter10.html">
+            
+                    
+                        <b>3.6.</b>
+                    
+                    第10章：零知识证明加速器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第三部分：AI加速实战</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="chapter11.html">
+            
+                <a href="chapter11.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    第11章：AI加速器基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="chapter12.html">
+            
+                <a href="chapter12.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    第12章：LLM推理加速
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="chapter13.html">
+            
+                <a href="chapter13.html">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    第13章：视觉与多模态处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="chapter14.html">
+            
+                <a href="chapter14.html">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    第14章：LLM服务基础设施
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="chapter15.html">
+            
+                <a href="chapter15.html">
+            
+                    
+                        <b>4.5.</b>
+                    
+                    第15章：机器人运动控制与FPGA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="chapter16.html">
+            
+                <a href="chapter16.html">
+            
+                    
+                        <b>4.6.</b>
+                    
+                    第16章：激光雷达信号处理与FPGA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="chapter17.html">
+            
+                <a href="chapter17.html">
+            
+                    
+                        <b>4.7.</b>
+                    
+                    第17章：毫米波雷达与FPGA
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第四部分：高级优化与扩展</li>
+        
+        
+    
+        <li class="chapter active" data-level="5.1" data-path="chapter18.html">
+            
+                <a href="chapter18.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    第18章：性能分析与优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="chapter19.html">
+            
+                <a href="chapter19.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    第19章：功耗优化技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="chapter20.html">
+            
+                <a href="chapter20.html">
+            
+                    
+                        <b>5.3.</b>
+                    
+                    第20章：多FPGA系统与扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="chapter21.html">
+            
+                <a href="chapter21.html">
+            
+                    
+                        <b>5.4.</b>
+                    
+                    第21章：可靠性与容错设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="chapter22.html">
+            
+                <a href="chapter22.html">
+            
+                    
+                        <b>5.5.</b>
+                    
+                    第22章：未来趋势与新兴技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../docs/DEPLOY_README.md">
+            
+                <span>
+            
+                    
+                        <b>6.1.</b>
+                    
+                    部署指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../docs/GITBOOK_SETUP.md">
+            
+                <span>
+            
+                    
+                        <b>6.2.</b>
+                    
+                    安装说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../docs/CONVERSION_SUMMARY.md">
+            
+                <span>
+            
+                    
+                        <b>6.3.</b>
+                    
+                    转换总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >第18章：性能分析与优化</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7B2C;&#x5341;&#x4E94;&#x7AE0;&#xFF1A;&#x6027;&#x80FD;&#x5206;&#x6790;&#x4E0E;&#x4F18;&#x5316;">&#x7B2C;&#x5341;&#x4E94;&#x7AE0;&#xFF1A;&#x6027;&#x80FD;&#x5206;&#x6790;&#x4E0E;&#x4F18;&#x5316;</h1>
+<p>&#x5728;FPGA&#x8BBE;&#x8BA1;&#x4E2D;&#xFF0C;&#x6027;&#x80FD;&#x4F18;&#x5316;&#x662F;&#x5C06;&#x7406;&#x8BBA;&#x8BBE;&#x8BA1;&#x8F6C;&#x5316;&#x4E3A;&#x9AD8;&#x6548;&#x5B9E;&#x73B0;&#x7684;&#x5173;&#x952E;&#x73AF;&#x8282;&#x3002;&#x4E0E;&#x8F6F;&#x4EF6;&#x4F18;&#x5316;&#x4E0D;&#x540C;&#xFF0C;FPGA&#x6027;&#x80FD;&#x4F18;&#x5316;&#x6D89;&#x53CA;&#x65F6;&#x5E8F;&#x6536;&#x655B;&#x3001;&#x8D44;&#x6E90;&#x5229;&#x7528;&#x3001;&#x529F;&#x8017;&#x63A7;&#x5236;&#x7B49;&#x591A;&#x4E2A;&#x7EF4;&#x5EA6;&#x7684;&#x6743;&#x8861;&#x3002;&#x672C;&#x7AE0;&#x5C06;&#x7CFB;&#x7EDF;&#x4ECB;&#x7ECD;&#x6027;&#x80FD;&#x74F6;&#x9888;&#x7684;&#x8BC6;&#x522B;&#x65B9;&#x6CD5;&#xFF0C;&#x6DF1;&#x5165;&#x5256;&#x6790;Vivado&#x65F6;&#x5E8F;&#x5206;&#x6790;&#x5DE5;&#x5177;&#x7684;&#x4F7F;&#x7528;&#x6280;&#x5DE7;&#xFF0C;&#x63A2;&#x8BA8;&#x8D44;&#x6E90;&#x4F18;&#x5316;&#x548C;&#x6570;&#x636E;&#x901A;&#x8DEF;&#x8BBE;&#x8BA1;&#x7684;&#x6700;&#x4F73;&#x5B9E;&#x8DF5;&#xFF0C;&#x5E76;&#x5C55;&#x793A;&#x5982;&#x4F55;&#x6784;&#x5EFA;&#x6027;&#x80FD;&#x76D1;&#x63A7;&#x57FA;&#x7840;&#x8BBE;&#x65BD;&#x3002;&#x901A;&#x8FC7;&#x672C;&#x7AE0;&#x5B66;&#x4E60;&#xFF0C;&#x60A8;&#x5C06;&#x638C;&#x63E1;&#x7CFB;&#x7EDF;&#x7EA7;&#x7684;FPGA&#x6027;&#x80FD;&#x4F18;&#x5316;&#x65B9;&#x6CD5;&#x8BBA;&#xFF0C;&#x80FD;&#x591F;&#x5C06;AI&#x52A0;&#x901F;&#x5668;&#x7684;&#x6027;&#x80FD;&#x63A8;&#x5411;&#x6781;&#x9650;&#x3002;</p>
+<h2 id="151-&#x6027;&#x80FD;&#x74F6;&#x9888;&#x8BC6;&#x522B;&#x65B9;&#x6CD5;&#x8BBA;">15.1 &#x6027;&#x80FD;&#x74F6;&#x9888;&#x8BC6;&#x522B;&#x65B9;&#x6CD5;&#x8BBA;</h2>
+<h3 id="1511-&#x6027;&#x80FD;&#x5206;&#x6790;&#x7684;&#x7CFB;&#x7EDF;&#x5316;&#x65B9;&#x6CD5;">15.1.1 &#x6027;&#x80FD;&#x5206;&#x6790;&#x7684;&#x7CFB;&#x7EDF;&#x5316;&#x65B9;&#x6CD5;</h3>
+<p>FPGA&#x6027;&#x80FD;&#x4F18;&#x5316;&#x59CB;&#x4E8E;&#x51C6;&#x786E;&#x8BC6;&#x522B;&#x74F6;&#x9888;&#x3002;&#x4E0E;CPU/GPU&#x4E0D;&#x540C;&#xFF0C;FPGA&#x7684;&#x74F6;&#x9888;&#x53EF;&#x80FD;&#x5B58;&#x5728;&#x4E8E;&#x591A;&#x4E2A;&#x5C42;&#x9762;&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// &#x6027;&#x80FD;&#x5206;&#x6790;&#x6846;&#x67B6;&#x9876;&#x5C42;
+module performance_analysis_framework #(
+    parameter NUM_MONITORS = 16,
+    parameter COUNTER_WIDTH = 64
+) (
+    input  logic clk,
+    input  logic rst_n,
+
+    // &#x76D1;&#x63A7;&#x70B9;&#x63A5;&#x53E3;
+    input  logic [NUM_MONITORS-1:0] monitor_events,
+    input  logic [31:0]             monitor_data[NUM_MONITORS],
+
+    // &#x63A7;&#x5236;&#x63A5;&#x53E3;
+    input  logic                    profile_enable,
+    input  logic [3:0]             profile_mode,
+
+    // &#x8F93;&#x51FA;&#x63A5;&#x53E3;
+    output logic [COUNTER_WIDTH-1:0] performance_counters[NUM_MONITORS],
+    output logic                     bottleneck_detected,
+    output logic [3:0]              bottleneck_type
+);
+</code></pre>
+<p><strong>&#x6027;&#x80FD;&#x74F6;&#x9888;&#x5206;&#x7C7B;&#xFF1A;</strong></p>
+<ol>
+<li><p><strong>&#x8BA1;&#x7B97;&#x74F6;&#x9888;</strong></p>
+<ul>
+<li>DSP&#x5229;&#x7528;&#x7387;&#x8FBE;&#x5230;&#x4E0A;&#x9650;</li>
+<li>&#x6D41;&#x6C34;&#x7EBF;&#x6DF1;&#x5EA6;&#x4E0D;&#x8DB3;</li>
+<li>&#x5E76;&#x884C;&#x5EA6;&#x53D7;&#x9650;</li>
+</ul>
+</li>
+<li><p><strong>&#x5185;&#x5B58;&#x74F6;&#x9888;</strong></p>
+<ul>
+<li>DDR&#x5E26;&#x5BBD;&#x9971;&#x548C;</li>
+<li>BRAM&#x8BBF;&#x95EE;&#x51B2;&#x7A81;</li>
+<li>&#x6570;&#x636E;&#x4F9D;&#x8D56;&#x5BFC;&#x81F4;&#x7684;&#x505C;&#x987F;</li>
+</ul>
+</li>
+<li><p><strong>&#x901A;&#x4FE1;&#x74F6;&#x9888;</strong></p>
+<ul>
+<li>PCIe&#x4F20;&#x8F93;&#x5EF6;&#x8FDF;</li>
+<li>&#x7247;&#x4E0A;&#x4E92;&#x8054;&#x62E5;&#x585E;</li>
+<li>&#x540C;&#x6B65;&#x5F00;&#x9500;&#x8FC7;&#x5927;</li>
+</ul>
+</li>
+<li><p><strong>&#x65F6;&#x5E8F;&#x74F6;&#x9888;</strong></p>
+<ul>
+<li>&#x5173;&#x952E;&#x8DEF;&#x5F84;&#x8FC7;&#x957F;</li>
+<li>&#x65F6;&#x949F;&#x57DF;&#x4EA4;&#x53C9;&#x5F00;&#x9500;</li>
+<li>&#x5EFA;&#x7ACB;/&#x4FDD;&#x6301;&#x65F6;&#x95F4;&#x8FDD;&#x4F8B;</li>
+</ul>
+</li>
+</ol>
+<h3 id="1512-&#x74F6;&#x9888;&#x8BC6;&#x522B;&#x5DE5;&#x5177;&#x94FE;">15.1.2 &#x74F6;&#x9888;&#x8BC6;&#x522B;&#x5DE5;&#x5177;&#x94FE;</h3>
+<pre><code class="lang-systemverilog">// &#x8BA1;&#x7B97;&#x5355;&#x5143;&#x5229;&#x7528;&#x7387;&#x76D1;&#x63A7;
+module compute_utilization_monitor #(
+    parameter NUM_UNITS = 32,
+    parameter WINDOW_SIZE = 1024
+) (
+    input  logic clk,
+    input  logic rst_n,
+
+    // &#x8BA1;&#x7B97;&#x5355;&#x5143;&#x72B6;&#x6001;
+    input  logic [NUM_UNITS-1:0] unit_busy,
+    input  logic [NUM_UNITS-1:0] unit_stalled,
+
+    // &#x5229;&#x7528;&#x7387;&#x7EDF;&#x8BA1;
+    output logic [7:0] avg_utilization,
+    output logic [7:0] peak_utilization,
+    output logic [31:0] stall_cycles
+);
+
+    // &#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x7EDF;&#x8BA1;
+    logic [9:0] busy_count;
+    logic [31:0] window_counter;
+    logic [7:0] utilization_history[WINDOW_SIZE];
+
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            busy_count &lt;= 0;
+            window_counter &lt;= 0;
+        end else begin
+            // &#x5B9E;&#x65F6;&#x7EDF;&#x8BA1;&#x5FD9;&#x788C;&#x5355;&#x5143;&#x6570;
+            busy_count &lt;= $countones(unit_busy);
+
+            // &#x8BA1;&#x7B97;&#x77AC;&#x65F6;&#x5229;&#x7528;&#x7387;
+            utilization_history[window_counter] &lt;= 
+                (busy_count * 100) / NUM_UNITS;
+
+            window_counter &lt;= (window_counter + 1) % WINDOW_SIZE;
+        end
+    end
+endmodule
+</code></pre>
+<h3 id="1513-&#x6570;&#x636E;&#x6D41;&#x5206;&#x6790;&#x65B9;&#x6CD5;">15.1.3 &#x6570;&#x636E;&#x6D41;&#x5206;&#x6790;&#x65B9;&#x6CD5;</h3>
+<p><strong>&#x5173;&#x952E;&#x6307;&#x6807;&#xFF1A;</strong></p>
+<ul>
+<li><strong>&#x541E;&#x5410;&#x91CF;</strong>&#xFF1A;&#x6BCF;&#x5468;&#x671F;&#x5904;&#x7406;&#x7684;&#x6570;&#x636E;&#x91CF;</li>
+<li><strong>&#x5EF6;&#x8FDF;</strong>&#xFF1A;&#x4ECE;&#x8F93;&#x5165;&#x5230;&#x8F93;&#x51FA;&#x7684;&#x5468;&#x671F;&#x6570;</li>
+<li><strong>&#x80CC;&#x538B;&#x9891;&#x7387;</strong>&#xFF1A;&#x4E0B;&#x6E38;&#x6A21;&#x5757;&#x65E0;&#x6CD5;&#x63A5;&#x6536;&#x6570;&#x636E;&#x7684;&#x9891;&#x7387;</li>
+<li><strong>&#x6570;&#x636E;&#x9965;&#x997F;</strong>&#xFF1A;&#x4E0A;&#x6E38;&#x6570;&#x636E;&#x4F9B;&#x5E94;&#x4E0D;&#x8DB3;&#x7684;&#x60C5;&#x51B5;</li>
+</ul>
+<pre><code class="lang-systemverilog">// &#x6570;&#x636E;&#x6D41;&#x76D1;&#x63A7;&#x5668;
+module dataflow_monitor #(
+    parameter DATA_WIDTH = 512,
+    parameter FIFO_DEPTH = 1024
+) (
+    input  logic clk,
+    input  logic rst_n,
+
+    // &#x6570;&#x636E;&#x6D41;&#x63A5;&#x53E3;
+    input  logic                    input_valid,
+    input  logic                    input_ready,
+    input  logic [DATA_WIDTH-1:0]   input_data,
+
+    input  logic                    output_valid,
+    input  logic                    output_ready,
+
+    // &#x76D1;&#x63A7;&#x8F93;&#x51FA;
+    output logic [31:0]             throughput_mbps,
+    output logic [15:0]             avg_latency,
+    output logic [31:0]             backpressure_cycles,
+    output logic [31:0]             starvation_cycles
+);
+</code></pre>
+<p><strong>&#x74F6;&#x9888;&#x8BC6;&#x522B;&#x51B3;&#x7B56;&#x6811;&#xFF1A;</strong></p>
+<ol>
+<li><p>&#x541E;&#x5410;&#x91CF;&#x4F4E;&#x4E8E;&#x9884;&#x671F;&#xFF1F;</p>
+<ul>
+<li>&#x68C0;&#x67E5;&#x8BA1;&#x7B97;&#x5355;&#x5143;&#x5229;&#x7528;&#x7387;</li>
+<li>&#x5206;&#x6790;&#x6570;&#x636E;&#x4F9B;&#x5E94;&#x94FE;</li>
+<li>&#x8BC4;&#x4F30;&#x5185;&#x5B58;&#x5E26;&#x5BBD;&#x4F7F;&#x7528;</li>
+</ul>
+</li>
+<li><p>&#x5EF6;&#x8FDF;&#x8D85;&#x8FC7;&#x8981;&#x6C42;&#xFF1F;</p>
+<ul>
+<li>&#x4F18;&#x5316;&#x6D41;&#x6C34;&#x7EBF;&#x6DF1;&#x5EA6;</li>
+<li>&#x51CF;&#x5C11;&#x4E32;&#x884C;&#x4F9D;&#x8D56;</li>
+<li>&#x8003;&#x8651;&#x9884;&#x8BA1;&#x7B97;&#x7B56;&#x7565;</li>
+</ul>
+</li>
+<li><p>&#x8D44;&#x6E90;&#x5229;&#x7528;&#x7387;&#x4F4E;&#xFF1F;</p>
+<ul>
+<li>&#x589E;&#x52A0;&#x5E76;&#x884C;&#x5EA6;</li>
+<li>&#x4F18;&#x5316;&#x6570;&#x636E;&#x5E03;&#x5C40;</li>
+<li>&#x8003;&#x8651;&#x4EFB;&#x52A1;&#x7EA7;&#x5E76;&#x884C;</li>
+</ul>
+</li>
+</ol>
+<h3 id="1514-&#x6848;&#x4F8B;&#x5206;&#x6790;&#xFF1A;transformer&#x63A8;&#x7406;&#x74F6;&#x9888;">15.1.4 &#x6848;&#x4F8B;&#x5206;&#x6790;&#xFF1A;Transformer&#x63A8;&#x7406;&#x74F6;&#x9888;</h3>
+<p>&#x4EE5;BERT-Base&#x6A21;&#x578B;&#x63A8;&#x7406;&#x4E3A;&#x4F8B;&#xFF0C;&#x5178;&#x578B;&#x74F6;&#x9888;&#x5206;&#x6790;&#xFF1A;</p>
+<p><strong>&#x89C2;&#x5BDF;&#x5230;&#x7684;&#x73B0;&#x8C61;&#xFF1A;</strong></p>
+<ul>
+<li>&#x6574;&#x4F53;&#x541E;&#x5410;&#x91CF;&#x4EC5;&#x8FBE;&#x5230;&#x7406;&#x8BBA;&#x503C;&#x7684;60%</li>
+<li>DSP&#x5229;&#x7528;&#x7387;95%&#xFF0C;&#x4F46;BRAM&#x5229;&#x7528;&#x7387;&#x4EC5;40%</li>
+<li>PCIe&#x4F20;&#x8F93;&#x5360;&#x603B;&#x65F6;&#x95F4;&#x7684;15%</li>
+</ul>
+<p><strong>&#x74F6;&#x9888;&#x5B9A;&#x4F4D;&#x8FC7;&#x7A0B;&#xFF1A;</strong></p>
+<ol>
+<li><p><strong>Profile&#x9636;&#x6BB5;&#x6027;&#x80FD;</strong></p>
+<pre><code>Embedding&#x67E5;&#x8BE2;: 5%
+&#x81EA;&#x6CE8;&#x610F;&#x529B;&#x8BA1;&#x7B97;: 70%
+FFN&#x5C42;: 20%
+&#x8F93;&#x51FA;&#x5904;&#x7406;: 5%
+</code></pre></li>
+<li><p><strong>&#x6DF1;&#x5165;&#x81EA;&#x6CE8;&#x610F;&#x529B;&#x6A21;&#x5757;</strong></p>
+<ul>
+<li>QKV&#x6295;&#x5F71;&#xFF1A;&#x8BA1;&#x7B97;&#x5BC6;&#x96C6;&#xFF0C;DSP&#x74F6;&#x9888;</li>
+<li>Softmax&#xFF1A;&#x5185;&#x5B58;&#x5BC6;&#x96C6;&#xFF0C;&#x5E26;&#x5BBD;&#x53D7;&#x9650;</li>
+<li>&#x6CE8;&#x610F;&#x529B;&#x77E9;&#x9635;&#x4E58;&#x6CD5;&#xFF1A;&#x6DF7;&#x5408;&#x74F6;&#x9888;</li>
+</ul>
+</li>
+<li><p><strong>&#x4F18;&#x5316;&#x7B56;&#x7565;</strong></p>
+<ul>
+<li>&#x878D;&#x5408;QKV&#x6295;&#x5F71;&#x51CF;&#x5C11;&#x5185;&#x5B58;&#x8BBF;&#x95EE;</li>
+<li>&#x4F7F;&#x7528;&#x8FD1;&#x4F3C;Softmax&#x964D;&#x4F4E;&#x590D;&#x6742;&#x5EA6;</li>
+<li>&#x5B9E;&#x65BD;KV-Cache&#x907F;&#x514D;&#x91CD;&#x590D;&#x8BA1;&#x7B97;</li>
+</ul>
+</li>
+</ol>
+<h3 id="1515-&#x9AD8;&#x7EA7;&#x6027;&#x80FD;&#x5206;&#x6790;&#x6280;&#x672F;">15.1.5 &#x9AD8;&#x7EA7;&#x6027;&#x80FD;&#x5206;&#x6790;&#x6280;&#x672F;</h3>
+<p><strong>1. &#x786C;&#x4EF6;&#x6027;&#x80FD;&#x8BA1;&#x6570;&#x5668;(HPC)&#x96C6;&#x6210;</strong></p>
+<pre><code class="lang-systemverilog">// &#x9AD8;&#x7CBE;&#x5EA6;&#x6027;&#x80FD;&#x8BA1;&#x6570;&#x5668;&#x6A21;&#x5757;
+module hardware_performance_counter #(
+    parameter NUM_EVENTS = 32,
+    parameter COUNTER_WIDTH = 48  // &#x652F;&#x6301;&#x957F;&#x65F6;&#x95F4;&#x8FD0;&#x884C;
+) (
+    input  logic clk,
+    input  logic rst_n,
+
+    // &#x4E8B;&#x4EF6;&#x8F93;&#x5165;
+    input  logic [NUM_EVENTS-1:0] event_triggers,
+    input  logic [NUM_EVENTS-1:0] event_enables,
+
+    // &#x8BA1;&#x6570;&#x5668;&#x63A7;&#x5236;
+    input  logic                  counter_reset,
+    input  logic                  counter_freeze,
+
+    // &#x6027;&#x80FD;&#x6570;&#x636E;&#x8F93;&#x51FA;
+    output logic [COUNTER_WIDTH-1:0] event_counts[NUM_EVENTS],
+    output logic [63:0]              total_cycles,
+    output logic                     overflow_flag
+);
+
+    // &#x4E3B;&#x5468;&#x671F;&#x8BA1;&#x6570;&#x5668;
+    always_ff @(posedge clk) begin
+        if (!rst_n || counter_reset) begin
+            total_cycles &lt;= 0;
+        end else if (!counter_freeze) begin
+            total_cycles &lt;= total_cycles + 1;
+        end
+    end
+
+    // &#x4E8B;&#x4EF6;&#x8BA1;&#x6570;&#x5668;&#x9635;&#x5217;
+    genvar i;
+    generate
+        for (i = 0; i &lt; NUM_EVENTS; i++) begin : event_counter
+            logic event_pulse;
+            logic prev_trigger;
+
+            // &#x8FB9;&#x6CBF;&#x68C0;&#x6D4B;
+            always_ff @(posedge clk) begin
+                prev_trigger &lt;= event_triggers[i];
+                event_pulse &lt;= event_triggers[i] &amp;&amp; !prev_trigger;
+            end
+
+            // &#x8BA1;&#x6570;&#x903B;&#x8F91;
+            always_ff @(posedge clk) begin
+                if (!rst_n || counter_reset) begin
+                    event_counts[i] &lt;= 0;
+                end else if (!counter_freeze &amp;&amp; event_enables[i] &amp;&amp; event_pulse) begin
+                    if (event_counts[i] == {COUNTER_WIDTH{1&apos;b1}}) begin
+                        overflow_flag &lt;= 1&apos;b1;
+                    end else begin
+                        event_counts[i] &lt;= event_counts[i] + 1;
+                    end
+                end
+            end
+        end
+    endgenerate
+endmodule
+</code></pre>
+<p><strong>2. &#x5B9E;&#x65F6;&#x6027;&#x80FD;&#x5206;&#x6790;&#x5F15;&#x64CE;</strong></p>
+<pre><code class="lang-systemverilog">// &#x6027;&#x80FD;&#x5F02;&#x5E38;&#x68C0;&#x6D4B;&#x5668;
+module performance_anomaly_detector #(
+    parameter WINDOW_SIZE = 1024,
+    parameter THRESHOLD_BITS = 16
+) (
+    input  logic clk,
+    input  logic rst_n,
+
+    // &#x6027;&#x80FD;&#x6307;&#x6807;&#x8F93;&#x5165;
+    input  logic [31:0] current_throughput,
+    input  logic [31:0] current_latency,
+    input  logic [15:0] queue_occupancy,
+
+    // &#x9608;&#x503C;&#x914D;&#x7F6E;
+    input  logic [THRESHOLD_BITS-1:0] throughput_min_threshold,
+    input  logic [THRESHOLD_BITS-1:0] latency_max_threshold,
+    input  logic [THRESHOLD_BITS-1:0] queue_threshold,
+
+    // &#x5F02;&#x5E38;&#x8F93;&#x51FA;
+    output logic throughput_anomaly,
+    output logic latency_anomaly,
+    output logic congestion_anomaly,
+    output logic [2:0] anomaly_severity  // 0-7&#x7EA7;&#x522B;
+);
+
+    // &#x79FB;&#x52A8;&#x5E73;&#x5747;&#x8BA1;&#x7B97;
+    logic [31:0] throughput_history[WINDOW_SIZE];
+    logic [31:0] throughput_avg;
+    logic [9:0]  window_ptr;
+
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            window_ptr &lt;= 0;
+            throughput_avg &lt;= 0;
+        end else begin
+            throughput_history[window_ptr] &lt;= current_throughput;
+            window_ptr &lt;= (window_ptr + 1) % WINDOW_SIZE;
+
+            // &#x8BA1;&#x7B97;&#x79FB;&#x52A8;&#x5E73;&#x5747;
+            logic [41:0] sum = 0;
+            for (int i = 0; i &lt; WINDOW_SIZE; i++) begin
+                sum = sum + throughput_history[i];
+            end
+            throughput_avg &lt;= sum / WINDOW_SIZE;
+        end
+    end
+
+    // &#x5F02;&#x5E38;&#x68C0;&#x6D4B;&#x903B;&#x8F91;
+    always_comb begin
+        // &#x541E;&#x5410;&#x91CF;&#x5F02;&#x5E38;&#xFF1A;&#x4F4E;&#x4E8E;&#x9608;&#x503C;&#x7684;80%
+        throughput_anomaly = (throughput_avg &lt; (throughput_min_threshold * 8 / 10));
+
+        // &#x5EF6;&#x8FDF;&#x5F02;&#x5E38;&#xFF1A;&#x8D85;&#x8FC7;&#x9608;&#x503C;
+        latency_anomaly = (current_latency &gt; latency_max_threshold);
+
+        // &#x62E5;&#x585E;&#x5F02;&#x5E38;&#xFF1A;&#x961F;&#x5217;&#x5360;&#x7528;&#x7387;&#x8FC7;&#x9AD8;
+        congestion_anomaly = (queue_occupancy &gt; queue_threshold);
+
+        // &#x4E25;&#x91CD;&#x7A0B;&#x5EA6;&#x8BC4;&#x4F30;
+        anomaly_severity = {throughput_anomaly, latency_anomaly, congestion_anomaly};
+    end
+endmodule
+</code></pre>
+<p><strong>3. &#x6027;&#x80FD;&#x74F6;&#x9888;&#x81EA;&#x52A8;&#x5B9A;&#x4F4D;</strong></p>
+<p>&#x74F6;&#x9888;&#x5B9A;&#x4F4D;&#x7B97;&#x6CD5;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// &#x74F6;&#x9888;&#x5B9A;&#x4F4D;&#x72B6;&#x6001;&#x673A;
+module bottleneck_locator #(
+    parameter NUM_MODULES = 16
+) (
+    input  logic clk,
+    input  logic rst_n,
+
+    // &#x6A21;&#x5757;&#x6027;&#x80FD;&#x6570;&#x636E;
+    input  logic [31:0] module_active_cycles[NUM_MODULES],
+    input  logic [31:0] module_stall_cycles[NUM_MODULES],
+    input  logic [31:0] module_throughput[NUM_MODULES],
+
+    // &#x74F6;&#x9888;&#x5B9A;&#x4F4D;&#x7ED3;&#x679C;
+    output logic [3:0]  bottleneck_module_id,
+    output logic [2:0]  bottleneck_type,  // 0:&#x8BA1;&#x7B97;,1:&#x5185;&#x5B58;,2:&#x901A;&#x4FE1;
+    output logic [7:0]  bottleneck_severity
+);
+
+    // &#x6027;&#x80FD;&#x6548;&#x7387;&#x8BA1;&#x7B97;
+    logic [7:0] module_efficiency[NUM_MODULES];
+
+    always_comb begin
+        for (int i = 0; i &lt; NUM_MODULES; i++) begin
+            if (module_active_cycles[i] + module_stall_cycles[i] &gt; 0) begin
+                module_efficiency[i] = (module_active_cycles[i] * 100) / 
+                                      (module_active_cycles[i] + module_stall_cycles[i]);
+            end else begin
+                module_efficiency[i] = 100;
+            end
+        end
+    end
+
+    // &#x627E;&#x51FA;&#x6548;&#x7387;&#x6700;&#x4F4E;&#x7684;&#x6A21;&#x5757;
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            bottleneck_module_id &lt;= 0;
+            bottleneck_severity &lt;= 0;
+        end else begin
+            logic [7:0] min_efficiency = 100;
+            logic [3:0] min_id = 0;
+
+            for (int i = 0; i &lt; NUM_MODULES; i++) begin
+                if (module_efficiency[i] &lt; min_efficiency) begin
+                    min_efficiency = module_efficiency[i];
+                    min_id = i;
+                end
+            end
+
+            bottleneck_module_id &lt;= min_id;
+            bottleneck_severity &lt;= 100 - min_efficiency;
+        end
+    end
+endmodule
+</code></pre>
+<h3 id="1516-&#x6027;&#x80FD;&#x4F18;&#x5316;&#x51B3;&#x7B56;&#x6811;">15.1.6 &#x6027;&#x80FD;&#x4F18;&#x5316;&#x51B3;&#x7B56;&#x6811;</h3>
+<p><strong>&#x7CFB;&#x7EDF;&#x5316;&#x7684;&#x4F18;&#x5316;&#x6D41;&#x7A0B;&#xFF1A;</strong></p>
+<ol>
+<li><p><strong>&#x521D;&#x59CB;&#x8BC4;&#x4F30;&#x9636;&#x6BB5;</strong></p>
+<ul>
+<li>&#x8FD0;&#x884C;&#x57FA;&#x51C6;&#x6D4B;&#x8BD5;&#x83B7;&#x53D6;&#x57FA;&#x7EBF;&#x6027;&#x80FD;</li>
+<li>&#x6536;&#x96C6;&#x6240;&#x6709;&#x6027;&#x80FD;&#x8BA1;&#x6570;&#x5668;&#x6570;&#x636E;</li>
+<li>&#x751F;&#x6210;&#x6027;&#x80FD;&#x70ED;&#x56FE;</li>
+</ul>
+</li>
+<li><p><strong>&#x74F6;&#x9888;&#x5206;&#x7C7B;&#x4E0E;&#x4F18;&#x5148;&#x7EA7;</strong></p>
+<pre><code>&#x4F18;&#x5148;&#x7EA7;1&#xFF1A;&#x65F6;&#x5E8F;&#x8FDD;&#x4F8B;&#xFF08;&#x5FC5;&#x987B;&#x89E3;&#x51B3;&#xFF09;
+&#x4F18;&#x5148;&#x7EA7;2&#xFF1A;&#x8BA1;&#x7B97;&#x74F6;&#x9888;&#xFF08;&#x5F71;&#x54CD;&#x541E;&#x5410;&#x91CF;&#xFF09;
+&#x4F18;&#x5148;&#x7EA7;3&#xFF1A;&#x5185;&#x5B58;&#x74F6;&#x9888;&#xFF08;&#x5F71;&#x54CD;&#x5EF6;&#x8FDF;&#xFF09;
+&#x4F18;&#x5148;&#x7EA7;4&#xFF1A;&#x901A;&#x4FE1;&#x74F6;&#x9888;&#xFF08;&#x5F71;&#x54CD;&#x6269;&#x5C55;&#x6027;&#xFF09;
+&#x4F18;&#x5148;&#x7EA7;5&#xFF1A;&#x529F;&#x8017;&#x95EE;&#x9898;&#xFF08;&#x5F71;&#x54CD;&#x90E8;&#x7F72;&#xFF09;
+</code></pre></li>
+<li><p><strong>&#x4F18;&#x5316;&#x7B56;&#x7565;&#x9009;&#x62E9;&#x77E9;&#x9635;</strong></p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>&#x74F6;&#x9888;&#x7C7B;&#x578B;</th>
+<th>&#x8D44;&#x6E90;&#x5145;&#x8DB3;</th>
+<th>&#x8D44;&#x6E90;&#x53D7;&#x9650;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x8BA1;&#x7B97;&#x74F6;&#x9888;</td>
+<td>&#x589E;&#x52A0;&#x5E76;&#x884C;&#x5EA6;</td>
+<td>&#x7B97;&#x6CD5;&#x4F18;&#x5316;</td>
+</tr>
+<tr>
+<td>&#x5185;&#x5B58;&#x74F6;&#x9888;</td>
+<td>&#x589E;&#x52A0;&#x7F13;&#x5B58;</td>
+<td>&#x6570;&#x636E;&#x590D;&#x7528;</td>
+</tr>
+<tr>
+<td>&#x901A;&#x4FE1;&#x74F6;&#x9888;</td>
+<td>&#x589E;&#x52A0;&#x5E26;&#x5BBD;</td>
+<td>&#x6570;&#x636E;&#x538B;&#x7F29;</td>
+</tr>
+<tr>
+<td>&#x65F6;&#x5E8F;&#x74F6;&#x9888;</td>
+<td>&#x63D2;&#x5165;&#x6D41;&#x6C34;&#x7EBF;</td>
+<td>&#x964D;&#x4F4E;&#x9891;&#x7387;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1517-&#x5B9E;&#x6218;&#x6848;&#x4F8B;&#xFF1A;&#x89C6;&#x9891;&#x5904;&#x7406;&#x6D41;&#x6C34;&#x7EBF;&#x4F18;&#x5316;">15.1.7 &#x5B9E;&#x6218;&#x6848;&#x4F8B;&#xFF1A;&#x89C6;&#x9891;&#x5904;&#x7406;&#x6D41;&#x6C34;&#x7EBF;&#x4F18;&#x5316;</h3>
+<p><strong>&#x573A;&#x666F;&#x63CF;&#x8FF0;&#xFF1A;</strong>
+4K@60fps&#x5B9E;&#x65F6;&#x89C6;&#x9891;&#x5904;&#x7406;&#xFF0C;&#x5305;&#x542B;&#x53BB;&#x566A;&#x3001;&#x589E;&#x5F3A;&#x3001;&#x7F16;&#x7801;&#x4E09;&#x4E2A;&#x9636;&#x6BB5;</p>
+<p><strong>&#x521D;&#x59CB;&#x6027;&#x80FD;&#x95EE;&#x9898;&#xFF1A;</strong></p>
+<ul>
+<li>&#x53EA;&#x80FD;&#x8FBE;&#x5230;45fps</li>
+<li>DDR&#x5E26;&#x5BBD;&#x5229;&#x7528;&#x7387;98%</li>
+<li>&#x53BB;&#x566A;&#x6A21;&#x5757;DSP&#x5229;&#x7528;&#x7387;90%</li>
+</ul>
+<p><strong>&#x4F18;&#x5316;&#x8FC7;&#x7A0B;&#xFF1A;</strong></p>
+<ol>
+<li><p><strong>&#x7B2C;&#x4E00;&#x8F6E;&#xFF1A;&#x5185;&#x5B58;&#x4F18;&#x5316;</strong></p>
+<ul>
+<li>&#x5B9E;&#x65BD;&#x884C;&#x7F13;&#x5B58;&#x51CF;&#x5C11;DDR&#x8BBF;&#x95EE;</li>
+<li>&#x4F7F;&#x7528;&#x7247;&#x4E0A;BRAM&#x505A;&#x5E27;&#x7F13;&#x5B58;</li>
+<li>&#x7ED3;&#x679C;&#xFF1A;DDR&#x5E26;&#x5BBD;&#x964D;&#x81F3;70%&#xFF0C;fps&#x63D0;&#x5347;&#x81F3;52</li>
+</ul>
+</li>
+<li><p><strong>&#x7B2C;&#x4E8C;&#x8F6E;&#xFF1A;&#x8BA1;&#x7B97;&#x4F18;&#x5316;</strong></p>
+<ul>
+<li>&#x53BB;&#x566A;&#x7B97;&#x6CD5;&#x4ECE;5x5&#x6539;&#x4E3A;3x3&#x53EF;&#x5206;&#x79BB;&#x6EE4;&#x6CE2;</li>
+<li>DSP&#x5229;&#x7528;&#x7387;&#x964D;&#x81F3;60%</li>
+<li>&#x7ED3;&#x679C;&#xFF1A;fps&#x63D0;&#x5347;&#x81F3;58</li>
+</ul>
+</li>
+<li><p><strong>&#x7B2C;&#x4E09;&#x8F6E;&#xFF1A;&#x7CFB;&#x7EDF;&#x4F18;&#x5316;</strong></p>
+<ul>
+<li>&#x5B9E;&#x65BD;&#x4E09;&#x7EA7;&#x6D41;&#x6C34;&#x7EBF;&#x91CD;&#x53E0;</li>
+<li>&#x4F18;&#x5316;&#x6570;&#x636E;&#x683C;&#x5F0F;&#x51CF;&#x5C11;&#x4F4D;&#x5BBD;</li>
+<li>&#x7ED3;&#x679C;&#xFF1A;&#x8FBE;&#x5230;60fps&#x76EE;&#x6807;</li>
+</ul>
+</li>
+</ol>
+<h2 id="152-vivado&#x65F6;&#x5E8F;&#x5206;&#x6790;&#x6DF1;&#x5165;">15.2 Vivado&#x65F6;&#x5E8F;&#x5206;&#x6790;&#x6DF1;&#x5165;</h2>
+<h3 id="1521-&#x9759;&#x6001;&#x65F6;&#x5E8F;&#x5206;&#x6790;sta&#x539F;&#x7406;">15.2.1 &#x9759;&#x6001;&#x65F6;&#x5E8F;&#x5206;&#x6790;(STA)&#x539F;&#x7406;</h3>
+<p>&#x65F6;&#x5E8F;&#x6536;&#x655B;&#x662F;FPGA&#x8BBE;&#x8BA1;&#x6210;&#x529F;&#x7684;&#x57FA;&#x7840;&#x3002;Vivado&#x7684;&#x65F6;&#x5E8F;&#x5206;&#x6790;&#x5F15;&#x64CE;&#x57FA;&#x4E8E;&#x884C;&#x4E1A;&#x6807;&#x51C6;&#x7684;&#x9759;&#x6001;&#x65F6;&#x5E8F;&#x5206;&#x6790;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// &#x65F6;&#x5E8F;&#x5173;&#x952E;&#x8DEF;&#x5F84;&#x793A;&#x4F8B;
+module timing_critical_path #(
+    parameter PIPELINE_STAGES = 4
+) (
+    input  logic        clk,
+    input  logic        rst_n,
+    input  logic [31:0] data_in,
+    output logic [31:0] data_out
+);
+
+    // &#x6D41;&#x6C34;&#x7EBF;&#x5BC4;&#x5B58;&#x5668;
+    logic [31:0] pipe_reg[PIPELINE_STAGES];
+
+    // &#x7EC4;&#x5408;&#x903B;&#x8F91;&#x5EF6;&#x8FDF;&#x793A;&#x4F8B;
+    logic [31:0] comb_result;
+
+    // &#x5173;&#x952E;&#x8DEF;&#x5F84;&#xFF1A;&#x5305;&#x542B;&#x590D;&#x6742;&#x7EC4;&#x5408;&#x903B;&#x8F91;
+    always_comb begin
+        comb_result = data_in;
+        // &#x591A;&#x7EA7;&#x903B;&#x8F91;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x65F6;&#x5E8F;&#x8FDD;&#x4F8B;
+        for (int i = 0; i &lt; 8; i++) begin
+            comb_result = comb_result * 3 + i;  // &#x590D;&#x6742;&#x8FD0;&#x7B97;
+        end
+    end
+
+    // &#x6D41;&#x6C34;&#x7EBF;&#x5B9E;&#x73B0;
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            for (int i = 0; i &lt; PIPELINE_STAGES; i++)
+                pipe_reg[i] &lt;= 0;
+        end else begin
+            pipe_reg[0] &lt;= comb_result;
+            for (int i = 1; i &lt; PIPELINE_STAGES; i++)
+                pipe_reg[i] &lt;= pipe_reg[i-1];
+        end
+    end
+
+    assign data_out = pipe_reg[PIPELINE_STAGES-1];
+endmodule
+</code></pre>
+<p><strong>&#x65F6;&#x5E8F;&#x5206;&#x6790;&#x5173;&#x952E;&#x6982;&#x5FF5;&#xFF1A;</strong></p>
+<ol>
+<li><p><strong>&#x5EFA;&#x7ACB;&#x65F6;&#x95F4;(Setup Time)</strong></p>
+<ul>
+<li>&#x6570;&#x636E;&#x5FC5;&#x987B;&#x5728;&#x65F6;&#x949F;&#x8FB9;&#x6CBF;&#x524D;&#x7A33;&#x5B9A;&#x7684;&#x65F6;&#x95F4;</li>
+<li>&#x516C;&#x5F0F;&#xFF1A;Tclk &#x2265; Tcq + Tlogic + Trouting + Tsetup</li>
+</ul>
+</li>
+<li><p><strong>&#x4FDD;&#x6301;&#x65F6;&#x95F4;(Hold Time)</strong></p>
+<ul>
+<li>&#x6570;&#x636E;&#x5FC5;&#x987B;&#x5728;&#x65F6;&#x949F;&#x8FB9;&#x6CBF;&#x540E;&#x4FDD;&#x6301;&#x7A33;&#x5B9A;&#x7684;&#x65F6;&#x95F4;</li>
+<li>&#x901A;&#x5E38;&#x901A;&#x8FC7;&#x5E03;&#x7EBF;&#x5EF6;&#x8FDF;&#x81EA;&#x52A8;&#x6EE1;&#x8DB3;</li>
+</ul>
+</li>
+<li><p><strong>&#x65F6;&#x949F;&#x504F;&#x659C;(Clock Skew)</strong></p>
+<ul>
+<li>&#x540C;&#x4E00;&#x65F6;&#x949F;&#x5230;&#x8FBE;&#x4E0D;&#x540C;&#x5BC4;&#x5B58;&#x5668;&#x7684;&#x65F6;&#x95F4;&#x5DEE;</li>
+<li>&#x53EF;&#x80FD;&#x5E2E;&#x52A9;&#x6216;&#x963B;&#x788D;&#x65F6;&#x5E8F;&#x6536;&#x655B;</li>
+</ul>
+</li>
+</ol>
+<h3 id="1522-&#x65F6;&#x5E8F;&#x7EA6;&#x675F;&#x7F16;&#x5199;&#x6280;&#x5DE7;">15.2.2 &#x65F6;&#x5E8F;&#x7EA6;&#x675F;&#x7F16;&#x5199;&#x6280;&#x5DE7;</h3>
+<pre><code class="lang-tcl"><span class="hljs-comment"># &#x4E3B;&#x65F6;&#x949F;&#x7EA6;&#x675F;</span>
+create_clock -period <span class="hljs-number">4.000</span> -name sys_clk [get_ports clk_p]
+
+<span class="hljs-comment"># &#x751F;&#x6210;&#x65F6;&#x949F;&#x7EA6;&#x675F;</span>
+create_generated_clock -name clk_div2 \
+    -<span class="hljs-keyword">source</span> [get_pins clk_gen/clk_in] \
+    -divide_by <span class="hljs-number">2</span> [get_pins clk_gen/clk_out]
+
+<span class="hljs-comment"># &#x8F93;&#x5165;&#x5EF6;&#x8FDF;&#x7EA6;&#x675F;</span>
+set_input_delay -<span class="hljs-keyword">clock</span> sys_clk -max <span class="hljs-number">1.5</span> [get_ports data_in[*]]
+set_input_delay -<span class="hljs-keyword">clock</span> sys_clk -min <span class="hljs-number">0.5</span> [get_ports data_in[*]]
+
+<span class="hljs-comment"># &#x8F93;&#x51FA;&#x5EF6;&#x8FDF;&#x7EA6;&#x675F;</span>
+set_output_delay -<span class="hljs-keyword">clock</span> sys_clk -max <span class="hljs-number">2.0</span> [get_ports data_out[*]]
+
+<span class="hljs-comment"># &#x591A;&#x5468;&#x671F;&#x8DEF;&#x5F84;</span>
+set_multicycle_path <span class="hljs-number">2</span> -setup -from [get_pins reg_a/Q] -to [get_pins reg_b/D]
+set_multicycle_path <span class="hljs-number">1</span> -hold -from [get_pins reg_a/Q] -to [get_pins reg_b/D]
+
+<span class="hljs-comment"># &#x4F2A;&#x8DEF;&#x5F84;&#x58F0;&#x660E;</span>
+set_false_path -from [get_clocks clk_a] -to [get_clocks clk_b]
+</code></pre>
+<h3 id="1523-&#x65F6;&#x5E8F;&#x8FDD;&#x4F8B;&#x5206;&#x6790;&#x4E0E;&#x4FEE;&#x590D;">15.2.3 &#x65F6;&#x5E8F;&#x8FDD;&#x4F8B;&#x5206;&#x6790;&#x4E0E;&#x4FEE;&#x590D;</h3>
+<p><strong>&#x5E38;&#x89C1;&#x65F6;&#x5E8F;&#x8FDD;&#x4F8B;&#x7C7B;&#x578B;&#xFF1A;</strong></p>
+<ol>
+<li><p><strong>Setup&#x8FDD;&#x4F8B;&#x4FEE;&#x590D;&#x7B56;&#x7565;</strong></p>
+<pre><code class="lang-systemverilog">// &#x539F;&#x59CB;&#x4EE3;&#x7801;&#xFF1A;&#x957F;&#x7EC4;&#x5408;&#x8DEF;&#x5F84;
+always_comb begin
+    result = ((a * b) + c) * d + e;  // &#x591A;&#x7EA7;&#x8FD0;&#x7B97;
+end
+
+// &#x4F18;&#x5316;&#x540E;&#xFF1A;&#x63D2;&#x5165;&#x6D41;&#x6C34;&#x7EBF;
+always_ff @(posedge clk) begin
+    stage1 &lt;= a * b;           // &#x7B2C;&#x4E00;&#x7EA7;
+    stage2 &lt;= stage1 + c;      // &#x7B2C;&#x4E8C;&#x7EA7;
+    stage3 &lt;= stage2 * d;      // &#x7B2C;&#x4E09;&#x7EA7;
+    result &lt;= stage3 + e;      // &#x7B2C;&#x56DB;&#x7EA7;
+end
+</code></pre>
+</li>
+<li><p><strong>&#x65F6;&#x949F;&#x57DF;&#x4EA4;&#x53C9;(CDC)&#x5904;&#x7406;</strong></p>
+<pre><code class="lang-systemverilog">// &#x53CC;&#x89E6;&#x53D1;&#x5668;&#x540C;&#x6B65;&#x5668;
+module cdc_sync #(
+    parameter WIDTH = 1
+) (
+    input  logic             clk_dst,
+    input  logic             rst_n,
+    input  logic [WIDTH-1:0] data_src,
+    output logic [WIDTH-1:0] data_dst
+);
+
+    (* ASYNC_REG = &quot;TRUE&quot; *)
+    logic [WIDTH-1:0] sync_ff1, sync_ff2;
+
+    always_ff @(posedge clk_dst) begin
+        if (!rst_n) begin
+            sync_ff1 &lt;= 0;
+            sync_ff2 &lt;= 0;
+        end else begin
+            sync_ff1 &lt;= data_src;
+            sync_ff2 &lt;= sync_ff1;
+        end
+    end
+
+    assign data_dst = sync_ff2;
+endmodule
+</code></pre>
+</li>
+</ol>
+<h3 id="1524-&#x9AD8;&#x7EA7;&#x65F6;&#x5E8F;&#x4F18;&#x5316;&#x6280;&#x672F;">15.2.4 &#x9AD8;&#x7EA7;&#x65F6;&#x5E8F;&#x4F18;&#x5316;&#x6280;&#x672F;</h3>
+<p><strong>1. &#x7269;&#x7406;&#x4F18;&#x5316;&#x6307;&#x4EE4;</strong></p>
+<pre><code class="lang-tcl"><span class="hljs-comment"># &#x5BC4;&#x5B58;&#x5668;&#x590D;&#x5236;</span>
+set_property PHYS_OPT_MODIFIED_REGDUP true [get_cells critical_reg]
+
+<span class="hljs-comment"># &#x903B;&#x8F91;&#x590D;&#x5236;</span>
+set_property KEEP_HIERARCHY SOFT [get_cells critical_module]
+
+<span class="hljs-comment"># &#x5E03;&#x5C40;&#x7EA6;&#x675F;</span>
+create_pblock pblock_critical
+add_cells_to_pblock pblock_critical [get_cells critical_path/*]
+resize_pblock pblock_critical -add {SLICE_X0Y0:SLICE_X50Y50}
+</code></pre>
+<p><strong>2. &#x65F6;&#x5E8F;&#x9A71;&#x52A8;&#x7684;&#x7EFC;&#x5408;&#x9009;&#x9879;</strong></p>
+<pre><code class="lang-tcl"><span class="hljs-comment"># &#x7EFC;&#x5408;&#x7B56;&#x7565;</span>
+set_property STEPS.SYNTH_DESIGN.ARGS.DIRECTIVE \
+    PerformanceOptimized [get_runs synth_1]
+
+<span class="hljs-comment"># &#x5B9E;&#x73B0;&#x7B56;&#x7565;</span>
+set_property STEPS.OPT_DESIGN.ARGS.DIRECTIVE \
+    ExploreWithRemap [get_runs impl_1]
+</code></pre>
+<h3 id="1525-&#x65F6;&#x5E8F;&#x62A5;&#x544A;&#x89E3;&#x8BFB;">15.2.5 &#x65F6;&#x5E8F;&#x62A5;&#x544A;&#x89E3;&#x8BFB;</h3>
+<p><strong>&#x5173;&#x952E;&#x62A5;&#x544A;&#x7C7B;&#x578B;&#xFF1A;</strong></p>
+<ol>
+<li><p><strong>&#x65F6;&#x5E8F;&#x6458;&#x8981;&#x62A5;&#x544A;</strong></p>
+<ul>
+<li>WNS (Worst Negative Slack)</li>
+<li>WHS (Worst Hold Slack)</li>
+<li>TNS (Total Negative Slack)</li>
+<li>&#x65F6;&#x949F;&#x4EA4;&#x4E92;&#x77E9;&#x9635;</li>
+</ul>
+</li>
+<li><p><strong>&#x8BE6;&#x7EC6;&#x8DEF;&#x5F84;&#x62A5;&#x544A;</strong></p>
+<pre><code>Data Path Delay:        4.521ns (logic 2.134ns route 2.387ns)
+Logic Levels:           5
+Clock Path Skew:        -0.123ns
+Source Clock:           sys_clk rising edge
+Destination Clock:      sys_clk rising edge
+</code></pre></li>
+<li><p><strong>&#x65F6;&#x949F;&#x5229;&#x7528;&#x7387;&#x62A5;&#x544A;</strong></p>
+<ul>
+<li>&#x65F6;&#x949F;&#x7F13;&#x51B2;&#x5668;&#x4F7F;&#x7528;&#x60C5;&#x51B5;</li>
+<li>&#x65F6;&#x949F;&#x533A;&#x57DF;&#x8D1F;&#x8F7D;</li>
+<li>&#x5168;&#x5C40;&#x65F6;&#x949F;&#x8D44;&#x6E90;&#x5206;&#x914D;</li>
+</ul>
+</li>
+</ol>
+<h3 id="1526-&#x9AD8;&#x7EA7;&#x65F6;&#x5E8F;&#x7EA6;&#x675F;&#x6280;&#x672F;">15.2.6 &#x9AD8;&#x7EA7;&#x65F6;&#x5E8F;&#x7EA6;&#x675F;&#x6280;&#x672F;</h3>
+<p><strong>1. &#x65F6;&#x949F;&#x7EC4;&#x7BA1;&#x7406;</strong></p>
+<pre><code class="lang-tcl"><span class="hljs-comment"># &#x5F02;&#x6B65;&#x65F6;&#x949F;&#x7EC4;&#x5B9A;&#x4E49;</span>
+set_clock_groups -name async_clks -asynchronous \
+    -group [get_clocks clk_sys] \
+    -group [get_clocks clk_ddr] \
+    -group [get_clocks clk_pcie]
+
+<span class="hljs-comment"># &#x903B;&#x8F91;&#x72EC;&#x5360;&#x65F6;&#x949F;&#x7EC4;</span>
+set_clock_groups -name exclusive_clks -logically_exclusive \
+    -group [get_clocks clk_250] \
+    -group [get_clocks clk_125]
+
+<span class="hljs-comment"># &#x7269;&#x7406;&#x72EC;&#x5360;&#x65F6;&#x949F;&#x7EC4;&#xFF08;&#x7528;&#x4E8E;&#x65F6;&#x5206;&#x590D;&#x7528;&#xFF09;</span>
+set_clock_groups -name physical_exclusive -physically_exclusive \
+    -group [get_clocks clk_mode0] \
+    -group [get_clocks clk_mode1]
+</code></pre>
+<p><strong>2. &#x9AD8;&#x7EA7;I/O&#x7EA6;&#x675F;</strong></p>
+<pre><code class="lang-tcl"><span class="hljs-comment"># &#x6E90;&#x540C;&#x6B65;&#x63A5;&#x53E3;&#x7EA6;&#x675F;</span>
+create_clock -name rx_clk -period <span class="hljs-number">5.0</span> [get_ports rx_clk_p]
+
+<span class="hljs-comment"># &#x4E2D;&#x5FC3;&#x5BF9;&#x9F50;&#x6570;&#x636E;</span>
+set_input_delay -<span class="hljs-keyword">clock</span> rx_clk -max <span class="hljs-number">2.0</span> [get_ports rx_data[*]]
+set_input_delay -<span class="hljs-keyword">clock</span> rx_clk -min <span class="hljs-number">0.5</span> [get_ports rx_data[*]]
+
+<span class="hljs-comment"># &#x8FB9;&#x6CBF;&#x5BF9;&#x9F50;&#x6570;&#x636E;&#xFF08;DDR&#x63A5;&#x53E3;&#xFF09;</span>
+set_input_delay -<span class="hljs-keyword">clock</span> rx_clk -max <span class="hljs-number">0.5</span> [get_ports ddr_dq[*]] -clock_fall -add_delay
+set_input_delay -<span class="hljs-keyword">clock</span> rx_clk -min <span class="hljs-number">-0.5</span> [get_ports ddr_dq[*]] -clock_fall -add_delay
+
+<span class="hljs-comment"># &#x8F93;&#x51FA;&#x5EF6;&#x8FDF;&#x4E0E;&#x8D1F;&#x8F7D;&#x7EA6;&#x675F;</span>
+set_output_delay -<span class="hljs-keyword">clock</span> sys_clk -max <span class="hljs-number">3.0</span> [get_ports tx_data[*]]
+set_load <span class="hljs-number">5.0</span> [get_ports tx_data[*]]
+</code></pre>
+<p><strong>3. &#x8DEF;&#x5F84;&#x7279;&#x5B9A;&#x7EA6;&#x675F;</strong></p>
+<pre><code class="lang-tcl"><span class="hljs-comment"># &#x6700;&#x5927;&#x5EF6;&#x8FDF;&#x7EA6;&#x675F;&#xFF08;&#x7528;&#x4E8E;&#x5F02;&#x6B65;&#x8DEF;&#x5F84;&#xFF09;</span>
+set_max_delay <span class="hljs-number">10.0</span> -from [get_pins ctrl_reg/Q] -to [get_pins status_reg/D]
+
+<span class="hljs-comment"># &#x6700;&#x5C0F;&#x5EF6;&#x8FDF;&#x7EA6;&#x675F;&#xFF08;&#x9632;&#x6B62;&#x4FDD;&#x6301;&#x65F6;&#x95F4;&#x8FDD;&#x4F8B;&#xFF09;</span>
+set_min_delay <span class="hljs-number">2.0</span> -from [get_pins data_reg/Q] -to [get_pins capture_reg/D]
+
+<span class="hljs-comment"># &#x6570;&#x636E;&#x8DEF;&#x5F84;&#x5EF6;&#x8FDF;&#x7EA6;&#x675F;</span>
+set_max_delay -datapath_only <span class="hljs-number">8.0</span> \
+    -from [get_cells input_stage/*] \
+    -to [get_cells output_stage/*]
+</code></pre>
+<h3 id="1527-&#x65F6;&#x5E8F;&#x5F02;&#x5E38;&#x5904;&#x7406;">15.2.7 &#x65F6;&#x5E8F;&#x5F02;&#x5E38;&#x5904;&#x7406;</h3>
+<p><strong>1. &#x591A;&#x5468;&#x671F;&#x8DEF;&#x5F84;&#x4F18;&#x5316;</strong></p>
+<pre><code class="lang-systemverilog">// &#x591A;&#x5468;&#x671F;&#x8DEF;&#x5F84;&#x793A;&#x4F8B;&#xFF1A;&#x590D;&#x6742;&#x7B97;&#x672F;&#x8FD0;&#x7B97;
+module multicycle_arithmetic #(
+    parameter WIDTH = 64
+) (
+    input  logic             clk,
+    input  logic             rst_n,
+    input  logic             start,
+    input  logic [WIDTH-1:0] operand_a,
+    input  logic [WIDTH-1:0] operand_b,
+    output logic [WIDTH-1:0] result,
+    output logic             done
+);
+
+    // &#x591A;&#x5468;&#x671F;&#x8BA1;&#x7B97;&#x72B6;&#x6001;&#x673A;
+    typedef enum logic [1:0] {
+        IDLE,
+        COMPUTE_1,
+        COMPUTE_2,
+        COMPLETE
+    } state_t;
+
+    state_t state;
+    logic [WIDTH-1:0] temp_result;
+
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            state &lt;= IDLE;
+            done &lt;= 0;
+        end else begin
+            case (state)
+                IDLE: begin
+                    if (start) begin
+                        state &lt;= COMPUTE_1;
+                        done &lt;= 0;
+                    end
+                end
+
+                COMPUTE_1: begin
+                    // &#x7B2C;&#x4E00;&#x4E2A;&#x5468;&#x671F;&#xFF1A;&#x90E8;&#x5206;&#x8BA1;&#x7B97;
+                    temp_result &lt;= operand_a[31:0] * operand_b[31:0];
+                    state &lt;= COMPUTE_2;
+                end
+
+                COMPUTE_2: begin
+                    // &#x7B2C;&#x4E8C;&#x4E2A;&#x5468;&#x671F;&#xFF1A;&#x5B8C;&#x6210;&#x8BA1;&#x7B97;
+                    result &lt;= temp_result + 
+                             (operand_a[63:32] * operand_b[31:0]) +
+                             (operand_a[31:0] * operand_b[63:32]);
+                    state &lt;= COMPLETE;
+                end
+
+                COMPLETE: begin
+                    done &lt;= 1;
+                    state &lt;= IDLE;
+                end
+            endcase
+        end
+    end
+endmodule
+</code></pre>
+<p>&#x5BF9;&#x5E94;&#x7684;&#x65F6;&#x5E8F;&#x7EA6;&#x675F;&#xFF1A;</p>
+<pre><code class="lang-tcl"><span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x591A;&#x5468;&#x671F;&#x8DEF;&#x5F84;</span>
+set_multicycle_path <span class="hljs-number">2</span> -setup \
+    -from [get_cells compute_inst/operand_*_reg[*]] \
+    -to [get_cells compute_inst/result_reg[*]]
+
+set_multicycle_path <span class="hljs-number">1</span> -hold \
+    -from [get_cells compute_inst/operand_*_reg[*]] \
+    -to [get_cells compute_inst/result_reg[*]]
+</code></pre>
+<p><strong>2. &#x4F2A;&#x8DEF;&#x5F84;&#x8BC6;&#x522B;&#x4E0E;&#x58F0;&#x660E;</strong></p>
+<pre><code class="lang-tcl"><span class="hljs-comment"># &#x8DE8;&#x65F6;&#x949F;&#x57DF;&#x4F2A;&#x8DEF;&#x5F84;</span>
+set_false_path -from [get_clocks clk_a] -to [get_clocks clk_b]
+
+<span class="hljs-comment"># &#x590D;&#x4F4D;&#x4FE1;&#x53F7;&#x4F2A;&#x8DEF;&#x5F84;</span>
+set_false_path -from [get_ports rst_n] -to [all_registers]
+
+<span class="hljs-comment"># &#x9759;&#x6001;&#x914D;&#x7F6E;&#x5BC4;&#x5B58;&#x5668;</span>
+set_false_path -from [get_cells config_regs/*] \
+    -to [get_cells datapath/*]
+
+<span class="hljs-comment"># &#x6D4B;&#x8BD5;&#x6A21;&#x5F0F;&#x8DEF;&#x5F84;</span>
+set_false_path -through [get_pins mux_test/sel]
+</code></pre>
+<h3 id="1528-&#x65F6;&#x5E8F;&#x6536;&#x655B;&#x7B56;&#x7565;">15.2.8 &#x65F6;&#x5E8F;&#x6536;&#x655B;&#x7B56;&#x7565;</h3>
+<p><strong>1. &#x589E;&#x91CF;&#x5F0F;&#x65F6;&#x5E8F;&#x6536;&#x655B;&#x6D41;&#x7A0B;</strong></p>
+<pre><code class="lang-tcl"><span class="hljs-comment"># &#x7B56;&#x7565;1&#xFF1A;&#x9AD8;&#x52AA;&#x529B;&#x5EA6;&#x7EFC;&#x5408;</span>
+set_property STEPS.SYNTH_DESIGN.ARGS.DIRECTIVE \
+    PerformanceOptimized [get_runs synth_1]
+set_property STEPS.SYNTH_DESIGN.ARGS.RETIMING true [get_runs synth_1]
+
+<span class="hljs-comment"># &#x7B56;&#x7565;2&#xFF1A;&#x7269;&#x7406;&#x4F18;&#x5316;</span>
+set_property STEPS.PHYS_OPT_DESIGN.IS_ENABLED true [get_runs impl_1]
+set_property STEPS.POST_ROUTE_PHYS_OPT_DESIGN.IS_ENABLED true [get_runs impl_1]
+
+<span class="hljs-comment"># &#x7B56;&#x7565;3&#xFF1A;&#x591A;&#x7B56;&#x7565;&#x63A2;&#x7D22;</span>
+create_run -name impl_explore1 -parent_run synth_1 -flow {Vivado Implementation <span class="hljs-number">2020</span>}
+set_property strategy Performance_ExplorePostRoutePhysOpt [get_runs impl_explore1]
+
+create_run -name impl_explore2 -parent_run synth_1 -flow {Vivado Implementation <span class="hljs-number">2020</span>}
+set_property strategy Performance_NetDelay_high [get_runs impl_explore2]
+</code></pre>
+<p><strong>2. &#x5173;&#x952E;&#x8DEF;&#x5F84;&#x4F18;&#x5316;&#x6280;&#x672F;</strong></p>
+<pre><code class="lang-systemverilog">// &#x5BC4;&#x5B58;&#x5668;&#x5E73;&#x8861;&#x793A;&#x4F8B;
+module register_balancing #(
+    parameter STAGES = 4,
+    parameter WIDTH = 32
+) (
+    input  logic             clk,
+    input  logic [WIDTH-1:0] data_in,
+    output logic [WIDTH-1:0] data_out
+);
+
+    // &#x81EA;&#x52A8;&#x5BC4;&#x5B58;&#x5668;&#x5E73;&#x8861;&#x5C5E;&#x6027;
+    (* shreg_extract = &quot;no&quot; *)
+    (* register_balancing = &quot;yes&quot; *)
+    logic [WIDTH-1:0] balance_reg[STAGES];
+
+    always_ff @(posedge clk) begin
+        balance_reg[0] &lt;= data_in;
+        for (int i = 1; i &lt; STAGES; i++) begin
+            balance_reg[i] &lt;= balance_reg[i-1];
+        end
+    end
+
+    assign data_out = balance_reg[STAGES-1];
+endmodule
+</code></pre>
+<h3 id="1529-&#x65F6;&#x5E8F;&#x5206;&#x6790;&#x811A;&#x672C;&#x81EA;&#x52A8;&#x5316;">15.2.9 &#x65F6;&#x5E8F;&#x5206;&#x6790;&#x811A;&#x672C;&#x81EA;&#x52A8;&#x5316;</h3>
+<p><strong>1. TCL&#x811A;&#x672C;&#x65F6;&#x5E8F;&#x5206;&#x6790;</strong></p>
+<pre><code class="lang-tcl"><span class="hljs-comment"># &#x65F6;&#x5E8F;&#x5206;&#x6790;&#x81EA;&#x52A8;&#x5316;&#x811A;&#x672C;</span>
+<span class="hljs-keyword">proc</span><span class="hljs-title"> analyze_timing_summary</span> {} {
+<span class="hljs-comment">    # &#x6253;&#x5F00;&#x5B9E;&#x73B0;&#x540E;&#x7684;&#x8BBE;&#x8BA1;</span>
+    open_run impl_1
+
+<span class="hljs-comment">    # &#x751F;&#x6210;&#x65F6;&#x5E8F;&#x6458;&#x8981;</span>
+    <span class="hljs-keyword">set</span> wns [get_property SLACK [get_timing_paths -max_paths <span class="hljs-number">1</span> -setup]]
+    <span class="hljs-keyword">set</span> whs [get_property SLACK [get_timing_paths -max_paths <span class="hljs-number">1</span> -hold]]
+
+    <span class="hljs-keyword">puts</span> <span class="hljs-string">&quot;----------------------------------------&quot;</span>
+    <span class="hljs-keyword">puts</span> <span class="hljs-string">&quot;Timing Summary:&quot;</span>
+    <span class="hljs-keyword">puts</span> <span class="hljs-string">&quot;WNS (setup): $wns ns&quot;</span>
+    <span class="hljs-keyword">puts</span> <span class="hljs-string">&quot;WHS (hold): $whs ns&quot;</span>
+
+<span class="hljs-comment">    # &#x68C0;&#x67E5;&#x65F6;&#x5E8F;&#x662F;&#x5426;&#x6EE1;&#x8DB3;</span>
+    <span class="hljs-keyword">if</span> {$wns &lt; <span class="hljs-number">0</span>} {
+        <span class="hljs-keyword">puts</span> <span class="hljs-string">&quot;ERROR: Setup timing violation!&quot;</span>
+        report_timing_summary -<span class="hljs-keyword">file</span> timing_violations.rpt
+
+<span class="hljs-comment">        # &#x5206;&#x6790;&#x8FDD;&#x4F8B;&#x8DEF;&#x5F84;</span>
+        <span class="hljs-keyword">set</span> worst_paths [get_timing_paths -setup -max_paths <span class="hljs-number">10</span> -slack_less_than <span class="hljs-number">0</span>]
+        <span class="hljs-keyword">foreach</span> path $worst_paths {
+            <span class="hljs-keyword">set</span> startpoint [get_property STARTPOINT_PIN $path]
+            <span class="hljs-keyword">set</span> endpoint [get_property ENDPOINT_PIN $path]
+            <span class="hljs-keyword">set</span> slack [get_property SLACK $path]
+            <span class="hljs-keyword">puts</span> <span class="hljs-string">&quot;Path: $startpoint -&gt; $endpoint, Slack: $slack&quot;</span>
+        }
+    } else {
+        <span class="hljs-keyword">puts</span> <span class="hljs-string">&quot;Timing constraints met!&quot;</span>
+    }
+}
+
+<span class="hljs-comment"># &#x8FD0;&#x884C;&#x5206;&#x6790;</span>
+analyze_timing_summary
+</code></pre>
+<p><strong>2. &#x65F6;&#x5E8F;&#x8D8B;&#x52BF;&#x76D1;&#x63A7;</strong></p>
+<pre><code class="lang-tcl"><span class="hljs-comment"># &#x76D1;&#x63A7;&#x591A;&#x6B21;&#x8FD0;&#x884C;&#x7684;&#x65F6;&#x5E8F;&#x8D8B;&#x52BF;</span>
+<span class="hljs-keyword">proc</span><span class="hljs-title"> monitor_timing_trend</span> {num_runs} {
+    <span class="hljs-keyword">set</span> results_file [<span class="hljs-keyword">open</span> <span class="hljs-string">&quot;timing_trend.csv&quot;</span> w]
+    <span class="hljs-keyword">puts</span> $results_file <span class="hljs-string">&quot;Run,WNS,WHS,TNS,Frequency&quot;</span>
+
+    <span class="hljs-keyword">for</span> {<span class="hljs-keyword">set</span> i <span class="hljs-number">1</span>} {$i &lt;= $num_runs} {<span class="hljs-keyword">incr</span> i} {
+<span class="hljs-comment">        # &#x8FD0;&#x884C;&#x5B9E;&#x73B0;</span>
+        reset_run impl_1
+        launch_runs impl_1 -jobs <span class="hljs-number">8</span>
+        wait_on_run impl_1
+
+<span class="hljs-comment">        # &#x63D0;&#x53D6;&#x65F6;&#x5E8F;&#x6570;&#x636E;</span>
+        open_run impl_1
+        <span class="hljs-keyword">set</span> wns [get_property SLACK [get_timing_paths -setup -max_paths <span class="hljs-number">1</span>]]
+        <span class="hljs-keyword">set</span> whs [get_property SLACK [get_timing_paths -hold -max_paths <span class="hljs-number">1</span>]]
+        <span class="hljs-keyword">set</span> tns [get_property SLACK [get_timing_paths -setup -max_paths <span class="hljs-number">1000</span>]]
+
+<span class="hljs-comment">        # &#x8BA1;&#x7B97;&#x5B9E;&#x9645;&#x9891;&#x7387;</span>
+        <span class="hljs-keyword">set</span> period [get_property PERIOD [get_clocks sys_clk]]
+        <span class="hljs-keyword">set</span> actual_freq [<span class="hljs-keyword">expr</span> <span class="hljs-number">1000.0</span> / ($period - $wns)]
+
+        <span class="hljs-keyword">puts</span> $results_file <span class="hljs-string">&quot;$i,$wns,$whs,$tns,$actual_freq&quot;</span>
+    }
+
+    <span class="hljs-keyword">close</span> $results_file
+    <span class="hljs-keyword">puts</span> <span class="hljs-string">&quot;Timing trend analysis completed. Results in timing_trend.csv&quot;</span>
+}
+</code></pre>
+<h3 id="15210-&#x9AD8;&#x7EA7;&#x65F6;&#x949F;&#x7BA1;&#x7406;">15.2.10 &#x9AD8;&#x7EA7;&#x65F6;&#x949F;&#x7BA1;&#x7406;</h3>
+<p><strong>1. &#x65F6;&#x949F;&#x57DF;&#x4EA4;&#x53C9;&#x4F18;&#x5316;</strong></p>
+<pre><code class="lang-systemverilog">// &#x9AD8;&#x6027;&#x80FD;CDC&#x540C;&#x6B65;&#x5668;
+module advanced_cdc_sync #(
+    parameter WIDTH = 32,
+    parameter SYNC_STAGES = 3
+) (
+    // &#x6E90;&#x65F6;&#x949F;&#x57DF;
+    input  logic             clk_src,
+    input  logic             rst_src_n,
+    input  logic [WIDTH-1:0] data_src,
+    input  logic             valid_src,
+    output logic             ready_src,
+
+    // &#x76EE;&#x6807;&#x65F6;&#x949F;&#x57DF;
+    input  logic             clk_dst,
+    input  logic             rst_dst_n,
+    output logic [WIDTH-1:0] data_dst,
+    output logic             valid_dst,
+    input  logic             ready_dst
+);
+
+    // Gray&#x7801;&#x8F6C;&#x6362;&#x7528;&#x4E8E;&#x591A;&#x4F4D;CDC
+    function [WIDTH-1:0] binary_to_gray(input [WIDTH-1:0] binary);
+        return binary ^ (binary &gt;&gt; 1);
+    endfunction
+
+    function [WIDTH-1:0] gray_to_binary(input [WIDTH-1:0] gray);
+        gray_to_binary[WIDTH-1] = gray[WIDTH-1];
+        for (int i = WIDTH-2; i &gt;= 0; i--) begin
+            gray_to_binary[i] = gray_to_binary[i+1] ^ gray[i];
+        end
+    endfunction
+
+    // &#x63E1;&#x624B;&#x540C;&#x6B65;&#x5668;
+    (* ASYNC_REG = &quot;TRUE&quot; *)
+    logic req_sync[SYNC_STAGES];
+    logic ack_sync[SYNC_STAGES];
+
+    // &#x6E90;&#x57DF;&#xFF1A;&#x53D1;&#x9001;&#x8BF7;&#x6C42;
+    logic req_src, ack_src_sync;
+    logic [WIDTH-1:0] data_gray_src;
+
+    always_ff @(posedge clk_src) begin
+        if (!rst_src_n) begin
+            req_src &lt;= 0;
+            data_gray_src &lt;= 0;
+        end else if (valid_src &amp;&amp; ready_src) begin
+            data_gray_src &lt;= binary_to_gray(data_src);
+            req_src &lt;= ~req_src;  // &#x5207;&#x6362;&#x8BF7;&#x6C42;&#x4FE1;&#x53F7;
+        end
+    end
+
+    // &#x76EE;&#x6807;&#x57DF;&#xFF1A;&#x63A5;&#x6536;&#x6570;&#x636E;
+    logic req_dst_sync, req_dst_prev;
+    logic [WIDTH-1:0] data_gray_dst;
+
+    always_ff @(posedge clk_dst) begin
+        if (!rst_dst_n) begin
+            req_sync &lt;= &apos;{default: &apos;0};
+            req_dst_prev &lt;= 0;
+        end else begin
+            req_sync[0] &lt;= req_src;
+            for (int i = 1; i &lt; SYNC_STAGES; i++) begin
+                req_sync[i] &lt;= req_sync[i-1];
+            end
+            req_dst_sync &lt;= req_sync[SYNC_STAGES-1];
+            req_dst_prev &lt;= req_dst_sync;
+        end
+    end
+
+    // &#x68C0;&#x6D4B;&#x8BF7;&#x6C42;&#x8FB9;&#x6CBF;
+    wire req_pulse = req_dst_sync ^ req_dst_prev;
+
+    always_ff @(posedge clk_dst) begin
+        if (!rst_dst_n) begin
+            valid_dst &lt;= 0;
+            data_dst &lt;= 0;
+        end else if (req_pulse) begin
+            valid_dst &lt;= 1;
+            data_dst &lt;= gray_to_binary(data_gray_src);
+        end else if (ready_dst) begin
+            valid_dst &lt;= 0;
+        end
+    end
+endmodule
+</code></pre>
+<p><strong>2. &#x52A8;&#x6001;&#x65F6;&#x949F;&#x5207;&#x6362;</strong></p>
+<pre><code class="lang-systemverilog">// &#x65E0;&#x6BDB;&#x523A;&#x65F6;&#x949F;&#x5207;&#x6362;&#x5668;
+module glitch_free_clock_mux (
+    input  logic clk0,      // &#x65F6;&#x949F;0
+    input  logic clk1,      // &#x65F6;&#x949F;1
+    input  logic sel,       // &#x9009;&#x62E9;&#x4FE1;&#x53F7;
+    input  logic rst_n,
+    output logic clk_out    // &#x8F93;&#x51FA;&#x65F6;&#x949F;
+);
+
+    logic sel0_sync1, sel0_sync2, sel0_sync3;
+    logic sel1_sync1, sel1_sync2, sel1_sync3;
+    logic clk0_en, clk1_en;
+
+    // &#x540C;&#x6B65;&#x5230;clk0&#x57DF;
+    always_ff @(posedge clk0 or negedge rst_n) begin
+        if (!rst_n) begin
+            {sel0_sync3, sel0_sync2, sel0_sync1} &lt;= 3&apos;b000;
+        end else begin
+            {sel0_sync3, sel0_sync2, sel0_sync1} &lt;= {sel0_sync2, sel0_sync1, ~sel &amp; ~clk1_en};
+        end
+    end
+
+    // &#x540C;&#x6B65;&#x5230;clk1&#x57DF;
+    always_ff @(posedge clk1 or negedge rst_n) begin
+        if (!rst_n) begin
+            {sel1_sync3, sel1_sync2, sel1_sync1} &lt;= 3&apos;b000;
+        end else begin
+            {sel1_sync3, sel1_sync2, sel1_sync1} &lt;= {sel1_sync2, sel1_sync1, sel &amp; ~clk0_en};
+        end
+    end
+
+    assign clk0_en = sel0_sync3;
+    assign clk1_en = sel1_sync3;
+
+    // &#x65F6;&#x949F;&#x95E8;&#x63A7;&#x8F93;&#x51FA;
+    (* keep = &quot;true&quot; *)
+    logic clk0_gated, clk1_gated;
+
+    assign clk0_gated = clk0 &amp; clk0_en;
+    assign clk1_gated = clk1 &amp; clk1_en;
+    assign clk_out = clk0_gated | clk1_gated;
+endmodule
+</code></pre>
+<h2 id="153-&#x8D44;&#x6E90;&#x5229;&#x7528;&#x7387;&#x4F18;&#x5316;&#x7B56;&#x7565;">15.3 &#x8D44;&#x6E90;&#x5229;&#x7528;&#x7387;&#x4F18;&#x5316;&#x7B56;&#x7565;</h2>
+<h3 id="1531-&#x8D44;&#x6E90;&#x5E73;&#x8861;&#x4E0E;&#x6743;&#x8861;">15.3.1 &#x8D44;&#x6E90;&#x5E73;&#x8861;&#x4E0E;&#x6743;&#x8861;</h3>
+<p>FPGA&#x8D44;&#x6E90;&#x4F18;&#x5316;&#x4E0D;&#x4EC5;&#x662F;&#x51CF;&#x5C11;&#x4F7F;&#x7528;&#x91CF;&#xFF0C;&#x66F4;&#x91CD;&#x8981;&#x7684;&#x662F;&#x5E73;&#x8861;&#x5404;&#x7C7B;&#x8D44;&#x6E90;&#x7684;&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre><code class="lang-systemverilog">// &#x8D44;&#x6E90;&#x5E73;&#x8861;&#x793A;&#x4F8B;&#xFF1A;&#x4E58;&#x6CD5;&#x5668;&#x5B9E;&#x73B0;
+module resource_balanced_multiplier #(
+    parameter WIDTH = 32,
+    parameter USE_DSP = 1,  // 1: DSP&#x5B9E;&#x73B0;, 0: LUT&#x5B9E;&#x73B0;
+    parameter PIPELINE = 3
+) (
+    input  logic                clk,
+    input  logic                rst_n,
+    input  logic [WIDTH-1:0]    a,
+    input  logic [WIDTH-1:0]    b,
+    output logic [2*WIDTH-1:0]  result
+);
+
+    generate
+        if (USE_DSP) begin : dsp_mult
+            // DSP48E2&#x5B9E;&#x73B0;
+            (* use_dsp = &quot;yes&quot; *)
+            logic [2*WIDTH-1:0] mult_result;
+
+            always_ff @(posedge clk) begin
+                if (!rst_n)
+                    mult_result &lt;= 0;
+                else
+                    mult_result &lt;= a * b;
+            end
+
+            // &#x53EF;&#x9009;&#x6D41;&#x6C34;&#x7EBF;
+            logic [2*WIDTH-1:0] pipe_stages[PIPELINE-1];
+            always_ff @(posedge clk) begin
+                pipe_stages[0] &lt;= mult_result;
+                for (int i = 1; i &lt; PIPELINE-1; i++)
+                    pipe_stages[i] &lt;= pipe_stages[i-1];
+            end
+
+            assign result = (PIPELINE &gt; 1) ? 
+                           pipe_stages[PIPELINE-2] : mult_result;
+
+        end else begin : lut_mult
+            // LUT&#x5B9E;&#x73B0;&#xFF1A;Booth&#x7F16;&#x7801;&#x4E58;&#x6CD5;&#x5668;
+            (* use_dsp = &quot;no&quot; *)
+            logic [2*WIDTH-1:0] partial_products[WIDTH/2];
+
+            // Booth&#x7F16;&#x7801;&#x903B;&#x8F91;
+            always_comb begin
+                for (int i = 0; i &lt; WIDTH/2; i++) begin
+                    logic [2:0] booth_bits;
+                    booth_bits = {b[2*i+1], b[2*i], (i==0) ? 1&apos;b0 : b[2*i-1]};
+
+                    case (booth_bits)
+                        3&apos;b000, 3&apos;b111: partial_products[i] = 0;
+                        3&apos;b001, 3&apos;b010: partial_products[i] = a &lt;&lt; (2*i);
+                        3&apos;b011: partial_products[i] = (a &lt;&lt; (2*i+1));
+                        3&apos;b100: partial_products[i] = -(a &lt;&lt; (2*i+1));
+                        3&apos;b101, 3&apos;b110: partial_products[i] = -(a &lt;&lt; (2*i));
+                    endcase
+                end
+            end
+
+            // &#x52A0;&#x6CD5;&#x6811;
+            always_ff @(posedge clk) begin
+                if (!rst_n)
+                    result &lt;= 0;
+                else begin
+                    logic [2*WIDTH-1:0] sum = 0;
+                    for (int i = 0; i &lt; WIDTH/2; i++)
+                        sum = sum + partial_products[i];
+                    result &lt;= sum;
+                end
+            end
+        end
+    endgenerate
+endmodule
+</code></pre>
+<p><strong>&#x8D44;&#x6E90;&#x6743;&#x8861;&#x539F;&#x5219;&#xFF1A;</strong></p>
+<ol>
+<li><p><strong>DSP vs LUT&#x6743;&#x8861;</strong></p>
+<ul>
+<li>DSP&#xFF1A;&#x9AD8;&#x901F;&#x3001;&#x4F4E;&#x529F;&#x8017;&#xFF0C;&#x4F46;&#x6570;&#x91CF;&#x6709;&#x9650;</li>
+<li>LUT&#xFF1A;&#x7075;&#x6D3B;&#x3001;&#x6570;&#x91CF;&#x591A;&#xFF0C;&#x4F46;&#x901F;&#x5EA6;&#x8F83;&#x6162;</li>
+<li>&#x5EFA;&#x8BAE;&#xFF1A;&#x5173;&#x952E;&#x8DEF;&#x5F84;&#x7528;DSP&#xFF0C;&#x975E;&#x5173;&#x952E;&#x8DEF;&#x5F84;&#x7528;LUT</li>
+</ul>
+</li>
+<li><p><strong>BRAM vs &#x5206;&#x5E03;&#x5F0F;RAM</strong></p>
+<ul>
+<li>BRAM&#xFF1A;&#x5927;&#x5BB9;&#x91CF;&#x3001;&#x9AD8;&#x5E26;&#x5BBD;</li>
+<li>&#x5206;&#x5E03;&#x5F0F;RAM&#xFF1A;&#x5C0F;&#x5BB9;&#x91CF;&#x3001;&#x4F4E;&#x5EF6;&#x8FDF;</li>
+<li>&#x5EFA;&#x8BAE;&#xFF1A;&gt;256&#x4F4D;&#x7528;BRAM&#xFF0C;&lt;256&#x4F4D;&#x7528;&#x5206;&#x5E03;&#x5F0F;</li>
+</ul>
+</li>
+</ol>
+<h3 id="1532-&#x8D44;&#x6E90;&#x5171;&#x4EAB;&#x4E0E;&#x590D;&#x7528;">15.3.2 &#x8D44;&#x6E90;&#x5171;&#x4EAB;&#x4E0E;&#x590D;&#x7528;</h3>
+<pre><code class="lang-systemverilog">// &#x8D44;&#x6E90;&#x5171;&#x4EAB;&#x7B97;&#x672F;&#x5355;&#x5143;
+module shared_arithmetic_unit #(
+    parameter WIDTH = 32,
+    parameter NUM_OPS = 4  // &#x652F;&#x6301;&#x7684;&#x64CD;&#x4F5C;&#x6570;
+) (
+    input  logic                clk,
+    input  logic                rst_n,
+
+    // &#x64CD;&#x4F5C;&#x9009;&#x62E9;
+    input  logic [1:0]          op_select,  // 00:add, 01:sub, 10:mul, 11:mac
+    input  logic                op_valid,
+
+    // &#x64CD;&#x4F5C;&#x6570;
+    input  logic [WIDTH-1:0]    operand_a,
+    input  logic [WIDTH-1:0]    operand_b,
+    input  logic [WIDTH-1:0]    operand_c,  // for MAC
+
+    // &#x7ED3;&#x679C;
+    output logic [2*WIDTH-1:0]  result,
+    output logic                result_valid
+);
+
+    // &#x5171;&#x4EAB;DSP48E2&#x8D44;&#x6E90;
+    (* use_dsp = &quot;yes&quot; *)
+    logic [WIDTH-1:0]   dsp_a, dsp_b, dsp_c;
+    logic [2*WIDTH-1:0] dsp_result;
+    logic [3:0]         dsp_mode;
+
+    // DSP&#x914D;&#x7F6E;
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            dsp_mode &lt;= 0;
+            result_valid &lt;= 0;
+        end else if (op_valid) begin
+            case (op_select)
+                2&apos;b00: begin  // ADD
+                    dsp_a &lt;= operand_a;
+                    dsp_b &lt;= operand_b;
+                    dsp_c &lt;= 0;
+                    dsp_mode &lt;= 4&apos;b0000;  // A+B
+                end
+                2&apos;b01: begin  // SUB
+                    dsp_a &lt;= operand_a;
+                    dsp_b &lt;= operand_b;
+                    dsp_c &lt;= 0;
+                    dsp_mode &lt;= 4&apos;b0001;  // A-B
+                end
+                2&apos;b10: begin  // MUL
+                    dsp_a &lt;= operand_a;
+                    dsp_b &lt;= operand_b;
+                    dsp_c &lt;= 0;
+                    dsp_mode &lt;= 4&apos;b0010;  // A*B
+                end
+                2&apos;b11: begin  // MAC
+                    dsp_a &lt;= operand_a;
+                    dsp_b &lt;= operand_b;
+                    dsp_c &lt;= operand_c;
+                    dsp_mode &lt;= 4&apos;b0011;  // A*B+C
+                end
+            endcase
+            result_valid &lt;= 1;
+        end else begin
+            result_valid &lt;= 0;
+        end
+    end
+
+    // DSP&#x5B9E;&#x4F8B;&#x5316;
+    DSP48E2 #(
+        .USE_MULT(&quot;MULTIPLY&quot;),
+        .USE_PATTERN_DETECT(&quot;NO_PATDET&quot;),
+        .USE_SIMD(&quot;ONE48&quot;)
+    ) dsp_inst (
+        .CLK(clk),
+        .A(dsp_a),
+        .B(dsp_b),
+        .C(dsp_c),
+        .ALUMODE(dsp_mode[3:0]),
+        .P(dsp_result)
+    );
+
+    assign result = dsp_result;
+endmodule
+</code></pre>
+<h3 id="1533-&#x5185;&#x5B58;&#x5206;&#x5C42;&#x4E0E;&#x4F18;&#x5316;">15.3.3 &#x5185;&#x5B58;&#x5206;&#x5C42;&#x4E0E;&#x4F18;&#x5316;</h3>
+<p><strong>&#x5185;&#x5B58;&#x5C42;&#x6B21;&#x8BBE;&#x8BA1;&#xFF1A;</strong></p>
+<pre><code class="lang-systemverilog">// &#x5206;&#x5C42;&#x7F13;&#x5B58;&#x7CFB;&#x7EDF;
+module hierarchical_cache #(
+    parameter L1_SIZE = 4096,    // 4KB L1
+    parameter L2_SIZE = 65536,   // 64KB L2
+    parameter LINE_SIZE = 64     // 64B cache line
+) (
+    input  logic        clk,
+    input  logic        rst_n,
+
+    // CPU&#x63A5;&#x53E3;
+    input  logic [31:0] addr,
+    input  logic        rd_en,
+    input  logic        wr_en,
+    input  logic [63:0] wr_data,
+    output logic [63:0] rd_data,
+    output logic        hit,
+
+    // DDR&#x63A5;&#x53E3;
+    output logic [31:0] ddr_addr,
+    output logic        ddr_rd_en,
+    input  logic [511:0] ddr_rd_data,
+    input  logic        ddr_rd_valid
+);
+
+    // L1 Cache: &#x5206;&#x5E03;&#x5F0F;RAM&#x5B9E;&#x73B0;
+    (* ram_style = &quot;distributed&quot; *)
+    logic [63:0] l1_data[L1_SIZE/8];
+    logic [19:0] l1_tag[L1_SIZE/LINE_SIZE];
+    logic        l1_valid[L1_SIZE/LINE_SIZE];
+
+    // L2 Cache: BRAM&#x5B9E;&#x73B0;
+    (* ram_style = &quot;block&quot; *)
+    logic [511:0] l2_data[L2_SIZE/LINE_SIZE];
+    logic [15:0]  l2_tag[L2_SIZE/LINE_SIZE];
+    logic         l2_valid[L2_SIZE/LINE_SIZE];
+
+    // &#x5730;&#x5740;&#x89E3;&#x7801;
+    logic [5:0]  offset;
+    logic [9:0]  l1_index;
+    logic [9:0]  l2_index;
+    logic [19:0] tag;
+
+    assign offset = addr[5:0];
+    assign l1_index = addr[15:6];
+    assign l2_index = addr[15:6];
+    assign tag = addr[31:12];
+
+    // L1&#x67E5;&#x627E;
+    logic l1_hit;
+    always_comb begin
+        l1_hit = l1_valid[l1_index] &amp;&amp; (l1_tag[l1_index] == tag);
+    end
+
+    // L1&#x547D;&#x4E2D;&#xFF1A;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;
+    always_ff @(posedge clk) begin
+        if (l1_hit &amp;&amp; rd_en) begin
+            rd_data &lt;= l1_data[{l1_index, offset[5:3]}];
+            hit &lt;= 1;
+        end else begin
+            hit &lt;= 0;
+            // &#x542F;&#x52A8;L2&#x67E5;&#x627E;
+        end
+    end
+endmodule
+</code></pre>
+<h3 id="1534-&#x52A8;&#x6001;&#x8D44;&#x6E90;&#x5206;&#x914D;">15.3.4 &#x52A8;&#x6001;&#x8D44;&#x6E90;&#x5206;&#x914D;</h3>
+<p><strong>&#x90E8;&#x5206;&#x91CD;&#x914D;&#x7F6E;&#x7B56;&#x7565;&#xFF1A;</strong></p>
+<pre><code class="lang-systemverilog">// &#x52A8;&#x6001;&#x53EF;&#x91CD;&#x914D;&#x7F6E;&#x52A0;&#x901F;&#x5668;
+module dynamic_accelerator #(
+    parameter NUM_CONFIGS = 4
+) (
+    input  logic        clk,
+    input  logic        rst_n,
+
+    // &#x914D;&#x7F6E;&#x63A5;&#x53E3;
+    input  logic [2:0]  config_select,
+    input  logic        reconfig_start,
+    output logic        reconfig_done,
+
+    // &#x6570;&#x636E;&#x63A5;&#x53E3;
+    input  logic [511:0] data_in,
+    output logic [511:0] data_out,
+    input  logic         data_valid
+);
+
+    // &#x914D;&#x7F6E;&#x5B58;&#x50A8;
+    logic [31:0] config_data[NUM_CONFIGS][1024];
+
+    // ICAP&#x63A7;&#x5236;&#x5668;
+    logic        icap_ce;
+    logic        icap_wr;
+    logic [31:0] icap_data;
+
+    // &#x91CD;&#x914D;&#x7F6E;&#x72B6;&#x6001;&#x673A;
+    typedef enum logic [2:0] {
+        IDLE,
+        LOAD_CONFIG,
+        WRITE_ICAP,
+        WAIT_DONE,
+        COMPLETE
+    } reconfig_state_t;
+
+    reconfig_state_t state;
+
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            state &lt;= IDLE;
+            reconfig_done &lt;= 0;
+        end else begin
+            case (state)
+                IDLE: begin
+                    if (reconfig_start) begin
+                        state &lt;= LOAD_CONFIG;
+                        reconfig_done &lt;= 0;
+                    end
+                end
+
+                LOAD_CONFIG: begin
+                    // &#x52A0;&#x8F7D;&#x914D;&#x7F6E;&#x6570;&#x636E;
+                    state &lt;= WRITE_ICAP;
+                end
+
+                WRITE_ICAP: begin
+                    // &#x5199;&#x5165;ICAP
+                    icap_ce &lt;= 0;
+                    icap_wr &lt;= 0;
+                    icap_data &lt;= config_data[config_select][0];
+                    state &lt;= WAIT_DONE;
+                end
+
+                WAIT_DONE: begin
+                    // &#x7B49;&#x5F85;&#x91CD;&#x914D;&#x7F6E;&#x5B8C;&#x6210;
+                    state &lt;= COMPLETE;
+                end
+
+                COMPLETE: begin
+                    reconfig_done &lt;= 1;
+                    state &lt;= IDLE;
+                end
+            endcase
+        end
+    end
+endmodule
+</code></pre>
+<h3 id="1535-&#x8D44;&#x6E90;&#x4F7F;&#x7528;&#x5206;&#x6790;&#x5DE5;&#x5177;">15.3.5 &#x8D44;&#x6E90;&#x4F7F;&#x7528;&#x5206;&#x6790;&#x5DE5;&#x5177;</h3>
+<p><strong>Vivado&#x8D44;&#x6E90;&#x62A5;&#x544A;&#x89E3;&#x8BFB;&#xFF1A;</strong></p>
+<ol>
+<li><p><strong>&#x5229;&#x7528;&#x7387;&#x62A5;&#x544A;&#x5173;&#x952E;&#x6307;&#x6807;</strong></p>
+<pre><code>+----------------------------+-------+-------+-----------+-------+
+|          Site Type         |  Used | Fixed | Available | Util% |
++----------------------------+-------+-------+-----------+-------+
+| CLB LUTs                   | 45231 |     0 |    433200 | 10.44 |
+|   LUT as Logic             | 42156 |     0 |    433200 |  9.73 |
+|   LUT as Memory            |  3075 |     0 |    174200 |  1.77 |
+| CLB Registers              | 68542 |     0 |    866400 |  7.91 |
+| CARRY8                     |  2156 |     0 |     54150 |  3.98 |
+| F7 Muxes                   |  1892 |     0 |    216600 |  0.87 |
+| F8 Muxes                   |   423 |     0 |    108300 |  0.39 |
+| Block RAM Tile             |   256 |     0 |       912 | 28.07 |
+|   RAMB36/FIFO              |   256 |     0 |       912 | 28.07 |
+| DSPs                       |   420 |     0 |      2520 | 16.67 |
++----------------------------+-------+-------+-----------+-------+
+</code></pre></li>
+<li><p><strong>&#x8D44;&#x6E90;&#x74F6;&#x9888;&#x8BC6;&#x522B;</strong></p>
+<ul>
+<li>CLB&#x5229;&#x7528;&#x7387;&gt;80%&#xFF1A;&#x5E03;&#x7EBF;&#x62E5;&#x5835;&#x98CE;&#x9669;</li>
+<li>BRAM&#x5229;&#x7528;&#x7387;&gt;90%&#xFF1A;&#x8003;&#x8651;&#x5916;&#x90E8;&#x5B58;&#x50A8;</li>
+<li>DSP&#x5229;&#x7528;&#x7387;&gt;75%&#xFF1A;&#x8003;&#x8651;LUT&#x5B9E;&#x73B0;</li>
+</ul>
+</li>
+<li><p><strong>&#x8D44;&#x6E90;&#x4F18;&#x5316;&#x5EFA;&#x8BAE;</strong></p>
+<ul>
+<li>&#x4F7F;&#x7528;&#x8D44;&#x6E90;&#x5171;&#x4EAB;&#x51CF;&#x5C11;DSP&#x4F7F;&#x7528;</li>
+<li>&#x91C7;&#x7528;&#x6D41;&#x6C34;&#x7EBF;&#x5E73;&#x8861;LUT&#x548C;&#x5BC4;&#x5B58;&#x5668;</li>
+<li>&#x4F18;&#x5316;&#x5B58;&#x50A8;&#x5668;&#x6620;&#x5C04;&#x51CF;&#x5C11;BRAM</li>
+</ul>
+</li>
+</ol>
+<h2 id="154-&#x6570;&#x636E;&#x901A;&#x8DEF;&#x4F18;&#x5316;&#x6280;&#x672F;">15.4 &#x6570;&#x636E;&#x901A;&#x8DEF;&#x4F18;&#x5316;&#x6280;&#x672F;</h2>
+<p>&#x6570;&#x636E;&#x901A;&#x8DEF;&#x662F;FPGA&#x8BBE;&#x8BA1;&#x7684;&#x6838;&#x5FC3;&#xFF0C;&#x5176;&#x6027;&#x80FD;&#x76F4;&#x63A5;&#x51B3;&#x5B9A;&#x4E86;&#x6574;&#x4E2A;&#x7CFB;&#x7EDF;&#x7684;&#x541E;&#x5410;&#x91CF;&#x3002;&#x672C;&#x8282;&#x6DF1;&#x5165;&#x63A2;&#x8BA8;&#x5404;&#x79CD;&#x6570;&#x636E;&#x901A;&#x8DEF;&#x4F18;&#x5316;&#x6280;&#x672F;&#xFF0C;&#x5305;&#x62EC;&#x4F4D;&#x5BBD;&#x4F18;&#x5316;&#x3001;&#x6570;&#x636E;&#x5BF9;&#x9F50;&#x3001;&#x7A81;&#x53D1;&#x4F20;&#x8F93;&#x548C;&#x6D41;&#x6C34;&#x7EBF;&#x4F18;&#x5316;&#x3002;</p>
+<h3 id="1541-&#x4F4D;&#x5BBD;&#x4F18;&#x5316;&#x7B56;&#x7565;">15.4.1 &#x4F4D;&#x5BBD;&#x4F18;&#x5316;&#x7B56;&#x7565;</h3>
+<p><strong>1. &#x52A8;&#x6001;&#x4F4D;&#x5BBD;&#x8C03;&#x6574;</strong></p>
+<pre><code class="lang-systemverilog">// &#x81EA;&#x9002;&#x5E94;&#x4F4D;&#x5BBD;&#x5904;&#x7406;&#x5668;
+module adaptive_bitwidth_processor #(
+    parameter MAX_WIDTH = 64,
+    parameter MIN_WIDTH = 8
+) (
+    input  logic                    clk,
+    input  logic                    rst_n,
+    input  logic [MAX_WIDTH-1:0]    data_in,
+    input  logic                    data_valid,
+    input  logic [2:0]              precision_mode,  // 0:8b, 1:16b, 2:32b, 3:64b
+    output logic [MAX_WIDTH-1:0]    data_out,
+    output logic                    data_ready
+);
+
+    // &#x4F4D;&#x5BBD;&#x9009;&#x62E9;&#x903B;&#x8F91;
+    logic [5:0] active_width;
+    logic [3:0] parallel_factor;
+
+    always_comb begin
+        case (precision_mode)
+            3&apos;b000: begin
+                active_width = 8;
+                parallel_factor = MAX_WIDTH / 8;  // 8&#x8DEF;&#x5E76;&#x884C;
+            end
+            3&apos;b001: begin
+                active_width = 16;
+                parallel_factor = MAX_WIDTH / 16; // 4&#x8DEF;&#x5E76;&#x884C;
+            end
+            3&apos;b010: begin
+                active_width = 32;
+                parallel_factor = MAX_WIDTH / 32; // 2&#x8DEF;&#x5E76;&#x884C;
+            end
+            default: begin
+                active_width = 64;
+                parallel_factor = 1;              // &#x5355;&#x8DEF;
+            end
+        endcase
+    end
+
+    // &#x5E76;&#x884C;&#x5904;&#x7406;&#x5355;&#x5143;
+    genvar i;
+    generate
+        for (i = 0; i &lt; 8; i++) begin : proc_unit
+            logic [7:0] unit_data;
+            logic       unit_enable;
+
+            // &#x52A8;&#x6001;&#x542F;&#x7528;&#x5904;&#x7406;&#x5355;&#x5143;
+            assign unit_enable = (i &lt; parallel_factor);
+
+            always_ff @(posedge clk) begin
+                if (!rst_n) begin
+                    unit_data &lt;= 0;
+                end else if (data_valid &amp;&amp; unit_enable) begin
+                    case (precision_mode)
+                        3&apos;b000: unit_data &lt;= data_in[i*8 +: 8];
+                        3&apos;b001: unit_data &lt;= data_in[i*16 +: 8];
+                        3&apos;b010: unit_data &lt;= data_in[i*32 +: 8];
+                        default: unit_data &lt;= data_in[i*8 +: 8];
+                    endcase
+                end
+            end
+        end
+    endgenerate
+
+    // &#x8F93;&#x51FA;&#x91CD;&#x7EC4;
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            data_out &lt;= 0;
+            data_ready &lt;= 0;
+        end else begin
+            data_ready &lt;= data_valid;
+            // &#x6839;&#x636E;&#x6A21;&#x5F0F;&#x91CD;&#x7EC4;&#x8F93;&#x51FA;
+            for (int j = 0; j &lt; 8; j++) begin
+                if (j &lt; parallel_factor)
+                    data_out[j*8 +: 8] &lt;= proc_unit[j].unit_data;
+                else
+                    data_out[j*8 +: 8] &lt;= 0;
+            end
+        end
+    end
+endmodule
+</code></pre>
+<p><strong>2. &#x4F4D;&#x5BBD;&#x8F6C;&#x6362;&#x4F18;&#x5316;</strong></p>
+<pre><code class="lang-systemverilog">// &#x9AD8;&#x6548;&#x4F4D;&#x5BBD;&#x8F6C;&#x6362;&#x5668;
+module efficient_width_converter #(
+    parameter INPUT_WIDTH = 128,
+    parameter OUTPUT_WIDTH = 32,
+    parameter RATIO = INPUT_WIDTH / OUTPUT_WIDTH
+) (
+    input  logic                        clk,
+    input  logic                        rst_n,
+
+    // &#x5BBD;&#x8F93;&#x5165;&#x63A5;&#x53E3;
+    input  logic [INPUT_WIDTH-1:0]      wide_data,
+    input  logic                        wide_valid,
+    output logic                        wide_ready,
+
+    // &#x7A84;&#x8F93;&#x51FA;&#x63A5;&#x53E3;  
+    output logic [OUTPUT_WIDTH-1:0]     narrow_data,
+    output logic                        narrow_valid,
+    input  logic                        narrow_ready
+);
+
+    // &#x7F13;&#x51B2;&#x548C;&#x63A7;&#x5236;&#x903B;&#x8F91;
+    logic [INPUT_WIDTH-1:0] data_buffer;
+    logic [$clog2(RATIO):0] counter;
+    logic buffer_valid;
+
+    // &#x8F93;&#x5165;&#x63E1;&#x624B;
+    assign wide_ready = !buffer_valid || (counter == RATIO-1 &amp;&amp; narrow_ready);
+
+    // &#x6570;&#x636E;&#x7F13;&#x51B2;
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            data_buffer &lt;= 0;
+            buffer_valid &lt;= 0;
+        end else if (wide_valid &amp;&amp; wide_ready) begin
+            data_buffer &lt;= wide_data;
+            buffer_valid &lt;= 1;
+        end else if (counter == RATIO-1 &amp;&amp; narrow_ready) begin
+            buffer_valid &lt;= 0;
+        end
+    end
+
+    // &#x8F93;&#x51FA;&#x63A7;&#x5236;
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            counter &lt;= 0;
+            narrow_valid &lt;= 0;
+        end else if (buffer_valid) begin
+            if (narrow_ready || !narrow_valid) begin
+                narrow_data &lt;= data_buffer[counter*OUTPUT_WIDTH +: OUTPUT_WIDTH];
+                narrow_valid &lt;= 1;
+
+                if (counter &lt; RATIO-1)
+                    counter &lt;= counter + 1;
+                else
+                    counter &lt;= 0;
+            end
+        end else begin
+            narrow_valid &lt;= 0;
+            counter &lt;= 0;
+        end
+    end
+endmodule
+</code></pre>
+<h3 id="1542-&#x6570;&#x636E;&#x5BF9;&#x9F50;&#x4E0E;&#x6253;&#x5305;">15.4.2 &#x6570;&#x636E;&#x5BF9;&#x9F50;&#x4E0E;&#x6253;&#x5305;</h3>
+<p><strong>1. &#x81EA;&#x52A8;&#x6570;&#x636E;&#x5BF9;&#x9F50;&#x5668;</strong></p>
+<pre><code class="lang-systemverilog">// &#x53EF;&#x914D;&#x7F6E;&#x6570;&#x636E;&#x5BF9;&#x9F50;&#x5668;
+module data_aligner #(
+    parameter DATA_WIDTH = 64,
+    parameter ALIGN_WIDTH = 8   // &#x5BF9;&#x9F50;&#x8FB9;&#x754C;
+) (
+    input  logic                        clk,
+    input  logic                        rst_n,
+
+    // &#x672A;&#x5BF9;&#x9F50;&#x8F93;&#x5165;
+    input  logic [DATA_WIDTH-1:0]       unaligned_data,
+    input  logic [$clog2(DATA_WIDTH):0] data_bytes,      // &#x6709;&#x6548;&#x5B57;&#x8282;&#x6570;
+    input  logic [$clog2(ALIGN_WIDTH):0] offset,         // &#x8D77;&#x59CB;&#x504F;&#x79FB;
+    input  logic                        input_valid,
+
+    // &#x5BF9;&#x9F50;&#x8F93;&#x51FA;
+    output logic [DATA_WIDTH-1:0]       aligned_data,
+    output logic                        aligned_valid,
+    output logic                        aligned_last
+);
+
+    // &#x5185;&#x90E8;&#x7F13;&#x51B2;
+    logic [2*DATA_WIDTH-1:0] shift_buffer;
+    logic [$clog2(DATA_WIDTH):0] buffer_bytes;
+    logic first_word;
+
+    // &#x79FB;&#x4F4D;&#x5BF9;&#x9F50;&#x903B;&#x8F91;
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            shift_buffer &lt;= 0;
+            buffer_bytes &lt;= 0;
+            first_word &lt;= 1;
+            aligned_valid &lt;= 0;
+        end else if (input_valid) begin
+            if (first_word) begin
+                // &#x9996;&#x6B21;&#x6570;&#x636E;&#xFF0C;&#x6839;&#x636E;&#x504F;&#x79FB;&#x5BF9;&#x9F50;
+                shift_buffer &lt;= unaligned_data &lt;&lt; (offset * 8);
+                buffer_bytes &lt;= data_bytes;
+                first_word &lt;= 0;
+
+                if (data_bytes + offset &gt;= DATA_WIDTH/8) begin
+                    aligned_data &lt;= shift_buffer[DATA_WIDTH-1:0];
+                    aligned_valid &lt;= 1;
+                    shift_buffer &lt;= shift_buffer &gt;&gt; DATA_WIDTH;
+                    buffer_bytes &lt;= buffer_bytes - (DATA_WIDTH/8 - offset);
+                end
+            end else begin
+                // &#x540E;&#x7EED;&#x6570;&#x636E;&#x62FC;&#x63A5;
+                shift_buffer[buffer_bytes*8 +: data_bytes*8] &lt;= unaligned_data[0 +: data_bytes*8];
+                buffer_bytes &lt;= buffer_bytes + data_bytes;
+
+                if (buffer_bytes + data_bytes &gt;= DATA_WIDTH/8) begin
+                    aligned_data &lt;= shift_buffer[DATA_WIDTH-1:0];
+                    aligned_valid &lt;= 1;
+                    shift_buffer &lt;= shift_buffer &gt;&gt; DATA_WIDTH;
+                    buffer_bytes &lt;= buffer_bytes + data_bytes - DATA_WIDTH/8;
+                end else begin
+                    aligned_valid &lt;= 0;
+                end
+            end
+        end else begin
+            aligned_valid &lt;= 0;
+        end
+    end
+
+    // &#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5B57;&#x68C0;&#x6D4B;
+    assign aligned_last = (buffer_bytes &lt; DATA_WIDTH/8) &amp;&amp; !input_valid;
+endmodule
+</code></pre>
+<p><strong>2. &#x6570;&#x636E;&#x6253;&#x5305;&#x5668;</strong></p>
+<pre><code class="lang-systemverilog">// &#x9AD8;&#x6548;&#x6570;&#x636E;&#x6253;&#x5305;&#x5668;
+module data_packer #(
+    parameter ELEMENT_WIDTH = 16,
+    parameter ELEMENTS_PER_WORD = 4,
+    parameter WORD_WIDTH = ELEMENT_WIDTH * ELEMENTS_PER_WORD
+) (
+    input  logic                        clk,
+    input  logic                        rst_n,
+
+    // &#x5143;&#x7D20;&#x8F93;&#x5165;
+    input  logic [ELEMENT_WIDTH-1:0]    element_data,
+    input  logic                        element_valid,
+    output logic                        element_ready,
+
+    // &#x6253;&#x5305;&#x8F93;&#x51FA;
+    output logic [WORD_WIDTH-1:0]       packed_data,
+    output logic                        packed_valid,
+    input  logic                        packed_ready
+);
+
+    // &#x6253;&#x5305;&#x7F13;&#x51B2;
+    logic [WORD_WIDTH-1:0] pack_buffer;
+    logic [$clog2(ELEMENTS_PER_WORD):0] element_count;
+    logic buffer_full;
+
+    // &#x8F93;&#x5165;&#x63A7;&#x5236;
+    assign element_ready = !buffer_full || packed_ready;
+    assign buffer_full = (element_count == ELEMENTS_PER_WORD);
+
+    // &#x6253;&#x5305;&#x903B;&#x8F91;
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            pack_buffer &lt;= 0;
+            element_count &lt;= 0;
+            packed_valid &lt;= 0;
+        end else begin
+            // &#x8F93;&#x51FA;&#x5904;&#x7406;
+            if (packed_valid &amp;&amp; packed_ready) begin
+                packed_valid &lt;= 0;
+                element_count &lt;= 0;
+            end
+
+            // &#x8F93;&#x5165;&#x5904;&#x7406;
+            if (element_valid &amp;&amp; element_ready) begin
+                pack_buffer[element_count*ELEMENT_WIDTH +: ELEMENT_WIDTH] &lt;= element_data;
+                element_count &lt;= element_count + 1;
+
+                if (element_count == ELEMENTS_PER_WORD - 1) begin
+                    packed_data &lt;= {element_data, pack_buffer[0 +: (ELEMENTS_PER_WORD-1)*ELEMENT_WIDTH]};
+                    packed_valid &lt;= 1;
+                end
+            end
+        end
+    end
+endmodule
+</code></pre>
+<h3 id="1543-&#x7A81;&#x53D1;&#x4F20;&#x8F93;&#x4F18;&#x5316;">15.4.3 &#x7A81;&#x53D1;&#x4F20;&#x8F93;&#x4F18;&#x5316;</h3>
+<p><strong>1. &#x7A81;&#x53D1;&#x4F20;&#x8F93;&#x63A7;&#x5236;&#x5668;</strong></p>
+<pre><code class="lang-systemverilog">// AXI&#x7A81;&#x53D1;&#x4F20;&#x8F93;&#x4F18;&#x5316;&#x5668;
+module burst_optimizer #(
+    parameter ADDR_WIDTH = 32,
+    parameter DATA_WIDTH = 128,
+    parameter MAX_BURST_LEN = 256,
+    parameter ID_WIDTH = 4
+) (
+    input  logic                        clk,
+    input  logic                        rst_n,
+
+    // &#x8BF7;&#x6C42;&#x8F93;&#x5165;
+    input  logic [ADDR_WIDTH-1:0]       req_addr,
+    input  logic [31:0]                 req_bytes,
+    input  logic                        req_valid,
+    output logic                        req_ready,
+
+    // AXI&#x4E3B;&#x63A5;&#x53E3;
+    output logic [ID_WIDTH-1:0]         m_axi_arid,
+    output logic [ADDR_WIDTH-1:0]       m_axi_araddr,
+    output logic [7:0]                  m_axi_arlen,
+    output logic [2:0]                  m_axi_arsize,
+    output logic [1:0]                  m_axi_arburst,
+    output logic                        m_axi_arvalid,
+    input  logic                        m_axi_arready,
+
+    input  logic [DATA_WIDTH-1:0]       m_axi_rdata,
+    input  logic                        m_axi_rlast,
+    input  logic                        m_axi_rvalid,
+    output logic                        m_axi_rready
+);
+
+    // &#x7A81;&#x53D1;&#x8BA1;&#x7B97;&#x903B;&#x8F91;
+    logic [7:0] burst_len;
+    logic [2:0] burst_size;
+    logic [31:0] bytes_remaining;
+    logic [ADDR_WIDTH-1:0] current_addr;
+
+    // &#x72B6;&#x6001;&#x673A;
+    typedef enum logic [1:0] {
+        IDLE,
+        CALC_BURST,
+        SEND_CMD,
+        RECEIVE_DATA
+    } state_t;
+
+    state_t state;
+
+    // &#x7A81;&#x53D1;&#x957F;&#x5EA6;&#x8BA1;&#x7B97;
+    function logic [7:0] calc_burst_len(
+        input logic [31:0] bytes,
+        input logic [ADDR_WIDTH-1:0] addr
+    );
+        logic [7:0] max_len;
+        logic [11:0] boundary_bytes;
+
+        // 4KB&#x8FB9;&#x754C;&#x5BF9;&#x9F50;
+        boundary_bytes = 4096 - (addr &amp; 12&apos;hFFF);
+
+        // &#x8BA1;&#x7B97;&#x6700;&#x5927;&#x7A81;&#x53D1;&#x957F;&#x5EA6;
+        if (bytes &lt;= boundary_bytes) begin
+            max_len = (bytes + (DATA_WIDTH/8) - 1) / (DATA_WIDTH/8);
+        end else begin
+            max_len = boundary_bytes / (DATA_WIDTH/8);
+        end
+
+        // &#x9650;&#x5236;&#x6700;&#x5927;&#x7A81;&#x53D1;&#x957F;&#x5EA6;
+        if (max_len &gt; MAX_BURST_LEN)
+            return MAX_BURST_LEN - 1;
+        else if (max_len == 0)
+            return 0;
+        else
+            return max_len - 1;
+    endfunction
+
+    // &#x4E3B;&#x72B6;&#x6001;&#x673A;
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            state &lt;= IDLE;
+            req_ready &lt;= 1;
+            m_axi_arvalid &lt;= 0;
+            bytes_remaining &lt;= 0;
+        end else begin
+            case (state)
+                IDLE: begin
+                    if (req_valid &amp;&amp; req_ready) begin
+                        current_addr &lt;= req_addr;
+                        bytes_remaining &lt;= req_bytes;
+                        req_ready &lt;= 0;
+                        state &lt;= CALC_BURST;
+                    end
+                end
+
+                CALC_BURST: begin
+                    burst_len &lt;= calc_burst_len(bytes_remaining, current_addr);
+                    burst_size &lt;= $clog2(DATA_WIDTH/8);
+                    state &lt;= SEND_CMD;
+                end
+
+                SEND_CMD: begin
+                    m_axi_arid &lt;= 0;
+                    m_axi_araddr &lt;= current_addr;
+                    m_axi_arlen &lt;= burst_len;
+                    m_axi_arsize &lt;= burst_size;
+                    m_axi_arburst &lt;= 2&apos;b01;  // INCR
+                    m_axi_arvalid &lt;= 1;
+
+                    if (m_axi_arready) begin
+                        m_axi_arvalid &lt;= 0;
+                        state &lt;= RECEIVE_DATA;
+                    end
+                end
+
+                RECEIVE_DATA: begin
+                    if (m_axi_rvalid &amp;&amp; m_axi_rlast) begin
+                        bytes_remaining &lt;= bytes_remaining - ((burst_len + 1) * (DATA_WIDTH/8));
+                        current_addr &lt;= current_addr + ((burst_len + 1) * (DATA_WIDTH/8));
+
+                        if (bytes_remaining &lt;= (burst_len + 1) * (DATA_WIDTH/8)) begin
+                            state &lt;= IDLE;
+                            req_ready &lt;= 1;
+                        end else begin
+                            state &lt;= CALC_BURST;
+                        end
+                    end
+                end
+            endcase
+        end
+    end
+
+    // &#x6570;&#x636E;&#x63A5;&#x6536;&#x59CB;&#x7EC8;&#x51C6;&#x5907;
+    assign m_axi_rready = (state == RECEIVE_DATA);
+endmodule
+</code></pre>
+<h3 id="1544-&#x6570;&#x636E;&#x901A;&#x8DEF;&#x6D41;&#x6C34;&#x7EBF;&#x4F18;&#x5316;">15.4.4 &#x6570;&#x636E;&#x901A;&#x8DEF;&#x6D41;&#x6C34;&#x7EBF;&#x4F18;&#x5316;</h3>
+<p><strong>1. &#x81EA;&#x9002;&#x5E94;&#x6D41;&#x6C34;&#x7EBF;&#x6DF1;&#x5EA6;</strong></p>
+<pre><code class="lang-systemverilog">// &#x53EF;&#x914D;&#x7F6E;&#x6D41;&#x6C34;&#x7EBF;&#x6DF1;&#x5EA6;&#x4F18;&#x5316;&#x5668;
+module adaptive_pipeline #(
+    parameter DATA_WIDTH = 32,
+    parameter MAX_STAGES = 8
+) (
+    input  logic                        clk,
+    input  logic                        rst_n,
+
+    // &#x6570;&#x636E;&#x8F93;&#x5165;
+    input  logic [DATA_WIDTH-1:0]       data_in,
+    input  logic                        data_valid,
+
+    // &#x914D;&#x7F6E;&#x63A5;&#x53E3;
+    input  logic [2:0]                  pipeline_depth,  // 1-8&#x7EA7;
+    input  logic                        bypass_enable,
+
+    // &#x6570;&#x636E;&#x8F93;&#x51FA;
+    output logic [DATA_WIDTH-1:0]       data_out,
+    output logic                        data_valid_out
+);
+
+    // &#x6D41;&#x6C34;&#x7EBF;&#x5BC4;&#x5B58;&#x5668;
+    logic [DATA_WIDTH-1:0] pipe_regs [MAX_STAGES];
+    logic [MAX_STAGES-1:0] valid_regs;
+
+    // &#x6D41;&#x6C34;&#x7EBF;&#x903B;&#x8F91;
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            for (int i = 0; i &lt; MAX_STAGES; i++) begin
+                pipe_regs[i] &lt;= 0;
+                valid_regs[i] &lt;= 0;
+            end
+        end else begin
+            // &#x7B2C;&#x4E00;&#x7EA7;
+            pipe_regs[0] &lt;= data_in;
+            valid_regs[0] &lt;= data_valid;
+
+            // &#x540E;&#x7EED;&#x7EA7;
+            for (int i = 1; i &lt; MAX_STAGES; i++) begin
+                pipe_regs[i] &lt;= pipe_regs[i-1];
+                valid_regs[i] &lt;= valid_regs[i-1];
+            end
+        end
+    end
+
+    // &#x8F93;&#x51FA;&#x591A;&#x8DEF;&#x9009;&#x62E9;
+    always_comb begin
+        if (bypass_enable) begin
+            data_out = data_in;
+            data_valid_out = data_valid;
+        end else begin
+            case (pipeline_depth)
+                3&apos;d0: begin
+                    data_out = data_in;
+                    data_valid_out = data_valid;
+                end
+                3&apos;d1: begin
+                    data_out = pipe_regs[0];
+                    data_valid_out = valid_regs[0];
+                end
+                3&apos;d2: begin
+                    data_out = pipe_regs[1];
+                    data_valid_out = valid_regs[1];
+                end
+                3&apos;d3: begin
+                    data_out = pipe_regs[2];
+                    data_valid_out = valid_regs[2];
+                end
+                3&apos;d4: begin
+                    data_out = pipe_regs[3];
+                    data_valid_out = valid_regs[3];
+                end
+                3&apos;d5: begin
+                    data_out = pipe_regs[4];
+                    data_valid_out = valid_regs[4];
+                end
+                3&apos;d6: begin
+                    data_out = pipe_regs[5];
+                    data_valid_out = valid_regs[5];
+                end
+                3&apos;d7: begin
+                    data_out = pipe_regs[6];
+                    data_valid_out = valid_regs[6];
+                end
+            endcase
+        end
+    end
+endmodule
+</code></pre>
+<p><strong>2. &#x6570;&#x636E;&#x901A;&#x8DEF;&#x8D1F;&#x8F7D;&#x5747;&#x8861;</strong></p>
+<pre><code class="lang-systemverilog">// &#x591A;&#x901A;&#x9053;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x5668;
+module datapath_load_balancer #(
+    parameter DATA_WIDTH = 64,
+    parameter NUM_CHANNELS = 4
+) (
+    input  logic                        clk,
+    input  logic                        rst_n,
+
+    // &#x8F93;&#x5165;&#x63A5;&#x53E3;
+    input  logic [DATA_WIDTH-1:0]       in_data,
+    input  logic                        in_valid,
+    output logic                        in_ready,
+
+    // &#x591A;&#x901A;&#x9053;&#x8F93;&#x51FA;
+    output logic [DATA_WIDTH-1:0]       out_data [NUM_CHANNELS],
+    output logic [NUM_CHANNELS-1:0]     out_valid,
+    input  logic [NUM_CHANNELS-1:0]     out_ready,
+
+    // &#x6027;&#x80FD;&#x76D1;&#x63A7;
+    output logic [31:0]                 channel_load [NUM_CHANNELS]
+);
+
+    // &#x901A;&#x9053;&#x9009;&#x62E9;&#x903B;&#x8F91;
+    logic [$clog2(NUM_CHANNELS)-1:0] current_channel;
+    logic [$clog2(NUM_CHANNELS)-1:0] next_channel;
+
+    // &#x8D1F;&#x8F7D;&#x7EDF;&#x8BA1;
+    logic [31:0] channel_counters [NUM_CHANNELS];
+
+    // &#x5BFB;&#x627E;&#x6700;&#x7A7A;&#x95F2;&#x901A;&#x9053;
+    always_comb begin
+        next_channel = 0;
+        for (int i = 1; i &lt; NUM_CHANNELS; i++) begin
+            if (channel_counters[i] &lt; channel_counters[next_channel])
+                next_channel = i;
+        end
+    end
+
+    // &#x8F93;&#x5165;&#x51C6;&#x5907;&#x4FE1;&#x53F7;
+    assign in_ready = out_ready[current_channel];
+
+    // &#x6570;&#x636E;&#x5206;&#x53D1;
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            current_channel &lt;= 0;
+            for (int i = 0; i &lt; NUM_CHANNELS; i++) begin
+                out_valid[i] &lt;= 0;
+                channel_counters[i] &lt;= 0;
+            end
+        end else begin
+            // &#x6E05;&#x9664;&#x5DF2;&#x63A5;&#x6536;&#x7684;valid&#x4FE1;&#x53F7;
+            for (int i = 0; i &lt; NUM_CHANNELS; i++) begin
+                if (out_valid[i] &amp;&amp; out_ready[i]) begin
+                    out_valid[i] &lt;= 0;
+                    channel_counters[i] &lt;= channel_counters[i] - 1;
+                end
+            end
+
+            // &#x5206;&#x53D1;&#x65B0;&#x6570;&#x636E;
+            if (in_valid &amp;&amp; in_ready) begin
+                out_data[current_channel] &lt;= in_data;
+                out_valid[current_channel] &lt;= 1;
+                channel_counters[current_channel] &lt;= channel_counters[current_channel] + 1;
+
+                // &#x66F4;&#x65B0;&#x901A;&#x9053;&#x9009;&#x62E9;
+                current_channel &lt;= next_channel;
+            end
+        end
+    end
+
+    // &#x8D1F;&#x8F7D;&#x8F93;&#x51FA;
+    assign channel_load = channel_counters;
+endmodule
+</code></pre>
+<h3 id="1545-&#x6570;&#x636E;&#x9884;&#x53D6;&#x4E0E;&#x7F13;&#x5B58;">15.4.5 &#x6570;&#x636E;&#x9884;&#x53D6;&#x4E0E;&#x7F13;&#x5B58;</h3>
+<p><strong>1. &#x667A;&#x80FD;&#x9884;&#x53D6;&#x63A7;&#x5236;&#x5668;</strong></p>
+<pre><code class="lang-systemverilog">// &#x81EA;&#x9002;&#x5E94;&#x6570;&#x636E;&#x9884;&#x53D6;&#x5668;
+module adaptive_prefetcher #(
+    parameter ADDR_WIDTH = 32,
+    parameter DATA_WIDTH = 128,
+    parameter CACHE_LINES = 64,
+    parameter LINE_SIZE = 64  // bytes
+) (
+    input  logic                        clk,
+    input  logic                        rst_n,
+
+    // CPU&#x8BF7;&#x6C42;&#x63A5;&#x53E3;
+    input  logic [ADDR_WIDTH-1:0]       cpu_addr,
+    input  logic                        cpu_valid,
+    output logic [DATA_WIDTH-1:0]       cpu_data,
+    output logic                        cpu_ready,
+
+    // &#x5185;&#x5B58;&#x63A5;&#x53E3;
+    output logic [ADDR_WIDTH-1:0]       mem_addr,
+    output logic                        mem_valid,
+    input  logic [DATA_WIDTH-1:0]       mem_data,
+    input  logic                        mem_ready
+);
+
+    // &#x9884;&#x53D6;&#x72B6;&#x6001;
+    typedef struct packed {
+        logic [ADDR_WIDTH-1:0] addr;
+        logic valid;
+        logic [2:0] confidence;  // &#x9884;&#x53D6;&#x7F6E;&#x4FE1;&#x5EA6;
+    } prefetch_entry_t;
+
+    prefetch_entry_t prefetch_queue[4];
+
+    // &#x8BBF;&#x95EE;&#x6A21;&#x5F0F;&#x68C0;&#x6D4B;
+    logic [ADDR_WIDTH-1:0] last_addr;
+    logic [ADDR_WIDTH-1:0] stride;
+    logic stride_detected;
+
+    // &#x6B65;&#x957F;&#x68C0;&#x6D4B;
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            last_addr &lt;= 0;
+            stride &lt;= 0;
+            stride_detected &lt;= 0;
+        end else if (cpu_valid &amp;&amp; cpu_ready) begin
+            if (last_addr != 0) begin
+                logic [ADDR_WIDTH-1:0] current_stride;
+                current_stride = cpu_addr - last_addr;
+
+                if (stride == current_stride) begin
+                    stride_detected &lt;= 1;
+                end else begin
+                    stride &lt;= current_stride;
+                    stride_detected &lt;= 0;
+                end
+            end
+            last_addr &lt;= cpu_addr;
+        end
+    end
+
+    // &#x9884;&#x53D6;&#x5730;&#x5740;&#x751F;&#x6210;
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            for (int i = 0; i &lt; 4; i++) begin
+                prefetch_queue[i].valid &lt;= 0;
+                prefetch_queue[i].confidence &lt;= 0;
+            end
+        end else if (stride_detected &amp;&amp; cpu_valid &amp;&amp; cpu_ready) begin
+            // &#x751F;&#x6210;&#x9884;&#x53D6;&#x5730;&#x5740;
+            for (int i = 0; i &lt; 4; i++) begin
+                prefetch_queue[i].addr &lt;= cpu_addr + (i+1) * stride;
+                prefetch_queue[i].valid &lt;= 1;
+                prefetch_queue[i].confidence &lt;= 3&apos;b111;
+            end
+        end
+    end
+
+    // &#x7F13;&#x5B58;&#x67E5;&#x627E;&#x548C;&#x9884;&#x53D6;&#x63A7;&#x5236;
+    typedef enum logic [1:0] {
+        IDLE,
+        CHECK_CACHE,
+        FETCH_MEM,
+        PREFETCH
+    } state_t;
+
+    state_t state;
+    logic [1:0] prefetch_idx;
+
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            state &lt;= IDLE;
+            mem_valid &lt;= 0;
+            cpu_ready &lt;= 0;
+            prefetch_idx &lt;= 0;
+        end else begin
+            case (state)
+                IDLE: begin
+                    if (cpu_valid) begin
+                        state &lt;= CHECK_CACHE;
+                    end else if (prefetch_queue[prefetch_idx].valid) begin
+                        state &lt;= PREFETCH;
+                    end
+                end
+
+                CHECK_CACHE: begin
+                    // &#x7B80;&#x5316;&#xFF1A;&#x76F4;&#x63A5;&#x4ECE;&#x5185;&#x5B58;&#x83B7;&#x53D6;
+                    mem_addr &lt;= cpu_addr;
+                    mem_valid &lt;= 1;
+                    state &lt;= FETCH_MEM;
+                end
+
+                FETCH_MEM: begin
+                    if (mem_ready) begin
+                        cpu_data &lt;= mem_data;
+                        cpu_ready &lt;= 1;
+                        mem_valid &lt;= 0;
+                        state &lt;= IDLE;
+                    end
+                end
+
+                PREFETCH: begin
+                    if (!cpu_valid) begin  // CPU&#x4F18;&#x5148;&#x7EA7;&#x66F4;&#x9AD8;
+                        mem_addr &lt;= prefetch_queue[prefetch_idx].addr;
+                        mem_valid &lt;= 1;
+
+                        if (mem_ready) begin
+                            // &#x5B58;&#x50A8;&#x9884;&#x53D6;&#x6570;&#x636E;&#x5230;&#x7F13;&#x5B58;
+                            prefetch_queue[prefetch_idx].valid &lt;= 0;
+                            prefetch_idx &lt;= prefetch_idx + 1;
+                            mem_valid &lt;= 0;
+                            state &lt;= IDLE;
+                        end
+                    end else begin
+                        state &lt;= CHECK_CACHE;
+                    end
+                end
+            endcase
+        end
+    end
+endmodule
+</code></pre>
+<h2 id="155-&#x6027;&#x80FD;&#x8BA1;&#x6570;&#x5668;&#x4E0E;&#x76D1;&#x63A7;">15.5 &#x6027;&#x80FD;&#x8BA1;&#x6570;&#x5668;&#x4E0E;&#x76D1;&#x63A7;</h2>
+<p>&#x5B9E;&#x65F6;&#x6027;&#x80FD;&#x76D1;&#x63A7;&#x662F;&#x4F18;&#x5316;FPGA&#x8BBE;&#x8BA1;&#x7684;&#x5173;&#x952E;&#x3002;&#x672C;&#x8282;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x8BBE;&#x8BA1;&#x548C;&#x5B9E;&#x73B0;&#x6027;&#x80FD;&#x8BA1;&#x6570;&#x5668;&#xFF0C;&#x5EFA;&#x7ACB;&#x76D1;&#x63A7;&#x6846;&#x67B6;&#xFF0C;&#x4EE5;&#x53CA;&#x5982;&#x4F55;&#x5229;&#x7528;&#x76D1;&#x63A7;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x6027;&#x80FD;&#x5206;&#x6790;&#x548C;&#x4F18;&#x5316;&#x3002;</p>
+<h3 id="1551-&#x6027;&#x80FD;&#x8BA1;&#x6570;&#x5668;&#x8BBE;&#x8BA1;">15.5.1 &#x6027;&#x80FD;&#x8BA1;&#x6570;&#x5668;&#x8BBE;&#x8BA1;</h3>
+<p><strong>1. &#x901A;&#x7528;&#x6027;&#x80FD;&#x8BA1;&#x6570;&#x5668;&#x6846;&#x67B6;</strong></p>
+<pre><code class="lang-systemverilog">// &#x53EF;&#x914D;&#x7F6E;&#x6027;&#x80FD;&#x8BA1;&#x6570;&#x5668;
+module performance_counter #(
+    parameter COUNTER_WIDTH = 48,
+    parameter NUM_EVENTS = 16,
+    parameter EVENT_WIDTH = 4
+) (
+    input  logic                        clk,
+    input  logic                        rst_n,
+
+    // &#x4E8B;&#x4EF6;&#x8F93;&#x5165;
+    input  logic [NUM_EVENTS-1:0]       events,
+    input  logic [EVENT_WIDTH-1:0]      event_select,
+
+    // &#x63A7;&#x5236;&#x63A5;&#x53E3;
+    input  logic                        counter_enable,
+    input  logic                        counter_clear,
+    input  logic                        snapshot_trigger,
+
+    // &#x8BA1;&#x6570;&#x5668;&#x8F93;&#x51FA;
+    output logic [COUNTER_WIDTH-1:0]    counter_value,
+    output logic [COUNTER_WIDTH-1:0]    snapshot_value,
+    output logic                        overflow
+);
+
+    // &#x5185;&#x90E8;&#x8BA1;&#x6570;&#x5668;
+    logic [COUNTER_WIDTH-1:0] count_reg;
+    logic selected_event;
+
+    // &#x4E8B;&#x4EF6;&#x9009;&#x62E9;
+    always_comb begin
+        if (event_select &lt; NUM_EVENTS)
+            selected_event = events[event_select];
+        else
+            selected_event = 0;
+    end
+
+    // &#x8BA1;&#x6570;&#x903B;&#x8F91;
+    always_ff @(posedge clk) begin
+        if (!rst_n || counter_clear) begin
+            count_reg &lt;= 0;
+            overflow &lt;= 0;
+        end else if (counter_enable &amp;&amp; selected_event) begin
+            if (count_reg == {COUNTER_WIDTH{1&apos;b1}}) begin
+                overflow &lt;= 1;
+            end else begin
+                count_reg &lt;= count_reg + 1;
+            end
+        end
+    end
+
+    // &#x5FEB;&#x7167;&#x529F;&#x80FD;
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            snapshot_value &lt;= 0;
+        end else if (snapshot_trigger) begin
+            snapshot_value &lt;= count_reg;
+        end
+    end
+
+    assign counter_value = count_reg;
+endmodule
+</code></pre>
+<p><strong>2. &#x5C42;&#x6B21;&#x5316;&#x6027;&#x80FD;&#x76D1;&#x63A7;&#x5668;</strong></p>
+<pre><code class="lang-systemverilog">// &#x591A;&#x7EA7;&#x6027;&#x80FD;&#x76D1;&#x63A7;&#x7CFB;&#x7EDF;
+module hierarchical_monitor #(
+    parameter NUM_MODULES = 8,
+    parameter NUM_COUNTERS_PER_MODULE = 4
+) (
+    input  logic                        clk,
+    input  logic                        rst_n,
+
+    // &#x6A21;&#x5757;&#x6027;&#x80FD;&#x4E8B;&#x4EF6;
+    input  logic [3:0]                  module_events [NUM_MODULES],
+
+    // AXI-Lite&#x914D;&#x7F6E;&#x63A5;&#x53E3;
+    input  logic [31:0]                 s_axi_awaddr,
+    input  logic                        s_axi_awvalid,
+    output logic                        s_axi_awready,
+
+    input  logic [31:0]                 s_axi_wdata,
+    input  logic                        s_axi_wvalid,
+    output logic                        s_axi_wready,
+
+    output logic [1:0]                  s_axi_bresp,
+    output logic                        s_axi_bvalid,
+    input  logic                        s_axi_bready,
+
+    input  logic [31:0]                 s_axi_araddr,
+    input  logic                        s_axi_arvalid,
+    output logic                        s_axi_arready,
+
+    output logic [31:0]                 s_axi_rdata,
+    output logic [1:0]                  s_axi_rresp,
+    output logic                        s_axi_rvalid,
+    input  logic                        s_axi_rready
+);
+
+    // &#x6027;&#x80FD;&#x8BA1;&#x6570;&#x5668;&#x9635;&#x5217;
+    logic [47:0] counters [NUM_MODULES][NUM_COUNTERS_PER_MODULE];
+    logic [3:0]  event_select [NUM_MODULES][NUM_COUNTERS_PER_MODULE];
+    logic        counter_enable [NUM_MODULES];
+
+    // &#x5168;&#x5C40;&#x63A7;&#x5236;&#x5BC4;&#x5B58;&#x5668;
+    logic        global_enable;
+    logic        global_clear;
+    logic [31:0] sample_period;
+    logic [31:0] sample_counter;
+
+    // &#x8BA1;&#x6570;&#x5668;&#x5B9E;&#x4F8B;&#x5316;
+    genvar i, j;
+    generate
+        for (i = 0; i &lt; NUM_MODULES; i++) begin : module_gen
+            for (j = 0; j &lt; NUM_COUNTERS_PER_MODULE; j++) begin : counter_gen
+                performance_counter #(
+                    .COUNTER_WIDTH(48),
+                    .NUM_EVENTS(4),
+                    .EVENT_WIDTH(2)
+                ) counter_inst (
+                    .clk(clk),
+                    .rst_n(rst_n),
+                    .events(module_events[i]),
+                    .event_select(event_select[i][j][1:0]),
+                    .counter_enable(counter_enable[i] &amp;&amp; global_enable),
+                    .counter_clear(global_clear),
+                    .snapshot_trigger(sample_counter == 0),
+                    .counter_value(counters[i][j]),
+                    .snapshot_value(),
+                    .overflow()
+                );
+            end
+        end
+    endgenerate
+
+    // &#x91C7;&#x6837;&#x5468;&#x671F;&#x63A7;&#x5236;
+    always_ff @(posedge clk) begin
+        if (!rst_n || !global_enable) begin
+            sample_counter &lt;= sample_period;
+        end else if (sample_counter &gt; 0) begin
+            sample_counter &lt;= sample_counter - 1;
+        end else begin
+            sample_counter &lt;= sample_period;
+        end
+    end
+
+    // AXI-Lite&#x5BC4;&#x5B58;&#x5668;&#x6620;&#x5C04;
+    // 0x00: &#x5168;&#x5C40;&#x63A7;&#x5236; (enable, clear)
+    // 0x04: &#x91C7;&#x6837;&#x5468;&#x671F;
+    // 0x10-0x1F: &#x6A21;&#x5757;&#x4F7F;&#x80FD;
+    // 0x20-0x3F: &#x4E8B;&#x4EF6;&#x9009;&#x62E9;
+    // 0x100+: &#x8BA1;&#x6570;&#x5668;&#x503C;
+
+    // &#x7B80;&#x5316;&#x7684;AXI&#x5904;&#x7406;&#x903B;&#x8F91;
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            s_axi_awready &lt;= 1;
+            s_axi_wready &lt;= 1;
+            s_axi_arready &lt;= 1;
+            global_enable &lt;= 0;
+            global_clear &lt;= 0;
+            sample_period &lt;= 32&apos;d1000000; // &#x9ED8;&#x8BA4;1M&#x5468;&#x671F;
+        end else begin
+            // &#x5199;&#x64CD;&#x4F5C;
+            if (s_axi_awvalid &amp;&amp; s_axi_wvalid) begin
+                case (s_axi_awaddr[11:0])
+                    12&apos;h000: begin
+                        global_enable &lt;= s_axi_wdata[0];
+                        global_clear &lt;= s_axi_wdata[1];
+                    end
+                    12&apos;h004: sample_period &lt;= s_axi_wdata;
+                    default: begin
+                        // &#x5176;&#x4ED6;&#x5BC4;&#x5B58;&#x5668;&#x914D;&#x7F6E;
+                    end
+                endcase
+            end
+
+            // &#x8BFB;&#x64CD;&#x4F5C;
+            if (s_axi_arvalid) begin
+                if (s_axi_araddr[11:8] == 4&apos;h1) begin
+                    // &#x8BFB;&#x53D6;&#x8BA1;&#x6570;&#x5668;&#x503C;
+                    logic [3:0] mod_idx = s_axi_araddr[7:4];
+                    logic [1:0] cnt_idx = s_axi_araddr[3:2];
+                    s_axi_rdata &lt;= counters[mod_idx][cnt_idx][31:0];
+                end
+            end
+        end
+    end
+endmodule
+</code></pre>
+<h3 id="1552-&#x5B9E;&#x65F6;&#x76D1;&#x63A7;&#x6846;&#x67B6;">15.5.2 &#x5B9E;&#x65F6;&#x76D1;&#x63A7;&#x6846;&#x67B6;</h3>
+<p><strong>1. &#x4E8B;&#x4EF6;&#x8FFD;&#x8E2A;&#x7CFB;&#x7EDF;</strong></p>
+<pre><code class="lang-systemverilog">// &#x9AD8;&#x6027;&#x80FD;&#x4E8B;&#x4EF6;&#x8FFD;&#x8E2A;&#x5668;
+module event_tracer #(
+    parameter TRACE_DEPTH = 1024,
+    parameter TIMESTAMP_WIDTH = 48,
+    parameter EVENT_DATA_WIDTH = 64
+) (
+    input  logic                        clk,
+    input  logic                        rst_n,
+
+    // &#x4E8B;&#x4EF6;&#x8F93;&#x5165;
+    input  logic                        event_valid,
+    input  logic [7:0]                  event_id,
+    input  logic [EVENT_DATA_WIDTH-1:0] event_data,
+
+    // &#x8FFD;&#x8E2A;&#x63A7;&#x5236;
+    input  logic                        trace_enable,
+    input  logic                        trace_trigger,
+    input  logic [1:0]                  trigger_mode, // 0:&#x5373;&#x65F6;, 1:&#x5EF6;&#x8FDF;, 2:&#x7A97;&#x53E3;
+
+    // &#x8FFD;&#x8E2A;&#x7F13;&#x51B2;&#x8BFB;&#x53D6;
+    input  logic [$clog2(TRACE_DEPTH)-1:0] read_addr,
+    output logic [TIMESTAMP_WIDTH-1:0]      read_timestamp,
+    output logic [7:0]                      read_event_id,
+    output logic [EVENT_DATA_WIDTH-1:0]     read_event_data,
+
+    // &#x72B6;&#x6001;&#x8F93;&#x51FA;
+    output logic                        trace_full,
+    output logic                        trace_triggered
+);
+
+    // &#x8FFD;&#x8E2A;&#x7F13;&#x51B2;
+    typedef struct packed {
+        logic [TIMESTAMP_WIDTH-1:0]     timestamp;
+        logic [7:0]                     event_id;
+        logic [EVENT_DATA_WIDTH-1:0]    event_data;
+    } trace_entry_t;
+
+    trace_entry_t trace_buffer[TRACE_DEPTH];
+    logic [$clog2(TRACE_DEPTH)-1:0] write_ptr;
+    logic [$clog2(TRACE_DEPTH)-1:0] trigger_ptr;
+    logic [TIMESTAMP_WIDTH-1:0] timestamp_counter;
+
+    // &#x89E6;&#x53D1;&#x72B6;&#x6001;&#x673A;
+    typedef enum logic [1:0] {
+        WAIT_TRIGGER,
+        PRE_TRIGGER,
+        POST_TRIGGER,
+        STOPPED
+    } trace_state_t;
+
+    trace_state_t trace_state;
+    logic [$clog2(TRACE_DEPTH)-1:0] post_trigger_count;
+
+    // &#x65F6;&#x95F4;&#x6233;&#x751F;&#x6210;
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            timestamp_counter &lt;= 0;
+        end else begin
+            timestamp_counter &lt;= timestamp_counter + 1;
+        end
+    end
+
+    // &#x8FFD;&#x8E2A;&#x72B6;&#x6001;&#x673A;
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            trace_state &lt;= WAIT_TRIGGER;
+            write_ptr &lt;= 0;
+            trigger_ptr &lt;= 0;
+            trace_triggered &lt;= 0;
+            post_trigger_count &lt;= 0;
+        end else if (trace_enable) begin
+            case (trace_state)
+                WAIT_TRIGGER: begin
+                    if (event_valid) begin
+                        // &#x5FAA;&#x73AF;&#x7F13;&#x51B2;&#x5199;&#x5165;
+                        trace_buffer[write_ptr].timestamp &lt;= timestamp_counter;
+                        trace_buffer[write_ptr].event_id &lt;= event_id;
+                        trace_buffer[write_ptr].event_data &lt;= event_data;
+                        write_ptr &lt;= write_ptr + 1;
+
+                        if (trace_trigger) begin
+                            trigger_ptr &lt;= write_ptr;
+                            trace_triggered &lt;= 1;
+
+                            case (trigger_mode)
+                                2&apos;b00: trace_state &lt;= STOPPED;      // &#x5373;&#x65F6;&#x505C;&#x6B62;
+                                2&apos;b01: begin                        // &#x5EF6;&#x8FDF;&#x505C;&#x6B62;
+                                    trace_state &lt;= POST_TRIGGER;
+                                    post_trigger_count &lt;= TRACE_DEPTH/2;
+                                end
+                                2&apos;b10: trace_state &lt;= PRE_TRIGGER;  // &#x7A97;&#x53E3;&#x6A21;&#x5F0F;
+                            endcase
+                        end
+                    end
+                end
+
+                PRE_TRIGGER: begin
+                    // &#x7EE7;&#x7EED;&#x8BB0;&#x5F55;&#x9884;&#x89E6;&#x53D1;&#x6570;&#x636E;
+                    if (event_valid) begin
+                        trace_buffer[write_ptr].timestamp &lt;= timestamp_counter;
+                        trace_buffer[write_ptr].event_id &lt;= event_id;
+                        trace_buffer[write_ptr].event_data &lt;= event_data;
+                        write_ptr &lt;= write_ptr + 1;
+                    end
+                end
+
+                POST_TRIGGER: begin
+                    if (event_valid &amp;&amp; post_trigger_count &gt; 0) begin
+                        trace_buffer[write_ptr].timestamp &lt;= timestamp_counter;
+                        trace_buffer[write_ptr].event_id &lt;= event_id;
+                        trace_buffer[write_ptr].event_data &lt;= event_data;
+                        write_ptr &lt;= write_ptr + 1;
+                        post_trigger_count &lt;= post_trigger_count - 1;
+                    end else if (post_trigger_count == 0) begin
+                        trace_state &lt;= STOPPED;
+                    end
+                end
+
+                STOPPED: begin
+                    // &#x505C;&#x6B62;&#x8BB0;&#x5F55;&#xFF0C;&#x4FDD;&#x6301;&#x6570;&#x636E;
+                end
+            endcase
+        end
+    end
+
+    // &#x7F13;&#x51B2;&#x8BFB;&#x53D6;
+    assign read_timestamp = trace_buffer[read_addr].timestamp;
+    assign read_event_id = trace_buffer[read_addr].event_id;
+    assign read_event_data = trace_buffer[read_addr].event_data;
+
+    // &#x72B6;&#x6001;&#x8F93;&#x51FA;
+    assign trace_full = (write_ptr == TRACE_DEPTH-1);
+endmodule
+</code></pre>
+<p><strong>2. &#x6027;&#x80FD;&#x5F02;&#x5E38;&#x68C0;&#x6D4B;&#x5668;</strong></p>
+<pre><code class="lang-systemverilog">// &#x81EA;&#x9002;&#x5E94;&#x6027;&#x80FD;&#x5F02;&#x5E38;&#x68C0;&#x6D4B;
+module performance_anomaly_detector #(
+    parameter DATA_WIDTH = 32,
+    parameter WINDOW_SIZE = 256
+) (
+    input  logic                        clk,
+    input  logic                        rst_n,
+
+    // &#x6027;&#x80FD;&#x6307;&#x6807;&#x8F93;&#x5165;
+    input  logic [DATA_WIDTH-1:0]       metric_value,
+    input  logic                        metric_valid,
+
+    // &#x9608;&#x503C;&#x914D;&#x7F6E;
+    input  logic [DATA_WIDTH-1:0]       static_threshold_high,
+    input  logic [DATA_WIDTH-1:0]       static_threshold_low,
+    input  logic                        adaptive_mode,
+    input  logic [3:0]                  sensitivity,  // &#x7075;&#x654F;&#x5EA6;
+
+    // &#x5F02;&#x5E38;&#x8F93;&#x51FA;
+    output logic                        anomaly_detected,
+    output logic [1:0]                  anomaly_type,  // 0:&#x6B63;&#x5E38;, 1:&#x8FC7;&#x9AD8;, 2:&#x8FC7;&#x4F4E;, 3:&#x5F02;&#x5E38;&#x6CE2;&#x52A8;
+    output logic [DATA_WIDTH-1:0]       running_average,
+    output logic [DATA_WIDTH-1:0]       std_deviation
+);
+
+    // &#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x7F13;&#x51B2;
+    logic [DATA_WIDTH-1:0] window_buffer[WINDOW_SIZE];
+    logic [$clog2(WINDOW_SIZE)-1:0] window_ptr;
+    logic window_full;
+
+    // &#x7EDF;&#x8BA1;&#x53D8;&#x91CF;
+    logic [DATA_WIDTH+$clog2(WINDOW_SIZE)-1:0] sum;
+    logic [2*DATA_WIDTH-1:0] sum_squares;
+    logic [DATA_WIDTH-1:0] current_avg;
+    logic [DATA_WIDTH-1:0] current_std;
+
+    // &#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x66F4;&#x65B0;
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            window_ptr &lt;= 0;
+            window_full &lt;= 0;
+            sum &lt;= 0;
+            sum_squares &lt;= 0;
+        end else if (metric_valid) begin
+            // &#x79FB;&#x9664;&#x65E7;&#x503C;
+            if (window_full) begin
+                sum &lt;= sum - window_buffer[window_ptr];
+                sum_squares &lt;= sum_squares - window_buffer[window_ptr] * window_buffer[window_ptr];
+            end
+
+            // &#x6DFB;&#x52A0;&#x65B0;&#x503C;
+            window_buffer[window_ptr] &lt;= metric_value;
+            sum &lt;= sum + metric_value;
+            sum_squares &lt;= sum_squares + metric_value * metric_value;
+
+            // &#x66F4;&#x65B0;&#x6307;&#x9488;
+            window_ptr &lt;= window_ptr + 1;
+            if (window_ptr == WINDOW_SIZE-1)
+                window_full &lt;= 1;
+        end
+    end
+
+    // &#x8BA1;&#x7B97;&#x7EDF;&#x8BA1;&#x503C;
+    always_comb begin
+        logic [$clog2(WINDOW_SIZE)-1:0] count;
+        count = window_full ? WINDOW_SIZE : window_ptr + 1;
+
+        if (count &gt; 0) begin
+            current_avg = sum / count;
+            // &#x7B80;&#x5316;&#x7684;&#x6807;&#x51C6;&#x5DEE;&#x8BA1;&#x7B97;
+            logic [2*DATA_WIDTH-1:0] variance;
+            variance = (sum_squares / count) - (current_avg * current_avg);
+            current_std = variance[DATA_WIDTH-1:0];  // &#x8FD1;&#x4F3C;&#x5E73;&#x65B9;&#x6839;
+        end else begin
+            current_avg = 0;
+            current_std = 0;
+        end
+    end
+
+    // &#x5F02;&#x5E38;&#x68C0;&#x6D4B;&#x903B;&#x8F91;
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            anomaly_detected &lt;= 0;
+            anomaly_type &lt;= 0;
+        end else if (metric_valid) begin
+            if (adaptive_mode) begin
+                // &#x81EA;&#x9002;&#x5E94;&#x9608;&#x503C;&#x6A21;&#x5F0F;
+                logic [DATA_WIDTH-1:0] adaptive_high, adaptive_low;
+                adaptive_high = current_avg + (current_std &lt;&lt; sensitivity);
+                adaptive_low = current_avg - (current_std &lt;&lt; sensitivity);
+
+                if (metric_value &gt; adaptive_high) begin
+                    anomaly_detected &lt;= 1;
+                    anomaly_type &lt;= 2&apos;b01;  // &#x8FC7;&#x9AD8;
+                end else if (metric_value &lt; adaptive_low) begin
+                    anomaly_detected &lt;= 1;
+                    anomaly_type &lt;= 2&apos;b10;  // &#x8FC7;&#x4F4E;
+                end else begin
+                    anomaly_detected &lt;= 0;
+                    anomaly_type &lt;= 2&apos;b00;  // &#x6B63;&#x5E38;
+                end
+            end else begin
+                // &#x9759;&#x6001;&#x9608;&#x503C;&#x6A21;&#x5F0F;
+                if (metric_value &gt; static_threshold_high) begin
+                    anomaly_detected &lt;= 1;
+                    anomaly_type &lt;= 2&apos;b01;
+                end else if (metric_value &lt; static_threshold_low) begin
+                    anomaly_detected &lt;= 1;
+                    anomaly_type &lt;= 2&apos;b10;
+                end else begin
+                    anomaly_detected &lt;= 0;
+                    anomaly_type &lt;= 2&apos;b00;
+                end
+            end
+        end
+    end
+
+    // &#x8F93;&#x51FA;&#x8D4B;&#x503C;
+    assign running_average = current_avg;
+    assign std_deviation = current_std;
+endmodule
+</code></pre>
+<h3 id="1553-&#x6027;&#x80FD;&#x6570;&#x636E;&#x805A;&#x5408;&#x4E0E;&#x5206;&#x6790;">15.5.3 &#x6027;&#x80FD;&#x6570;&#x636E;&#x805A;&#x5408;&#x4E0E;&#x5206;&#x6790;</h3>
+<p><strong>1. &#x591A;&#x6E90;&#x6570;&#x636E;&#x805A;&#x5408;&#x5668;</strong></p>
+<pre><code class="lang-systemverilog">// &#x6027;&#x80FD;&#x6570;&#x636E;&#x805A;&#x5408;&#x5F15;&#x64CE;
+module performance_aggregator #(
+    parameter NUM_SOURCES = 16,
+    parameter DATA_WIDTH = 32,
+    parameter AGGREGATION_PERIOD = 1000000  // 1M cycles
+) (
+    input  logic                        clk,
+    input  logic                        rst_n,
+
+    // &#x6570;&#x636E;&#x6E90;&#x8F93;&#x5165;
+    input  logic [DATA_WIDTH-1:0]       source_data [NUM_SOURCES],
+    input  logic [NUM_SOURCES-1:0]      source_valid,
+
+    // &#x805A;&#x5408;&#x914D;&#x7F6E;
+    input  logic [2:0]                  aggregation_mode,  // 0:sum, 1:avg, 2:max, 3:min
+    input  logic [NUM_SOURCES-1:0]      source_enable,
+
+    // &#x805A;&#x5408;&#x7ED3;&#x679C;&#x8F93;&#x51FA;
+    output logic [DATA_WIDTH+$clog2(NUM_SOURCES)-1:0] aggregate_result,
+    output logic                                       aggregate_valid,
+    output logic [31:0]                               sample_count
+);
+
+    // &#x805A;&#x5408;&#x7D2F;&#x52A0;&#x5668;
+    logic [DATA_WIDTH+$clog2(NUM_SOURCES)-1:0] accumulator;
+    logic [DATA_WIDTH-1:0] max_value, min_value;
+    logic [31:0] period_counter;
+    logic [31:0] valid_samples;
+
+    // &#x5468;&#x671F;&#x63A7;&#x5236;
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            period_counter &lt;= 0;
+            aggregate_valid &lt;= 0;
+        end else begin
+            if (period_counter &lt; AGGREGATION_PERIOD - 1) begin
+                period_counter &lt;= period_counter + 1;
+                aggregate_valid &lt;= 0;
+            end else begin
+                period_counter &lt;= 0;
+                aggregate_valid &lt;= 1;
+            end
+        end
+    end
+
+    // &#x6570;&#x636E;&#x805A;&#x5408;&#x903B;&#x8F91;
+    always_ff @(posedge clk) begin
+        if (!rst_n || period_counter == 0) begin
+            accumulator &lt;= 0;
+            max_value &lt;= 0;
+            min_value &lt;= {DATA_WIDTH{1&apos;b1}};
+            valid_samples &lt;= 0;
+        end else begin
+            // &#x5904;&#x7406;&#x6BCF;&#x4E2A;&#x6570;&#x636E;&#x6E90;
+            for (int i = 0; i &lt; NUM_SOURCES; i++) begin
+                if (source_valid[i] &amp;&amp; source_enable[i]) begin
+                    case (aggregation_mode)
+                        3&apos;b000, 3&apos;b001: begin  // Sum or Average
+                            accumulator &lt;= accumulator + source_data[i];
+                        end
+                        3&apos;b010: begin  // Max
+                            if (source_data[i] &gt; max_value)
+                                max_value &lt;= source_data[i];
+                        end
+                        3&apos;b011: begin  // Min
+                            if (source_data[i] &lt; min_value)
+                                min_value &lt;= source_data[i];
+                        end
+                    endcase
+                    valid_samples &lt;= valid_samples + 1;
+                end
+            end
+        end
+    end
+
+    // &#x7ED3;&#x679C;&#x8F93;&#x51FA;
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            aggregate_result &lt;= 0;
+            sample_count &lt;= 0;
+        end else if (aggregate_valid) begin
+            case (aggregation_mode)
+                3&apos;b000: aggregate_result &lt;= accumulator;  // Sum
+                3&apos;b001: begin  // Average
+                    if (valid_samples &gt; 0)
+                        aggregate_result &lt;= accumulator / valid_samples;
+                    else
+                        aggregate_result &lt;= 0;
+                end
+                3&apos;b010: aggregate_result &lt;= max_value;  // Max
+                3&apos;b011: aggregate_result &lt;= min_value;  // Min
+                default: aggregate_result &lt;= 0;
+            endcase
+            sample_count &lt;= valid_samples;
+        end
+    end
+endmodule
+</code></pre>
+<h3 id="1554-&#x6027;&#x80FD;&#x76D1;&#x63A7;&#x63A5;&#x53E3;&#x8BBE;&#x8BA1;">15.5.4 &#x6027;&#x80FD;&#x76D1;&#x63A7;&#x63A5;&#x53E3;&#x8BBE;&#x8BA1;</h3>
+<p><strong>1. &#x9AD8;&#x901F;&#x76D1;&#x63A7;&#x6570;&#x636E;&#x5BFC;&#x51FA;</strong></p>
+<pre><code class="lang-systemverilog">// &#x6027;&#x80FD;&#x6570;&#x636E;&#x6D41;&#x5F0F;&#x5BFC;&#x51FA;&#x63A5;&#x53E3;
+module performance_data_streamer #(
+    parameter NUM_COUNTERS = 64,
+    parameter COUNTER_WIDTH = 48,
+    parameter STREAM_WIDTH = 256
+) (
+    input  logic                        clk,
+    input  logic                        rst_n,
+
+    // &#x8BA1;&#x6570;&#x5668;&#x8F93;&#x5165;
+    input  logic [COUNTER_WIDTH-1:0]    counter_values [NUM_COUNTERS],
+    input  logic [NUM_COUNTERS-1:0]     counter_updated,
+
+    // &#x6D41;&#x5F0F;&#x8F93;&#x51FA;&#x63A5;&#x53E3; (AXI-Stream)
+    output logic [STREAM_WIDTH-1:0]     m_axis_tdata,
+    output logic                        m_axis_tvalid,
+    input  logic                        m_axis_tready,
+    output logic                        m_axis_tlast,
+    output logic [31:0]                 m_axis_tuser,  // &#x65F6;&#x95F4;&#x6233;
+
+    // &#x63A7;&#x5236;
+    input  logic                        stream_enable,
+    input  logic [31:0]                 stream_period
+);
+
+    // &#x6253;&#x5305;&#x72B6;&#x6001;&#x673A;
+    typedef enum logic [2:0] {
+        IDLE,
+        COLLECT,
+        PACK_HEADER,
+        PACK_DATA,
+        SEND
+    } state_t;
+
+    state_t state;
+    logic [$clog2(NUM_COUNTERS)-1:0] counter_idx;
+    logic [31:0] timestamp;
+    logic [31:0] period_timer;
+
+    // &#x6570;&#x636E;&#x6253;&#x5305;&#x7F13;&#x51B2;
+    logic [COUNTER_WIDTH-1:0] snapshot_buffer [NUM_COUNTERS];
+    logic [NUM_COUNTERS-1:0] snapshot_valid;
+
+    // &#x5468;&#x671F;&#x89E6;&#x53D1;
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            period_timer &lt;= 0;
+            timestamp &lt;= 0;
+        end else if (stream_enable) begin
+            if (period_timer &gt;= stream_period) begin
+                period_timer &lt;= 0;
+            end else begin
+                period_timer &lt;= period_timer + 1;
+            end
+            timestamp &lt;= timestamp + 1;
+        end
+    end
+
+    // &#x72B6;&#x6001;&#x673A;
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            state &lt;= IDLE;
+            counter_idx &lt;= 0;
+            m_axis_tvalid &lt;= 0;
+        end else begin
+            case (state)
+                IDLE: begin
+                    if (stream_enable &amp;&amp; period_timer == 0) begin
+                        state &lt;= COLLECT;
+                    end
+                end
+
+                COLLECT: begin
+                    // &#x5FEB;&#x7167;&#x6240;&#x6709;&#x8BA1;&#x6570;&#x5668;
+                    for (int i = 0; i &lt; NUM_COUNTERS; i++) begin
+                        if (counter_updated[i]) begin
+                            snapshot_buffer[i] &lt;= counter_values[i];
+                            snapshot_valid[i] &lt;= 1;
+                        end
+                    end
+                    state &lt;= PACK_HEADER;
+                    counter_idx &lt;= 0;
+                end
+
+                PACK_HEADER: begin
+                    // &#x6253;&#x5305;&#x5934;&#x90E8;&#x4FE1;&#x606F;
+                    m_axis_tdata[31:0] &lt;= 32&apos;hDEADBEEF;  // &#x9B54;&#x672F;&#x5B57;
+                    m_axis_tdata[63:32] &lt;= timestamp;
+                    m_axis_tdata[95:64] &lt;= {16&apos;d0, 16&apos;d(NUM_COUNTERS)};
+                    m_axis_tdata[127:96] &lt;= 32&apos;d0;  // &#x4FDD;&#x7559;
+                    m_axis_tdata[255:128] &lt;= 128&apos;d0;
+                    m_axis_tuser &lt;= timestamp;
+                    m_axis_tvalid &lt;= 1;
+                    m_axis_tlast &lt;= 0;
+
+                    if (m_axis_tready) begin
+                        state &lt;= PACK_DATA;
+                    end
+                end
+
+                PACK_DATA: begin
+                    // &#x6253;&#x5305;&#x8BA1;&#x6570;&#x5668;&#x6570;&#x636E;
+                    logic [3:0] counters_per_beat;
+                    counters_per_beat = STREAM_WIDTH / COUNTER_WIDTH;
+
+                    for (int i = 0; i &lt; counters_per_beat; i++) begin
+                        if (counter_idx + i &lt; NUM_COUNTERS) begin
+                            m_axis_tdata[i*COUNTER_WIDTH +: COUNTER_WIDTH] &lt;= 
+                                snapshot_buffer[counter_idx + i];
+                        end else begin
+                            m_axis_tdata[i*COUNTER_WIDTH +: COUNTER_WIDTH] &lt;= 0;
+                        end
+                    end
+
+                    m_axis_tvalid &lt;= 1;
+                    m_axis_tlast &lt;= (counter_idx + counters_per_beat &gt;= NUM_COUNTERS);
+
+                    if (m_axis_tready) begin
+                        counter_idx &lt;= counter_idx + counters_per_beat;
+                        if (counter_idx + counters_per_beat &gt;= NUM_COUNTERS) begin
+                            state &lt;= IDLE;
+                            m_axis_tvalid &lt;= 0;
+                        end
+                    end
+                end
+            endcase
+        end
+    end
+endmodule
+</code></pre>
+<h3 id="1555-&#x6027;&#x80FD;&#x4F18;&#x5316;&#x53CD;&#x9988;&#x7CFB;&#x7EDF;">15.5.5 &#x6027;&#x80FD;&#x4F18;&#x5316;&#x53CD;&#x9988;&#x7CFB;&#x7EDF;</h3>
+<p><strong>1. &#x81EA;&#x52A8;&#x6027;&#x80FD;&#x8C03;&#x4F18;&#x63A7;&#x5236;&#x5668;</strong></p>
+<pre><code class="lang-systemverilog">// &#x57FA;&#x4E8E;&#x6027;&#x80FD;&#x53CD;&#x9988;&#x7684;&#x81EA;&#x52A8;&#x8C03;&#x4F18;&#x7CFB;&#x7EDF;
+module auto_performance_tuner #(
+    parameter NUM_PARAMS = 8,
+    parameter PARAM_WIDTH = 16
+) (
+    input  logic                        clk,
+    input  logic                        rst_n,
+
+    // &#x6027;&#x80FD;&#x6307;&#x6807;&#x8F93;&#x5165;
+    input  logic [31:0]                 throughput,
+    input  logic [31:0]                 latency,
+    input  logic [31:0]                 power_estimate,
+    input  logic                        metrics_valid,
+
+    // &#x8C03;&#x4F18;&#x53C2;&#x6570;&#x8F93;&#x51FA;
+    output logic [PARAM_WIDTH-1:0]      tuning_params [NUM_PARAMS],
+    output logic                        params_updated,
+
+    // &#x8C03;&#x4F18;&#x914D;&#x7F6E;
+    input  logic [2:0]                  optimization_target,  // 0:&#x541E;&#x5410;&#x91CF;, 1:&#x5EF6;&#x8FDF;, 2:&#x529F;&#x8017;, 3:&#x5E73;&#x8861;
+    input  logic                        tuning_enable
+);
+
+    // &#x53C2;&#x6570;&#x8303;&#x56F4;&#x5B9A;&#x4E49;
+    typedef struct packed {
+        logic [PARAM_WIDTH-1:0] min_value;
+        logic [PARAM_WIDTH-1:0] max_value;
+        logic [PARAM_WIDTH-1:0] step_size;
+    } param_range_t;
+
+    param_range_t param_ranges [NUM_PARAMS];
+
+    // &#x8C03;&#x4F18;&#x72B6;&#x6001;
+    typedef enum logic [2:0] {
+        INIT,
+        MEASURE_BASELINE,
+        EXPLORE,
+        EXPLOIT,
+        CONVERGED
+    } tuner_state_t;
+
+    tuner_state_t state;
+    logic [31:0] best_score;
+    logic [PARAM_WIDTH-1:0] best_params [NUM_PARAMS];
+    logic [PARAM_WIDTH-1:0] current_params [NUM_PARAMS];
+    logic [$clog2(NUM_PARAMS)-1:0] param_idx;
+
+    // &#x8BC4;&#x5206;&#x51FD;&#x6570;
+    function logic [31:0] calculate_score(
+        input logic [31:0] tput,
+        input logic [31:0] lat,
+        input logic [31:0] pwr,
+        input logic [2:0] target
+    );
+        case (target)
+            3&apos;b000: return tput;                          // &#x6700;&#x5927;&#x5316;&#x541E;&#x5410;&#x91CF;
+            3&apos;b001: return 32&apos;hFFFFFFFF - lat;           // &#x6700;&#x5C0F;&#x5316;&#x5EF6;&#x8FDF;
+            3&apos;b010: return 32&apos;hFFFFFFFF - pwr;           // &#x6700;&#x5C0F;&#x5316;&#x529F;&#x8017;
+            3&apos;b011: return tput * 1000 / (lat + pwr);    // &#x5E73;&#x8861;&#x4F18;&#x5316;
+            default: return tput;
+        endcase
+    endfunction
+
+    // &#x53C2;&#x6570;&#x63A2;&#x7D22;&#x903B;&#x8F91;
+    always_ff @(posedge clk) begin
+        if (!rst_n) begin
+            state &lt;= INIT;
+            param_idx &lt;= 0;
+            best_score &lt;= 0;
+            params_updated &lt;= 0;
+
+            // &#x521D;&#x59CB;&#x5316;&#x53C2;&#x6570;&#x8303;&#x56F4;
+            for (int i = 0; i &lt; NUM_PARAMS; i++) begin
+                param_ranges[i].min_value &lt;= 0;
+                param_ranges[i].max_value &lt;= {PARAM_WIDTH{1&apos;b1}};
+                param_ranges[i].step_size &lt;= 1;
+                current_params[i] &lt;= param_ranges[i].min_value;
+                best_params[i] &lt;= param_ranges[i].min_value;
+            end
+        end else if (tuning_enable) begin
+            case (state)
+                INIT: begin
+                    // &#x8BBE;&#x7F6E;&#x521D;&#x59CB;&#x53C2;&#x6570;
+                    for (int i = 0; i &lt; NUM_PARAMS; i++) begin
+                        tuning_params[i] &lt;= current_params[i];
+                    end
+                    params_updated &lt;= 1;
+                    state &lt;= MEASURE_BASELINE;
+                end
+
+                MEASURE_BASELINE: begin
+                    params_updated &lt;= 0;
+                    if (metrics_valid) begin
+                        best_score &lt;= calculate_score(throughput, latency, power_estimate, optimization_target);
+                        state &lt;= EXPLORE;
+                        param_idx &lt;= 0;
+                    end
+                end
+
+                EXPLORE: begin
+                    // &#x722C;&#x5C71;&#x7B97;&#x6CD5;&#x63A2;&#x7D22;&#x53C2;&#x6570;&#x7A7A;&#x95F4;
+                    if (metrics_valid) begin
+                        logic [31:0] current_score;
+                        current_score = calculate_score(throughput, latency, power_estimate, optimization_target);
+
+                        if (current_score &gt; best_score) begin
+                            best_score &lt;= current_score;
+                            best_params &lt;= current_params;
+                        end
+
+                        // &#x8C03;&#x6574;&#x4E0B;&#x4E00;&#x4E2A;&#x53C2;&#x6570;
+                        if (current_params[param_idx] &lt; param_ranges[param_idx].max_value) begin
+                            current_params[param_idx] &lt;= current_params[param_idx] + param_ranges[param_idx].step_size;
+                        end else begin
+                            current_params[param_idx] &lt;= best_params[param_idx];
+                            param_idx &lt;= param_idx + 1;
+
+                            if (param_idx == NUM_PARAMS - 1) begin
+                                state &lt;= EXPLOIT;
+                            end
+                        end
+
+                        // &#x66F4;&#x65B0;&#x53C2;&#x6570;
+                        for (int i = 0; i &lt; NUM_PARAMS; i++) begin
+                            tuning_params[i] &lt;= current_params[i];
+                        end
+                        params_updated &lt;= 1;
+                    end else begin
+                        params_updated &lt;= 0;
+                    end
+                end
+
+                EXPLOIT: begin
+                    // &#x4F7F;&#x7528;&#x6700;&#x4F73;&#x53C2;&#x6570;
+                    for (int i = 0; i &lt; NUM_PARAMS; i++) begin
+                        tuning_params[i] &lt;= best_params[i];
+                    end
+                    params_updated &lt;= 1;
+                    state &lt;= CONVERGED;
+                end
+
+                CONVERGED: begin
+                    params_updated &lt;= 0;
+                    // &#x4FDD;&#x6301;&#x6700;&#x4F73;&#x914D;&#x7F6E;
+                end
+            endcase
+        end
+    end
+endmodule
+</code></pre>
+<h2 id="&#x672C;&#x7AE0;&#x5C0F;&#x7ED3;">&#x672C;&#x7AE0;&#x5C0F;&#x7ED3;</h2>
+<p>&#x672C;&#x7AE0;&#x6DF1;&#x5165;&#x63A2;&#x8BA8;&#x4E86;FPGA&#x6027;&#x80FD;&#x5206;&#x6790;&#x4E0E;&#x4F18;&#x5316;&#x7684;&#x5404;&#x4E2A;&#x65B9;&#x9762;&#xFF1A;</p>
+<ol>
+<li><strong>&#x6027;&#x80FD;&#x74F6;&#x9888;&#x8BC6;&#x522B;</strong>&#xFF1A;&#x4ECB;&#x7ECD;&#x4E86;&#x7CFB;&#x7EDF;&#x5316;&#x7684;&#x6027;&#x80FD;&#x5206;&#x6790;&#x65B9;&#x6CD5;&#x3001;&#x5DE5;&#x5177;&#x94FE;&#x4F7F;&#x7528;&#x3001;&#x6570;&#x636E;&#x6D41;&#x5206;&#x6790;&#x7B49;&#x6280;&#x672F;</li>
+<li><strong>&#x65F6;&#x5E8F;&#x5206;&#x6790;</strong>&#xFF1A;&#x8BE6;&#x7EC6;&#x8BB2;&#x89E3;&#x4E86;Vivado&#x65F6;&#x5E8F;&#x5206;&#x6790;&#x5DE5;&#x5177;&#x3001;&#x7EA6;&#x675F;&#x7F16;&#x5199;&#x3001;&#x8FDD;&#x4F8B;&#x4FEE;&#x590D;&#x548C;&#x6536;&#x655B;&#x7B56;&#x7565;</li>
+<li><strong>&#x8D44;&#x6E90;&#x4F18;&#x5316;</strong>&#xFF1A;&#x8BA8;&#x8BBA;&#x4E86;&#x8D44;&#x6E90;&#x5E73;&#x8861;&#x3001;&#x5171;&#x4EAB;&#x590D;&#x7528;&#x3001;&#x5185;&#x5B58;&#x5206;&#x5C42;&#x548C;&#x52A8;&#x6001;&#x5206;&#x914D;&#x6280;&#x672F;</li>
+<li><strong>&#x6570;&#x636E;&#x901A;&#x8DEF;&#x4F18;&#x5316;</strong>&#xFF1A;&#x6DB5;&#x76D6;&#x4E86;&#x4F4D;&#x5BBD;&#x4F18;&#x5316;&#x3001;&#x6570;&#x636E;&#x5BF9;&#x9F50;&#x3001;&#x7A81;&#x53D1;&#x4F20;&#x8F93;&#x548C;&#x6D41;&#x6C34;&#x7EBF;&#x4F18;&#x5316;</li>
+<li><strong>&#x6027;&#x80FD;&#x76D1;&#x63A7;</strong>&#xFF1A;&#x8BBE;&#x8BA1;&#x4E86;&#x5B8C;&#x6574;&#x7684;&#x6027;&#x80FD;&#x8BA1;&#x6570;&#x5668;&#x3001;&#x5B9E;&#x65F6;&#x76D1;&#x63A7;&#x6846;&#x67B6;&#x548C;&#x81EA;&#x52A8;&#x8C03;&#x4F18;&#x7CFB;&#x7EDF;</li>
+</ol>
+<h2 id="&#x7EC3;&#x4E60;&#x9898;">&#x7EC3;&#x4E60;&#x9898;</h2>
+<ol>
+<li><p><strong>&#x65F6;&#x5E8F;&#x5206;&#x6790;&#x57FA;&#x7840;&#x9898;</strong>
+&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x5DE5;&#x4F5C;&#x5728;250MHz&#x7684;&#x6570;&#x636E;&#x5904;&#x7406;&#x6A21;&#x5757;&#xFF0C;&#x8F93;&#x5165;&#x6570;&#x636E;&#x9700;&#x8981;&#x7ECF;&#x8FC7;3&#x7EA7;&#x6D41;&#x6C34;&#x7EBF;&#x5904;&#x7406;&#x3002;&#x5982;&#x4F55;&#x7F16;&#x5199;&#x65F6;&#x5E8F;&#x7EA6;&#x675F;&#x786E;&#x4FDD;&#x8BBE;&#x8BA1;&#x6EE1;&#x8DB3;&#x65F6;&#x5E8F;&#x8981;&#x6C42;&#xFF1F;</p>
+<p><em>Hint: &#x8003;&#x8651;&#x65F6;&#x949F;&#x5468;&#x671F;&#x3001;&#x5EFA;&#x7ACB;&#x65F6;&#x95F4;&#x548C;&#x4FDD;&#x6301;&#x65F6;&#x95F4;&#x8981;&#x6C42;</em></p>
+</li>
+<li><p><strong>&#x8D44;&#x6E90;&#x4F18;&#x5316;&#x6311;&#x6218;&#x9898;</strong>
+&#x6709;&#x4E00;&#x4E2A;&#x9700;&#x8981;32&#x4E2A;&#x4E58;&#x6CD5;&#x5668;&#x7684;&#x7B97;&#x6CD5;&#xFF0C;&#x4F46;&#x76EE;&#x6807;FPGA&#x53EA;&#x6709;16&#x4E2A;DSP&#x3002;&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x8D44;&#x6E90;&#x5171;&#x4EAB;&#x65B9;&#x6848;&#xFF0C;&#x5728;&#x4FDD;&#x6301;&#x6027;&#x80FD;&#x7684;&#x540C;&#x65F6;&#x51CF;&#x5C11;DSP&#x4F7F;&#x7528;&#x3002;</p>
+<p><em>Hint: &#x8003;&#x8651;&#x65F6;&#x5206;&#x590D;&#x7528;&#x548C;&#x6D41;&#x6C34;&#x7EBF;&#x5E73;&#x8861;</em></p>
+</li>
+<li><p><strong>&#x6570;&#x636E;&#x901A;&#x8DEF;&#x8BBE;&#x8BA1;&#x9898;</strong>
+&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5BBD;&#x5EA6;&#x8F6C;&#x6362;&#x5668;&#xFF0C;&#x5C06;256&#x4F4D;&#x5BBD;&#x7684;&#x8F93;&#x5165;&#x8F6C;&#x6362;&#x4E3A;64&#x4F4D;&#x5BBD;&#x7684;&#x8F93;&#x51FA;&#xFF0C;&#x8981;&#x6C42;&#x652F;&#x6301;&#x53CD;&#x538B;&#x548C;&#x6D41;&#x63A7;&#x3002;</p>
+<p><em>Hint: &#x4F7F;&#x7528;&#x6709;&#x6548;&#x7684;&#x63E1;&#x624B;&#x534F;&#x8BAE;&#x548C;&#x7F13;&#x51B2;&#x7BA1;&#x7406;</em></p>
+</li>
+<li><p><strong>&#x6027;&#x80FD;&#x76D1;&#x63A7;&#x5B9E;&#x73B0;&#x9898;</strong>
+&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x6027;&#x80FD;&#x8BA1;&#x6570;&#x5668;&#xFF0C;&#x80FD;&#x591F;&#x540C;&#x65F6;&#x76D1;&#x63A7;4&#x4E2A;&#x4E8B;&#x4EF6;&#xFF0C;&#x652F;&#x6301;48&#x4F4D;&#x8BA1;&#x6570;&#x548C;&#x6EA2;&#x51FA;&#x68C0;&#x6D4B;&#x3002;</p>
+<p><em>Hint: &#x8003;&#x8651;&#x4E8B;&#x4EF6;&#x9009;&#x62E9;&#x903B;&#x8F91;&#x548C;&#x8BA1;&#x6570;&#x5668;&#x590D;&#x7528;</em></p>
+</li>
+<li><p><strong>&#x7A81;&#x53D1;&#x4F20;&#x8F93;&#x4F18;&#x5316;&#x9898;</strong>
+&#x4F18;&#x5316;&#x4E00;&#x4E2A;AXI&#x4E3B;&#x63A5;&#x53E3;&#xFF0C;&#x4F7F;&#x5176;&#x80FD;&#x591F;&#x81EA;&#x52A8;&#x5C06;&#x591A;&#x4E2A;&#x5C0F;&#x7684;&#x8BFB;&#x8BF7;&#x6C42;&#x5408;&#x5E76;&#x6210;&#x5927;&#x7684;&#x7A81;&#x53D1;&#x4F20;&#x8F93;&#x3002;</p>
+<p><em>Hint: &#x5206;&#x6790;&#x5730;&#x5740;&#x6A21;&#x5F0F;&#x548C;&#x5B9E;&#x73B0;&#x8BF7;&#x6C42;&#x7F13;&#x51B2;</em></p>
+</li>
+<li><p><strong>&#x6027;&#x80FD;&#x5F02;&#x5E38;&#x68C0;&#x6D4B;&#x9898;</strong>
+&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x81EA;&#x9002;&#x5E94;&#x9608;&#x503C;&#x7684;&#x6027;&#x80FD;&#x5F02;&#x5E38;&#x68C0;&#x6D4B;&#x5668;&#xFF0C;&#x80FD;&#x591F;&#x6839;&#x636E;&#x5386;&#x53F2;&#x6570;&#x636E;&#x52A8;&#x6001;&#x8C03;&#x6574;&#x68C0;&#x6D4B;&#x9608;&#x503C;&#x3002;</p>
+<p><em>Hint: &#x4F7F;&#x7528;&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x548C;&#x7EDF;&#x8BA1;&#x5206;&#x6790;</em></p>
+</li>
+<li><p><strong>&#x81EA;&#x52A8;&#x8C03;&#x4F18;&#x7CFB;&#x7EDF;&#x9898;</strong>
+&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x81EA;&#x52A8;&#x8C03;&#x4F18;&#x63A7;&#x5236;&#x5668;&#xFF0C;&#x80FD;&#x591F;&#x901A;&#x8FC7;&#x8C03;&#x6574;2-3&#x4E2A;&#x53C2;&#x6570;&#x6765;&#x4F18;&#x5316;&#x7CFB;&#x7EDF;&#x541E;&#x5410;&#x91CF;&#x3002;</p>
+<p><em>Hint: &#x4F7F;&#x7528;&#x722C;&#x5C71;&#x7B97;&#x6CD5;&#x6216;&#x5176;&#x4ED6;&#x7B80;&#x5355;&#x7684;&#x4F18;&#x5316;&#x7B97;&#x6CD5;</em></p>
+</li>
+<li><p><strong>&#x7EFC;&#x5408;&#x4F18;&#x5316;&#x6311;&#x6218;&#x9898;</strong>
+&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x89C6;&#x9891;&#x5904;&#x7406;&#x7CFB;&#x7EDF;&#xFF0C;&#x76EE;&#x6807;&#x662F;&#x5728;&#x4FDD;&#x6301;60fps&#x7684;&#x540C;&#x65F6;&#x6700;&#x5C0F;&#x5316;&#x529F;&#x8017;&#x3002;&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x6027;&#x80FD;&#x4F18;&#x5316;&#x65B9;&#x6848;&#x3002;</p>
+<p><em>Hint: &#x7ED3;&#x5408;&#x65F6;&#x949F;&#x95E8;&#x63A7;&#x3001;&#x52A8;&#x6001;&#x7535;&#x538B;&#x8C03;&#x8282;&#x548C;&#x8D1F;&#x8F7D;&#x5747;&#x8861;</em></p>
+</li>
+</ol>
+<h2 id="&#x5E38;&#x89C1;&#x9677;&#x9631;&#x4E0E;&#x9519;&#x8BEF;">&#x5E38;&#x89C1;&#x9677;&#x9631;&#x4E0E;&#x9519;&#x8BEF;</h2>
+<ol>
+<li><p><strong>&#x8FC7;&#x5EA6;&#x4F18;&#x5316;&#x5355;&#x4E00;&#x6307;&#x6807;</strong></p>
+<ul>
+<li>&#x53EA;&#x5173;&#x6CE8;&#x9891;&#x7387;&#x800C;&#x5FFD;&#x7565;&#x529F;&#x8017;</li>
+<li>&#x8FC7;&#x5EA6;&#x6D41;&#x6C34;&#x7EBF;&#x5BFC;&#x81F4;&#x5EF6;&#x8FDF;&#x8FC7;&#x5927;</li>
+<li>&#x89E3;&#x51B3;&#xFF1A;&#x5EFA;&#x7ACB;&#x5E73;&#x8861;&#x7684;&#x4F18;&#x5316;&#x76EE;&#x6807;</li>
+</ul>
+</li>
+<li><p><strong>&#x65F6;&#x5E8F;&#x7EA6;&#x675F;&#x4E0D;&#x5B8C;&#x6574;</strong></p>
+<ul>
+<li>&#x7F3A;&#x5C11;&#x5F02;&#x6B65;&#x65F6;&#x949F;&#x57DF;&#x7EA6;&#x675F;</li>
+<li>&#x5FFD;&#x7565;I/O&#x65F6;&#x5E8F;&#x7EA6;&#x675F;</li>
+<li>&#x89E3;&#x51B3;&#xFF1A;&#x7CFB;&#x7EDF;&#x5316;&#x7684;&#x7EA6;&#x675F;&#x65B9;&#x6CD5;</li>
+</ul>
+</li>
+<li><p><strong>&#x8D44;&#x6E90;&#x5171;&#x4EAB;&#x4E0D;&#x5F53;</strong></p>
+<ul>
+<li>&#x5171;&#x4EAB;&#x903B;&#x8F91;&#x6210;&#x4E3A;&#x65B0;&#x7684;&#x74F6;&#x9888;</li>
+<li>&#x63A7;&#x5236;&#x590D;&#x6742;&#x5EA6;&#x8FC7;&#x9AD8;</li>
+<li>&#x89E3;&#x51B3;&#xFF1A;&#x4ED4;&#x7EC6;&#x5206;&#x6790;&#x4F7F;&#x7528;&#x6A21;&#x5F0F;</li>
+</ul>
+</li>
+<li><p><strong>&#x76D1;&#x63A7;&#x5F00;&#x9500;&#x8FC7;&#x5927;</strong></p>
+<ul>
+<li>&#x6027;&#x80FD;&#x8BA1;&#x6570;&#x5668;&#x5F71;&#x54CD;&#x88AB;&#x6D4B;&#x7CFB;&#x7EDF;</li>
+<li>&#x76D1;&#x63A7;&#x6570;&#x636E;&#x5E26;&#x5BBD;&#x8FC7;&#x9AD8;</li>
+<li>&#x89E3;&#x51B3;&#xFF1A;&#x6700;&#x5C0F;&#x5316;&#x4FB5;&#x5165;&#x5F0F;&#x8BBE;&#x8BA1;</li>
+</ul>
+</li>
+<li><p><strong>&#x4F18;&#x5316;&#x7B56;&#x7565;&#x9519;&#x8BEF;</strong></p>
+<ul>
+<li>&#x5C40;&#x90E8;&#x4F18;&#x5316;&#x5BFC;&#x81F4;&#x5168;&#x5C40;&#x6027;&#x80FD;&#x4E0B;&#x964D;</li>
+<li>&#x5FFD;&#x7565;&#x6570;&#x636E;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;</li>
+<li>&#x89E3;&#x51B3;&#xFF1A;&#x5168;&#x5C40;&#x89C6;&#x89D2;&#x7684;&#x4F18;&#x5316;</li>
+</ul>
+</li>
+</ol>
+<h2 id="&#x6700;&#x4F73;&#x5B9E;&#x8DF5;&#x68C0;&#x67E5;&#x6E05;&#x5355;">&#x6700;&#x4F73;&#x5B9E;&#x8DF5;&#x68C0;&#x67E5;&#x6E05;&#x5355;</h2>
+<h3 id="&#x6027;&#x80FD;&#x5206;&#x6790;">&#x6027;&#x80FD;&#x5206;&#x6790;</h3>
+<ul>
+<li>[ ] &#x5EFA;&#x7ACB;&#x6E05;&#x6670;&#x7684;&#x6027;&#x80FD;&#x6307;&#x6807;</li>
+<li>[ ] &#x4F7F;&#x7528;&#x591A;&#x79CD;&#x5206;&#x6790;&#x5DE5;&#x5177;&#x4EA4;&#x53C9;&#x9A8C;&#x8BC1;</li>
+<li>[ ] &#x8BB0;&#x5F55;&#x57FA;&#x51C6;&#x6027;&#x80FD;&#x6570;&#x636E;</li>
+<li>[ ] &#x5B9A;&#x671F;&#x8FDB;&#x884C;&#x6027;&#x80FD;&#x56DE;&#x5F52;&#x6D4B;&#x8BD5;</li>
+</ul>
+<h3 id="&#x65F6;&#x5E8F;&#x4F18;&#x5316;">&#x65F6;&#x5E8F;&#x4F18;&#x5316;</h3>
+<ul>
+<li>[ ] &#x5B8C;&#x6574;&#x7684;&#x65F6;&#x5E8F;&#x7EA6;&#x675F;&#x8986;&#x76D6;</li>
+<li>[ ] &#x5408;&#x7406;&#x7684;&#x65F6;&#x949F;&#x89C4;&#x5212;</li>
+<li>[ ] &#x9002;&#x5F53;&#x7684;&#x6D41;&#x6C34;&#x7EBF;&#x6DF1;&#x5EA6;</li>
+<li>[ ] &#x65F6;&#x5E8F;&#x4F59;&#x91CF;&#x9884;&#x7559;</li>
+</ul>
+<h3 id="&#x8D44;&#x6E90;&#x4F18;&#x5316;">&#x8D44;&#x6E90;&#x4F18;&#x5316;</h3>
+<ul>
+<li>[ ] &#x8D44;&#x6E90;&#x4F7F;&#x7528;&#x7387;&#x5747;&#x8861;</li>
+<li>[ ] &#x5408;&#x7406;&#x7684;&#x8D44;&#x6E90;&#x5171;&#x4EAB;&#x7B56;&#x7565;</li>
+<li>[ ] &#x5B58;&#x50A8;&#x5668;&#x5C42;&#x6B21;&#x4F18;&#x5316;</li>
+<li>[ ] &#x52A8;&#x6001;&#x8D44;&#x6E90;&#x7BA1;&#x7406;</li>
+</ul>
+<h3 id="&#x76D1;&#x63A7;&#x7CFB;&#x7EDF;">&#x76D1;&#x63A7;&#x7CFB;&#x7EDF;</h3>
+<ul>
+<li>[ ] &#x4F4E;&#x5F00;&#x9500;&#x7684;&#x76D1;&#x63A7;&#x8BBE;&#x8BA1;</li>
+<li>[ ] &#x5B9E;&#x65F6;&#x6570;&#x636E;&#x5206;&#x6790;&#x80FD;&#x529B;</li>
+<li>[ ] &#x5F02;&#x5E38;&#x68C0;&#x6D4B;&#x548C;&#x62A5;&#x8B66;</li>
+<li>[ ] &#x6027;&#x80FD;&#x8D8B;&#x52BF;&#x8DDF;&#x8E2A;</li>
+</ul>
+<h3 id="&#x6301;&#x7EED;&#x4F18;&#x5316;">&#x6301;&#x7EED;&#x4F18;&#x5316;</h3>
+<ul>
+<li>[ ] &#x81EA;&#x52A8;&#x5316;&#x6027;&#x80FD;&#x6D4B;&#x8BD5;</li>
+<li>[ ] &#x7248;&#x672C;&#x95F4;&#x6027;&#x80FD;&#x5BF9;&#x6BD4;</li>
+<li>[ ] &#x4F18;&#x5316;&#x6548;&#x679C;&#x91CF;&#x5316;</li>
+<li>[ ] &#x6587;&#x6863;&#x5316;&#x4F18;&#x5316;&#x51B3;&#x7B56;</li>
+</ul>
+<hr>
+<div style="text-align: center; margin: 20px 0;">
+  <a href="chapter17.html" style="margin-right: 20px;">&#x2190; &#x4E0A;&#x4E00;&#x7AE0;&#xFF1A;&#x672A;&#x6765;&#x8D8B;&#x52BF;&#x4E0E;&#x65B0;&#x5174;&#x6280;&#x672F;</a>
+  <a href="chapter19.html" style="margin-left: 20px;">&#x4E0B;&#x4E00;&#x7AE0;&#xFF1A;&#x529F;&#x8017;&#x4F18;&#x5316;&#x6280;&#x672F; &#x2192;</a>
+</div>
+
+
+
+<script type="text/javascript">var targetUl = document.getElementsByClassName('page-inner')[0].getElementsByTagName('ul')[0];if(targetUl.getElementsByTagName('a').length>0){targetUl.className='toc';}</script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="chapter17.html" class="navigation navigation-prev " aria-label="Previous page: 第17章：毫米波雷达与FPGA">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="chapter19.html" class="navigation navigation-next " aria-label="Next page: 第19章：功耗优化技术">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第18章：性能分析与优化","level":"5.1","depth":1,"next":{"title":"第19章：功耗优化技术","level":"5.2","depth":1,"path":"chapters/chapter19.md","ref":"chapters/chapter19.md","articles":[]},"previous":{"title":"第17章：毫米波雷达与FPGA","level":"4.7","depth":1,"path":"chapters/chapter17.md","ref":"chapters/chapter17.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","search","copy-code-button","theme-default","back-to-top-button","github","splitter","toc"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"assets/css/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/Xde1997/Tutorial_FPGA"},"splitter":{},"toc":{"addClass":true,"className":"toc"},"search":{"maxIndexSize":100000,"ignoreCase":true},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{"copyText":"复制代码","format":"html"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"assets/css/website.css"}},"expandable-chapters":{"chapterExpand":true,"chapterRespectURL":true}},"theme":"default","author":"FPGA教程团队","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"themeColor":"#2196F3","themeColorSecondary":"#FF5722"},"title":"FPGA原理与AI加速应用教程","language":"zh-hans","gitbook":"*","description":"面向软件工程师的FPGA实战指南"},"file":{"path":"chapters/chapter18.md","mtime":"2025-08-03T12:50:50.917Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-08-03T12:52:22.204Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
