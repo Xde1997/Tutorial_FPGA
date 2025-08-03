@@ -2,6 +2,12 @@
 
 > 面向软件工程师的FPGA实战指南
 
+[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
+
+**原始作者：** [zsc/fpga_tutorial](https://github.com/zsc/fpga_tutorial/tree/main)
+
+本教程基于原始作者的开源项目，采用知识共享署名-相同方式共享 4.0 国际许可协议。
+
 本教程面向具有软件工程和AI背景的工程师，旨在快速掌握FPGA设计原理并应用于AI加速领域。课程采用自顶向下的方法，从系统架构到具体实现，重点关注大语言模型(LLM)、视觉模型和多模态AI系统的硬件加速。
 
 ## 🎯 目标读者
@@ -39,7 +45,13 @@
 
 ## 📄 版权与反馈
 
-本教程遵循CC BY-SA 4.0协议。如有问题或建议，请提交Issue。
+本教程基于 [zsc/fpga_tutorial](https://github.com/zsc/fpga_tutorial/tree/main) 项目，遵循 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 协议。
+
+**许可证要求：**
+- 署名：使用本教程时请标注原始作者 [zsc/fpga_tutorial](https://github.com/zsc/fpga_tutorial/tree/main)
+- 相同方式共享：基于本教程的衍生作品必须采用相同的CC BY-SA 4.0协议
+
+如有问题或建议，请提交Issue。
 
 ---
 
