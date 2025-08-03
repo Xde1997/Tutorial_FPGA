@@ -117,8 +117,8 @@ deploy_to_github() {
         fi
         
         # 清理当前分支内容（保留.git目录）
-        echo "🧹 清理当前分支内容..."
-        find . -mindepth 1 -not -path './.git*' -delete
+        # echo "🧹 清理当前分支内容..."
+        # find . -mindepth 1 -not -path './.git*' -delete
         
         # 复制文档内容
         echo "📋 复制文档内容..."
